@@ -5,9 +5,9 @@ import { IMAGES } from "@/lib/constants";
 export default function Hero() {
   return (
     <section id="hero" className="w-full bg-gradient-to-br from-green-300 via-green-400 to-green-500 pt-24 pb-16">
-      <div className="container mx-auto">
-        <AnimatedSection className="text-center w-full max-w-4xl mx-auto" delay={0.2}>
-          <div className="bg-white border-2 border-black p-8 mx-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+      <div className="w-full px-4">
+        <AnimatedSection className="text-center w-full" delay={0.2}>
+          <div className="bg-white border-2 border-black p-8 w-full" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
             <div className="bg-green-400 border-2 border-black p-6 mb-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
               <div className="flex flex-col items-center justify-center mb-4">
                 <Image

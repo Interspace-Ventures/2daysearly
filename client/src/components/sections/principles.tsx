@@ -47,7 +47,7 @@ const Principles = () => {
       className="neo-section bg-gradient-to-br from-green-200 via-green-300 to-green-400"
       aria-labelledby="principles-heading"
     >
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="w-full px-4">
         <AnimatedSection>
           <div className="bg-white border-2 border-black p-8 mb-8" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
             <h2 

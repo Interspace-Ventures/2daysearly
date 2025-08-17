@@ -62,7 +62,7 @@ export default function Portfolio() {
       className="neo-section bg-white"
       aria-labelledby="portfolio-heading"
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="w-full px-4">
         <AnimatedSection>
           <div className="text-center mb-16">
             <div className="bg-black border-2 border-black p-8 mb-6 inline-block" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
