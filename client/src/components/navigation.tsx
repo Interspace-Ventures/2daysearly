@@ -1,26 +1,55 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
 import { Menu, X, ExternalLink, Loader2 } from "lucide-react";
-import ThemeToggle from "@/components/ui/theme-toggle";
-import { scrollToElement, getActiveSection } from "@/lib/scroll";
-import { Separator } from "@/components/ui/separator";
-import Image from "@/components/ui/image";
 import { useToast } from "@/hooks/use-toast";
+import Image from "@/components/ui/image";
+
+function scrollToElement(elementId: string) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    const navHeight = 80;
+    const elementPosition = element.offsetTop - navHeight;
+    window.scrollTo({
+      top: elementPosition,
+      behavior: 'smooth'
+    });
+  }
+}
+
+function getActiveSection(): string {
+  const sections = ['hero', 'purpose', 'principles', 'portfolio', 'partners'];
+  const scrollPosition = window.scrollY + 100;
+  
+  for (let i = sections.length - 1; i >= 0; i--) {
+    const element = document.getElementById(sections[i]);
+    if (element && element.offsetTop <= scrollPosition) {
+      return sections[i];
+    }
+  }
+  
+  return 'hero';
+}
+
+declare global {
+  interface Window {
+    Tally?: any;
+    TallyConfig?: {
+      formId: string;
+    };
+  }
+}
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [isTallyLoading, setIsTallyLoading] = useState(false); // Changed to false by default
+  const [isTallyLoading, setIsTallyLoading] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
       setActiveSection(getActiveSection());
     };
     window.addEventListener("scroll", handleScroll);
 
-    // Only check Tally when needed, not on initial load
     const handleTallyLoad = () => {
       setIsTallyLoading(false);
     };
@@ -41,9 +70,8 @@ export default function Navigation() {
 
   const handleJoinClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setIsTallyLoading(true); // Set loading when attempting to open form
+    setIsTallyLoading(true);
 
-    // Check if Tally is available
     if (!window.Tally) {
       toast({
         variant: "destructive",
@@ -54,7 +82,6 @@ export default function Navigation() {
       return;
     }
 
-    // Create a container for the form
     const formContainer = document.createElement('div');
     formContainer.id = 'tally-form-container';
     formContainer.style.position = 'fixed';
@@ -64,35 +91,39 @@ export default function Navigation() {
     formContainer.style.width = '600px';
     formContainer.style.maxWidth = '100vw';
     formContainer.style.backgroundColor = 'white';
-    formContainer.style.boxShadow = '-4px 0 6px -1px rgb(0 0 0 / 0.1)';
+    formContainer.style.border = '3px solid #000000';
+    formContainer.style.boxShadow = '-8px 0 0px 0px #000000';
     formContainer.style.zIndex = '9999';
     formContainer.style.transform = 'translateX(100%)';
     formContainer.style.transition = 'transform 0.3s ease-in-out';
 
-    // Add title container
     const titleContainer = document.createElement('div');
     titleContainer.style.padding = '1.5rem';
-    titleContainer.style.borderBottom = '1px solid #e5e7eb';
+    titleContainer.style.borderBottom = '3px solid #000000';
     titleContainer.style.display = 'flex';
     titleContainer.style.justifyContent = 'space-between';
     titleContainer.style.alignItems = 'center';
+    titleContainer.style.backgroundColor = '#ef4444';
 
     const title = document.createElement('h2');
-    title.textContent = '2 Days Early Syndicate Onboarding';
+    title.textContent = '2 DAYS EARLY SYNDICATE ONBOARDING';
     title.style.margin = '0';
     title.style.fontSize = '1.25rem';
-    title.style.fontWeight = '600';
-    title.style.color = '#111827';
+    title.style.fontWeight = 'bold';
+    title.style.color = 'white';
+    title.style.fontFamily = 'Courier New, monospace';
 
-    // Add close button
     const closeButton = document.createElement('button');
     closeButton.innerHTML = '×';
     closeButton.style.fontSize = '24px';
-    closeButton.style.border = 'none';
-    closeButton.style.background = 'none';
+    closeButton.style.border = '2px solid #000000';
+    closeButton.style.background = 'white';
     closeButton.style.cursor = 'pointer';
     closeButton.style.padding = '0.5rem';
     closeButton.style.lineHeight = '1';
+    closeButton.style.color = 'black';
+    closeButton.style.fontWeight = 'bold';
+    closeButton.style.boxShadow = '2px 2px 0px 0px #000000';
 
     const cleanup = () => {
       if (document.body.contains(formContainer)) {
@@ -107,7 +138,6 @@ export default function Navigation() {
 
     closeButton.onclick = cleanup;
 
-    // Create embedded form
     const iframe = document.createElement('iframe');
     iframe.src = `https://tally.so/embed/${window.TallyConfig?.formId || 'nP1v8e'}?alignLeft=1&transparentBackground=1&hideTitle=1`;
     iframe.style.width = '100%';
@@ -116,18 +146,15 @@ export default function Navigation() {
     iframe.style.padding = '1.5rem';
     iframe.title = "2 Days Early Syndicate Onboarding";
 
-    // Remove loading indicator when iframe loads
     iframe.onload = () => {
       setIsTallyLoading(false);
     };
 
-    // Assemble the components
     titleContainer.appendChild(title);
     titleContainer.appendChild(closeButton);
     formContainer.appendChild(titleContainer);
     formContainer.appendChild(iframe);
 
-    // Add overlay
     const overlay = document.createElement('div');
     overlay.style.position = 'fixed';
     overlay.style.top = '0';
@@ -140,12 +167,10 @@ export default function Navigation() {
     overlay.style.transition = 'opacity 0.3s ease-in-out';
     overlay.onclick = cleanup;
 
-    // Add to document
     document.body.appendChild(overlay);
     document.body.appendChild(formContainer);
     document.body.style.overflow = 'hidden';
 
-    // Trigger animations
     requestAnimationFrame(() => {
       overlay.style.opacity = '1';
       formContainer.style.transform = 'translateX(0)';
@@ -153,16 +178,16 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { id: 'purpose', label: 'Purpose' },
-    { id: 'principles', label: 'Principles' },
-    { id: 'portfolio', label: 'Portfolio' },
-    { id: 'partners', label: 'Partners' }
+    { id: 'purpose', label: 'PURPOSE' },
+    { id: 'principles', label: 'PRINCIPLES' },
+    { id: 'portfolio', label: 'PORTFOLIO' },
+    { id: 'partners', label: 'PARTNERS' }
   ];
 
   const actionButtons = [
     { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN", primary: false },
     {
-      label: isTallyLoading ? "Loading..." : "JOIN*",
+      label: isTallyLoading ? "LOADING..." : "JOIN*",
       primary: false,
       onClick: handleJoinClick,
       icon: isTallyLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : undefined
@@ -171,26 +196,19 @@ export default function Navigation() {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-[#baf5da]/80 dark:bg-white/80 backdrop-blur-sm
-        ${isScrolled ? 'shadow-sm' : ''}
-        md:top-4 md:mx-4 md:rounded-full`}
-      role="navigation"
-      aria-label="Main navigation"
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-yellow-400 neo-border-thin border-t-0 border-l-0 border-r-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, 'hero')}
-            className="flex-shrink-0 transform hover:scale-105 transition-transform duration-200"
+            className="flex-shrink-0"
           >
-            <Image
-              src="/images/2-days-early-calendar-icon-2025.png"
-              alt="2 Days Early"
-              className="h-12 w-12 rounded-full object-contain"
-              fallbackSrc="/images/2-days-early-logo-2025.png"
-            />
+            <div className="neo-border bg-white px-4 py-2 neo-shadow">
+              <span className="text-xl font-bold text-black font-mono">
+                2 DAYS EARLY
+              </span>
+            </div>
           </a>
 
           <div className="hidden md:flex items-center gap-4">
@@ -200,97 +218,85 @@ export default function Navigation() {
                   key={id}
                   href={`#${id}`}
                   onClick={(e) => handleNavClick(e, id)}
-                  className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-2 py-1 transition-all duration-200 transform hover:-translate-y-0.5 ${
-                    activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
+                  className={`neo-border px-4 py-2 font-bold text-sm transition-all duration-100 ${
+                    activeSection === id 
+                      ? 'bg-primary text-white neo-shadow' 
+                      : 'bg-white text-black hover:neo-shadow hover:transform hover:translate-x-1 hover:translate-y-1'
                   }`}
-                  role="menuitem"
-                  aria-current={activeSection === id ? 'page' : undefined}
                 >
                   {label}
                 </a>
               ))}
             </div>
 
-            <Separator orientation="vertical" className="h-6 mx-2" />
+            <div className="w-px h-8 bg-black mx-4"></div>
 
             <div className="flex items-center gap-2">
               {actionButtons.map((button) => (
                 <button
                   key={button.label}
                   onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
-                  className={`${
+                  className={`neo-button ${
                     button.primary
-                      ? 'bg-primary text-white hover:bg-primary/90'
-                      : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
-                  } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 transition-all duration-200 transform hover:-translate-y-0.5`}
+                      ? 'bg-primary text-white'
+                      : 'bg-secondary text-black'
+                  }`}
                 >
-                  {button.label} {button.href && <ExternalLink className="h-3 w-3" />}
-                  {button.icon}
+                  {button.label} 
+                  {button.href && <ExternalLink className="h-4 w-4 ml-1" />}
+                  {button.icon && <span className="ml-1">{button.icon}</span>}
                 </button>
               ))}
-              <Separator orientation="vertical" className="h-6 mx-2" />
-              <ThemeToggle />
             </div>
           </div>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-700 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-100 transition-colors duration-200"
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
-            aria-label={isOpen ? "Close main menu" : "Open main menu"}
+            className="md:hidden neo-border bg-white p-2 neo-shadow"
           >
-            {isOpen ? <X className="block h-6 w-6" aria-hidden="true" /> : <Menu className="block h-6 w-6" aria-hidden="true" />}
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-      </div>
 
-      <div
-        id="mobile-menu"
-        className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-[#baf5da]/95 dark:bg-white/95 backdrop-blur-sm`}
-        role="menu"
-        aria-label="Mobile navigation"
-      >
-        <div className="px-4 pt-2 pb-3 space-y-4">
-          <div className="flex flex-wrap gap-2">
-            {navItems.map(({ id, label }) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                onClick={(e) => handleNavClick(e, id)}
-                className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-1.5 py-1 text-sm md:text-base md:px-2 transition-all duration-200 transform hover:-translate-y-0.5 ${
-                  activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
-                }`}
-                role="menuitem"
-                aria-current={activeSection === id ? 'page' : undefined}
-              >
-                {label}
-              </a>
-            ))}
-          </div>
-
-          <Separator className="my-2" />
-
-          <div className="flex flex-wrap gap-2">
-            {actionButtons.map((button) => (
-              <button
-                key={button.label}
-                onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
-                className={`${
-                  button.primary
-                    ? 'bg-primary text-white hover:bg-primary/90'
-                    : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
-                } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 w-full justify-center transition-all duration-200 transform hover:-translate-y-0.5`}
-              >
-                {button.label} {button.href && <ExternalLink className="h-3 w-3" />}
-                {button.icon}
-              </button>
-            ))}
-            <div className="flex justify-center w-full pt-2">
-              <ThemeToggle />
+        {/* Mobile menu */}
+        {isOpen && (
+          <div className="md:hidden bg-white neo-border neo-shadow mt-2 mb-4">
+            <div className="px-4 pt-4 pb-6 space-y-4">
+              {navItems.map(({ id, label }) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={(e) => handleNavClick(e, id)}
+                  className={`block neo-border px-4 py-3 font-bold text-center transition-all duration-100 ${
+                    activeSection === id 
+                      ? 'bg-primary text-white neo-shadow' 
+                      : 'bg-white text-black hover:neo-shadow'
+                  }`}
+                >
+                  {label}
+                </a>
+              ))}
+              
+              <div className="h-px bg-black my-4"></div>
+              
+              {actionButtons.map((button) => (
+                <button
+                  key={button.label}
+                  onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
+                  className={`w-full neo-button ${
+                    button.primary
+                      ? 'bg-primary text-white'
+                      : 'bg-secondary text-black'
+                  }`}
+                >
+                  {button.label} 
+                  {button.href && <ExternalLink className="h-4 w-4 ml-1" />}
+                  {button.icon && <span className="ml-1">{button.icon}</span>}
+                </button>
+              ))}
             </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );

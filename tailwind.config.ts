@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        sans: ['Courier New', 'monospace'],
+        mono: ['Courier New', 'Courier', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",

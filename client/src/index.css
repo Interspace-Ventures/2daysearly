@@ -2,37 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Neobrutalism styles */
+@layer components {
+  .neo-shadow {
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+  
+  .neo-shadow-lg {
+    box-shadow: 8px 8px 0px 0px #000000;
+  }
+  
+  .neo-shadow-xl {
+    box-shadow: 12px 12px 0px 0px #000000;
+  }
+  
+  .neo-border {
+    border: 3px solid #000000;
+  }
+  
+  .neo-border-thin {
+    border: 2px solid #000000;
+  }
+  
+  .neo-card {
+    @apply neo-border neo-shadow bg-white;
+  }
+  
+  .neo-button {
+    @apply neo-border neo-shadow bg-primary text-primary-foreground font-bold text-lg px-6 py-3 transition-all duration-100;
+  }
+  
+  .neo-button:hover {
+    @apply neo-shadow-lg transform translate-x-1 translate-y-1;
+  }
+  
+  .neo-button:active {
+    @apply neo-shadow transform translate-x-2 translate-y-2;
+  }
+  
+  .neo-input {
+    @apply neo-border bg-white px-4 py-3 text-black font-bold text-lg;
+  }
+  
+  .neo-section {
+    @apply py-16 px-8;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 84% 57%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 60 100% 50%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 20%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 240 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 57%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 142.1 70.6% 45.3%;
+    --border: 0 0% 0%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 0%;
 
-    --radius: 0.5rem;
+    --radius: 0rem;
   }
 
   .dark {
@@ -70,8 +117,9 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased transition-colors duration-300 font-sans overflow-x-hidden;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply bg-background text-foreground font-mono overflow-x-hidden;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
   }
 
   .container {

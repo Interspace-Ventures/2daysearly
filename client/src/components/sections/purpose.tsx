@@ -1,67 +1,76 @@
-import { memo } from "react";
 import AnimatedSection from "@/components/ui/animated-section";
 
-const Purpose = () => {
+export default function Purpose() {
   return (
     <section 
       id="purpose" 
-      className="py-8 md:py-12 bg-gray-50 dark:bg-primary/5"
+      className="neo-section bg-white"
       aria-labelledby="purpose-heading"
     >
-      <AnimatedSection className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
-        <h2 
-          id="purpose-heading"
-          className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8"
-        >
-          By operators. For operators.
-        </h2>
-        <div className="space-y-4 md:space-y-6">
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            We are a community of{" "}
-            <strong className="bg-primary/20">
-              entrepreneurs, investors and operators
-            </strong>
-            . We have backgrounds in growth, product, engineering, operations, finance, analytics and more, determined to helping startups succeed like we did at Chime.
-          </p>
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            We aim to be the operator syndicate with{" "}
-            <strong className="bg-primary/20">
-              highest value per dollar invested.
-            </strong>{" "}
-            Companies we invest in get access to our experience network, and our commitment to empower impactful firms that provide better options for everyday people.
-          </p>
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            We love investing in amazing founders of all backgrounds, and we&apos;re especially committed to{" "}
-            <strong className="bg-primary/20">
-              invest in future companies founded by Chime alumni.
-            </strong>
-          </p>
+      <div className="max-w-6xl mx-auto px-4">
+        <AnimatedSection>
+          <div className="neo-card p-8 mb-8">
+            <div className="bg-primary neo-border neo-shadow p-6 mb-6">
+              <h2 
+                id="purpose-heading"
+                className="text-4xl md:text-6xl font-bold text-white font-mono text-center"
+              >
+                BY OPERATORS. FOR OPERATORS.
+              </h2>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-yellow-100 neo-border p-6">
+                <p className="text-xl font-bold text-black font-mono leading-relaxed">
+                  WE ARE A COMMUNITY OF{" "}
+                  <span className="bg-yellow-400 neo-border-thin px-2 py-1">
+                    ENTREPRENEURS, INVESTORS AND OPERATORS
+                  </span>
+                  . WE HAVE BACKGROUNDS IN GROWTH, PRODUCT, ENGINEERING, OPERATIONS, FINANCE, ANALYTICS AND MORE, DETERMINED TO HELPING STARTUPS SUCCEED LIKE WE DID AT CHIME.
+                </p>
+              </div>
+              
+              <div className="bg-blue-100 neo-border p-6">
+                <p className="text-xl font-bold text-black font-mono leading-relaxed">
+                  WE AIM TO BE THE OPERATOR SYNDICATE WITH{" "}
+                  <span className="bg-blue-400 neo-border-thin px-2 py-1 text-white">
+                    HIGHEST VALUE PER DOLLAR INVESTED.
+                  </span>{" "}
+                  COMPANIES WE INVEST IN GET ACCESS TO OUR EXPERIENCE NETWORK, AND OUR COMMITMENT TO EMPOWER IMPACTFUL FIRMS THAT PROVIDE BETTER OPTIONS FOR EVERYDAY PEOPLE.
+                </p>
+              </div>
+              
+              <div className="bg-green-100 neo-border p-6">
+                <p className="text-xl font-bold text-black font-mono leading-relaxed">
+                  WE LOVE INVESTING IN AMAZING FOUNDERS OF ALL BACKGROUNDS, AND WE&apos;RE ESPECIALLY COMMITTED TO{" "}
+                  <span className="bg-green-400 neo-border-thin px-2 py-1">
+                    INVEST IN FUTURE COMPANIES FOUNDED BY CHIME ALUMNI.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+        
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
+          <div className="neo-card p-6 text-center bg-white">
+            <div className="text-5xl font-bold text-primary mb-4 font-mono">150+</div>
+            <div className="text-lg font-bold text-black font-mono">CHIME OPERATORS IN 2 DAYS EARLY SYNDICATE</div>
+          </div>
+          <div className="neo-card p-6 text-center bg-white">
+            <div className="text-5xl font-bold text-primary mb-4 font-mono">40%</div>
+            <div className="text-lg font-bold text-black font-mono">HAVE EXPERIENCE SCALING STARTUPS FROM 0 - 100 FTES</div>
+          </div>
+          <div className="neo-card p-6 text-center bg-white">
+            <div className="text-5xl font-bold text-primary mb-4 font-mono">73%</div>
+            <div className="text-lg font-bold text-black font-mono">HAVE DIRECTLY MANAGED TEAMS OF 10+ PEOPLE</div>
+          </div>
+          <div className="neo-card p-6 text-center bg-white">
+            <div className="text-5xl font-bold text-primary mb-4 font-mono">$5M+</div>
+            <div className="text-lg font-bold text-black font-mono">AVERAGE REVENUE RESPONSIBILITY PER OPERATOR</div>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8">
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <div className="text-3xl font-bold text-primary mb-2">150+</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Chime operators in 2 Days Early syndicate</div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <div className="text-3xl font-bold text-primary mb-2">40%</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Have experience scaling startups from 0 - 100 FTEs</div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <div className="text-3xl font-bold text-primary mb-2">73%</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Have Product or Engineering expertise</div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-            <div className="text-3xl font-bold text-primary mb-2">$2.5M</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">investing capacity each year</div>
-          </div>
-        </div>
-
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-8 text-center italic">
-          *To build the best community we can for our members, we&apos;re limiting access to current and former Chime employees only at this time
-        </p>
-      </AnimatedSection>
+      </div>
     </section>
   );
-};
-
-export default memo(Purpose);
+}

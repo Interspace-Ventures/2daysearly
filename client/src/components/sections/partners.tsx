@@ -4,40 +4,72 @@ import Image from "@/components/ui/image";
 
 interface PartnerCardProps {
   name: string;
-  bio: string;
+  bio: React.ReactNode;
   image: string;
   imageClassName?: string;
 }
 
 const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps) => (
-  <div className="flex flex-col items-center space-y-4 p-6">
-    <div className="w-48 h-48 rounded-full overflow-hidden bg-white shadow-lg">
-      <Image
-        src={image}
-        alt={`${name}'s portrait`}
-        className={`w-full h-full object-cover ${imageClassName || ''}`}
-        fallbackSrc="/images/2-days-early-logo-2025.png"
-      />
+  <div className="neo-card p-8 bg-white text-center">
+    <div className="bg-gradient-to-br from-purple-400 to-pink-400 neo-border neo-shadow p-6 mb-6">
+      <div className="w-32 h-32 mx-auto bg-white neo-border rounded-full overflow-hidden">
+        <Image
+          src={image}
+          alt={`${name}'s portrait`}
+          className={`w-full h-full object-cover ${imageClassName || ''}`}
+          fallbackSrc="/images/2-days-early-logo-2025.png"
+        />
+      </div>
     </div>
-    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 text-center">{name}</h3>
-    <p className="text-gray-700 dark:text-gray-300 text-left text-sm max-w-sm">{bio}</p>
+    
+    <div className="bg-yellow-400 neo-border neo-shadow p-4 mb-4">
+      <h3 className="text-3xl font-bold text-black font-mono">{name}</h3>
+    </div>
+    
+    <div className="bg-gray-100 neo-border p-4">
+      <div className="text-black font-bold font-mono text-sm leading-relaxed text-left">
+        {bio}
+      </div>
+    </div>
   </div>
 ));
 
+PartnerCard.displayName = "PartnerCard";
+
 const partners = [
   {
-    name: "Maia",
-    bio: <>Builds cool fintech stuff at Chime (after they acquired her credit-building startup Pinch). Previously founded Rocksbox (also acquired). Now backs founders at XFactor & Parcel B. Probably sharing <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/90 underline">tmi tweets</a> about raising her two amazing daughers.</>,
+    name: "MAIA",
+    bio: (
+      <>
+        BUILDS COOL FINTECH STUFF AT CHIME (AFTER THEY ACQUIRED HER CREDIT-BUILDING STARTUP PINCH). PREVIOUSLY FOUNDED ROCKSBOX (ALSO ACQUIRED). NOW BACKS FOUNDERS AT XFACTOR & PARCEL B. PROBABLY SHARING{" "}
+        <span className="bg-yellow-400 neo-border-thin px-1">
+          <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="text-black font-bold underline">
+            TMI TWEETS
+          </a>
+        </span>{" "}
+        ABOUT RAISING HER TWO AMAZING DAUGHTERS.
+      </>
+    ),
     image: "/images/Maia.png"
   },
   {
-    name: "Baishi",
-    bio: "At Chime, shapes lending products helping millions get the credit they deserve. Previously revolutionized mortgages at LendingHome and home search at Compass. Building great fintech while raising tiny humans.",
+    name: "BAISHI",
+    bio: "AT CHIME, SHAPES LENDING PRODUCTS HELPING MILLIONS GET THE CREDIT THEY DESERVE. PREVIOUSLY REVOLUTIONIZED MORTGAGES AT LENDINGHOME AND HOME SEARCH AT COMPASS. BUILDING GREAT FINTECH WHILE RAISING TINY HUMANS.",
     image: "/images/Baishi.png"
   },
   {
-    name: "Samir",
-    bio: <>Finance nerd building money superpowers at Cash App. Previously shaped Strategic Finance at HRT, Unit, and Chime after starting at JP Morgan. Writes <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/90 underline">over-engineered fintech takes</a> and is learning to code at the speed of thought with Replit.</>,
+    name: "SAMIR",
+    bio: (
+      <>
+        FINANCE NERD BUILDING MONEY SUPERPOWERS AT CASH APP. PREVIOUSLY SHAPED STRATEGIC FINANCE AT HRT, UNIT, AND CHIME AFTER STARTING AT JP MORGAN. WRITES{" "}
+        <span className="bg-blue-400 neo-border-thin px-1 text-white">
+          <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
+            OVER-ENGINEERED FINTECH TAKES
+          </a>
+        </span>{" "}
+        AND IS LEARNING TO CODE AT THE SPEED OF THOUGHT WITH REPLIT.
+      </>
+    ),
     image: "/images/Samir-Desai-min.png",
     imageClassName: "scale-[0.8]"
   }
@@ -47,22 +79,30 @@ const Partners = () => {
   return (
     <section 
       id="partners" 
-      className="py-8 md:py-12 bg-white dark:bg-primary/10"
+      className="neo-section bg-gradient-to-br from-green-300 via-blue-300 to-purple-300"
       aria-labelledby="partners-heading"
     >
-      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 
-          id="partners-heading"
-          className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center"
-        >
-          Partners
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {partners.map((partner) => (
-            <PartnerCard key={partner.name} {...partner} />
-          ))}
-        </div>
-      </AnimatedSection>
+      <div className="max-w-7xl mx-auto px-4">
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <div className="bg-white neo-border neo-shadow-lg p-8 mb-6 inline-block">
+              <h2 
+                id="partners-heading"
+                className="text-4xl md:text-6xl font-bold text-black font-mono"
+              >
+                PARTNERS
+              </h2>
+              <div className="bg-red-400 neo-border h-4 mx-auto w-24 mt-4"></div>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {partners.map((partner) => (
+              <PartnerCard key={partner.name} {...partner} />
+            ))}
+          </div>
+        </AnimatedSection>
+      </div>
     </section>
   );
 };
