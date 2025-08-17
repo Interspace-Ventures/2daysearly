@@ -20,11 +20,18 @@ export default function Portfolio() {
       color: "bg-purple-400"
     },
     {
-      name: "HARPER",
-      href: "https://www.harperinsure.com/",
-      description: "MODERN INSURANCE PLATFORM ENABLING EMBEDDED INSURANCE EXPERIENCES FOR INNOVATIVE BUSINESSES.",
-      logo: IMAGES.companies.harper,
+      name: "FIZZ",
+      href: "https://joinfizz.com",
+      description: "SOCIAL DEBIT CARD AND FINANCIAL PLATFORM DESIGNED FOR COLLEGE STUDENTS AND YOUNG ADULTS.",
+      logo: "/images/fizz-logo.png",
       color: "bg-green-400"
+    },
+    {
+      name: "HADRIUS",
+      href: "https://hadrius.ai",
+      description: "AI-POWERED CYBERSECURITY PLATFORM PROVIDING INTELLIGENT THREAT DETECTION AND RESPONSE.",
+      logo: "/images/hadrius-logo.png",
+      color: "bg-purple-400"
     },
     {
       name: "KARTERA",
@@ -97,7 +104,9 @@ export default function Portfolio() {
                 <img
                   src={company.logo}
                   alt={`${company.name} logo`}
-                  className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-30"
+                  className={`max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-30 ${
+                    company.name === 'FIZZ' || company.name === 'HADRIUS' ? 'filter grayscale' : ''
+                  }`}
                 />
               </div>
 
