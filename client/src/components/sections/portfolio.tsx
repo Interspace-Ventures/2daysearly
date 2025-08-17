@@ -82,47 +82,37 @@ export default function Portfolio() {
           </div>
         </AnimatedSection>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {companies.map((company) => (
             <a 
               key={company.name}
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-white border-2 border-black transition-all duration-200 hover:shadow-lg" 
+              className="group relative bg-white border-2 border-black p-8 transition-all duration-300 hover:scale-105" 
               style={{boxShadow: '4px 4px 0px 0px #000000'}}
             >
-              {/* Logo Section - Completely rectangular, no rounded elements */}
-              <div className="bg-white p-8 border-b-2 border-black">
-                <div className="h-16 flex items-center justify-center bg-gray-50 border-2 border-black p-4">
-                  <img
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    className="max-w-full max-h-full object-contain"
-                    style={{filter: 'none'}}
-                  />
-                </div>
+              {/* Main Logo Display */}
+              <div className="aspect-square flex items-center justify-center">
+                <img
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-30"
+                />
               </div>
 
-              {/* Company Name */}
-              <div className="bg-green-400 p-4 border-b-2 border-black">
-                <h3 className="text-xl font-bold text-black text-center" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+              {/* Hover Overlay */}
+              <div className="absolute inset-2 bg-green-400 border-2 border-black p-4 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-300" 
+                   style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+                <h3 className="text-lg font-bold text-black text-center mb-3" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                   {company.name.toUpperCase()}
                 </h3>
-              </div>
-              
-              {/* Description */}
-              <div className="bg-white p-4 border-b-2 border-black">
-                <p className="text-sm font-bold text-black leading-relaxed text-center" style={{fontFamily: 'Inter, sans-serif'}}>
+                <p className="text-sm font-bold text-black leading-tight text-center mb-3" style={{fontFamily: 'Inter, sans-serif'}}>
                   {company.description}
                 </p>
-              </div>
-              
-              {/* Visit Button */}
-              <div className="bg-green-600 p-4">
-                <div className="flex items-center justify-center gap-2">
-                  <ExternalLink className="h-4 w-4 text-white" />
-                  <span className="text-sm font-bold text-white" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>VISIT SITE</span>
+                <div className="flex items-center justify-center gap-1 text-xs font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+                  <ExternalLink className="h-3 w-3" />
+                  VISIT
                 </div>
               </div>
             </a>
