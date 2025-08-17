@@ -13,8 +13,8 @@ export default function Purpose() {
             <div className="bg-green-500 border-2 border-black p-6 mb-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
               <h2 
                 id="purpose-heading"
-                className="text-4xl md:text-6xl font-bold text-white text-center"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+                className="text-2xl md:text-6xl font-bold text-white text-center"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
               >
                 BY OPERATORS. FOR OPERATORS.
               </h2>

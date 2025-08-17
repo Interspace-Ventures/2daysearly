@@ -68,20 +68,20 @@ export default function Portfolio() {
             <div className="bg-black border-2 border-black p-8 mb-6 inline-block" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
               <h2 
                 id="portfolio-heading" 
-                className="text-3xl md:text-5xl font-bold text-white"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+                className="text-2xl md:text-5xl font-bold text-white"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
               >
                 WE'RE PROUD TO INVEST OUR TIME
               </h2>
               <h2 
-                className="text-3xl md:text-5xl font-bold text-green-400"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+                className="text-2xl md:text-5xl font-bold text-green-400"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#4ade80'}}
               >
                 AND MONEY IN OPERATORS AT
               </h2>
               <h2 
-                className="text-3xl md:text-5xl font-bold text-white"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+                className="text-2xl md:text-5xl font-bold text-white"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
               >
                 THESE STARTUPS:
               </h2>
