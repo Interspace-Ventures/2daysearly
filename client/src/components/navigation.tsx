@@ -312,7 +312,7 @@ export default function Navigation() {
                     key={id}
                     href={`#${id}`}
                     onClick={(e) => handleNavClick(e, id)}
-                    className={`block py-3 px-4 font-bold text-lg text-center border-2 border-black transition-all duration-100 ${
+                    className={`block py-2 px-4 font-bold text-base text-center border-2 border-black transition-all duration-100 ${
                       activeSection === id 
                         ? 'bg-green-600 text-white' 
                         : 'bg-white text-black hover:bg-green-100'
@@ -334,7 +334,7 @@ export default function Navigation() {
                     key={button.label}
                     onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
                     disabled={isTallyLoading && !!button.onClick}
-                    className={`w-full border-2 border-black px-4 py-3 font-bold text-lg flex items-center justify-center gap-2 transition-all duration-100 ${
+                    className={`w-full border-2 border-black px-4 py-2 font-bold text-base flex items-center justify-center gap-2 transition-all duration-100 ${
                       button.primary
                         ? 'bg-green-600 text-white hover:bg-green-700'
                         : 'bg-white text-black hover:bg-gray-100'
