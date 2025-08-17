@@ -7,27 +7,27 @@
     <title>2 Days Early</title>
     <link rel="icon" type="image/png" href="/images/2-days-early-calendar-icon-2025.png" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Initialize Tally configuration -->
+    <!-- Tally configuration for manual loading only -->
     <script>
       window.TallyConfig = {
         hideTitle: true,
-        formId: 'nP1v8e'
+        formId: 'nP1v8e',
+        autoOpen: false
       };
-      // Create a custom event to notify when Tally is loaded
-      window.addEventListener('load', function() {
-        const tallyScript = document.querySelector('script[src*="tally.so"]');
-        if (tallyScript) {
-          tallyScript.addEventListener('load', function() {
+      
+      // Load Tally script manually when needed
+      window.loadTally = function() {
+        if (!window.Tally && !document.querySelector('script[src*="tally.so"]')) {
+          const script = document.createElement('script');
+          script.src = 'https://tally.so/widgets/embed.js';
+          script.async = true;
+          script.onload = function() {
             window.dispatchEvent(new Event('tally-loaded'));
-          });
+          };
+          document.head.appendChild(script);
         }
-      });
+      };
     </script>
-    <!-- Load Tally script -->
-    <script
-      async
-      src="https://tally.so/widgets/embed.js"
-    ></script>
   </head>
   <body>
     <div id="root"></div>

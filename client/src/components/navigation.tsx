@@ -34,7 +34,10 @@ declare global {
     Tally?: any;
     TallyConfig?: {
       formId: string;
+      hideTitle?: boolean;
+      autoOpen?: boolean;
     };
+    loadTally?: () => void;
   }
 }
 
@@ -72,15 +75,45 @@ export default function Navigation() {
     e.preventDefault();
     setIsTallyLoading(true);
 
+    // Load Tally script if not already loaded
     if (!window.Tally) {
-      toast({
-        variant: "destructive",
-        title: "Error loading form",
-        description: "Please refresh the page and try again.",
-      });
-      setIsTallyLoading(false);
-      return;
+      if (typeof window.loadTally === 'function') {
+        window.loadTally();
+        // Wait for Tally to load
+        const checkTally = setInterval(() => {
+          if (window.Tally) {
+            clearInterval(checkTally);
+            openTallyForm();
+          }
+        }, 100);
+        // Timeout after 5 seconds
+        setTimeout(() => {
+          clearInterval(checkTally);
+          if (!window.Tally) {
+            toast({
+              variant: "destructive",
+              title: "Error loading form",
+              description: "Please refresh the page and try again.",
+            });
+            setIsTallyLoading(false);
+          }
+        }, 5000);
+        return;
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error loading form",
+          description: "Please refresh the page and try again.",
+        });
+        setIsTallyLoading(false);
+        return;
+      }
     }
+    
+    openTallyForm();
+  };
+
+  const openTallyForm = () => {
 
     const formContainer = document.createElement('div');
     formContainer.id = 'tally-form-container';
