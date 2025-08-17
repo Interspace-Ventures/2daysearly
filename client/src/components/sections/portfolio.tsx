@@ -91,16 +91,16 @@ export default function Portfolio() {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="bg-green-400 border-2 border-black p-6 mb-4 text-center" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                  <div className="w-20 h-16 mx-auto mb-4 bg-white border-2 border-black flex items-center justify-center">
+                <div className="bg-green-400 border-2 border-black p-6 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+                  <div className="bg-white border-2 border-black p-4 mb-4">
                     <Image
                       src={company.logo}
                       alt={`${company.name} logo`}
-                      className="w-16 h-12 object-contain"
+                      className="w-full h-16 object-contain"
                       fallbackSrc="/images/2-days-early-logo-2025.png"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>{company.name}</h3>
+                  <h3 className="text-2xl font-bold text-black text-center" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>{company.name}</h3>
                 </div>
                 
                 <div className="bg-gray-50 border-2 border-black p-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
