@@ -60,7 +60,7 @@ body, html {
   }
   
   .neo-section {
-    @apply py-16 px-8;
+    @apply py-16;
   }
   
   /* Mobile text visibility fixes */
