@@ -1,17 +1,22 @@
-/* EMERGENCY MOBILE WIDTH DEBUG */
-@media (max-width: 768px) {
-  /* Nuclear option: force everything to use full viewport */
-  * {
-    max-width: none !important;
-    width: auto !important;
-  }
-  
-  html, body {
+/* EMERGENCY MOBILE WIDTH OVERRIDE */
+@media screen and (max-width: 768px) {
+  /* FORCE FULL VIEWPORT WIDTH ON EVERYTHING */
+  html {
     width: 100vw !important;
     max-width: 100vw !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+  
+  body {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
   
   #root {
@@ -19,27 +24,48 @@
     max-width: 100vw !important;
     margin: 0 !important;
     padding: 0 !important;
+    box-sizing: border-box !important;
   }
   
-  /* Remove ALL constraints */
-  .container, [class*="max-w"], [class*="mx-auto"] {
-    max-width: none !important;
+  /* FORCE ALL ELEMENTS TO USE MAXIMUM WIDTH */
+  * {
+    box-sizing: border-box !important;
+  }
+  
+  /* OVERRIDE ALL POSSIBLE WIDTH CONSTRAINTS */
+  .min-h-screen,
+  main,
+  section,
+  nav,
+  header,
+  div,
+  .container,
+  [class*="max-w"],
+  [class*="mx-auto"],
+  .w-full {
     width: 100% !important;
+    max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
   
-  /* Force sections to full width */
+  /* SECTIONS GET FULL VIEWPORT WIDTH */
   section {
     width: 100vw !important;
     max-width: 100vw !important;
     margin: 0 !important;
-    padding-left: 0.25rem !important;
-    padding-right: 0.25rem !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
   }
   
-  /* Debug border to see actual widths */
-  section {
-    border: 2px solid red !important;
+  /* Remove any grid or flex constraints */
+  .grid {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
