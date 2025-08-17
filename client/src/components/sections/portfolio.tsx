@@ -23,14 +23,14 @@ export default function Portfolio() {
       name: "FIZZ",
       href: "https://joinfizz.com",
       description: "SOCIAL DEBIT CARD AND FINANCIAL PLATFORM DESIGNED FOR COLLEGE STUDENTS AND YOUNG ADULTS.",
-      logo: "/images/fizz-logo.png",
+      logo: "/images/fizz-logo.svg",
       color: "bg-green-400"
     },
     {
       name: "HADRIUS",
       href: "https://hadrius.ai",
       description: "AI-POWERED CYBERSECURITY PLATFORM PROVIDING INTELLIGENT THREAT DETECTION AND RESPONSE.",
-      logo: "/images/hadrius-logo.png",
+      logo: "/images/hadrius-logo.svg",
       color: "bg-purple-400"
     },
     {
