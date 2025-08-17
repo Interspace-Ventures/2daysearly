@@ -11,7 +11,7 @@ export default function Portfolio() {
       aria-labelledby="portfolio-heading"
       style={{ overflow: 'visible' }}
     >
-      <div className="w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeader
             id="portfolio-heading"
@@ -23,7 +23,7 @@ export default function Portfolio() {
           />
         </AnimatedSection>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {COMPANIES.map((company) => (
             <CompanyCard key={company.name} company={company} />
           ))}

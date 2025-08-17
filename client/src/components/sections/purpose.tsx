@@ -7,7 +7,7 @@ export default function Purpose() {
       className="neo-section bg-white"
       aria-labelledby="purpose-heading"
     >
-      <div className="w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <div className="bg-white border-2 border-black p-8 mb-8 text-center" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
             <h2 

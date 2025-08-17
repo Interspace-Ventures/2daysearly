@@ -23,7 +23,8 @@ const CompanyCard = memo(({ company }: CompanyCardProps) => (
         style={{
           maxWidth: '160px',
           maxHeight: '120px',
-          display: 'block'
+          display: 'block',
+          minHeight: '60px'
         }}
         onError={(e) => {
           e.currentTarget.src = IMAGES.companies.placeholder;
