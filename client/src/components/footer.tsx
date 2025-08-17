@@ -8,7 +8,7 @@ export default function Footer() {
           2 DAYS EARLY
         </div>
         
-        <div className="flex flex-wrap justify-center gap-6 mb-6">
+        <div className="flex flex-col justify-center gap-4 mb-6">
           <a 
             href="#purpose"
             className="text-white hover:text-green-400 transition-colors"
