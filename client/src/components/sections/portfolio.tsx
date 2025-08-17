@@ -84,32 +84,39 @@ export default function Portfolio() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {companies.map((company) => (
-            <div key={company.name} className="bg-white border-2 border-black p-6 transition-all duration-200" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+            <div key={company.name} className="bg-white border-2 border-black transition-all duration-200" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
               <a 
                 href={company.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="bg-green-400 border-2 border-black p-6 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                  <div className="bg-white border-2 border-black p-4 mb-4">
-                    <Image
-                      src={company.logo}
-                      alt={`${company.name} logo`}
-                      className="w-full h-16 object-contain"
-                      fallbackSrc="/images/2-days-early-logo-2025.png"
-                    />
-                  </div>
-                  <h3 className="text-2xl font-bold text-black text-center" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>{company.name}</h3>
+                {/* Logo Section */}
+                <div className="bg-white border-b-2 border-black p-6">
+                  <Image
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    className="w-full h-20 object-contain"
+                    fallbackSrc="/images/2-days-early-logo-2025.png"
+                  />
+                </div>
+
+                {/* Company Name */}
+                <div className="bg-green-400 border-b-2 border-black p-4">
+                  <h3 className="text-xl font-bold text-black text-center" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+                    {company.name}
+                  </h3>
                 </div>
                 
-                <div className="bg-gray-50 border-2 border-black p-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+                {/* Description */}
+                <div className="bg-gray-50 border-b-2 border-black p-4">
                   <p className="text-sm font-bold text-black leading-relaxed" style={{fontFamily: 'Inter, sans-serif'}}>
                     {company.description}
                   </p>
                 </div>
                 
-                <div className="bg-green-600 border-2 border-black p-3 text-center" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+                {/* Visit Button */}
+                <div className="bg-green-600 p-3">
                   <div className="flex items-center justify-center gap-2">
                     <ExternalLink className="h-4 w-4 text-white" />
                     <span className="text-sm font-bold text-white" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>VISIT SITE</span>
