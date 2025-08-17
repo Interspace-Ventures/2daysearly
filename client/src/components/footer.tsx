@@ -43,11 +43,26 @@ export default function Footer() {
         </div>
         
         <div className="bg-white neo-border p-4">
-          <p className="text-black font-bold font-mono text-sm">
-            © 2025 2 DAYS EARLY SYNDICATE. ALL RIGHTS RESERVED.
-          </p>
-          <p className="text-black font-mono text-xs mt-1">
-            POWERED BY NEOBRUTALISM DESIGN PRINCIPLES
+          <p className="text-black font-bold text-sm" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+            COPYRIGHT{" "}
+            <a 
+              href="https://interspace.ventures" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-green-600 hover:text-green-800 underline"
+            >
+              INTERSPACE VENTURES
+            </a>
+            . BUILT AT THE SPEED OF THOUGHT WITH{" "}
+            <a 
+              href="https://replit.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-green-600 hover:text-green-800 underline"
+            >
+              REPLIT
+            </a>
+            .
           </p>
         </div>
       </div>
