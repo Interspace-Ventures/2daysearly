@@ -1,16 +1,13 @@
 <svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- White background for visibility -->
-  <rect width="200" height="80" fill="white" stroke="black" stroke-width="2"/>
-  
-  <!-- Fizz logo simplified in black and white -->
+  <!-- Fizz logo - Clean monochrome design -->
   <g>
     <!-- "FIZZ" text -->
-    <text x="100" y="35" font-family="Arial Black, Arial" font-size="24" font-weight="bold" fill="black" text-anchor="middle">FIZZ</text>
+    <text x="100" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="black" text-anchor="middle">FIZZ</text>
     
     <!-- Credit card symbol -->
-    <rect x="75" y="45" width="50" height="25" rx="3" fill="none" stroke="black" stroke-width="2"/>
-    <rect x="80" y="52" width="40" height="3" fill="black"/>
-    <rect x="80" y="58" width="15" height="2" fill="black"/>
-    <rect x="80" y="62" width="20" height="2" fill="black"/>
+    <rect x="75" y="48" width="50" height="25" rx="3" fill="none" stroke="black" stroke-width="2"/>
+    <rect x="80" y="55" width="40" height="2" fill="black"/>
+    <rect x="80" y="60" width="15" height="1.5" fill="black"/>
+    <rect x="80" y="64" width="20" height="1.5" fill="black"/>
   </g>
 </svg>
