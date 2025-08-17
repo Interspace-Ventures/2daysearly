@@ -100,7 +100,7 @@ export default function Portfolio() {
               style={{boxShadow: '4px 4px 0px 0px #000000'}}
             >
               {/* Main Logo Display */}
-              <div className="aspect-square flex items-center justify-center">
+              <div className="aspect-[4/3] flex items-center justify-center">
                 <Image
                   src={company.logo}
                   alt={`${company.name} logo`}
