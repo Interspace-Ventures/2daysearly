@@ -13,6 +13,8 @@ export const IMAGES = {
     backpack: "/images/backpack.png",
     harper: "/images/harper.png",
     juno: "/images/juno.png",
+    fizz: "/images/fizz-logo.svg",
+    hadrius: "/images/hadrius-logo.svg",
     kartera: "/images/kartera.png",
     sundae: "/images/sundae.png",
     waldo: "/images/waldo.png"
