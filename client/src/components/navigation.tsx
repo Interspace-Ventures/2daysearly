@@ -238,7 +238,13 @@ export default function Navigation() {
             onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0"
           >
-            <div className="bg-white px-4 py-2 border-2 border-black" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+            <div className="bg-white px-4 py-2 border-2 border-black flex items-center gap-2" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+              <Image
+                src="/images/2-days-early-calendar-icon-2025.png"
+                alt="2 Days Early Calendar Icon"
+                className="w-6 h-6 object-contain"
+                fallbackSrc="/images/2-days-early-calendar-icon-2025.png"
+              />
               <span className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 2 DAYS EARLY
               </span>
