@@ -196,7 +196,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 neo-border-thin border-t-0 border-l-0 border-r-0">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 border-b-2 border-black" style={{fontFamily: 'Courier New, monospace'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <a
@@ -204,8 +204,8 @@ export default function Navigation() {
             onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0"
           >
-            <div className="neo-border bg-white px-4 py-2 neo-shadow">
-              <span className="text-xl font-bold text-black font-mono">
+            <div className="bg-white px-4 py-2 border-2 border-black" style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Courier New, monospace'}}>
+              <span className="text-xl font-bold text-black">
                 2 DAYS EARLY
               </span>
             </div>
@@ -218,11 +218,12 @@ export default function Navigation() {
                   key={id}
                   href={`#${id}`}
                   onClick={(e) => handleNavClick(e, id)}
-                  className={`neo-border px-4 py-2 font-bold text-sm transition-all duration-100 ${
+                  className={`border-2 border-black px-4 py-2 font-bold text-sm transition-all duration-100 ${
                     activeSection === id 
-                      ? 'bg-primary text-white neo-shadow' 
-                      : 'bg-white text-black hover:neo-shadow hover:transform hover:translate-x-1 hover:translate-y-1'
+                      ? 'bg-green-500 text-white' 
+                      : 'bg-white text-black hover:transform hover:translate-x-1 hover:translate-y-1'
                   }`}
+                  style={activeSection === id ? {boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Courier New, monospace'} : {fontFamily: 'Courier New, monospace'}}
                 >
                   {label}
                 </a>
@@ -236,11 +237,12 @@ export default function Navigation() {
                 <button
                   key={button.label}
                   onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
-                  className={`neo-button ${
+                  className={`border-2 border-black px-6 py-3 font-bold text-lg transition-all duration-100 ${
                     button.primary
-                      ? 'bg-primary text-white'
-                      : 'bg-secondary text-black'
+                      ? 'bg-green-500 text-white'
+                      : 'bg-green-600 text-white'
                   }`}
+                  style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Courier New, monospace'}}
                 >
                   {button.label} 
                   {button.href && <ExternalLink className="h-4 w-4 ml-1" />}
@@ -252,7 +254,8 @@ export default function Navigation() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden neo-border bg-white p-2 neo-shadow"
+            className="md:hidden border-2 border-black bg-white p-2"
+            style={{boxShadow: '4px 4px 0px 0px #000000'}}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
