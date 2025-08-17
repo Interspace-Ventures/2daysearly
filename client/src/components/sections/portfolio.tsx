@@ -28,8 +28,8 @@ export default function Portfolio() {
     },
     {
       name: "HADRIUS",
-      href: "https://hadrius.ai",
-      description: "AI-POWERED CYBERSECURITY PLATFORM PROVIDING INTELLIGENT THREAT DETECTION AND RESPONSE.",
+      href: "https://hadrius.com",
+      description: "AI-POWERED COMPLIANCE PLATFORM FOR SEC & FINRA REGULATED FIRMS, SAVING 19HRS/WEEK ON COMPLIANCE TASKS.",
       logo: IMAGES.companies.hadrius,
       color: "bg-purple-400"
     },
