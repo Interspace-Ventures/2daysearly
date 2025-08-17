@@ -9,7 +9,7 @@ export const IMAGES = {
     fallback: "/images/2-days-early-logo-2025.png"
   },
   companies: {
-    placeholder: "/images/company-placeholder.png",
+    placeholder: "/images/company-placeholder.svg",
     backpack: "/images/backpack.png",
     harper: "/images/harper.png",
     juno: "/images/juno.png",

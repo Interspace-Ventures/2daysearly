@@ -100,13 +100,12 @@ export default function Portfolio() {
               style={{boxShadow: '4px 4px 0px 0px #000000'}}
             >
               {/* Main Logo Display */}
-              <div className="aspect-square flex items-center justify-center">
-                <img
+              <div className="aspect-square flex items-center justify-center bg-gray-50 border border-gray-200">
+                <Image
                   src={company.logo}
                   alt={`${company.name} logo`}
-                  className={`max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-30 ${
-                    company.name === 'FIZZ' || company.name === 'HADRIUS' ? 'filter grayscale' : ''
-                  }`}
+                  className="w-32 h-16 object-contain transition-opacity duration-300 group-hover:opacity-30"
+                  fallbackSrc={IMAGES.companies.placeholder}
                 />
               </div>
 
