@@ -91,27 +91,28 @@ export default function Portfolio() {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="bg-green-400 border-2 border-black p-4 mb-4 text-center" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                  <div className="w-16 h-16 mx-auto mb-4 bg-white border-2 border-black rounded-full flex items-center justify-center">
+                <div className="bg-green-400 border-2 border-black p-6 mb-4 text-center" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+                  <div className="w-20 h-16 mx-auto mb-4 bg-white border-2 border-black flex items-center justify-center">
                     <Image
                       src={company.logo}
                       alt={`${company.name} logo`}
-                      className="w-10 h-10 object-contain"
+                      className="w-16 h-12 object-contain"
                       fallbackSrc="/images/2-days-early-logo-2025.png"
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>{company.name}</h3>
                 </div>
                 
-                <div className="bg-gray-100 border-2 border-black p-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                  <p className="text-sm font-bold text-black leading-tight" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+                <div className="bg-gray-50 border-2 border-black p-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+                  <p className="text-sm font-bold text-black leading-relaxed" style={{fontFamily: 'Inter, sans-serif'}}>
                     {company.description}
                   </p>
                 </div>
                 
-                <div className="flex items-center justify-center">
-                  <div className="bg-blue-500 neo-border neo-shadow px-4 py-2 text-white font-bold font-mono text-sm flex items-center gap-2">
-                    VISIT SITE <ExternalLink className="h-4 w-4" />
+                <div className="bg-green-600 border-2 border-black p-3 text-center" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+                  <div className="flex items-center justify-center gap-2">
+                    <ExternalLink className="h-4 w-4 text-white" />
+                    <span className="text-sm font-bold text-white" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>VISIT SITE</span>
                   </div>
                 </div>
               </a>
