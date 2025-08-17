@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -117,8 +119,8 @@
   }
 
   body {
-    @apply bg-white text-black font-mono overflow-x-hidden;
-    font-family: 'Courier New', Courier, monospace !important;
+    @apply bg-white text-black overflow-x-hidden;
+    font-family: 'Alexandria', 'Inter', sans-serif !important;
     font-weight: bold;
   }
 

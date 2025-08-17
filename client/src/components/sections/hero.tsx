@@ -7,11 +7,11 @@ export default function Hero() {
         <AnimatedSection className="text-center w-full max-w-4xl mx-auto" delay={0.2}>
           <div className="bg-white border-2 border-black p-8 mx-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
             <div className="bg-green-400 border-2 border-black p-6 mb-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-              <h1 className="text-6xl md:text-8xl font-bold text-black mb-4 leading-tight" style={{fontFamily: 'Courier New, monospace'}}>
+              <h1 className="text-6xl md:text-8xl font-bold text-black mb-4 leading-tight" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 2 DAYS EARLY
               </h1>
               <div className="bg-white border-2 border-black p-4 inline-block" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <p className="text-2xl md:text-3xl font-bold text-black" style={{fontFamily: 'Courier New, monospace'}}>
+                <p className="text-2xl md:text-3xl font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                   OPERATOR SYNDICATE
                 </p>
               </div>
@@ -19,16 +19,16 @@ export default function Hero() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
               <div className="bg-green-500 border-2 border-black p-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <div className="text-white font-bold text-xl" style={{fontFamily: 'Courier New, monospace'}}>INVEST</div>
-                <div className="text-white text-sm" style={{fontFamily: 'Courier New, monospace'}}>IN THE FUTURE</div>
+                <div className="text-white font-bold text-xl" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>INVEST</div>
+                <div className="text-white text-sm" style={{fontFamily: 'Inter, sans-serif'}}>IN THE FUTURE</div>
               </div>
               <div className="bg-green-600 border-2 border-black p-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <div className="text-white font-bold text-xl" style={{fontFamily: 'Courier New, monospace'}}>BUILD</div>
-                <div className="text-white text-sm" style={{fontFamily: 'Courier New, monospace'}}>TOGETHER</div>
+                <div className="text-white font-bold text-xl" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>BUILD</div>
+                <div className="text-white text-sm" style={{fontFamily: 'Inter, sans-serif'}}>TOGETHER</div>
               </div>
               <div className="bg-green-800 border-2 border-black p-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <div className="text-white font-bold text-xl" style={{fontFamily: 'Courier New, monospace'}}>WIN</div>
-                <div className="text-white text-sm" style={{fontFamily: 'Courier New, monospace'}}>AS ONE</div>
+                <div className="text-white font-bold text-xl" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>WIN</div>
+                <div className="text-white text-sm" style={{fontFamily: 'Inter, sans-serif'}}>AS ONE</div>
               </div>
             </div>
           </div>

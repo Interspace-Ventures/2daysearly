@@ -6,8 +6,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Courier New', 'monospace'],
-        mono: ['Courier New', 'Courier', 'monospace'],
+        sans: ['Alexandria', 'Inter', 'system-ui', 'sans-serif'],
+        primary: ['Alexandria', 'Inter', 'system-ui', 'sans-serif'],
+        secondary: ['Inter', 'Alexandria', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -196,7 +196,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 border-b-2 border-black" style={{fontFamily: 'Courier New, monospace'}}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <a
@@ -204,7 +204,7 @@ export default function Navigation() {
             onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0"
           >
-            <div className="bg-white px-4 py-2 border-2 border-black" style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Courier New, monospace'}}>
+            <div className="bg-white px-4 py-2 border-2 border-black" style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}>
               <span className="text-xl font-bold text-black">
                 2 DAYS EARLY
               </span>
@@ -223,7 +223,7 @@ export default function Navigation() {
                       ? 'bg-green-500 text-white' 
                       : 'bg-white text-black hover:transform hover:translate-x-1 hover:translate-y-1'
                   }`}
-                  style={activeSection === id ? {boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Courier New, monospace'} : {fontFamily: 'Courier New, monospace'}}
+                  style={activeSection === id ? {boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'} : {fontFamily: 'Alexandria, Inter, sans-serif'}}
                 >
                   {label}
                 </a>
@@ -242,7 +242,7 @@ export default function Navigation() {
                       ? 'bg-green-500 text-white'
                       : 'bg-green-600 text-white'
                   }`}
-                  style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Courier New, monospace'}}
+                  style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                 >
                   {button.label} 
                   {button.href && <ExternalLink className="h-4 w-4 ml-1" />}

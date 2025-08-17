@@ -13,7 +13,8 @@ export default function Purpose() {
             <div className="bg-primary neo-border neo-shadow p-6 mb-6">
               <h2 
                 id="purpose-heading"
-                className="text-4xl md:text-6xl font-bold text-white font-mono text-center"
+                className="text-4xl md:text-6xl font-bold text-white text-center"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
               >
                 BY OPERATORS. FOR OPERATORS.
               </h2>
@@ -21,7 +22,7 @@ export default function Purpose() {
             
             <div className="space-y-6">
               <div className="bg-green-50 neo-border p-6">
-                <p className="text-xl font-bold text-black font-mono leading-relaxed">
+                <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                   WE ARE A COMMUNITY OF{" "}
                   <span className="bg-green-400 neo-border-thin px-2 py-1 text-white">
                     ENTREPRENEURS, INVESTORS AND OPERATORS
@@ -31,7 +32,7 @@ export default function Purpose() {
               </div>
               
               <div className="bg-green-100 neo-border p-6">
-                <p className="text-xl font-bold text-black font-mono leading-relaxed">
+                <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                   WE AIM TO BE THE OPERATOR SYNDICATE WITH{" "}
                   <span className="bg-green-600 neo-border-thin px-2 py-1 text-white">
                     HIGHEST VALUE PER DOLLAR INVESTED.
@@ -41,7 +42,7 @@ export default function Purpose() {
               </div>
               
               <div className="bg-green-200 neo-border p-6">
-                <p className="text-xl font-bold text-black font-mono leading-relaxed">
+                <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                   WE LOVE INVESTING IN AMAZING FOUNDERS OF ALL BACKGROUNDS, AND WE&apos;RE ESPECIALLY COMMITTED TO{" "}
                   <span className="bg-green-800 neo-border-thin px-2 py-1 text-white">
                     INVEST IN FUTURE COMPANIES FOUNDED BY CHIME ALUMNI.
