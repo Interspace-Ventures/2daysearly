@@ -32,49 +32,49 @@ export const COMPANIES: Company[] = [
   {
     name: "BACKPACK",
     href: "https://www.backpack529.com/",
-    description: "SIMPLIFYING 529 PLAN MANAGEMENT FOR FAMILIES AND ADVISORS WITH INNOVATIVE PAYMENT SOLUTIONS.",
+    description: "Simplifying 529 plan management for families and advisors with innovative payment solutions.",
     logo: IMAGES.companies.backpack,
     color: "bg-blue-400"
   },
   {
     name: "JUNO", 
     href: "https://juno.finance/",
-    description: "MODERN BANKING FOR THE CRYPTO-NATIVE, WITH SEAMLESS ON-RAMPS AND A FOCUS ON USER EXPERIENCE.",
+    description: "Modern banking for the crypto-native, with seamless on-ramps and a focus on user experience.",
     logo: IMAGES.companies.juno,
     color: "bg-purple-400"
   },
   {
     name: "FIZZ",
     href: "https://joinfizz.com",
-    description: "SOCIAL DEBIT CARD AND FINANCIAL PLATFORM DESIGNED FOR COLLEGE STUDENTS AND YOUNG ADULTS.",
+    description: "Social debit card and financial platform designed for college students and young adults.",
     logo: IMAGES.companies.fizz,
     color: "bg-green-400"
   },
   {
     name: "HADRIUS",
     href: "https://hadrius.com",
-    description: "AI-POWERED COMPLIANCE PLATFORM FOR SEC & FINRA REGULATED FIRMS, SAVING 19HRS/WEEK ON COMPLIANCE TASKS.",
+    description: "AI-powered compliance platform for SEC & FINRA regulated firms, saving 19hrs/week on compliance tasks.",
     logo: IMAGES.companies.hadrius,
     color: "bg-purple-400"
   },
   {
     name: "KARTERA",
     href: "https://www.kartera.com",
-    description: "EMPOWERING FINANCIAL ADVISORS WITH DIGITAL-FIRST SOLUTIONS TO SERVE THE NEXT GENERATION OF WEALTH.",
+    description: "Empowering financial advisors with digital-first solutions to serve the next generation of wealth.",
     logo: IMAGES.companies.kartera,
     color: "bg-yellow-400"
   },
   {
     name: "SUNDAE",
     href: "https://www.sundae.com",
-    description: "MARKETPLACE CONNECTING HOMEOWNERS LOOKING TO SELL WITH PROPERTY INVESTORS FOR FAIR, OFF-MARKET DEALS.",
+    description: "Marketplace connecting homeowners looking to sell with property investors for fair, off-market deals.",
     logo: IMAGES.companies.sundae,
     color: "bg-orange-400"
   },
   {
     name: "WALDO",
     href: "https://www.waldo.ai/",
-    description: "AI-POWERED FRAUD PREVENTION THAT AUTOMATES COMPLIANCE AND KEEPS YOUR BUSINESS SAFE.",
+    description: "AI-powered fraud prevention that automates compliance and keeps your business safe.",
     logo: IMAGES.companies.waldo,
     color: "bg-red-400"
   }

@@ -28,15 +28,15 @@ PrincipleItem.displayName = "PrincipleItem";
 const principles = [
   {
     number: 1,
-    text: "WE RECOGNIZE THE VALUE OF PROFITING WITH USERS, RATHER THAN FROM THEM",
+    text: "We recognize the value of profiting with users, rather than from them",
   },
   {
     number: 2,
-    text: "WE INVEST IN BUSINESSES THAT CREATE HIGH MEMBER LOYALTY AND EARN TRUST",
+    text: "We invest in businesses that create high member loyalty and earn trust",
   },
   {
     number: 3,
-    text: "WE BELIEVE IN DOING WELL BY DOING GOOD WITH TRANSPARENT AND SUSTAINABLE OPERATING MODELS",
+    text: "We believe in doing well by doing good with transparent and sustainable operating models",
   },
 ];
 

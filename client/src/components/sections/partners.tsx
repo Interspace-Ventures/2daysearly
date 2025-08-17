@@ -9,33 +9,33 @@ const partners: Partner[] = [
     name: "MAIA",
     bio: (
       <>
-        BUILDS COOL FINTECH STUFF AT CHIME (AFTER THEY ACQUIRED HER CREDIT-BUILDING STARTUP PINCH). PREVIOUSLY FOUNDED ROCKSBOX (ALSO ACQUIRED). NOW BACKS FOUNDERS AT XFACTOR & PARCEL B. PROBABLY SHARING{" "}
+        Builds cool fintech stuff at Chime (after they acquired her credit-building startup Pinch). Previously founded Rocksbox (also acquired). Now backs founders at XFactor & Parcel B. Probably sharing{" "}
         <span className="bg-green-600 border-2 border-black px-1 text-white">
           <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
-            TMI TWEETS
+            TMI tweets
           </a>
         </span>{" "}
-        ABOUT RAISING HER TWO AMAZING DAUGHTERS.
+        about raising her two amazing daughters.
       </>
     ),
     image: "/images/Maia.png"
   },
   {
     name: "BAISHI",
-    bio: "AT CHIME, SHAPES LENDING PRODUCTS HELPING MILLIONS GET THE CREDIT THEY DESERVE. PREVIOUSLY REVOLUTIONIZED MORTGAGES AT LENDINGHOME AND HOME SEARCH AT COMPASS. BUILDING GREAT FINTECH WHILE RAISING TINY HUMANS.",
+    bio: "At Chime, shapes lending products helping millions get the credit they deserve. Previously revolutionized mortgages at LendingHome and home search at Compass. Building great fintech while raising tiny humans.",
     image: "/images/Baishi.png"
   },
   {
     name: "SAMIR",
     bio: (
       <>
-        FINANCE NERD BUILDING MONEY SUPERPOWERS AT CASH APP. PREVIOUSLY SHAPED STRATEGIC FINANCE AT HRT, UNIT, AND CHIME AFTER STARTING AT JP MORGAN. WRITES{" "}
+        Finance nerd building money superpowers at Cash App. Previously shaped strategic finance at HRT, Unit, and Chime after starting at JP Morgan. Writes{" "}
         <span className="bg-green-800 border-2 border-black px-1 text-white">
           <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
-            OVER-ENGINEERED FINTECH TAKES
+            over-engineered fintech takes
           </a>
         </span>{" "}
-        AND LOVES BUILDING MODELS IN PYTHON.
+        and loves building models in Python.
       </>
     ),
     image: "/images/Samir-Desai-min.png",
