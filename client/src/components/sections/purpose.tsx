@@ -53,7 +53,7 @@ export default function Purpose() {
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-12">
           <div className="neo-card p-6 text-center bg-white">
-            <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>150+</div>
+            <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>200+</div>
             <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>CHIME OPERATORS IN 2 DAYS EARLY SYNDICATE</div>
           </div>
           <div className="neo-card p-6 text-center bg-white">
