@@ -8,25 +8,35 @@ interface CompanyCardProps {
   company: Company;
 }
 
-const CompanyCard = memo(({ company }: CompanyCardProps) => (
-  <a 
-    href={company.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group relative block bg-white transition-all duration-300 hover:scale-105"
-    style={getNeoBrutalistStyle('md')}
-  >
-    {/* Logo Container */}
-    <div className="h-48 w-full flex items-center justify-center p-8 bg-white">
-      <img
-        src={company.logo}
-        alt={`${company.name} logo`}
-        className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-20"
-        onError={(e) => {
-          e.currentTarget.src = IMAGES.companies.placeholder;
-        }}
-      />
-    </div>
+const CompanyCard = memo(({ company }: CompanyCardProps) => {
+  console.log(`[Company Card Debug] Rendering ${company.name} with logo: ${company.logo}`);
+  
+  return (
+    <a 
+      href={company.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative block bg-white transition-all duration-300 hover:scale-105"
+      style={getNeoBrutalistStyle('md')}
+    >
+      {/* Logo Container */}
+      <div className="h-48 w-full flex items-center justify-center p-8 bg-white border border-red-200">
+        <img
+          src={company.logo}
+          alt={`${company.name} logo`}
+          className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-20 border border-blue-200"
+          onLoad={() => console.log(`[Company Logo] Successfully loaded: ${company.logo}`)}
+          onError={(e) => {
+            console.log(`[Company Logo] Failed to load: ${company.logo}, switching to placeholder`);
+            e.currentTarget.src = IMAGES.companies.placeholder;
+          }}
+          style={{ minWidth: '50px', minHeight: '50px' }}
+        />
+        {/* Debug info */}
+        <div className="absolute bottom-2 left-2 text-xs bg-yellow-200 p-1">
+          {company.name}
+        </div>
+      </div>
 
     {/* Hover Overlay */}
     <div 
@@ -54,7 +64,8 @@ const CompanyCard = memo(({ company }: CompanyCardProps) => (
       </div>
     </div>
   </a>
-));
+  );
+});
 
 CompanyCard.displayName = 'CompanyCard';
 
