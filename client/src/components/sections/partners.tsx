@@ -11,7 +11,7 @@ interface PartnerCardProps {
 
 const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps) => (
   <div className="neo-card p-8 bg-white text-center">
-    <div className="bg-gradient-to-br from-purple-400 to-pink-400 neo-border neo-shadow p-6 mb-6">
+    <div className="bg-gradient-to-br from-green-400 to-green-600 neo-border neo-shadow p-6 mb-6">
       <div className="w-32 h-32 mx-auto bg-white neo-border rounded-full overflow-hidden">
         <Image
           src={image}
@@ -22,7 +22,7 @@ const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps
       </div>
     </div>
     
-    <div className="bg-yellow-400 neo-border neo-shadow p-4 mb-4">
+    <div className="bg-green-400 neo-border neo-shadow p-4 mb-4">
       <h3 className="text-3xl font-bold text-black font-mono">{name}</h3>
     </div>
     
@@ -42,8 +42,8 @@ const partners = [
     bio: (
       <>
         BUILDS COOL FINTECH STUFF AT CHIME (AFTER THEY ACQUIRED HER CREDIT-BUILDING STARTUP PINCH). PREVIOUSLY FOUNDED ROCKSBOX (ALSO ACQUIRED). NOW BACKS FOUNDERS AT XFACTOR & PARCEL B. PROBABLY SHARING{" "}
-        <span className="bg-yellow-400 neo-border-thin px-1">
-          <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="text-black font-bold underline">
+        <span className="bg-green-600 neo-border-thin px-1 text-white">
+          <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
             TMI TWEETS
           </a>
         </span>{" "}
@@ -62,7 +62,7 @@ const partners = [
     bio: (
       <>
         FINANCE NERD BUILDING MONEY SUPERPOWERS AT CASH APP. PREVIOUSLY SHAPED STRATEGIC FINANCE AT HRT, UNIT, AND CHIME AFTER STARTING AT JP MORGAN. WRITES{" "}
-        <span className="bg-blue-400 neo-border-thin px-1 text-white">
+        <span className="bg-green-800 neo-border-thin px-1 text-white">
           <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
             OVER-ENGINEERED FINTECH TAKES
           </a>
@@ -79,7 +79,7 @@ const Partners = () => {
   return (
     <section 
       id="partners" 
-      className="neo-section bg-gradient-to-br from-green-300 via-blue-300 to-purple-300"
+      className="neo-section bg-gradient-to-br from-green-100 via-green-200 to-green-300"
       aria-labelledby="partners-heading"
     >
       <div className="max-w-7xl mx-auto px-4">
@@ -92,7 +92,7 @@ const Partners = () => {
               >
                 PARTNERS
               </h2>
-              <div className="bg-red-400 neo-border h-4 mx-auto w-24 mt-4"></div>
+              <div className="bg-green-600 neo-border h-4 mx-auto w-24 mt-4"></div>
             </div>
           </div>
           

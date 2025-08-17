@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="bg-black neo-border-thin border-b-0 border-l-0 border-r-0 py-12">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <div className="bg-yellow-400 neo-border neo-shadow-lg p-8 mb-8 inline-block">
+        <div className="bg-green-400 neo-border neo-shadow-lg p-8 mb-8 inline-block">
           <div className="text-4xl font-bold text-black font-mono mb-4">
             2 DAYS EARLY
           </div>
@@ -24,14 +24,14 @@ export default function Footer() {
             </a>
           </div>
           
-          <div className="neo-card p-6 bg-secondary">
-            <h3 className="text-xl font-bold text-black font-mono mb-2">JOIN</h3>
-            <p className="text-black font-mono text-sm">
+          <div className="neo-card p-6 bg-green-600">
+            <h3 className="text-xl font-bold text-white font-mono mb-2">JOIN</h3>
+            <p className="text-white font-mono text-sm">
               CLICK JOIN BUTTON ABOVE TO GET STARTED
             </p>
           </div>
           
-          <div className="neo-card p-6 bg-accent">
+          <div className="neo-card p-6 bg-green-800">
             <h3 className="text-xl font-bold text-white font-mono mb-2">PITCH</h3>
             <a 
               href="mailto:pitch@daysearly.com"
