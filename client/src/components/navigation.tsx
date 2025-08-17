@@ -198,83 +198,85 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0"
           >
-            <div className="bg-white px-4 py-2 border-2 border-black" style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}>
-              <span className="text-xl font-bold text-black">
+            <div className="bg-white px-4 py-2 border-2 border-black" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+              <span className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 2 DAYS EARLY
               </span>
             </div>
           </a>
 
-          <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              {navItems.map(({ id, label }) => (
-                <a
-                  key={id}
-                  href={`#${id}`}
-                  onClick={(e) => handleNavClick(e, id)}
-                  className={`border-2 border-black px-4 py-2 font-bold text-sm transition-all duration-100 ${
-                    activeSection === id 
-                      ? 'bg-green-500 text-white' 
-                      : 'bg-white text-black hover:transform hover:translate-x-1 hover:translate-y-1'
-                  }`}
-                  style={activeSection === id ? {boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'} : {fontFamily: 'Alexandria, Inter, sans-serif'}}
-                >
-                  {label}
-                </a>
-              ))}
-            </div>
-
-            <div className="w-px h-8 bg-black mx-4"></div>
-
-            <div className="flex items-center gap-2">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-3">
+            {navItems.map(({ id, label }) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                onClick={(e) => handleNavClick(e, id)}
+                className={`border-2 border-black px-3 py-2 font-bold text-sm transition-all duration-100 ${
+                  activeSection === id 
+                    ? 'bg-green-600 text-white' 
+                    : 'bg-white text-black hover:bg-gray-100'
+                }`}
+                style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+              >
+                {label}
+              </a>
+            ))}
+            
+            {/* Action Buttons */}
+            <div className="flex items-center gap-2 ml-4">
               {actionButtons.map((button) => (
                 <button
                   key={button.label}
                   onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
-                  className={`border-2 border-black px-6 py-3 font-bold text-lg transition-all duration-100 ${
+                  disabled={isTallyLoading && button.onClick}
+                  className={`border-2 border-black px-4 py-2 font-bold text-sm transition-all duration-100 flex items-center gap-1 ${
                     button.primary
-                      ? 'bg-green-500 text-white'
-                      : 'bg-green-600 text-white'
+                      ? 'bg-green-600 text-white hover:bg-green-700'
+                      : 'bg-white text-black hover:bg-gray-100'
                   }`}
-                  style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                  style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                 >
-                  {button.label} 
-                  {button.href && <ExternalLink className="h-4 w-4 ml-1" />}
-                  {button.icon && <span className="ml-1">{button.icon}</span>}
+                  {button.icon && button.icon}
+                  {button.label}
+                  {button.href && <ExternalLink className="h-3 w-3" />}
                 </button>
               ))}
             </div>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden border-2 border-black bg-white p-2"
-            style={{boxShadow: '4px 4px 0px 0px #000000'}}
+            style={{boxShadow: '2px 2px 0px 0px #000000'}}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white neo-border neo-shadow mt-2 mb-4">
-            <div className="px-4 pt-4 pb-6 space-y-4">
+          <div className="md:hidden bg-white border-2 border-black mt-2 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+            <div className="px-4 pt-4 pb-6 space-y-3">
               {navItems.map(({ id, label }) => (
                 <a
                   key={id}
                   href={`#${id}`}
                   onClick={(e) => handleNavClick(e, id)}
-                  className={`block neo-border px-4 py-3 font-bold text-center transition-all duration-100 ${
+                  className={`block border-2 border-black px-4 py-3 font-bold text-center transition-all duration-100 ${
                     activeSection === id 
-                      ? 'bg-primary text-white neo-shadow' 
-                      : 'bg-white text-black hover:neo-shadow'
+                      ? 'bg-green-600 text-white' 
+                      : 'bg-white text-black'
                   }`}
+                  style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                 >
                   {label}
                 </a>
@@ -286,15 +288,17 @@ export default function Navigation() {
                 <button
                   key={button.label}
                   onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
-                  className={`w-full neo-button ${
+                  disabled={isTallyLoading && button.onClick}
+                  className={`w-full border-2 border-black px-4 py-3 font-bold text-sm flex items-center justify-center gap-2 transition-all duration-100 ${
                     button.primary
-                      ? 'bg-primary text-white'
-                      : 'bg-secondary text-black'
+                      ? 'bg-green-600 text-white'
+                      : 'bg-white text-black'
                   }`}
+                  style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                 >
-                  {button.label} 
-                  {button.href && <ExternalLink className="h-4 w-4 ml-1" />}
-                  {button.icon && <span className="ml-1">{button.icon}</span>}
+                  {button.icon && button.icon}
+                  {button.label}
+                  {button.href && <ExternalLink className="h-4 w-4" />}
                 </button>
               ))}
             </div>
