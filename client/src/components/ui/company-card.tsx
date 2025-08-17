@@ -15,15 +15,22 @@ const CompanyCard = memo(({ company }: CompanyCardProps) => (
     className="group relative block bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000000] transition-all duration-300 hover:scale-105"
   >
     {/* Logo Display */}
-    <div className="h-48 w-full flex items-center justify-center p-8 bg-white">
+    <div className="h-48 w-full flex items-center justify-center p-8 bg-white relative">
       <img
         src={company.logo}
         alt={`${company.name} logo`}
         className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-20"
+        onLoad={() => console.log(`[Portfolio Logo] Successfully loaded: ${company.logo}`)}
         onError={(e) => {
+          console.log(`[Portfolio Logo] Failed to load: ${company.logo}, using placeholder`);
           e.currentTarget.src = IMAGES.companies.placeholder;
         }}
+        style={{ minWidth: '100px', minHeight: '60px' }}
       />
+      {/* Temporary debug overlay */}
+      <div className="absolute bottom-2 right-2 bg-yellow-300 text-xs p-1 font-mono">
+        {company.name}
+      </div>
     </div>
 
     {/* Hover Overlay */}
