@@ -63,8 +63,29 @@ body, html {
     @apply py-16;
   }
   
-  /* Mobile text visibility fixes */
+  /* Mobile text visibility fixes and width optimization */
   @media (max-width: 768px) {
+    /* Remove all constraints for maximum mobile width */
+    body, html {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100vw !important;
+      overflow-x: hidden;
+    }
+    
+    /* Ensure sections use full viewport width */
+    section {
+      width: 100vw !important;
+      margin: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    
+    .neo-section {
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem !important;
+    }
+    
     h1, h2, h3, h4, h5, h6, p, span, a, button, div {
       color: inherit !important;
       font-size: inherit !important;
