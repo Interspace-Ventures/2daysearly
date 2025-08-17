@@ -82,17 +82,15 @@ const Partners = () => {
     >
       <div className="w-full">
         <AnimatedSection>
-          <div className="text-center mb-16">
-            <div className="bg-white border-2 border-black p-8 mb-6 inline-block" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
-              <h2 
-                id="partners-heading"
-                className="text-4xl md:text-6xl font-bold text-black"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
-              >
-                PARTNERS
-              </h2>
-              <div className="bg-green-600 border-2 border-black h-4 mx-auto w-24 mt-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}></div>
-            </div>
+          <div className="bg-white border-2 border-black p-8 mb-16 text-center" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
+            <h2 
+              id="partners-heading"
+              className="text-4xl md:text-6xl font-bold text-black"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+            >
+              PARTNERS
+            </h2>
+            <div className="bg-green-600 border-2 border-black h-4 mx-auto w-24 mt-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

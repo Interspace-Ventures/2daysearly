@@ -9,46 +9,44 @@ export default function Purpose() {
     >
       <div className="w-full">
         <AnimatedSection>
-          <div className="bg-white border-2 border-black p-8 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-            <div className="bg-green-500 border-2 border-black p-6 mb-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-              <h2 
-                id="purpose-heading"
-                className="text-2xl md:text-6xl font-bold text-white text-center"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
-              >
-                BY OPERATORS. FOR OPERATORS.
-              </h2>
+          <div className="bg-green-500 border-2 border-black p-6 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+            <h2 
+              id="purpose-heading"
+              className="text-2xl md:text-6xl font-bold text-white text-center"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
+            >
+              BY OPERATORS. FOR OPERATORS.
+            </h2>
+          </div>
+          
+          <div className="space-y-6">
+            <div className="bg-green-50 border-2 border-black p-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+              <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+                WE ARE A COMMUNITY OF{" "}
+                <span className="bg-green-400 border-2 border-black px-2 py-1 text-white">
+                  ENTREPRENEURS, INVESTORS AND OPERATORS
+                </span>
+                . WE HAVE BACKGROUNDS IN GROWTH, PRODUCT, ENGINEERING, OPERATIONS, FINANCE, ANALYTICS AND MORE, DETERMINED TO HELPING STARTUPS SUCCEED LIKE WE DID AT CHIME.
+              </p>
             </div>
             
-            <div className="space-y-6">
-              <div className="bg-green-50 border-2 border-black p-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-                  WE ARE A COMMUNITY OF{" "}
-                  <span className="bg-green-400 border-2 border-black px-2 py-1 text-white">
-                    ENTREPRENEURS, INVESTORS AND OPERATORS
-                  </span>
-                  . WE HAVE BACKGROUNDS IN GROWTH, PRODUCT, ENGINEERING, OPERATIONS, FINANCE, ANALYTICS AND MORE, DETERMINED TO HELPING STARTUPS SUCCEED LIKE WE DID AT CHIME.
-                </p>
-              </div>
-              
-              <div className="bg-green-100 border-2 border-black p-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-                  WE AIM TO BE THE OPERATOR SYNDICATE WITH{" "}
-                  <span className="bg-green-600 border-2 border-black px-2 py-1 text-white">
-                    HIGHEST VALUE PER DOLLAR INVESTED.
-                  </span>{" "}
-                  COMPANIES WE INVEST IN GET ACCESS TO OUR EXPERIENCE NETWORK, AND OUR COMMITMENT TO EMPOWER IMPACTFUL FIRMS THAT PROVIDE BETTER OPTIONS FOR EVERYDAY PEOPLE.
-                </p>
-              </div>
-              
-              <div className="bg-green-200 border-2 border-black p-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-                  WE LOVE INVESTING IN AMAZING FOUNDERS OF ALL BACKGROUNDS, AND WE&apos;RE ESPECIALLY COMMITTED TO{" "}
-                  <span className="bg-green-800 border-2 border-black px-2 py-1 text-white">
-                    INVEST IN FUTURE COMPANIES FOUNDED BY CHIME ALUMNI.
-                  </span>
-                </p>
-              </div>
+            <div className="bg-green-100 border-2 border-black p-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+              <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+                WE AIM TO BE THE OPERATOR SYNDICATE WITH{" "}
+                <span className="bg-green-600 border-2 border-black px-2 py-1 text-white">
+                  HIGHEST VALUE PER DOLLAR INVESTED.
+                </span>{" "}
+                COMPANIES WE INVEST IN GET ACCESS TO OUR EXPERIENCE NETWORK, AND OUR COMMITMENT TO EMPOWER IMPACTFUL FIRMS THAT PROVIDE BETTER OPTIONS FOR EVERYDAY PEOPLE.
+              </p>
+            </div>
+            
+            <div className="bg-green-200 border-2 border-black p-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+              <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+                WE LOVE INVESTING IN AMAZING FOUNDERS OF ALL BACKGROUNDS, AND WE&apos;RE ESPECIALLY COMMITTED TO{" "}
+                <span className="bg-green-800 border-2 border-black px-2 py-1 text-white">
+                  INVEST IN FUTURE COMPANIES FOUNDED BY CHIME ALUMNI.
+                </span>
+              </p>
             </div>
           </div>
         </AnimatedSection>

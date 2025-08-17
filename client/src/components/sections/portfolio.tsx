@@ -64,28 +64,26 @@ export default function Portfolio() {
     >
       <div className="w-full">
         <AnimatedSection>
-          <div className="text-center mb-16">
-            <div className="bg-black border-2 border-black p-8 mb-6 inline-block" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
-              <h2 
-                id="portfolio-heading" 
-                className="text-2xl md:text-5xl font-bold text-white"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
-              >
-                WE'RE PROUD TO INVEST OUR TIME
-              </h2>
-              <h2 
-                className="text-2xl md:text-5xl font-bold text-white"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
-              >
-                AND MONEY IN OPERATORS AT
-              </h2>
-              <h2 
-                className="text-2xl md:text-5xl font-bold text-white"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
-              >
-                THESE STARTUPS:
-              </h2>
-            </div>
+          <div className="bg-black border-2 border-black p-8 mb-16 text-center" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
+            <h2 
+              id="portfolio-heading" 
+              className="text-2xl md:text-5xl font-bold text-white"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
+            >
+              WE'RE PROUD TO INVEST OUR TIME
+            </h2>
+            <h2 
+              className="text-2xl md:text-5xl font-bold text-white"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
+            >
+              AND MONEY IN OPERATORS AT
+            </h2>
+            <h2 
+              className="text-2xl md:text-5xl font-bold text-white"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
+            >
+              THESE STARTUPS:
+            </h2>
           </div>
         </AnimatedSection>
         

@@ -49,10 +49,10 @@ const Principles = () => {
     >
       <div className="w-full">
         <AnimatedSection>
-          <div className="bg-white border-2 border-black p-8 mb-8" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
+          <div className="bg-white border-2 border-black p-8 mb-8 text-center" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
             <h2 
               id="principles-heading"
-              className="text-4xl md:text-6xl font-bold text-black text-center mb-2"
+              className="text-4xl md:text-6xl font-bold text-black mb-4"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               OPERATING PRINCIPLES
