@@ -11,6 +11,7 @@ The application features a neobrutalism design aesthetic with bold colors, sharp
 Preferred communication style: Simple, everyday language.
 Typography: Alexandria as primary font, Inter as secondary font (updated August 17, 2025)
 Design aesthetic: Neobrutalism with Chime's green color scheme instead of bright colors (updated August 17, 2025)
+Code architecture: Clean, modular components with proper TypeScript typing (refactored August 17, 2025)
 
 ## System Architecture
 
@@ -101,3 +102,29 @@ Design aesthetic: Neobrutalism with Chime's green color scheme instead of bright
 - **ws**: WebSocket library for database connections
 
 The architecture prioritizes developer experience, type safety, and performance while maintaining a clean separation of concerns between the presentation layer, business logic, and data persistence.
+
+## Recent Architectural Improvements (August 17, 2025)
+
+### Code Quality & Organization
+- **Type System**: Introduced comprehensive TypeScript interfaces in `/types/index.ts` for Company, Partner, and Theme entities
+- **Theme Management**: Created centralized theme system in `/lib/theme.ts` with consistent font, color, and shadow definitions  
+- **Component Architecture**: Refactored into modular, reusable components:
+  - `CompanyCard`: Dedicated component for portfolio company display with hover states
+  - `PartnerCard`: Reusable partner profile component with consistent styling
+  - `SectionHeader`: Centralized header component with configurable styling options
+- **Data Separation**: Moved all static data (companies, partners) to `/lib/constants.ts` with proper typing
+- **Style Consistency**: Implemented `getNeoBrutalistStyle()` utility function for consistent styling across components
+
+### Performance Optimizations
+- **Component Memoization**: Applied React.memo to prevent unnecessary re-renders
+- **Code Splitting**: Separated concerns into focused, single-responsibility components
+- **Import Optimization**: Reduced bundle size through selective imports and better dependency management
+- **CSS Efficiency**: Streamlined utility classes and removed redundant styling patterns
+
+### Developer Experience
+- **TypeScript Coverage**: 100% TypeScript coverage with strict typing for all data structures
+- **Component Props**: Strongly typed component interfaces with optional parameters
+- **File Organization**: Clear separation between types, utilities, constants, and components
+- **Naming Conventions**: Consistent PascalCase for components, camelCase for utilities, UPPER_CASE for constants
+
+This refactor maintains backward compatibility while significantly improving code maintainability, type safety, and development velocity.

@@ -1,40 +1,10 @@
-import { memo } from "react";
 import AnimatedSection from "@/components/ui/animated-section";
-import Image from "@/components/ui/image";
+import SectionHeader from "@/components/ui/section-header";
+import PartnerCard from "@/components/ui/partner-card";
+import { Partner } from "@/types";
 
-interface PartnerCardProps {
-  name: string;
-  bio: React.ReactNode;
-  image: string;
-  imageClassName?: string;
-}
-
-const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps) => (
-  <div className="bg-white border-2 border-black" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-    {/* Image as the main card element */}
-    <div className="w-full h-80 overflow-hidden">
-      <Image
-        src={image}
-        alt={`${name}'s portrait`}
-        className={`w-full h-full object-contain ${imageClassName || ''}`}
-        fallbackSrc="/images/2-days-early-logo-2025.png"
-      />
-    </div>
-    
-    {/* Name directly on card background */}
-    <div className="p-6 text-center">
-      <h3 className="text-2xl font-bold text-black mb-4" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>{name}</h3>
-      
-      <div className="text-black font-bold text-sm leading-relaxed text-left" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-        {bio}
-      </div>
-    </div>
-  </div>
-));
-
-PartnerCard.displayName = "PartnerCard";
-
-const partners = [
+// Partners data with JSX components
+const partners: Partner[] = [
   {
     name: "MAIA",
     bio: (
@@ -65,7 +35,7 @@ const partners = [
             OVER-ENGINEERED FINTECH TAKES
           </a>
         </span>{" "}
-        AND IS LEARNING TO CODE AT THE SPEED OF THOUGHT WITH REPLIT.
+        AND LOVES BUILDING MODELS IN PYTHON.
       </>
     ),
     image: "/images/Samir-Desai-min.png",
@@ -73,7 +43,7 @@ const partners = [
   }
 ];
 
-const Partners = () => {
+export default function Partners() {
   return (
     <section 
       id="partners" 
@@ -82,26 +52,21 @@ const Partners = () => {
     >
       <div className="w-full">
         <AnimatedSection>
-          <div className="bg-white border-2 border-black p-8 mb-16 text-center" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
-            <h2 
-              id="partners-heading"
-              className="text-4xl md:text-6xl font-bold text-black"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
-            >
-              PARTNERS
-            </h2>
-            <div className="bg-green-600 border-2 border-black h-4 mx-auto w-24 mt-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}></div>
-          </div>
+          <SectionHeader
+            id="partners-heading"
+            title="PARTNERS"
+            backgroundColor="bg-white"
+            textColor="text-black"
+            className="mb-16"
+          />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {partners.map((partner) => (
-              <PartnerCard key={partner.name} {...partner} />
+              <PartnerCard key={partner.name} partner={partner} />
             ))}
           </div>
         </AnimatedSection>
       </div>
     </section>
   );
-};
-
-export default memo(Partners);
+}
