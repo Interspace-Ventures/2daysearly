@@ -12,8 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Serve static files from the correct dist/public directory
-app.use(express.static(path.join(__dirname, '..', 'dist', 'public')));
+// Skip static file serving in development - Vite will handle this
 
 interface ExtendedResponse extends Response {
   json: (body: any) => this;
@@ -79,15 +78,21 @@ const errorHandler = (
 
 const startServer = async () => {
   try {
+    // Always use Vite in development
+    const isProduction = process.env.NODE_ENV === "production";
+    log(`Running in ${isProduction ? "production" : "development"} mode`);
+    
     const server = registerRoutes(app);
-
-    app.use(errorHandler);
-
-    if (app.get("env") === "development") {
+    
+    if (!isProduction) {
+      log("Setting up Vite development server...");
       await setupVite(app, server);
     } else {
+      log("Setting up static file serving...");
       serveStatic(app);
     }
+
+    app.use(errorHandler);
 
     const tryPort = (port: number): Promise<void> => {
       return new Promise((resolve, reject) => {
