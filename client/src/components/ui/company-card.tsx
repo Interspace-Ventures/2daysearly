@@ -15,19 +15,27 @@ const CompanyCard = memo(({ company }: CompanyCardProps) => (
     className="group relative block bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000000] transition-all duration-300 hover:scale-105"
   >
     {/* Logo Display */}
-    <div className="h-48 w-full flex items-center justify-center p-8 bg-white">
+    <div className="h-48 w-full flex items-center justify-center p-8 bg-white relative z-10">
       <img
         src={company.logo}
         alt={`${company.name} logo`}
-        className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-20"
+        className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-20 relative z-20 portfolio-logo"
+        onLoad={() => console.log(`[Logo Visible Test] ${company.name} logo loaded and should be visible`)}
         onError={(e) => {
+          console.log(`[Logo Error] ${company.name} logo failed to load`);
           e.currentTarget.src = IMAGES.companies.placeholder;
+        }}
+        style={{ 
+          minWidth: '50px', 
+          minHeight: '30px',
+          backgroundColor: 'yellow',  // Temporary visibility check
+          border: '3px solid red'      // Temporary visibility check
         }}
       />
     </div>
 
     {/* Hover Overlay */}
-    <div className="absolute inset-0 bg-green-400 border-2 border-black p-4 flex flex-col justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+    <div className="absolute inset-0 bg-green-400 border-2 border-black p-4 flex flex-col justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-30">
       <h3 className="text-lg font-bold text-black text-center mb-3" style={{fontFamily: 'Alexandria, sans-serif'}}>
         {company.name}
       </h3>
