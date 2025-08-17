@@ -6,7 +6,7 @@ import Image from "@/components/ui/image";
 function scrollToElement(elementId: string) {
   const element = document.getElementById(elementId);
   if (element) {
-    const navHeight = 80;
+    const navHeight = 64; // Updated to match new navigation height
     const elementPosition = element.offsetTop - navHeight;
     window.scrollTo({
       top: elementPosition,
@@ -236,7 +236,7 @@ export default function Navigation() {
                 <button
                   key={button.label}
                   onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
-                  disabled={isTallyLoading && button.onClick}
+                  disabled={isTallyLoading && !!button.onClick}
                   className={`border-2 border-black px-4 py-2 font-bold text-sm transition-all duration-100 flex items-center gap-1 ${
                     button.primary
                       ? 'bg-green-600 text-white hover:bg-green-700'
@@ -289,7 +289,7 @@ export default function Navigation() {
                   <button
                     key={button.label}
                     onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
-                    disabled={isTallyLoading && button.onClick}
+                    disabled={isTallyLoading && !!button.onClick}
                     className={`border-2 border-black px-3 py-2 font-bold text-sm flex items-center justify-center gap-2 transition-all duration-100 ${
                       button.primary
                         ? 'bg-green-600 text-white'

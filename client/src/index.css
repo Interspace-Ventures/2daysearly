@@ -130,7 +130,7 @@
 
   section {
     @apply w-full;
-    scroll-margin-top: 8rem;
+    scroll-margin-top: 4rem;
   }
 
   ::selection {
