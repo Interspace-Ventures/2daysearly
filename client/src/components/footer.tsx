@@ -10,27 +10,18 @@ export default function Footer() {
         
         <div className="flex flex-wrap justify-center gap-6 mb-6">
           <a 
-            href="https://interspace.samir.xyz/p/101-everything-you-wanted-to-know" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-white hover:text-green-400 transition-colors"
-            style={{fontFamily: theme.fonts.primary}}
-          >
-            OUR STORY
-          </a>
-          <a 
-            href="mailto:pitch@2daysearly.com"
-            className="text-white hover:text-green-400 transition-colors"
-            style={{fontFamily: theme.fonts.primary}}
-          >
-            CONTACT
-          </a>
-          <a 
             href="#purpose"
             className="text-white hover:text-green-400 transition-colors"
             style={{fontFamily: theme.fonts.primary}}
           >
             PURPOSE
+          </a>
+          <a 
+            href="#principles"
+            className="text-white hover:text-green-400 transition-colors"
+            style={{fontFamily: theme.fonts.primary}}
+          >
+            PRINCIPLES
           </a>
           <a 
             href="#portfolio"
