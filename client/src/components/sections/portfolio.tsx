@@ -7,8 +7,9 @@ export default function Portfolio() {
   return (
     <section 
       id="portfolio" 
-      className="neo-section bg-white"
+      className="neo-section bg-white relative z-0"
       aria-labelledby="portfolio-heading"
+      style={{ overflow: 'visible' }}
     >
       <div className="w-full">
         <AnimatedSection>
@@ -22,7 +23,7 @@ export default function Portfolio() {
           />
         </AnimatedSection>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10" style={{ overflow: 'visible' }}>
           {COMPANIES.map((company) => (
             <CompanyCard key={company.name} company={company} />
           ))}

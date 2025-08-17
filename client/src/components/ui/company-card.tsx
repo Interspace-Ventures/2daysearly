@@ -13,9 +13,10 @@ const CompanyCard = memo(({ company }: CompanyCardProps) => (
     target="_blank"
     rel="noopener noreferrer"
     className="group relative block bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000000] transition-all duration-300 hover:scale-105"
+    style={{ minHeight: '200px', backgroundColor: '#f0f0f0' }}  // Temporary: make cards visible
   >
     {/* Logo Display */}
-    <div className="h-48 w-full flex items-center justify-center p-8 bg-white relative z-10">
+    <div className="h-48 w-full flex items-center justify-center p-8 bg-gray-100 relative z-10 border border-blue-500">  {/* Temporary: visible container */}
       <img
         src={company.logo}
         alt={`${company.name} logo`}
@@ -25,12 +26,7 @@ const CompanyCard = memo(({ company }: CompanyCardProps) => (
           console.log(`[Logo Error] ${company.name} logo failed to load`);
           e.currentTarget.src = IMAGES.companies.placeholder;
         }}
-        style={{ 
-          minWidth: '50px', 
-          minHeight: '30px',
-          backgroundColor: 'yellow',  // Temporary visibility check
-          border: '3px solid red'      // Temporary visibility check
-        }}
+        style={{ minWidth: '50px', minHeight: '30px' }}
       />
     </div>
 
@@ -42,9 +38,8 @@ const CompanyCard = memo(({ company }: CompanyCardProps) => (
       <p className="text-sm font-bold text-black leading-tight text-center mb-3" style={{fontFamily: 'Alexandria, sans-serif'}}>
         {company.description}
       </p>
-      <div className="flex items-center justify-center gap-1 text-xs font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>
-        <ExternalLink className="h-3 w-3" />
-        VISIT
+      <div className="flex items-center justify-center" style={{fontFamily: 'Alexandria, sans-serif'}}>
+        <ExternalLink className="h-4 w-4" />
       </div>
     </div>
   </a>
