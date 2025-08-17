@@ -94,20 +94,22 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative bg-white border-2 border-black transition-all duration-300 hover:scale-105" 
+              className="group relative block bg-white border-2 border-black transition-all duration-300 hover:scale-105" 
               style={{boxShadow: '4px 4px 0px 0px #000000'}}
             >
-              {/* Main Logo Display - Always Visible */}
-              <div className="h-48 flex items-center justify-center p-6 bg-white">
-                <Image
+              {/* Logo Container - No Text, Just Image */}
+              <div className="h-48 w-full flex items-center justify-center p-8 bg-white">
+                <img
                   src={company.logo}
                   alt={`${company.name} logo`}
-                  className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-30"
-                  fallbackSrc={IMAGES.companies.placeholder}
+                  className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-20"
+                  onError={(e) => {
+                    e.currentTarget.src = IMAGES.companies.placeholder;
+                  }}
                 />
               </div>
 
-              {/* Hover Overlay */}
+              {/* Hover Overlay - Only Shows on Hover */}
               <div className="absolute inset-0 bg-green-400 border-2 border-black p-4 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-300" 
                    style={{boxShadow: '2px 2px 0px 0px #000000'}}>
                 <h3 className="text-lg font-bold text-black text-center mb-3" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
