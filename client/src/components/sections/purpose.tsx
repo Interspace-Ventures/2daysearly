@@ -55,19 +55,19 @@ export default function Purpose() {
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
           <div className="neo-card p-6 text-center bg-white">
-            <div className="text-5xl font-bold text-primary mb-4" style={{fontFamily: 'Alexandria, sans-serif'}}>150+</div>
+            <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>150+</div>
             <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>CHIME OPERATORS IN 2 DAYS EARLY SYNDICATE</div>
           </div>
           <div className="neo-card p-6 text-center bg-white">
-            <div className="text-5xl font-bold text-primary mb-4" style={{fontFamily: 'Alexandria, sans-serif'}}>40%</div>
+            <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>40%</div>
             <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>HAVE EXPERIENCE SCALING STARTUPS FROM 0 - 100 FTES</div>
           </div>
           <div className="neo-card p-6 text-center bg-white">
-            <div className="text-5xl font-bold text-primary mb-4" style={{fontFamily: 'Alexandria, sans-serif'}}>73%</div>
+            <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>73%</div>
             <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>HAVE DIRECTLY MANAGED TEAMS OF 10+ PEOPLE</div>
           </div>
           <div className="neo-card p-6 text-center bg-white">
-            <div className="text-5xl font-bold text-primary mb-4" style={{fontFamily: 'Alexandria, sans-serif'}}>$2.5M</div>
+            <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>$2.5M</div>
             <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>INVESTING CAPACITY PER YEAR</div>
           </div>
         </div>
