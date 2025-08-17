@@ -10,7 +10,7 @@ interface PartnerCardProps {
 }
 
 const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps) => (
-  <div className="bg-white border-2 border-black text-center" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+  <div className="bg-white border-2 border-black" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
     {/* Image as the main card element */}
     <div className="w-full h-64 overflow-hidden">
       <Image
@@ -21,15 +21,12 @@ const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps
       />
     </div>
     
-    <div className="p-6">
-      <div className="bg-green-400 border-2 border-black p-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-        <h3 className="text-2xl font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>{name}</h3>
-      </div>
+    {/* Name directly on card background */}
+    <div className="p-6 text-center">
+      <h3 className="text-2xl font-bold text-black mb-4" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>{name}</h3>
       
-      <div className="bg-gray-100 border-2 border-black p-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-        <div className="text-black font-bold text-sm leading-relaxed text-left" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-          {bio}
-        </div>
+      <div className="text-black font-bold text-sm leading-relaxed text-left" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+        {bio}
       </div>
     </div>
   </div>
