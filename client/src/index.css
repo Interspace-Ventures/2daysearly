@@ -57,16 +57,7 @@ body {
     box-shadow: 4px 4px 0px 0px #000000;
   }
   
-  /* Force portfolio images to be visible and on top */
-  .portfolio-logo {
-    z-index: 100 !important;
-    position: relative !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    background-color: white !important;
-    border: 2px solid red !important; /* Temporary debug border */
-  }
+
   
   .neo-shadow-lg {
     box-shadow: 8px 8px 0px 0px #000000;
