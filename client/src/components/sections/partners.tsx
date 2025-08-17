@@ -12,11 +12,11 @@ interface PartnerCardProps {
 const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps) => (
   <div className="bg-white border-2 border-black" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
     {/* Image as the main card element */}
-    <div className="w-full h-64 overflow-hidden">
+    <div className="w-full h-80 overflow-hidden">
       <Image
         src={image}
         alt={`${name}'s portrait`}
-        className={`w-full h-full object-cover ${imageClassName || ''}`}
+        className={`w-full h-full object-contain ${imageClassName || ''}`}
         fallbackSrc="/images/2-days-early-logo-2025.png"
       />
     </div>
