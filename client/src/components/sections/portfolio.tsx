@@ -74,8 +74,8 @@ export default function Portfolio() {
                 WE'RE PROUD TO INVEST OUR TIME
               </h2>
               <h2 
-                className="text-2xl md:text-5xl font-bold text-green-400"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#4ade80'}}
+                className="text-2xl md:text-5xl font-bold text-white"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
               >
                 AND MONEY IN OPERATORS AT
               </h2>
