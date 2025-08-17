@@ -1,0 +1,45 @@
+/* EMERGENCY MOBILE WIDTH DEBUG */
+@media (max-width: 768px) {
+  /* Nuclear option: force everything to use full viewport */
+  * {
+    max-width: none !important;
+    width: auto !important;
+  }
+  
+  html, body {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+  
+  #root {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Remove ALL constraints */
+  .container, [class*="max-w"], [class*="mx-auto"] {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Force sections to full width */
+  section {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+  
+  /* Debug border to see actual widths */
+  section {
+    border: 2px solid red !important;
+  }
+}
