@@ -9,14 +9,24 @@ export default function Purpose() {
     >
       <div className="w-full">
         <AnimatedSection>
-          <div className="bg-green-500 border-2 border-black p-6 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+          <div className="bg-white border-2 border-black p-8 mb-8 text-center" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
             <h2 
               id="purpose-heading"
+              className="text-4xl md:text-6xl font-bold text-black mb-4"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+            >
+              PURPOSE
+            </h2>
+            <div className="bg-green-600 border-2 border-black h-4 mx-auto w-32" style={{boxShadow: '4px 4px 0px 0px #000000'}}></div>
+          </div>
+          
+          <div className="bg-green-500 border-2 border-black p-6 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+            <h3 
               className="text-2xl md:text-6xl font-bold text-white text-center"
               style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
             >
               BY OPERATORS. FOR OPERATORS.
-            </h2>
+            </h3>
           </div>
           
           <div className="space-y-6">
