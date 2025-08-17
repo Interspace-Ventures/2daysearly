@@ -23,9 +23,10 @@ export default function Portfolio() {
         </AnimatedSection>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {COMPANIES.map((company) => (
-            <CompanyCard key={company.name} company={company} />
-          ))}
+          {COMPANIES.map((company, index) => {
+            console.log(`[Portfolio Debug] Rendering company ${index}: ${company.name}`);
+            return <CompanyCard key={company.name} company={company} />;
+          })}
         </div>
       </div>
     </section>

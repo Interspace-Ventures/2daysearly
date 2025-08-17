@@ -7,47 +7,32 @@ interface CompanyCardProps {
   company: Company;
 }
 
-const CompanyCard = memo(({ company }: CompanyCardProps) => (
-  <a 
-    href={company.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group relative block bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000000] transition-all duration-300 hover:scale-105"
-  >
-    {/* Logo Display */}
-    <div className="h-48 w-full flex items-center justify-center p-8 bg-white relative">
-      <img
-        src={company.logo}
-        alt={`${company.name} logo`}
-        className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-20"
-        onLoad={() => console.log(`[Portfolio Logo] Successfully loaded: ${company.logo}`)}
-        onError={(e) => {
-          console.log(`[Portfolio Logo] Failed to load: ${company.logo}, using placeholder`);
-          e.currentTarget.src = IMAGES.companies.placeholder;
-        }}
-        style={{ minWidth: '100px', minHeight: '60px' }}
-      />
-      {/* Temporary debug overlay */}
-      <div className="absolute bottom-2 right-2 bg-yellow-300 text-xs p-1 font-mono">
-        {company.name}
+const CompanyCard = memo(({ company }: CompanyCardProps) => {
+  console.log(`[CompanyCard Render] ${company.name} with logo: ${company.logo}`);
+  
+  return (
+    <div className="w-full h-48 bg-red-100 border-4 border-red-500 p-4 mb-4">
+      {/* Big obvious test content */}
+      <div className="bg-yellow-300 p-4 text-center font-bold text-2xl">
+        TEST CARD: {company.name}
+      </div>
+      
+      {/* Logo test */}
+      <div className="bg-blue-200 p-2 flex items-center justify-center">
+        <img
+          src={company.logo}
+          alt={`${company.name} logo`}
+          className="max-w-32 max-h-16 object-contain bg-white border-2 border-green-500"
+          onLoad={() => console.log(`[Test Logo] Loaded: ${company.logo}`)}
+          onError={(e) => {
+            console.log(`[Test Logo] Failed: ${company.logo}`);
+            e.currentTarget.src = IMAGES.companies.placeholder;
+          }}
+        />
       </div>
     </div>
-
-    {/* Hover Overlay */}
-    <div className="absolute inset-0 bg-green-400 border-2 border-black p-4 flex flex-col justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-      <h3 className="text-lg font-bold text-black text-center mb-3" style={{fontFamily: 'Alexandria, sans-serif'}}>
-        {company.name}
-      </h3>
-      <p className="text-sm font-bold text-black leading-tight text-center mb-3" style={{fontFamily: 'Alexandria, sans-serif'}}>
-        {company.description}
-      </p>
-      <div className="flex items-center justify-center gap-1 text-xs font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>
-        <ExternalLink className="h-3 w-3" />
-        VISIT
-      </div>
-    </div>
-  </a>
-));
+  );
+});
 
 CompanyCard.displayName = 'CompanyCard';
 
