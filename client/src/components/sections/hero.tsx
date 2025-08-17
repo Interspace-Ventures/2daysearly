@@ -23,21 +23,6 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-              <div className="bg-green-500 border-2 border-black p-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <div className="text-white font-bold text-lg" style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}>INVEST</div>
-                <div className="text-white text-sm" style={{fontFamily: 'Inter, sans-serif', color: '#ffffff'}}>IN THE FUTURE</div>
-              </div>
-              <div className="bg-green-600 border-2 border-black p-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <div className="text-white font-bold text-lg" style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}>BUILD</div>
-                <div className="text-white text-sm" style={{fontFamily: 'Inter, sans-serif', color: '#ffffff'}}>TOGETHER</div>
-              </div>
-              <div className="bg-green-800 border-2 border-black p-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-                <div className="text-white font-bold text-lg" style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}>WIN</div>
-                <div className="text-white text-sm" style={{fontFamily: 'Inter, sans-serif', color: '#ffffff'}}>AS ONE</div>
-              </div>
-            </div>
           </div>
         </AnimatedSection>
       </div>
