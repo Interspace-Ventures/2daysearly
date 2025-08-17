@@ -58,20 +58,23 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-4">
         <AnimatedSection>
           <div className="text-center mb-16">
-            <div className="bg-black neo-shadow-lg p-8 mb-6 inline-block">
+            <div className="bg-black border-2 border-black p-8 mb-6 inline-block" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
               <h2 
                 id="portfolio-heading" 
-                className="text-3xl md:text-5xl font-bold text-white font-mono"
+                className="text-3xl md:text-5xl font-bold text-white"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
               >
                 WE'RE PROUD TO INVEST OUR TIME
               </h2>
               <h2 
-                className="text-3xl md:text-5xl font-bold text-yellow-400 font-mono"
+                className="text-3xl md:text-5xl font-bold text-green-400"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
               >
                 AND MONEY IN OPERATORS AT
               </h2>
               <h2 
-                className="text-3xl md:text-5xl font-bold text-white font-mono"
+                className="text-3xl md:text-5xl font-bold text-white"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
               >
                 THESE STARTUPS:
               </h2>
@@ -81,15 +84,15 @@ export default function Portfolio() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {companies.map((company) => (
-            <div key={company.name} className="neo-card bg-white p-6 hover:neo-shadow-lg transition-all duration-200">
+            <div key={company.name} className="bg-white border-2 border-black p-6 transition-all duration-200" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
               <a 
                 href={company.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className={`${company.color} neo-border neo-shadow p-4 mb-4 text-center`}>
-                  <div className="w-16 h-16 mx-auto mb-4 bg-white neo-border rounded-full flex items-center justify-center">
+                <div className="bg-green-400 border-2 border-black p-4 mb-4 text-center" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white border-2 border-black rounded-full flex items-center justify-center">
                     <Image
                       src={company.logo}
                       alt={`${company.name} logo`}
@@ -97,11 +100,11 @@ export default function Portfolio() {
                       fallbackSrc="/images/2-days-early-logo-2025.png"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-black font-mono">{company.name}</h3>
+                  <h3 className="text-2xl font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>{company.name}</h3>
                 </div>
                 
-                <div className="bg-gray-100 neo-border p-4 mb-4">
-                  <p className="text-sm font-bold text-black font-mono leading-tight">
+                <div className="bg-gray-100 border-2 border-black p-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+                  <p className="text-sm font-bold text-black leading-tight" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                     {company.description}
                   </p>
                 </div>

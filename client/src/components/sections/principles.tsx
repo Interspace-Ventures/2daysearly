@@ -7,15 +7,15 @@ interface PrincipleItemProps {
 }
 
 const PrincipleItem = memo(({ number, text }: PrincipleItemProps) => (
-  <div className="neo-card p-6 mb-6 bg-white">
+  <div className="bg-white border-2 border-black p-6 mb-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
     <div className="flex items-start gap-6">
-      <div className="bg-primary neo-border neo-shadow p-4 flex-shrink-0">
-        <span className="text-4xl font-bold text-white font-mono">
+      <div className="bg-green-500 border-2 border-black p-4 flex-shrink-0" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+        <span className="text-4xl font-bold text-white" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
           {number}
         </span>
       </div>
       <div className="flex-1">
-        <p className="text-2xl font-bold text-black font-mono leading-relaxed">
+        <p className="text-2xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
           {text}
         </p>
       </div>
@@ -49,14 +49,15 @@ const Principles = () => {
     >
       <div className="max-w-4xl mx-auto px-4">
         <AnimatedSection>
-          <div className="bg-white neo-border neo-shadow-lg p-8 mb-8">
+          <div className="bg-white border-2 border-black p-8 mb-8" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
             <h2 
               id="principles-heading"
-              className="text-4xl md:text-6xl font-bold text-black font-mono text-center mb-2"
+              className="text-4xl md:text-6xl font-bold text-black text-center mb-2"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               OPERATING PRINCIPLES
             </h2>
-            <div className="bg-green-600 neo-border h-4 mx-auto w-32"></div>
+            <div className="bg-green-600 border-2 border-black h-4 mx-auto w-32" style={{boxShadow: '4px 4px 0px 0px #000000'}}></div>
           </div>
           
           <div className="space-y-6">

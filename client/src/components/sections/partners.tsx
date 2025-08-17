@@ -10,9 +10,9 @@ interface PartnerCardProps {
 }
 
 const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps) => (
-  <div className="neo-card p-8 bg-white text-center">
-    <div className="bg-gradient-to-br from-green-400 to-green-600 neo-border neo-shadow p-6 mb-6">
-      <div className="w-32 h-32 mx-auto bg-white neo-border rounded-full overflow-hidden">
+  <div className="bg-white border-2 border-black p-8 text-center" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+    <div className="bg-gradient-to-br from-green-400 to-green-600 border-2 border-black p-6 mb-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+      <div className="w-32 h-32 mx-auto bg-white border-2 border-black rounded-full overflow-hidden">
         <Image
           src={image}
           alt={`${name}'s portrait`}
@@ -22,12 +22,12 @@ const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps
       </div>
     </div>
     
-    <div className="bg-green-400 neo-border neo-shadow p-4 mb-4">
-      <h3 className="text-3xl font-bold text-black font-mono">{name}</h3>
+    <div className="bg-green-400 border-2 border-black p-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+      <h3 className="text-3xl font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>{name}</h3>
     </div>
     
-    <div className="bg-gray-100 neo-border p-4">
-      <div className="text-black font-bold font-mono text-sm leading-relaxed text-left">
+    <div className="bg-gray-100 border-2 border-black p-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+      <div className="text-black font-bold text-sm leading-relaxed text-left" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
         {bio}
       </div>
     </div>
@@ -42,7 +42,7 @@ const partners = [
     bio: (
       <>
         BUILDS COOL FINTECH STUFF AT CHIME (AFTER THEY ACQUIRED HER CREDIT-BUILDING STARTUP PINCH). PREVIOUSLY FOUNDED ROCKSBOX (ALSO ACQUIRED). NOW BACKS FOUNDERS AT XFACTOR & PARCEL B. PROBABLY SHARING{" "}
-        <span className="bg-green-600 neo-border-thin px-1 text-white">
+        <span className="bg-green-600 border-2 border-black px-1 text-white">
           <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
             TMI TWEETS
           </a>
@@ -62,7 +62,7 @@ const partners = [
     bio: (
       <>
         FINANCE NERD BUILDING MONEY SUPERPOWERS AT CASH APP. PREVIOUSLY SHAPED STRATEGIC FINANCE AT HRT, UNIT, AND CHIME AFTER STARTING AT JP MORGAN. WRITES{" "}
-        <span className="bg-green-800 neo-border-thin px-1 text-white">
+        <span className="bg-green-800 border-2 border-black px-1 text-white">
           <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
             OVER-ENGINEERED FINTECH TAKES
           </a>
@@ -85,14 +85,15 @@ const Partners = () => {
       <div className="max-w-7xl mx-auto px-4">
         <AnimatedSection>
           <div className="text-center mb-16">
-            <div className="bg-white neo-border neo-shadow-lg p-8 mb-6 inline-block">
+            <div className="bg-white border-2 border-black p-8 mb-6 inline-block" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
               <h2 
                 id="partners-heading"
-                className="text-4xl md:text-6xl font-bold text-black font-mono"
+                className="text-4xl md:text-6xl font-bold text-black"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
               >
                 PARTNERS
               </h2>
-              <div className="bg-green-600 neo-border h-4 mx-auto w-24 mt-4"></div>
+              <div className="bg-green-600 border-2 border-black h-4 mx-auto w-24 mt-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}></div>
             </div>
           </div>
           
