@@ -297,42 +297,47 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white border-t-2 border-black">
-            <div className="px-4 py-4 space-y-4">
-              {navItems.map(({ id, label }) => (
-                <a
-                  key={id}
-                  href={`#${id}`}
-                  onClick={(e) => handleNavClick(e, id)}
-                  className={`block py-2 font-bold text-center transition-all duration-100 ${
-                    activeSection === id 
-                      ? 'text-green-700 underline underline-offset-4' 
-                      : 'text-black'
-                  }`}
-                  style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
-                >
-                  {label}
-                </a>
-              ))}
+          <div className="md:hidden bg-white border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+            <div className="px-4 py-6 space-y-4">
+              {/* Navigation Links */}
+              <div className="space-y-3">
+                {navItems.map(({ id, label }) => (
+                  <a
+                    key={id}
+                    href={`#${id}`}
+                    onClick={(e) => handleNavClick(e, id)}
+                    className={`block py-3 px-4 font-bold text-lg text-center border-2 border-black transition-all duration-100 ${
+                      activeSection === id 
+                        ? 'bg-green-600 text-white' 
+                        : 'bg-white text-black hover:bg-green-100'
+                    }`}
+                    style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                  >
+                    {label}
+                  </a>
+                ))}
+              </div>
               
-              <div className="h-px bg-black my-3"></div>
+              {/* Divider */}
+              <div className="h-0.5 bg-black my-6"></div>
               
-              <div className="grid grid-cols-1 gap-2">
+              {/* Action Buttons */}
+              <div className="space-y-3">
                 {actionButtons.map((button) => (
                   <button
                     key={button.label}
                     onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
                     disabled={isTallyLoading && !!button.onClick}
-                    className={`border-2 border-black px-3 py-2 font-bold text-sm flex items-center justify-center gap-2 transition-all duration-100 ${
+                    className={`w-full border-2 border-black px-4 py-3 font-bold text-lg flex items-center justify-center gap-2 transition-all duration-100 ${
                       button.primary
-                        ? 'bg-green-600 text-white'
-                        : 'bg-white text-black'
+                        ? 'bg-green-600 text-white hover:bg-green-700'
+                        : 'bg-white text-black hover:bg-gray-100'
                     }`}
                     style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                   >
                     {button.icon && button.icon}
                     {button.label}
-                    {button.href && <ExternalLink className="h-3 w-3" />}
+                    {button.href && <ExternalLink className="h-4 w-4" />}
                   </button>
                 ))}
               </div>
