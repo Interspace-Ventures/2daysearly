@@ -67,8 +67,8 @@ export default function Purpose() {
             <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>HAVE DIRECTLY MANAGED TEAMS OF 10+ PEOPLE</div>
           </div>
           <div className="neo-card p-6 text-center bg-white">
-            <div className="text-5xl font-bold text-primary mb-4" style={{fontFamily: 'Alexandria, sans-serif'}}>$5M+</div>
-            <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>AVERAGE REVENUE RESPONSIBILITY PER OPERATOR</div>
+            <div className="text-5xl font-bold text-primary mb-4" style={{fontFamily: 'Alexandria, sans-serif'}}>$2.5M</div>
+            <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>INVESTING CAPACITY PER YEAR</div>
           </div>
         </div>
       </div>
