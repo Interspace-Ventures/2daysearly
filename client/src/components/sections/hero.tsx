@@ -1,4 +1,6 @@
 import AnimatedSection from "@/components/ui/animated-section";
+import Image from "@/components/ui/image";
+import { IMAGES } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -7,9 +9,14 @@ export default function Hero() {
         <AnimatedSection className="text-center w-full max-w-4xl mx-auto" delay={0.2}>
           <div className="bg-white border-2 border-black p-8 mx-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
             <div className="bg-green-400 border-2 border-black p-6 mb-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-              <h1 className="text-4xl md:text-8xl font-bold text-black mb-4 leading-tight" style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#000000'}}>
-                2 DAYS EARLY
-              </h1>
+              <div className="flex flex-col items-center justify-center mb-4">
+                <Image
+                  src={IMAGES.logo.src}
+                  alt="2 Days Early Logo"
+                  className="max-w-full h-24 md:h-32 object-contain mb-4"
+                  fallbackSrc={IMAGES.logo.fallback}
+                />
+              </div>
               <div className="bg-white border-2 border-black p-4 inline-block" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
                 <p className="text-xl md:text-3xl font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#000000'}}>
                   OPERATOR SYNDICATE
