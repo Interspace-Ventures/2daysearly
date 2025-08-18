@@ -8,9 +8,9 @@ interface PartnerCardProps {
 }
 
 const PartnerCard = memo(({ partner }: PartnerCardProps) => (
-  <div className="bg-white flex flex-col" style={getNeoBrutalistStyle('md')}>
+  <div className="bg-white flex flex-col h-full" style={getNeoBrutalistStyle('md')}>
     {/* Profile Image */}
-    <div className="w-full h-48 bg-white flex items-center justify-center p-4">
+    <div className="w-full h-52 bg-white flex items-center justify-center p-3">
       <Image
         src={partner.image}
         alt={`${partner.name}'s portrait`}
