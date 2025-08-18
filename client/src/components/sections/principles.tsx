@@ -66,7 +66,7 @@ const Principles = () => {
             </h2>
           </div>
           
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 gap-4">
             {principles.map((principle) => (
               <PrincipleItem
                 key={principle.number}
