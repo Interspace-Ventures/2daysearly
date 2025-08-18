@@ -52,23 +52,20 @@ export default function Partners() {
     >
       <div className="container-fluid">
         <AnimatedSection>
-          <div style={{ margin: '0 clamp(0.5rem, 2vw, 1rem)' }}>
-            <div 
-              className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
-              style={{ 
-                padding: 'clamp(1.5rem, 4vw, 2.5rem)', 
-                marginBottom: 'clamp(2rem, 5vw, 4rem)',
-                margin: 'clamp(0.5rem, 2vw, 1rem) 0 clamp(2rem, 5vw, 4rem) 0'
-              }}
+          <div 
+            className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
+            style={{ 
+              padding: 'clamp(1.5rem, 4vw, 2.5rem)', 
+              marginBottom: 'clamp(2rem, 5vw, 4rem)'
+            }}
+          >
+            <h2 
+              id="partners-heading"
+              className="text-fluid-4xl font-bold text-black"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
-              <h2 
-                id="partners-heading"
-                className="text-fluid-4xl font-bold text-black"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
-              >
-                PARTNERS
-              </h2>
-            </div>
+              PARTNERS
+            </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

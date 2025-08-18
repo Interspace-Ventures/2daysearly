@@ -13,16 +13,14 @@ export default function Portfolio() {
     >
       <div className="container-fluid">
         <AnimatedSection>
-          <div style={{ margin: '0 clamp(0.5rem, 2vw, 1rem)' }}>
-            <SectionHeader
-              id="portfolio-heading"
-              title={[
-                "WE'RE PROUD TO INVEST OUR TIME",
-                "AND MONEY IN OPERATORS AT", 
-                "THESE STARTUPS:"
-              ]}
-            />
-          </div>
+          <SectionHeader
+            id="portfolio-heading"
+            title={[
+              "WE'RE PROUD TO INVEST OUR TIME",
+              "AND MONEY IN OPERATORS AT", 
+              "THESE STARTUPS:"
+            ]}
+          />
         </AnimatedSection>
         
         <div className="grid-responsive-3" style={{ margin: 'clamp(1rem, 3vw, 2rem) 0' }}>

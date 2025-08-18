@@ -23,8 +23,7 @@ const SectionHeader = memo(({
       className={`${backgroundColor} text-center ${className} neo-border-responsive neo-shadow-lg-responsive`}
       style={{ 
         padding: 'clamp(1.5rem, 4vw, 2.5rem)', 
-        marginBottom: 'clamp(2rem, 5vw, 4rem)',
-        margin: 'clamp(0.5rem, 2vw, 1rem) 0 clamp(2rem, 5vw, 4rem) 0'
+        marginBottom: 'clamp(2rem, 5vw, 4rem)'
       }}
     >
       {titleLines.map((line, index) => (
