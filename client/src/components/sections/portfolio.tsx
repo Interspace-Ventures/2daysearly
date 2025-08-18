@@ -22,17 +22,17 @@ export default function Portfolio() {
           >
             <h2 
               id="portfolio-heading"
-              className="text-fluid-4xl font-bold text-black"
+              className="text-fluid-4xl font-bold text-black mb-4"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               PORTFOLIO
             </h2>
-          </div>
-          
-          <div className="bg-green-500 border-2 border-black p-4 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+            
+            <div className="w-16 h-1 bg-green-500 mx-auto mb-4"></div>
+            
             <h3 
-              className="text-fluid-xl font-bold text-white text-center"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
+              className="text-fluid-xl font-bold text-green-600"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               We're proud to invest our time and money in operators at these startups:
             </h3>

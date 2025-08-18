@@ -18,17 +18,17 @@ export default function Purpose() {
           >
             <h2 
               id="purpose-heading"
-              className="text-fluid-4xl font-bold text-black"
+              className="text-fluid-4xl font-bold text-black mb-4"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               PURPOSE
             </h2>
-          </div>
-          
-          <div className="bg-green-500 border-2 border-black p-6 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+            
+            <div className="w-16 h-1 bg-green-500 mx-auto mb-4"></div>
+            
             <h3 
-              className="text-fluid-2xl font-bold text-white text-center"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
+              className="text-fluid-2xl font-bold text-green-600"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               By operators. For operators.
             </h3>
