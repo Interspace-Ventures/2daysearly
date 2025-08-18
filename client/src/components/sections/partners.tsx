@@ -50,7 +50,7 @@ export default function Partners() {
       className="neo-section bg-gradient-to-br from-green-100 via-green-200 to-green-300"
       aria-labelledby="partners-heading"
     >
-      <div className="container-fluid">
+      <div className="container-fluid" style={{ paddingLeft: 'clamp(1rem, 3vw, 2rem)', paddingRight: 'clamp(1rem, 3vw, 2rem)' }}>
         <AnimatedSection>
           <div 
             className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
