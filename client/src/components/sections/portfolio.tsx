@@ -31,7 +31,7 @@ export default function Portfolio() {
             <div className="w-16 h-1 bg-green-500 mx-auto mb-4"></div>
             
             <h3 
-              className="text-fluid-xl font-bold text-green-600"
+              className="text-fluid-xl font-bold text-black"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               We're proud to invest our time and money in operators at these startups:

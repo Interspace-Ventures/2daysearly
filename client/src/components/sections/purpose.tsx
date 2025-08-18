@@ -27,7 +27,7 @@ export default function Purpose() {
             <div className="w-16 h-1 bg-green-500 mx-auto mb-4"></div>
             
             <h3 
-              className="text-fluid-2xl font-bold text-green-600"
+              className="text-fluid-2xl font-bold text-black"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               By operators. For operators.
