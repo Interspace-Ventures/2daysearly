@@ -82,17 +82,17 @@ body {
     border: 3px solid #000000;
   }
 
-  /* Responsive Typography Scale with fluid sizing */
-  .text-fluid-xs { font-size: clamp(0.75rem, 2vw, 0.875rem); }
-  .text-fluid-sm { font-size: clamp(0.875rem, 2.5vw, 1rem); }
-  .text-fluid-base { font-size: clamp(1rem, 3vw, 1.125rem); }
-  .text-fluid-lg { font-size: clamp(1.125rem, 3.5vw, 1.25rem); }
-  .text-fluid-xl { font-size: clamp(1.25rem, 4vw, 1.5rem); }
-  .text-fluid-2xl { font-size: clamp(1.5rem, 5vw, 2rem); }
-  .text-fluid-3xl { font-size: clamp(1.875rem, 6vw, 2.5rem); }
-  .text-fluid-4xl { font-size: clamp(2.25rem, 7vw, 3rem); }
-  .text-fluid-5xl { font-size: clamp(2.75rem, 8vw, 3.75rem); }
-  .text-fluid-6xl { font-size: clamp(3.25rem, 10vw, 4.5rem); }
+  /* Responsive Typography Scale - More compact sizing */
+  .text-fluid-xs { font-size: clamp(0.7rem, 1.8vw, 0.8rem); }
+  .text-fluid-sm { font-size: clamp(0.8rem, 2vw, 0.9rem); }
+  .text-fluid-base { font-size: clamp(0.9rem, 2.2vw, 1rem); }
+  .text-fluid-lg { font-size: clamp(1rem, 2.5vw, 1.1rem); }
+  .text-fluid-xl { font-size: clamp(1.1rem, 3vw, 1.25rem); }
+  .text-fluid-2xl { font-size: clamp(1.25rem, 3.5vw, 1.5rem); }
+  .text-fluid-3xl { font-size: clamp(1.5rem, 4vw, 1.875rem); }
+  .text-fluid-4xl { font-size: clamp(1.875rem, 4.5vw, 2.25rem); }
+  .text-fluid-5xl { font-size: clamp(2rem, 5vw, 2.5rem); }
+  .text-fluid-6xl { font-size: clamp(2.25rem, 5.5vw, 3rem); }
 
   /* Responsive Container System - Increased spacing */
   .container-fluid {
@@ -169,8 +169,8 @@ body {
   }
   
   .neo-section {
-    padding-top: clamp(3rem, 8vw, 5rem);
-    padding-bottom: clamp(3rem, 8vw, 5rem);
+    padding-top: clamp(2rem, 5vw, 3.5rem);
+    padding-bottom: clamp(2rem, 5vw, 3.5rem);
   }
   
   /* Mobile and overflow optimizations */
