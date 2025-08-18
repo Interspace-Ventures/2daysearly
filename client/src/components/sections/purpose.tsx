@@ -9,15 +9,23 @@ export default function Purpose() {
     >
       <div className="container-fluid">
         <AnimatedSection>
-          <div className="bg-white neo-border-responsive neo-shadow-lg-responsive text-center card-responsive">
-            <h2 
-              id="purpose-heading"
-              className="text-fluid-5xl font-bold text-black mb-4"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+          <div style={{ margin: '0 clamp(0.5rem, 2vw, 1rem)' }}>
+            <div 
+              className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
+              style={{ 
+                padding: 'clamp(1.5rem, 4vw, 2.5rem)', 
+                marginBottom: 'clamp(2rem, 5vw, 4rem)',
+                margin: 'clamp(0.5rem, 2vw, 1rem) 0 clamp(2rem, 5vw, 4rem) 0'
+              }}
             >
-              PURPOSE
-            </h2>
-            <div className="bg-green-600 border-2 border-black h-4 mx-auto w-32" style={{boxShadow: '4px 4px 0px 0px #000000'}}></div>
+              <h2 
+                id="purpose-heading"
+                className="text-fluid-4xl font-bold text-black"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+              >
+                PURPOSE
+              </h2>
+            </div>
           </div>
           
           <div className="bg-green-500 border-2 border-black p-6 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>

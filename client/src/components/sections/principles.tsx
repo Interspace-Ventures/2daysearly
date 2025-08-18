@@ -50,16 +50,23 @@ const Principles = () => {
     >
       <div className="container-fluid">
         <AnimatedSection>
-          <div className="bg-white neo-border-responsive neo-shadow-lg-responsive text-center card-responsive mb-8">
-            <h2 
-              id="principles-heading"
-              className="text-fluid-5xl font-bold text-black mb-4"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+          <div style={{ margin: '0 clamp(0.5rem, 2vw, 1rem)' }}>
+            <div 
+              className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
+              style={{ 
+                padding: 'clamp(1.5rem, 4vw, 2.5rem)', 
+                marginBottom: 'clamp(2rem, 5vw, 4rem)',
+                margin: 'clamp(0.5rem, 2vw, 1rem) 0 clamp(2rem, 5vw, 4rem) 0'
+              }}
             >
-              OPERATING PRINCIPLES
-            </h2>
-            <div className="bg-green-600 neo-border-responsive mx-auto" 
-                 style={{ height: 'clamp(0.75rem, 2vw, 1rem)', width: 'clamp(6rem, 15vw, 8rem)', boxShadow: 'clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) 0px 0px #000000' }}></div>
+              <h2 
+                id="principles-heading"
+                className="text-fluid-4xl font-bold text-black"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+              >
+                OPERATING PRINCIPLES
+              </h2>
+            </div>
           </div>
           
           <div className="space-y-6">
