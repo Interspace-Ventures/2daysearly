@@ -8,28 +8,28 @@ interface PartnerCardProps {
 }
 
 const PartnerCard = memo(({ partner }: PartnerCardProps) => (
-  <div className="bg-white flex flex-col h-full" style={getNeoBrutalistStyle('md')}>
+  <div className="bg-white overflow-hidden" style={getNeoBrutalistStyle('md')}>
     {/* Profile Image */}
-    <div className="w-full h-52 bg-white flex items-center justify-center p-3">
-      <Image
+    <div className="w-full h-32 sm:h-40 bg-gray-50 flex items-center justify-center p-2">
+      <img
         src={partner.image}
         alt={`${partner.name}'s portrait`}
         className={`max-w-full max-h-full object-contain ${partner.imageClassName || ''}`}
-        fallbackSrc="/images/2-days-early-logo-2025.png"
+        style={{ maxWidth: '100%', maxHeight: '100%' }}
       />
     </div>
     
     {/* Content */}
-    <div className="p-4 flex-1 bg-white border-t-2 border-black">
+    <div className="p-3 bg-white border-t-2 border-black">
       <h3 
-        className="text-fluid-base font-bold text-black mb-2 text-center"
+        className="text-sm sm:text-base font-bold text-black mb-2 text-center"
         style={{ fontFamily: theme.fonts.primary }}
       >
         {partner.name}
       </h3>
       
       <div 
-        className="text-black text-fluid-xs leading-relaxed text-left"
+        className="text-black text-xs sm:text-sm leading-relaxed text-left"
         style={{ fontFamily: theme.fonts.primary }}
       >
         {partner.bio}
