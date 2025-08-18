@@ -7,15 +7,16 @@ interface PrincipleItemProps {
 }
 
 const PrincipleItem = memo(({ number, text }: PrincipleItemProps) => (
-  <div className="bg-white border-2 border-black p-6 mb-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-    <div className="flex items-start gap-6">
-      <div className="bg-green-500 border-2 border-black p-4 flex-shrink-0" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-        <span className="text-4xl font-bold text-white" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+  <div className="bg-white neo-border-responsive neo-shadow-responsive card-responsive-sm mb-6">
+    <div className="flex items-start" style={{ gap: 'clamp(1rem, 4vw, 2rem)' }}>
+      <div className="bg-green-500 neo-border-responsive neo-shadow-responsive flex-shrink-0" 
+           style={{ padding: 'clamp(0.75rem, 3vw, 1.5rem)' }}>
+        <span className="text-fluid-3xl font-bold text-white" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
           {number}
         </span>
       </div>
       <div className="flex-1">
-        <p className="text-2xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+        <p className="text-fluid-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
           {text}
         </p>
       </div>
@@ -47,17 +48,18 @@ const Principles = () => {
       className="neo-section bg-gradient-to-br from-green-200 via-green-300 to-green-400"
       aria-labelledby="principles-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-fluid">
         <AnimatedSection>
-          <div className="bg-white border-2 border-black p-8 mb-8 text-center" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
+          <div className="bg-white neo-border-responsive neo-shadow-lg-responsive text-center card-responsive mb-8">
             <h2 
               id="principles-heading"
-              className="text-4xl md:text-6xl font-bold text-black mb-4"
+              className="text-fluid-5xl font-bold text-black mb-4"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               OPERATING PRINCIPLES
             </h2>
-            <div className="bg-green-600 border-2 border-black h-4 mx-auto w-32" style={{boxShadow: '4px 4px 0px 0px #000000'}}></div>
+            <div className="bg-green-600 neo-border-responsive mx-auto" 
+                 style={{ height: 'clamp(0.75rem, 2vw, 1rem)', width: 'clamp(6rem, 15vw, 8rem)', boxShadow: 'clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) 0px 0px #000000' }}></div>
           </div>
           
           <div className="space-y-6">

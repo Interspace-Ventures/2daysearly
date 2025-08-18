@@ -50,12 +50,12 @@ export default function Partners() {
       className="neo-section bg-gradient-to-br from-green-100 via-green-200 to-green-300"
       aria-labelledby="partners-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-fluid">
         <AnimatedSection>
-          <div className="bg-white border-2 border-black p-8 mb-16 text-center" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
+          <div className="bg-white neo-border-responsive neo-shadow-lg-responsive text-center card-responsive mb-16">
             <h2 
               id="partners-heading"
-              className="text-4xl md:text-6xl font-bold text-black mb-4"
+              className="text-fluid-5xl font-bold text-black mb-4"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               PARTNERS

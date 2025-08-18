@@ -7,12 +7,12 @@ export default function Purpose() {
       className="neo-section bg-white"
       aria-labelledby="purpose-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-fluid">
         <AnimatedSection>
-          <div className="bg-white border-2 border-black p-8 mb-8 text-center" style={{boxShadow: '8px 8px 0px 0px #000000'}}>
+          <div className="bg-white neo-border-responsive neo-shadow-lg-responsive text-center card-responsive">
             <h2 
               id="purpose-heading"
-              className="text-4xl md:text-6xl font-bold text-black mb-4"
+              className="text-fluid-5xl font-bold text-black mb-4"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               PURPOSE

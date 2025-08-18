@@ -5,13 +5,17 @@ import { IMAGES } from "@/lib/constants";
 export default function Hero() {
   return (
     <section id="hero" className="w-full bg-gradient-to-br from-green-300 via-green-400 to-green-500 pt-24 pb-16">
-      <div className="w-full">
+      <div className="container-fluid">
         <AnimatedSection className="text-center w-full" delay={0.2}>
-          <div className="flex flex-col items-center justify-center px-4">
+          <div className="flex flex-col items-center justify-center">
             <Image
               src={IMAGES.logo.src}
               alt="2 Days Early Logo"
-              className="max-w-full h-32 md:h-48 object-contain"
+              className="max-w-full object-contain"
+              style={{ 
+                height: 'clamp(8rem, 15vw, 12rem)',
+                maxWidth: 'min(500px, 90vw)'
+              }}
               fallbackSrc={IMAGES.logo.fallback}
             />
           </div>

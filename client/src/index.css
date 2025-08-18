@@ -74,6 +74,71 @@ body {
   .neo-border-thick {
     border: 3px solid #000000;
   }
+
+  /* Responsive Typography Scale with fluid sizing */
+  .text-fluid-xs { font-size: clamp(0.75rem, 2vw, 0.875rem); }
+  .text-fluid-sm { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+  .text-fluid-base { font-size: clamp(1rem, 3vw, 1.125rem); }
+  .text-fluid-lg { font-size: clamp(1.125rem, 3.5vw, 1.25rem); }
+  .text-fluid-xl { font-size: clamp(1.25rem, 4vw, 1.5rem); }
+  .text-fluid-2xl { font-size: clamp(1.5rem, 5vw, 2rem); }
+  .text-fluid-3xl { font-size: clamp(1.875rem, 6vw, 2.5rem); }
+  .text-fluid-4xl { font-size: clamp(2.25rem, 7vw, 3rem); }
+  .text-fluid-5xl { font-size: clamp(2.75rem, 8vw, 3.75rem); }
+  .text-fluid-6xl { font-size: clamp(3.25rem, 10vw, 4.5rem); }
+
+  /* Responsive Container System */
+  .container-fluid {
+    width: 100%;
+    max-width: min(1400px, 95vw);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
+  }
+
+  /* Intelligent Grid Systems */
+  .grid-responsive-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+  
+  .grid-responsive-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  
+  .grid-responsive-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+  }
+
+  /* Responsive Card Components */
+  .card-responsive {
+    min-height: clamp(180px, 25vw, 280px);
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+  
+  .card-responsive-sm {
+    min-height: clamp(120px, 20vw, 200px);
+    padding: clamp(0.75rem, 2.5vw, 1.5rem);
+  }
+
+  /* Enhanced Neo-brutalism with responsive scaling */
+  .neo-shadow-responsive {
+    box-shadow: clamp(2px, 0.5vw, 4px) clamp(2px, 0.5vw, 4px) 0px 0px #000000;
+  }
+  
+  .neo-shadow-lg-responsive {
+    box-shadow: clamp(4px, 1vw, 8px) clamp(4px, 1vw, 8px) 0px 0px #000000;
+  }
+  
+  .neo-border-responsive {
+    border: clamp(1px, 0.25vw, 2px) solid #000000;
+  }
   
   .neo-card {
     @apply neo-border neo-shadow bg-white;

@@ -229,23 +229,25 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 neo-border-responsive" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+      <div className="container-fluid">
+        <div className="flex items-center justify-between" style={{ height: 'clamp(3.5rem, 8vw, 4rem)' }}>
           {/* Logo */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0"
           >
-            <div className="bg-white px-4 py-2 border-2 border-black flex items-center gap-2" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+            <div className="bg-white neo-border-responsive neo-shadow-responsive flex items-center" 
+                 style={{ padding: 'clamp(0.5rem, 2vw, 1rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)' }}>
               <Image
                 src="/images/2-days-early-calendar-icon-2025.png"
                 alt="2 Days Early Calendar Icon"
-                className="w-6 h-6 object-contain"
+                className="object-contain"
+                style={{ width: 'clamp(1rem, 3vw, 1.5rem)', height: 'clamp(1rem, 3vw, 1.5rem)' }}
                 fallbackSrc="/images/2-days-early-calendar-icon-2025.png"
               />
-              <span className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+              <span className="text-fluid-lg font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 2 DAYS EARLY
               </span>
             </div>
