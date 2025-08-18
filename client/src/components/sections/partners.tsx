@@ -68,7 +68,7 @@ export default function Partners() {
             </h2>
           </div>
           
-          <div className="grid-responsive-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {partners.map((partner) => (
               <PartnerCard key={partner.name} partner={partner} />
             ))}
