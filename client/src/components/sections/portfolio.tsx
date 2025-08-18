@@ -13,14 +13,30 @@ export default function Portfolio() {
     >
       <div className="container-fluid">
         <AnimatedSection>
-          <SectionHeader
-            id="portfolio-heading"
-            title={[
-              "WE'RE PROUD TO INVEST OUR TIME",
-              "AND MONEY IN OPERATORS AT", 
-              "THESE STARTUPS:"
-            ]}
-          />
+          <div 
+            className="bg-black text-center neo-border-responsive neo-shadow-lg-responsive"
+            style={{ 
+              padding: 'clamp(1.5rem, 4vw, 2.5rem)', 
+              marginBottom: 'clamp(2rem, 5vw, 4rem)'
+            }}
+          >
+            <h2 
+              id="portfolio-heading"
+              className="text-fluid-4xl font-bold text-white"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+            >
+              PORTFOLIO
+            </h2>
+          </div>
+          
+          <div className="bg-green-500 border-2 border-black p-6 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+            <h3 
+              className="text-fluid-4xl font-bold text-white text-center"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
+            >
+              WE'RE PROUD TO INVEST OUR TIME AND MONEY IN OPERATORS AT THESE STARTUPS:
+            </h3>
+          </div>
         </AnimatedSection>
         
         <div className="grid-responsive-3" style={{ margin: 'clamp(1rem, 3vw, 2rem) 0' }}>
