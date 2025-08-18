@@ -231,63 +231,79 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 neo-border-responsive" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
       <div className="container-fluid">
-        <div className="flex items-center justify-between" style={{ height: 'clamp(3.5rem, 8vw, 4rem)' }}>
-          {/* Logo */}
+        <div className="flex items-center justify-between w-full min-w-0" style={{ height: 'clamp(3.5rem, 8vw, 4rem)' }}>
+          {/* Logo - Prevent shrinking too much */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0"
           >
             <div className="bg-white neo-border-responsive neo-shadow-responsive flex items-center" 
-                 style={{ padding: 'clamp(0.5rem, 2vw, 1rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)' }}>
+                 style={{ padding: 'clamp(0.5rem, 1.5vw, 0.75rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)' }}>
               <Image
                 src="/images/2-days-early-calendar-icon-2025.png"
                 alt="2 Days Early Calendar Icon"
                 className="object-contain"
-                style={{ width: 'clamp(1rem, 3vw, 1.5rem)', height: 'clamp(1rem, 3vw, 1.5rem)' }}
+                style={{ width: 'clamp(1rem, 2.5vw, 1.25rem)', height: 'clamp(1rem, 2.5vw, 1.25rem)' }}
                 fallbackSrc="/images/2-days-early-calendar-icon-2025.png"
               />
-              <span className="text-fluid-lg font-bold text-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+              <span className="font-bold text-black whitespace-nowrap" 
+                    style={{
+                      fontFamily: 'Alexandria, Inter, sans-serif',
+                      fontSize: 'clamp(0.875rem, 2vw, 1.125rem)'
+                    }}>
                 2 DAYS EARLY
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-8">
-            {navItems.map(({ id, label }) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                onClick={(e) => handleNavClick(e, id)}
-                className={`px-3 py-1 font-bold text-sm transition-all duration-100 ${
-                  activeSection === id 
-                    ? 'text-green-800 underline underline-offset-4' 
-                    : 'text-black hover:text-green-800'
-                }`}
-                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
-              >
-                {label}
-              </a>
-            ))}
+          {/* Desktop Navigation - Fixed overflow issues */}
+          <div className="hidden md:flex items-center flex-1 justify-end min-w-0">
+            {/* Navigation Links - Scale down on smaller screens */}
+            <div className="flex items-center" style={{ gap: 'clamp(0.5rem, 2vw, 2rem)' }}>
+              {navItems.map(({ id, label }) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={(e) => handleNavClick(e, id)}
+                  className={`font-bold transition-all duration-100 whitespace-nowrap ${
+                    activeSection === id 
+                      ? 'text-green-800 underline underline-offset-4' 
+                      : 'text-black hover:text-green-800'
+                  }`}
+                  style={{
+                    fontFamily: 'Alexandria, Inter, sans-serif',
+                    fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
+                    padding: 'clamp(0.25rem, 1vw, 0.5rem)'
+                  }}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
             
-            {/* Action Buttons */}
-            <div className="flex items-center gap-2 ml-4 lg:ml-8">
+            {/* Action Buttons - Responsive sizing */}
+            <div className="flex items-center ml-4" style={{ gap: 'clamp(0.25rem, 1vw, 0.5rem)' }}>
               {actionButtons.map((button) => (
                 <button
                   key={button.label}
                   onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
                   disabled={isTallyLoading && !!button.onClick}
-                  className={`border-2 border-black px-4 py-2 font-bold text-sm transition-all duration-100 flex items-center gap-1 ${
+                  className={`neo-border-responsive neo-shadow-responsive font-bold transition-all duration-100 flex items-center whitespace-nowrap ${
                     button.primary
                       ? 'bg-green-600 text-white hover:bg-green-700'
                       : 'bg-white text-black hover:bg-gray-100'
                   }`}
-                  style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                  style={{
+                    fontFamily: 'Alexandria, Inter, sans-serif',
+                    fontSize: 'clamp(0.7rem, 1.2vw, 0.875rem)',
+                    padding: 'clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem)',
+                    gap: 'clamp(0.125rem, 0.5vw, 0.25rem)'
+                  }}
                 >
                   {button.icon && button.icon}
                   {button.label}
-                  {button.href && <ExternalLink className="h-3 w-3" />}
+                  {button.href && <ExternalLink style={{ width: 'clamp(0.75rem, 1.5vw, 1rem)', height: 'clamp(0.75rem, 1.5vw, 1rem)' }} />}
                 </button>
               ))}
             </div>

@@ -30,24 +30,31 @@ body, html {
 @tailwind components;
 @tailwind utilities;
 
-/* Force full width globally */
+/* Prevent overflow globally */
+* {
+  box-sizing: border-box;
+}
+
 html {
-  width: 100% !important;
-  max-width: 100% !important;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 #root {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* Improved CSS architecture with consistent theming */
@@ -87,14 +94,15 @@ body {
   .text-fluid-5xl { font-size: clamp(2.75rem, 8vw, 3.75rem); }
   .text-fluid-6xl { font-size: clamp(3.25rem, 10vw, 4.5rem); }
 
-  /* Responsive Container System */
+  /* Responsive Container System - Prevent overflow */
   .container-fluid {
     width: 100%;
-    max-width: min(1400px, 95vw);
+    max-width: min(1400px, 100vw);
     margin-left: auto;
     margin-right: auto;
-    padding-left: clamp(1rem, 3vw, 2rem);
-    padding-right: clamp(1rem, 3vw, 2rem);
+    padding-left: clamp(0.75rem, 2.5vw, 1.5rem);
+    padding-right: clamp(0.75rem, 2.5vw, 1.5rem);
+    box-sizing: border-box;
   }
 
   /* Intelligent Grid Systems */
@@ -164,7 +172,7 @@ body {
     @apply py-16;
   }
   
-  /* Mobile optimizations */
+  /* Mobile and overflow optimizations */
   @media (max-width: 768px) {
     /* Ensure text visibility */
     h1, h2, h3, h4, h5, h6, p, span, a, button, div {
@@ -180,11 +188,53 @@ body {
     .text-green-700 { color: #15803d !important; }
     .text-green-800 { color: #166534 !important; }
     
-    /* Mobile spacing adjustments */
-    .neo-section {
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
+    /* Prevent mobile overflow */
+    body {
+      overflow-x: hidden !important;
     }
+    
+    /* Force button text to not wrap awkwardly */
+    button {
+      white-space: nowrap;
+      min-width: 0;
+    }
+    
+    /* Ensure containers don't overflow */
+    .container-fluid {
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
+    }
+  }
+  
+  /* Medium screen navigation adjustments */
+  @media (max-width: 1024px) {
+    /* Ensure navigation doesn't overflow on medium screens */
+    nav .container-fluid {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+  }
+  
+  /* Very small screen adjustments */
+  @media (max-width: 480px) {
+    .container-fluid {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+  }
+  
+  /* Fix navigation overflow on all screen sizes */
+  nav {
+    overflow-x: hidden;
+  }
+  
+  nav .flex {
+    min-width: 0;
+  }
+  
+  nav button, nav a {
+    flex-shrink: 1;
+    min-width: 0;
   }
 }
 
