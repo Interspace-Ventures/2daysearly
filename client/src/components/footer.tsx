@@ -9,7 +9,7 @@ export default function Footer() {
         </div>
         
         {/* Responsive navigation links */}
-        <div className="flex flex-col md:flex-row md:justify-center gap-4 md:gap-8 lg:gap-12 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center mb-6">
           <a 
             href="#purpose"
             className="text-fluid-base text-white hover:text-green-400 transition-colors"
