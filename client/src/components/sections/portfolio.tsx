@@ -14,7 +14,7 @@ export default function Portfolio() {
       <div className="container-fluid">
         <AnimatedSection>
           <div 
-            className="bg-black text-center neo-border-responsive neo-shadow-lg-responsive"
+            className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
             style={{ 
               padding: 'clamp(1.5rem, 4vw, 2.5rem)', 
               marginBottom: 'clamp(2rem, 5vw, 4rem)'
@@ -22,7 +22,7 @@ export default function Portfolio() {
           >
             <h2 
               id="portfolio-heading"
-              className="text-fluid-4xl font-bold text-white"
+              className="text-fluid-4xl font-bold text-black"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               PORTFOLIO
