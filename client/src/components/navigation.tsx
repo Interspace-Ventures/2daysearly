@@ -266,9 +266,9 @@ export default function Navigation() {
                   key={id}
                   href={`#${id}`}
                   onClick={(e) => handleNavClick(e, id)}
-                  className={`transition-all duration-100 whitespace-nowrap ${
+                  className={`transition-all duration-100 whitespace-nowrap neo-border-responsive ${
                     activeSection === id 
-                      ? 'text-green-800 underline underline-offset-4 font-bold' 
+                      ? 'bg-black text-white font-bold neo-shadow-responsive' 
                       : 'text-black hover:text-green-800'
                   }`}
                   style={{

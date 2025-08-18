@@ -27,10 +27,10 @@ export default function Purpose() {
           
           <div className="bg-green-500 border-2 border-black p-6 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
             <h3 
-              className="text-fluid-4xl font-bold text-white text-center"
+              className="text-fluid-2xl font-bold text-white text-center"
               style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
             >
-              BY OPERATORS. FOR OPERATORS.
+              By operators. For operators.
             </h3>
           </div>
           

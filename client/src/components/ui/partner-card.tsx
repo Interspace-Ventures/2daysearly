@@ -10,7 +10,7 @@ interface PartnerCardProps {
 const PartnerCard = memo(({ partner }: PartnerCardProps) => (
   <div className="bg-white" style={getNeoBrutalistStyle('md')}>
     {/* Profile Image */}
-    <div className="w-full h-80 overflow-hidden">
+    <div className="w-full h-48 overflow-hidden">
       <Image
         src={partner.image}
         alt={`${partner.name}'s portrait`}
@@ -20,16 +20,16 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
     </div>
     
     {/* Content */}
-    <div className="p-6 text-center">
+    <div className="p-4 text-center">
       <h3 
-        className="text-fluid-xl font-bold text-black mb-4"
+        className="text-fluid-lg font-bold text-black mb-3"
         style={{ fontFamily: theme.fonts.primary }}
       >
         {partner.name}
       </h3>
       
       <div 
-        className="text-black text-fluid-sm leading-relaxed text-left"
+        className="text-black text-fluid-xs leading-relaxed text-left"
         style={{ fontFamily: theme.fonts.primary }}
       >
         {partner.bio}

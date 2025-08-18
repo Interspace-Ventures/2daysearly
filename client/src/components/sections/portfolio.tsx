@@ -29,12 +29,12 @@ export default function Portfolio() {
             </h2>
           </div>
           
-          <div className="bg-green-500 border-2 border-black p-6 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+          <div className="bg-green-500 border-2 border-black p-4 mb-8" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
             <h3 
-              className="text-fluid-4xl font-bold text-white text-center"
+              className="text-fluid-xl font-bold text-white text-center"
               style={{fontFamily: 'Alexandria, Inter, sans-serif', color: '#ffffff'}}
             >
-              WE'RE PROUD TO INVEST OUR TIME AND MONEY IN OPERATORS AT THESE STARTUPS:
+              We're proud to invest our time and money in operators at these startups:
             </h3>
           </div>
         </AnimatedSection>

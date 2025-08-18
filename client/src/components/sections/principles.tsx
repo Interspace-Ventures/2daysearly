@@ -7,16 +7,16 @@ interface PrincipleItemProps {
 }
 
 const PrincipleItem = memo(({ number, text }: PrincipleItemProps) => (
-  <div className="bg-white neo-border-responsive neo-shadow-responsive card-responsive-sm mb-6">
-    <div className="flex items-start" style={{ gap: 'clamp(1rem, 4vw, 2rem)' }}>
+  <div className="bg-white neo-border-responsive neo-shadow-responsive mb-4" style={{ padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
+    <div className="flex items-start" style={{ gap: 'clamp(0.75rem, 3vw, 1.5rem)' }}>
       <div className="bg-green-500 neo-border-responsive neo-shadow-responsive flex-shrink-0" 
-           style={{ padding: 'clamp(0.75rem, 3vw, 1.5rem)' }}>
-        <span className="text-fluid-3xl font-bold text-white" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+           style={{ padding: 'clamp(0.5rem, 2vw, 1rem)' }}>
+        <span className="text-fluid-2xl font-bold text-white" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
           {number}
         </span>
       </div>
       <div className="flex-1">
-        <p className="text-fluid-xl md:text-fluid-2xl text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+        <p className="text-fluid-base md:text-fluid-xl text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
           {text}
         </p>
       </div>
