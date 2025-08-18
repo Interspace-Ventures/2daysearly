@@ -94,14 +94,14 @@ body {
   .text-fluid-5xl { font-size: clamp(2rem, 5vw, 2.5rem); }
   .text-fluid-6xl { font-size: clamp(2.25rem, 5.5vw, 3rem); }
 
-  /* Responsive Container System - Better aligned spacing */
+  /* Responsive Container System - Aligned with navbar spacing */
   .container-fluid {
     width: 100%;
     max-width: min(1200px, 100vw);
     margin-left: auto;
     margin-right: auto;
-    padding-left: clamp(1.5rem, 4vw, 3rem);
-    padding-right: clamp(1.5rem, 4vw, 3rem);
+    padding-left: clamp(1rem, 2vw, 2rem);
+    padding-right: clamp(1rem, 2vw, 2rem);
     box-sizing: border-box;
   }
 
