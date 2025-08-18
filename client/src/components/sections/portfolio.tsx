@@ -23,7 +23,7 @@ export default function Portfolio() {
           />
         </AnimatedSection>
         
-        <div className="grid-responsive-3">
+        <div className="grid-responsive-3" style={{ margin: 'clamp(1rem, 3vw, 2rem) 0' }}>
           {COMPANIES.map((company) => (
             <CompanyCard key={company.name} company={company} />
           ))}

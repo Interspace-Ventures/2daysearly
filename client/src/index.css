@@ -94,14 +94,14 @@ body {
   .text-fluid-5xl { font-size: clamp(2.75rem, 8vw, 3.75rem); }
   .text-fluid-6xl { font-size: clamp(3.25rem, 10vw, 4.5rem); }
 
-  /* Responsive Container System - Prevent overflow */
+  /* Responsive Container System - Increased spacing */
   .container-fluid {
     width: 100%;
     max-width: min(1400px, 100vw);
     margin-left: auto;
     margin-right: auto;
-    padding-left: clamp(0.75rem, 2.5vw, 1.5rem);
-    padding-right: clamp(0.75rem, 2.5vw, 1.5rem);
+    padding-left: clamp(1.25rem, 4vw, 2.5rem);
+    padding-right: clamp(1.25rem, 4vw, 2.5rem);
     box-sizing: border-box;
   }
 
@@ -114,8 +114,8 @@ body {
   
   .grid-responsive-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-    gap: clamp(1rem, 2.5vw, 1.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
   }
   
   .grid-responsive-4 {
@@ -169,7 +169,8 @@ body {
   }
   
   .neo-section {
-    @apply py-16;
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
   }
   
   /* Mobile and overflow optimizations */
@@ -199,10 +200,10 @@ body {
       min-width: 0;
     }
     
-    /* Ensure containers don't overflow */
+    /* Ensure containers don't overflow but maintain spacing */
     .container-fluid {
-      padding-left: 0.75rem !important;
-      padding-right: 0.75rem !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
     }
   }
   
@@ -210,16 +211,16 @@ body {
   @media (max-width: 1024px) {
     /* Ensure navigation doesn't overflow on medium screens */
     nav .container-fluid {
-      padding-left: 0.5rem !important;
-      padding-right: 0.5rem !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
     }
   }
   
   /* Very small screen adjustments */
   @media (max-width: 480px) {
     .container-fluid {
-      padding-left: 0.5rem !important;
-      padding-right: 0.5rem !important;
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
     }
   }
   
