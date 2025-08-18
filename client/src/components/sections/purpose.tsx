@@ -39,9 +39,9 @@ export default function Purpose() {
           
           <div className="space-y-6">
             <div className="bg-green-50 border-2 border-black p-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-              <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+              <p className="text-xl text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We are a community of{" "}
-                <span className="bg-green-400 border-2 border-black px-2 py-1 text-white">
+                <span className="bg-green-400 border-2 border-black px-2 py-1 text-white font-bold">
                   entrepreneurs, investors and operators
                 </span>
                 . We have backgrounds in growth, product, engineering, operations, finance, analytics and more, determined to helping startups succeed like we did at Chime.
@@ -49,9 +49,9 @@ export default function Purpose() {
             </div>
             
             <div className="bg-green-100 border-2 border-black p-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-              <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+              <p className="text-xl text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We aim to be the operator syndicate with{" "}
-                <span className="bg-green-600 border-2 border-black px-2 py-1 text-white">
+                <span className="bg-green-600 border-2 border-black px-2 py-1 text-white font-bold">
                   highest value per dollar invested
                 </span>
                 . Companies we invest in get access to our experience network, and our commitment to empower impactful firms that provide better options for everyday people.
@@ -59,9 +59,9 @@ export default function Purpose() {
             </div>
             
             <div className="bg-green-200 border-2 border-black p-6" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
-              <p className="text-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+              <p className="text-xl text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We love investing in amazing founders of all backgrounds, and we're especially committed to{" "}
-                <span className="bg-green-800 border-2 border-black px-2 py-1 text-white">
+                <span className="bg-green-800 border-2 border-black px-2 py-1 text-white font-bold">
                   invest in future companies founded by Chime alumni
                 </span>
                 .
@@ -73,19 +73,19 @@ export default function Purpose() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-12">
           <div className="neo-card p-6 text-center bg-white">
             <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>200+</div>
-            <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>Chime operators in 2 Days Early syndicate</div>
+            <div className="text-lg text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>Chime operators in 2 Days Early syndicate</div>
           </div>
           <div className="neo-card p-6 text-center bg-white">
             <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>40%</div>
-            <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>have experience scaling startups from 0 - 100 FTEs</div>
+            <div className="text-lg text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>have experience scaling startups from 0 - 100 FTEs</div>
           </div>
           <div className="neo-card p-6 text-center bg-white">
             <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>73%</div>
-            <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>have directly managed teams of 10+ people</div>
+            <div className="text-lg text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>have directly managed teams of 10+ people</div>
           </div>
           <div className="neo-card p-6 text-center bg-white">
             <div className="text-7xl font-bold text-green-600 mb-4" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>$2.5M</div>
-            <div className="text-lg font-bold text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>investing capacity per year</div>
+            <div className="text-lg text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>investing capacity per year</div>
           </div>
         </div>
       </div>

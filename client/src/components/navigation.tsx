@@ -266,9 +266,9 @@ export default function Navigation() {
                   key={id}
                   href={`#${id}`}
                   onClick={(e) => handleNavClick(e, id)}
-                  className={`font-bold transition-all duration-100 whitespace-nowrap ${
+                  className={`transition-all duration-100 whitespace-nowrap ${
                     activeSection === id 
-                      ? 'text-green-800 underline underline-offset-4' 
+                      ? 'text-green-800 underline underline-offset-4 font-bold' 
                       : 'text-black hover:text-green-800'
                   }`}
                   style={{
@@ -289,9 +289,9 @@ export default function Navigation() {
                   key={button.label}
                   onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
                   disabled={isTallyLoading && !!button.onClick}
-                  className={`neo-border-responsive neo-shadow-responsive font-bold transition-all duration-100 flex items-center whitespace-nowrap ${
+                  className={`neo-border-responsive neo-shadow-responsive transition-all duration-100 flex items-center whitespace-nowrap ${
                     button.primary
-                      ? 'bg-green-600 text-white hover:bg-green-700'
+                      ? 'bg-green-600 text-white hover:bg-green-700 font-bold'
                       : 'bg-white text-black hover:bg-gray-100'
                   }`}
                   style={{
@@ -330,9 +330,9 @@ export default function Navigation() {
                     key={id}
                     href={`#${id}`}
                     onClick={(e) => handleNavClick(e, id)}
-                    className={`block py-2 px-4 font-bold text-base text-center border-2 border-black transition-all duration-100 ${
+                    className={`block py-2 px-4 text-base text-center border-2 border-black transition-all duration-100 ${
                       activeSection === id 
-                        ? 'bg-green-600 text-white' 
+                        ? 'bg-green-600 text-white font-bold' 
                         : 'bg-white text-black hover:bg-green-100'
                     }`}
                     style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}

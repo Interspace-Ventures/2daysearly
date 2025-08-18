@@ -16,7 +16,7 @@ const PrincipleItem = memo(({ number, text }: PrincipleItemProps) => (
         </span>
       </div>
       <div className="flex-1">
-        <p className="text-fluid-xl font-bold text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+        <p className="text-fluid-xl text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
           {text}
         </p>
       </div>

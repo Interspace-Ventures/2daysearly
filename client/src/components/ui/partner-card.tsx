@@ -29,7 +29,7 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
       </h3>
       
       <div 
-        className="text-black font-bold text-sm leading-relaxed text-left"
+        className="text-black text-sm leading-relaxed text-left"
         style={{ fontFamily: theme.fonts.primary }}
       >
         {partner.bio}
