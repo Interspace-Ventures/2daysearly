@@ -20,14 +20,18 @@ const SectionHeader = memo(({
   
   return (
     <div 
-      className={`${backgroundColor} p-8 mb-16 text-center ${className}`}
-      style={getNeoBrutalistStyle('lg')}
+      className={`${backgroundColor} text-center ${className} neo-border-responsive neo-shadow-lg-responsive`}
+      style={{ 
+        padding: 'clamp(1.5rem, 4vw, 2.5rem)', 
+        marginBottom: 'clamp(2rem, 5vw, 4rem)',
+        margin: 'clamp(0.5rem, 2vw, 1rem) 0 clamp(2rem, 5vw, 4rem) 0'
+      }}
     >
       {titleLines.map((line, index) => (
         <h2
           key={index}
           id={index === 0 ? id : undefined}
-          className={`text-2xl md:text-5xl font-bold ${textColor}`}
+          className={`text-fluid-4xl font-bold ${textColor}`}
           style={{ fontFamily: theme.fonts.primary }}
         >
           {line}
