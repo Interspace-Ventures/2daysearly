@@ -366,7 +366,7 @@ export default function Navigation() {
                         textDecoration: 'none'
                       }}
                     >
-                      <span className="flex items-center justify-between">
+                      <span className="flex items-center gap-2">
                         {button.label}
                         <ExternalLink className="h-4 w-4" />
                       </span>
