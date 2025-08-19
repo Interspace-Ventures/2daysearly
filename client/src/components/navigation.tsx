@@ -95,7 +95,7 @@ export default function Navigation() {
     formContainer.style.maxWidth = '100vw';
     formContainer.style.backgroundColor = 'white';
     formContainer.style.border = '4px solid #000000';
-    formContainer.style.boxShadow = '-6px 0 0px 0px #000000';
+    formContainer.style.boxShadow = '-4px 0 0px 0px #000000';
     formContainer.style.zIndex = '9999';
     formContainer.style.transform = 'translateX(100%)';
     formContainer.style.transition = 'transform 0.3s ease-in-out';
@@ -302,7 +302,7 @@ export default function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden border-2 border-black bg-white p-2"
-            style={{boxShadow: '2px 2px 0px 0px #000000'}}
+            style={{boxShadow: '4px 4px 0px 0px #000000'}}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
