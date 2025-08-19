@@ -37,7 +37,7 @@ const principles = [
   },
   {
     number: 3,
-    text: "We believe in doing well by doing good with transparent and sustainable operating models",
+    text: "We believe in doing well by doing good with transparent and fair operating models",
   },
 ];
 
