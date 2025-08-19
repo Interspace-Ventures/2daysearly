@@ -94,39 +94,41 @@ export default function Navigation() {
     formContainer.style.width = '600px';
     formContainer.style.maxWidth = '100vw';
     formContainer.style.backgroundColor = 'white';
-    formContainer.style.border = '3px solid #000000';
-    formContainer.style.boxShadow = '-8px 0 0px 0px #000000';
+    formContainer.style.border = '4px solid #000000';
+    formContainer.style.boxShadow = '-6px 0 0px 0px #000000';
     formContainer.style.zIndex = '9999';
     formContainer.style.transform = 'translateX(100%)';
     formContainer.style.transition = 'transform 0.3s ease-in-out';
 
     const titleContainer = document.createElement('div');
     titleContainer.style.padding = '1.5rem';
-    titleContainer.style.borderBottom = '3px solid #000000';
+    titleContainer.style.borderBottom = '4px solid #000000';
     titleContainer.style.display = 'flex';
     titleContainer.style.justifyContent = 'space-between';
     titleContainer.style.alignItems = 'center';
-    titleContainer.style.backgroundColor = '#ef4444';
+    titleContainer.style.backgroundColor = '#10b981';
 
     const title = document.createElement('h2');
     title.textContent = '2 DAYS EARLY SYNDICATE ONBOARDING';
     title.style.margin = '0';
-    title.style.fontSize = '1.25rem';
+    title.style.fontSize = '1.125rem';
     title.style.fontWeight = 'bold';
     title.style.color = 'white';
-    title.style.fontFamily = 'Courier New, monospace';
+    title.style.fontFamily = 'Alexandria, Inter, sans-serif';
 
     const closeButton = document.createElement('button');
     closeButton.innerHTML = '×';
-    closeButton.style.fontSize = '24px';
-    closeButton.style.border = '2px solid #000000';
+    closeButton.style.fontSize = '20px';
+    closeButton.style.border = '3px solid #000000';
     closeButton.style.background = 'white';
     closeButton.style.cursor = 'pointer';
-    closeButton.style.padding = '0.5rem';
+    closeButton.style.padding = '0.5rem 0.75rem';
     closeButton.style.lineHeight = '1';
     closeButton.style.color = 'black';
     closeButton.style.fontWeight = 'bold';
-    closeButton.style.boxShadow = '2px 2px 0px 0px #000000';
+    closeButton.style.fontFamily = 'Alexandria, Inter, sans-serif';
+    closeButton.style.boxShadow = '3px 3px 0px 0px #000000';
+    closeButton.style.transition = 'all 0.1s ease';
 
     const cleanup = () => {
       if (document.body.contains(formContainer)) {
