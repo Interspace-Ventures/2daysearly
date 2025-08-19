@@ -8,7 +8,7 @@ export default function Purpose() {
       style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
       aria-labelledby="purpose-heading"
     >
-      <div className="container-fluid" style={{ marginRight: '4px' }}>
+      <div className="container-fluid">
         <AnimatedSection>
           <div 
             className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"

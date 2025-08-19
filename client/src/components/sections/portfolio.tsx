@@ -10,7 +10,7 @@ export default function Portfolio() {
       style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
       aria-labelledby="portfolio-heading"
     >
-      <div className="container-fluid" style={{ marginRight: '4px' }}>
+      <div className="container-fluid">
         {/* Section Header */}
         <div 
           className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
