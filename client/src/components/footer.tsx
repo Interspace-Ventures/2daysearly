@@ -8,7 +8,7 @@ export default function Footer() {
           2 DAYS EARLY
         </div>
         
-        {/* Responsive navigation links */}
+        {/* First row: Section navigation links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center mb-6">
           <a 
             href="#purpose"
@@ -40,6 +40,7 @@ export default function Footer() {
           </a>
         </div>
         
+        {/* Second row: Action links */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center mb-6">
           <a 
             href="mailto:pitch@daysearly.com"
