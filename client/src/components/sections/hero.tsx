@@ -4,7 +4,7 @@ import { IMAGES } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full bg-gradient-to-br from-green-300 via-green-400 to-green-500 pt-24 pb-16">
+    <section id="hero" className="w-full bg-gradient-to-br from-green-50 via-green-100 to-green-200 pt-24 pb-16">
       <div className="container-fluid">
         <AnimatedSection className="text-center w-full" delay={0.2}>
           <div className="flex flex-col items-center justify-center">
