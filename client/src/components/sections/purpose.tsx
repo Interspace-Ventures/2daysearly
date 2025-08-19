@@ -10,19 +10,19 @@ export default function Purpose() {
     >
       <div className="container-fluid">
         <AnimatedSection>
-          <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
+          <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }} className="text-center">
             <h2 
               id="purpose-heading"
-              className="text-fluid-4xl font-bold text-black mb-4 text-left"
+              className="text-fluid-4xl font-bold text-black mb-4"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               PURPOSE
             </h2>
             
-            <div className="w-16 h-1 bg-green-500 mb-4"></div>
+            <div className="w-16 h-1 bg-green-500 mx-auto mb-4"></div>
             
             <h3 
-              className="text-fluid-2xl font-bold text-black text-left"
+              className="text-fluid-2xl font-bold text-black"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               By operators. For operators.
