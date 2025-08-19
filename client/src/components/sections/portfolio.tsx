@@ -6,7 +6,7 @@ export default function Portfolio() {
   return (
     <section 
       id="portfolio" 
-      className="bg-white"
+      className="bg-gradient-to-br from-green-100 via-green-200 to-green-300"
       style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
       aria-labelledby="portfolio-heading"
     >

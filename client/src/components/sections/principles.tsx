@@ -45,7 +45,7 @@ const Principles = () => {
   return (
     <section 
       id="principles" 
-      className="neo-section bg-gradient-to-br from-green-200 via-green-300 to-green-400"
+      className="neo-section bg-green-400"
       aria-labelledby="principles-heading"
     >
       <div className="container-fluid">

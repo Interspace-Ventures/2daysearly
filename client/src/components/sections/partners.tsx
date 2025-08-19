@@ -47,7 +47,7 @@ export default function Partners() {
   return (
     <section 
       id="partners" 
-      className="bg-gradient-to-br from-green-100 via-green-200 to-green-300"
+      className="bg-gradient-to-br from-green-300 via-green-400 to-green-500"
       style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
       aria-labelledby="partners-heading"
     >
