@@ -188,14 +188,13 @@ export default function Navigation() {
   ];
 
   const actionButtons = [
-    { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN", primary: false },
+    { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN" },
     {
       label: isTallyLoading ? "LOADING..." : "JOIN*",
-      primary: false,
       onClick: handleJoinClick,
       icon: isTallyLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : undefined
     },
-    { href: "mailto:pitch@daysearly.com", label: "PITCH", primary: true }
+    { href: "mailto:pitch@daysearly.com", label: "PITCH" }
   ];
 
   return (
@@ -254,29 +253,45 @@ export default function Navigation() {
               ))}
             </div>
             
-            {/* Action Buttons - Responsive sizing */}
-            <div className="flex items-center ml-4" style={{ gap: 'clamp(0.25rem, 1vw, 0.5rem)' }}>
+            {/* Action Links - Clean styling */}
+            <div className="flex items-center ml-4" style={{ gap: 'clamp(0.75rem, 2vw, 1.5rem)' }}>
               {actionButtons.map((button) => (
-                <button
-                  key={button.label}
-                  onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
-                  disabled={isTallyLoading && !!button.onClick}
-                  className={`neo-border-responsive neo-shadow-responsive transition-all duration-100 flex items-center whitespace-nowrap ${
-                    button.primary
-                      ? 'bg-green-600 text-white hover:bg-green-700 font-bold'
-                      : 'bg-white text-black hover:bg-gray-100'
-                  }`}
-                  style={{
-                    fontFamily: 'Alexandria, Inter, sans-serif',
-                    fontSize: 'clamp(0.7rem, 1.2vw, 0.875rem)',
-                    padding: 'clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem)',
-                    gap: 'clamp(0.125rem, 0.5vw, 0.25rem)'
-                  }}
-                >
-                  {button.icon && button.icon}
-                  {button.label}
-                  {button.href && <ExternalLink style={{ width: 'clamp(0.75rem, 1.5vw, 1rem)', height: 'clamp(0.75rem, 1.5vw, 1rem)' }} />}
-                </button>
+                button.onClick ? (
+                  <button
+                    key={button.label}
+                    onClick={button.onClick}
+                    disabled={isTallyLoading}
+                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold"
+                    style={{
+                      fontFamily: 'Alexandria, Inter, sans-serif',
+                      fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
+                      gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
+                      background: 'none',
+                      border: 'none',
+                      padding: '0'
+                    }}
+                  >
+                    {button.icon && button.icon}
+                    {button.label}
+                  </button>
+                ) : (
+                  <a
+                    key={button.label}
+                    href={button.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold"
+                    style={{
+                      fontFamily: 'Alexandria, Inter, sans-serif',
+                      fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
+                      gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    {button.label}
+                    <ExternalLink style={{ width: 'clamp(0.75rem, 1.5vw, 1rem)', height: 'clamp(0.75rem, 1.5vw, 1rem)' }} />
+                  </a>
+                )
               ))}
             </div>
           </div>
@@ -317,24 +332,44 @@ export default function Navigation() {
               {/* Divider */}
               <div className="h-0.5 bg-black my-6"></div>
               
-              {/* Action Buttons */}
+              {/* Action Links */}
               <div className="space-y-3">
                 {actionButtons.map((button) => (
-                  <button
-                    key={button.label}
-                    onClick={button.onClick || (button.href ? () => window.open(button.href, '_blank') : undefined)}
-                    disabled={isTallyLoading && !!button.onClick}
-                    className={`w-full border-2 border-black px-4 py-2 font-bold text-base flex items-center justify-center gap-2 transition-all duration-100 ${
-                      button.primary
-                        ? 'bg-green-600 text-white hover:bg-green-700'
-                        : 'bg-white text-black hover:bg-gray-100'
-                    }`}
-                    style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
-                  >
-                    {button.icon && button.icon}
-                    {button.label}
-                    {button.href && <ExternalLink className="h-4 w-4" />}
-                  </button>
+                  button.onClick ? (
+                    <button
+                      key={button.label}
+                      onClick={button.onClick}
+                      disabled={isTallyLoading}
+                      className="w-full text-left p-3 font-bold transition-all duration-100 text-black hover:text-green-800 bg-transparent border-none"
+                      style={{
+                        fontFamily: 'Alexandria, Inter, sans-serif',
+                        fontSize: '1rem'
+                      }}
+                    >
+                      <span className="flex items-center gap-2">
+                        {button.icon && button.icon}
+                        {button.label}
+                      </span>
+                    </button>
+                  ) : (
+                    <a
+                      key={button.label}
+                      href={button.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full text-left p-3 font-bold transition-all duration-100 text-black hover:text-green-800 block"
+                      style={{
+                        fontFamily: 'Alexandria, Inter, sans-serif',
+                        fontSize: '1rem',
+                        textDecoration: 'none'
+                      }}
+                    >
+                      <span className="flex items-center justify-between">
+                        {button.label}
+                        <ExternalLink className="h-4 w-4" />
+                      </span>
+                    </a>
+                  )
                 ))}
               </div>
             </div>
