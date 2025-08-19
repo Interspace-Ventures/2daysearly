@@ -13,7 +13,7 @@ export default function Purpose() {
           <div 
             className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
             style={{ 
-              padding: 'clamp(1.5rem, 4vw, 2.5rem)', 
+              padding: 'clamp(1rem, 3vw, 1.5rem)', 
               marginBottom: 'clamp(2rem, 5vw, 4rem)'
             }}
           >
