@@ -12,19 +12,21 @@ const CompanyCard = memo(({ company }: CompanyCardProps) => (
     href={company.href}
     target="_blank"
     rel="noopener noreferrer"
-    className="group relative block bg-white neo-border-responsive neo-shadow-responsive transition-all duration-300 hover:scale-105"
+    className="group relative block bg-white neo-border-responsive neo-shadow-responsive transition-all duration-300 hover:scale-105 overflow-hidden"
   >
-    {/* Logo Display with responsive sizing */}
-    <div className="card-responsive-sm w-full flex items-center justify-center bg-white">
+    {/* Logo Display - Always visible */}
+    <div className="w-full flex items-center justify-center bg-white transition-opacity duration-300 group-hover:opacity-0"
+         style={{ 
+           padding: 'clamp(1rem, 3vw, 2rem)',
+           minHeight: 'clamp(120px, 25vw, 200px)'
+         }}>
       <img
         src={company.logo}
         alt={`${company.name} logo`}
-        className="block object-contain transition-opacity duration-300 group-hover:opacity-20"
+        className="object-contain max-w-full max-h-full"
         style={{
-          maxWidth: 'clamp(120px, 20vw, 180px)',
-          maxHeight: 'clamp(80px, 15vw, 140px)',
-          display: 'block',
-          minHeight: 'clamp(40px, 10vw, 80px)'
+          maxWidth: 'clamp(100px, 18vw, 160px)',
+          maxHeight: 'clamp(60px, 12vw, 120px)'
         }}
         onError={(e) => {
           e.currentTarget.src = IMAGES.companies.placeholder;
@@ -32,13 +34,13 @@ const CompanyCard = memo(({ company }: CompanyCardProps) => (
       />
     </div>
 
-    {/* Hover Overlay with fluid typography */}
+    {/* Hover Overlay - Only appears on hover */}
     <div className="absolute inset-0 bg-green-400 neo-border-responsive flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-         style={{ padding: 'clamp(0.75rem, 2.5vw, 1.5rem)' }}>
-      <h3 className="text-fluid-lg font-bold text-black text-center mb-3" style={{fontFamily: 'Alexandria, sans-serif'}}>
+         style={{ padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
+      <h3 className="text-fluid-xl font-bold text-black text-center mb-2" style={{fontFamily: 'Alexandria, sans-serif'}}>
         {company.name}
       </h3>
-      <p className="text-fluid-sm font-bold text-black leading-tight text-center" style={{fontFamily: 'Alexandria, sans-serif'}}>
+      <p className="text-fluid-sm text-black leading-tight text-center" style={{fontFamily: 'Alexandria, sans-serif'}}>
         {company.description}
       </p>
     </div>
