@@ -319,12 +319,12 @@ export default function Navigation() {
                     key={id}
                     href={`#${id}`}
                     onClick={(e) => handleNavClick(e, id)}
-                    className={`block py-2 px-4 text-base text-center border-2 border-black transition-all duration-100 ${
+                    className={`block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 ${
                       activeSection === id 
                         ? 'bg-green-600 text-white font-bold' 
                         : 'bg-white text-black hover:bg-green-100'
                     }`}
-                    style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                    style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                   >
                     {label}
                   </a>
