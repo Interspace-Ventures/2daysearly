@@ -11,7 +11,8 @@ export default function Portfolio() {
     >
       <div className="container-fluid">
         {/* Section Header */}
-        <div className="bg-white border-4 border-black shadow-lg p-8 mb-12 text-center">
+        <div className="bg-white border-4 border-black p-8 mb-12 text-center" 
+             style={{ boxShadow: '8px 8px 0px 0px #000000' }}>
           <h2 
             id="portfolio-heading"
             className="text-4xl font-bold text-black mb-4"
