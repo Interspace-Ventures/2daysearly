@@ -16,7 +16,7 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       aria-label={`Visit ${company.name} website`}
     >
       {/* Logo container - visible by default */}
-      <div className="p-4 h-32 md:h-40 flex items-center justify-center bg-white">
+      <div className="p-4 h-28 md:h-32 flex items-center justify-center bg-white">
         <img
           src={company.logo}
           alt={`${company.name} logo`}
