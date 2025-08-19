@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-3 gap-4 md:gap-8 items-start">
           
           {/* Column 1: Navigation */}
-          <div className="flex flex-col items-center md:items-start space-y-2 md:space-y-3">
+          <div className="flex flex-col items-start space-y-2 md:space-y-3">
             <a 
               href="#purpose"
               className="text-fluid-base text-white hover:text-green-400 transition-colors"
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
           
           {/* Column 2: Actions */}
-          <div className="flex flex-col items-center md:items-start space-y-2 md:space-y-3">
+          <div className="flex flex-col items-start space-y-2 md:space-y-3">
             <a 
               href="mailto:pitch@daysearly.com"
               className="text-fluid-base text-white hover:text-green-400 transition-colors"
@@ -68,8 +68,8 @@ export default function Footer() {
           </div>
           
           {/* Column 3: Copyright & Social */}
-          <div className="flex flex-col items-center md:items-start space-y-4">
-            <div className="text-fluid-sm text-white text-center md:text-left" style={{fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
+          <div className="flex flex-col items-start space-y-4">
+            <div className="text-fluid-sm text-white text-left" style={{fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
               © 2025 2 DAYS EARLY<br />
               Built by{" "}
               <a 
