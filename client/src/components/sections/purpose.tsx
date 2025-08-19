@@ -35,7 +35,7 @@ export default function Purpose() {
             </h3>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" style={{ marginRight: '4px' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             <div className="bg-white border-4 border-black p-6 h-full flex flex-col justify-center" style={{backgroundColor: '#bbf7d0', boxShadow: '4px 4px 0px 0px #000000'}}>
               <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We are a community of{" "}
@@ -70,7 +70,6 @@ export default function Purpose() {
         
         <div 
           className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-12"
-          style={{ marginRight: '4px' }}
         >
           <div className="neo-card p-2 text-center bg-white">
             <div className="text-fluid-3xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>200+</div>
