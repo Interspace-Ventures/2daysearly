@@ -302,7 +302,7 @@ export default function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="sm:hidden border-2 border-black bg-white p-2"
-            style={{boxShadow: '4px 4px 0px 0px #000000'}}
+            style={{boxShadow: '2px 2px 0px 0px #000000'}}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -310,7 +310,7 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="sm:hidden bg-white border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+          <div className="sm:hidden bg-white border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Links */}
               <div className="space-y-3">
@@ -324,7 +324,7 @@ export default function Navigation() {
                         ? 'bg-green-600 text-white font-bold' 
                         : 'bg-white text-black hover:bg-green-100'
                     }`}
-                    style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                    style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                   >
                     {label}
                   </a>
@@ -343,7 +343,7 @@ export default function Navigation() {
                       onClick={button.onClick}
                       disabled={isTallyLoading}
                       className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-green-100 font-bold"
-                      style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                      style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {button.icon && button.icon}

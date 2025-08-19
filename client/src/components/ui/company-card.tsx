@@ -12,7 +12,7 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       target="_blank"
       rel="noopener noreferrer"
       className="group relative block bg-white border-4 border-black cursor-pointer transition-all duration-300 md:hover:scale-105" 
-      style={{ boxShadow: '4px 4px 0px 0px #000000' }}
+      style={{ boxShadow: '2px 2px 0px 0px #000000' }}
       aria-label={`Visit ${company.name} website`}
     >
       {/* Logo container - visible by default */}
