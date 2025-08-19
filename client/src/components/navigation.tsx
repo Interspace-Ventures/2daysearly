@@ -6,7 +6,7 @@ import Image from "@/components/ui/image";
 function scrollToElement(elementId: string) {
   const element = document.getElementById(elementId);
   if (element) {
-    const navHeight = 64; // Updated to match new navigation height
+    const navHeight = 80; // Updated to match new navigation height
     const elementPosition = element.offsetTop - navHeight;
     window.scrollTo({
       top: elementPosition,
@@ -74,46 +74,16 @@ export default function Navigation() {
   const handleJoinClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsTallyLoading(true);
-
-    // Load Tally script if not already loaded
-    if (!window.Tally) {
-      if (typeof window.loadTally === 'function') {
-        window.loadTally();
-        // Wait for Tally to load
-        const checkTally = setInterval(() => {
-          if (window.Tally) {
-            clearInterval(checkTally);
-            openTallyForm();
-          }
-        }, 100);
-        // Timeout after 5 seconds
-        setTimeout(() => {
-          clearInterval(checkTally);
-          if (!window.Tally) {
-            toast({
-              variant: "destructive",
-              title: "Error loading form",
-              description: "Please refresh the page and try again.",
-            });
-            setIsTallyLoading(false);
-          }
-        }, 5000);
-        return;
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Error loading form",
-          description: "Please refresh the page and try again.",
-        });
-        setIsTallyLoading(false);
-        return;
-      }
-    }
-    
     openTallyForm();
   };
 
   const openTallyForm = () => {
+    // Check if form is already open
+    const existingForm = document.getElementById('tally-form-container');
+    if (existingForm) {
+      setIsTallyLoading(false);
+      return;
+    }
 
     const formContainer = document.createElement('div');
     formContainer.id = 'tally-form-container';
@@ -172,7 +142,7 @@ export default function Navigation() {
     closeButton.onclick = cleanup;
 
     const iframe = document.createElement('iframe');
-    iframe.src = `https://tally.so/embed/${window.TallyConfig?.formId || 'nP1v8e'}?alignLeft=1&transparentBackground=1&hideTitle=1`;
+    iframe.src = 'https://tally.so/embed/nP1v8e?alignLeft=1&transparentBackground=1&hideTitle=1';
     iframe.style.width = '100%';
     iframe.style.height = 'calc(100% - 5rem)';
     iframe.style.border = 'none';
@@ -231,7 +201,7 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 neo-border-responsive" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
       <div className="container-fluid">
-        <div className="flex items-center justify-between w-full min-w-0" style={{ height: 'clamp(3.5rem, 8vw, 4rem)' }}>
+        <div className="flex items-center justify-between w-full min-w-0" style={{ height: 'clamp(4rem, 8vw, 5rem)' }}>
           {/* Logo - Prevent shrinking too much */}
           <a
             href="#hero"
