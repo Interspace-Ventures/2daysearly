@@ -80,7 +80,15 @@ const startServer = async () => {
   try {
     // Always use Vite in development
     const isProduction = process.env.NODE_ENV === "production";
-    log(`Running in ${isProduction ? "production" : "development"} mode`);
+    const startTime = Date.now();
+    log(`🚀 Starting server in ${isProduction ? "production" : "development"} mode`);
+    log(`⚡ Node.js version: ${process.version}`);
+    
+    if (!isProduction) {
+      log(`🔧 Development features: Hot Module Replacement, Source Maps`);
+    } else {
+      log(`📦 Production optimizations: Minification, Compression, Caching`);
+    }
     
     const server = registerRoutes(app);
     
@@ -98,8 +106,10 @@ const startServer = async () => {
       return new Promise((resolve, reject) => {
         server.listen(port, "0.0.0.0")
           .once('listening', () => {
+            const serverStartTime = Date.now() - startTime;
             log(`Server running at http://0.0.0.0:${port}`);
-            log('Server is ready to handle requests');
+            log(`Server is ready to handle requests`);
+            log(`🏁 Total server startup time: ${serverStartTime}ms`);
             resolve();
           })
           .once('error', (error: NodeJS.ErrnoException) => {
