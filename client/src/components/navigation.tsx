@@ -190,13 +190,13 @@ export default function Navigation() {
   ];
 
   const actionButtons = [
+    { href: "mailto:pitch@daysearly.com", label: "PITCH" },
     { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN" },
     {
       label: isTallyLoading ? "LOADING..." : "JOIN*",
       onClick: handleJoinClick,
       icon: isTallyLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : undefined
-    },
-    { href: "mailto:pitch@daysearly.com", label: "PITCH" }
+    }
   ];
 
   return (
