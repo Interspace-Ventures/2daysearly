@@ -36,7 +36,7 @@ export default function Purpose() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <div className="bg-white border-4 border-black p-6 h-full flex flex-col justify-center" style={{backgroundColor: '#bbf7d0', boxShadow: '4px 4px 0px 0px #000000'}}>
+            <div className="bg-white border-4 border-black p-6 h-full flex flex-col justify-start" style={{backgroundColor: '#bbf7d0', boxShadow: '4px 4px 0px 0px #000000'}}>
               <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We are a community of{" "}
                 <span className="bg-green-400 border-2 border-black px-2 py-1 text-white font-bold">
@@ -46,7 +46,7 @@ export default function Purpose() {
               </p>
             </div>
             
-            <div className="bg-white border-4 border-black p-6 h-full flex flex-col justify-center" style={{backgroundColor: '#bbf7d0', boxShadow: '4px 4px 0px 0px #000000'}}>
+            <div className="bg-white border-4 border-black p-6 h-full flex flex-col justify-start" style={{backgroundColor: '#bbf7d0', boxShadow: '4px 4px 0px 0px #000000'}}>
               <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We aim to be the operator syndicate with{" "}
                 <span className="bg-green-600 border-2 border-black px-2 py-1 text-white font-bold">
@@ -56,7 +56,7 @@ export default function Purpose() {
               </p>
             </div>
             
-            <div className="bg-white border-4 border-black p-6 h-full flex flex-col justify-center" style={{backgroundColor: '#bbf7d0', boxShadow: '4px 4px 0px 0px #000000'}}>
+            <div className="bg-white border-4 border-black p-6 h-full flex flex-col justify-start" style={{backgroundColor: '#bbf7d0', boxShadow: '4px 4px 0px 0px #000000'}}>
               <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We love investing in amazing founders of all backgrounds, and we're especially committed to{" "}
                 <span className="bg-green-800 border-2 border-black px-2 py-1 text-white font-bold">
