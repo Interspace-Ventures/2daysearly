@@ -105,6 +105,13 @@ body {
     box-sizing: border-box;
   }
 
+  /* Responsive breakpoint: iPad width and below = mobile, larger = desktop */
+  @media (min-width: 1024px) {
+    .container-fluid {
+      max-width: 1200px;
+    }
+  }
+
   /* Intelligent Grid Systems */
   .grid-responsive-2 {
     display: grid;

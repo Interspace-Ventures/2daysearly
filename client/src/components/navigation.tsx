@@ -262,23 +262,25 @@ export default function Navigation() {
             {/* Navigation Links - Scale down on smaller screens */}
             <div className="flex items-center" style={{ gap: 'clamp(0.5rem, 2vw, 2rem)' }}>
               {navItems.map(({ id, label }) => (
-                <a
+                <button
                   key={id}
-                  href={`#${id}`}
-                  onClick={(e) => handleNavClick(e, id)}
-                  className={`transition-all duration-100 whitespace-nowrap neo-border-responsive ${
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToElement(id);
+                  }}
+                  className={`transition-all duration-100 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
                     activeSection === id 
-                      ? 'bg-black text-white font-bold neo-shadow-responsive' 
+                      ? 'lg:bg-black lg:text-white font-bold lg:px-3 lg:py-1 lg:border-2 lg:border-black' 
                       : 'text-black hover:text-green-800'
                   }`}
                   style={{
                     fontFamily: 'Alexandria, Inter, sans-serif',
                     fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
-                    padding: 'clamp(0.25rem, 1vw, 0.5rem)'
+                    padding: activeSection === id ? 'clamp(0.25rem, 1vw, 0.5rem)' : '0'
                   }}
                 >
                   {label}
-                </a>
+                </button>
               ))}
             </div>
             
