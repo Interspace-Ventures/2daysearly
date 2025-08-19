@@ -11,7 +11,7 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       href={company.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block bg-white border-2 border-black cursor-pointer transition-all duration-300 md:hover:scale-105" 
+      className="group relative block bg-white border-2 border-black cursor-pointer transition-all duration-300 md:hover:scale-105 h-full" 
       style={{ boxShadow: '2px 2px 0px 0px #000000' }}
       aria-label={`Visit ${company.name} website`}
     >

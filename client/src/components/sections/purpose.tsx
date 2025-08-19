@@ -77,7 +77,7 @@ export default function Purpose() {
                 variant="slideUp"
                 duration={0.5}
               >
-                <div className="bg-white border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #000000'}}>
+                <div className="bg-white border-2 border-black p-4 flex flex-col justify-start h-full" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #000000'}}>
                   <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                     {card.text}
                   </p>
@@ -90,19 +90,19 @@ export default function Purpose() {
         <div 
           className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-12"
         >
-          <div className="neo-card p-2 text-center bg-white">
+          <div className="neo-card p-2 text-center bg-white h-full flex flex-col justify-center">
             <div className="text-fluid-3xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>200+</div>
             <div className="text-fluid-xs text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>Chime operators in 2 Days Early syndicate</div>
           </div>
-          <div className="neo-card p-2 text-center bg-white">
+          <div className="neo-card p-2 text-center bg-white h-full flex flex-col justify-center">
             <div className="text-fluid-3xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>40%</div>
             <div className="text-fluid-xs text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>have experience scaling startups from 0 - 100 FTEs</div>
           </div>
-          <div className="neo-card p-2 text-center bg-white">
+          <div className="neo-card p-2 text-center bg-white h-full flex flex-col justify-center">
             <div className="text-fluid-3xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>73%</div>
             <div className="text-fluid-xs text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>have directly managed teams of 10+ people</div>
           </div>
-          <div className="neo-card p-2 text-center bg-white">
+          <div className="neo-card p-2 text-center bg-white h-full flex flex-col justify-center">
             <div className="text-fluid-3xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>$2.5M</div>
             <div className="text-fluid-xs text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>investing capacity per year</div>
           </div>
