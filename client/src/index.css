@@ -94,10 +94,10 @@ body {
   .text-fluid-5xl { font-size: clamp(2rem, 5vw, 2.5rem); }
   .text-fluid-6xl { font-size: clamp(2.25rem, 5.5vw, 3rem); }
 
-  /* Responsive Container System - Exactly match navbar */
+  /* Responsive Container System - Reduced width for more side margins */
   .container-fluid {
     width: 100%;
-    max-width: min(1200px, 100vw);
+    max-width: min(1000px, 100vw);
     margin-left: auto;
     margin-right: auto;
     padding-left: clamp(0.5rem, 1vw, 1rem);
@@ -108,7 +108,7 @@ body {
   /* Responsive breakpoint: iPad width and below = mobile, larger = desktop */
   @media (min-width: 1024px) {
     .container-fluid {
-      max-width: 1200px;
+      max-width: 1000px;
     }
   }
 
