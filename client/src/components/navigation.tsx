@@ -209,7 +209,7 @@ export default function Navigation() {
             onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0"
           >
-            <div className="bg-green-100 neo-border-responsive neo-shadow-responsive flex items-center" 
+            <div className="bg-white neo-border-responsive neo-shadow-responsive flex items-center" 
                  style={{ padding: 'clamp(0.5rem, 1.5vw, 0.75rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)' }}>
               <Image
                 src="/images/2-days-early-calendar-icon-2025.png"
@@ -241,13 +241,13 @@ export default function Navigation() {
                   }}
                   className={`transition-all duration-100 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
                     activeSection === id 
-                      ? 'lg:bg-black lg:text-white font-bold lg:px-3 lg:py-1 lg:border-2 lg:border-black' 
+                      ? 'lg:bg-black lg:text-white font-bold lg:border-2 lg:border-black' 
                       : 'text-black hover:text-green-800'
                   }`}
                   style={{
                     fontFamily: 'Alexandria, Inter, sans-serif',
                     fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
-                    padding: activeSection === id ? 'clamp(0.25rem, 1vw, 0.5rem)' : '0'
+                    padding: 'clamp(0.25rem, 1vw, 0.5rem)'
                   }}
                 >
                   {label}

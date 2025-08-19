@@ -40,6 +40,31 @@ export default function Footer() {
           </a>
         </div>
         
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center mb-6">
+          <a 
+            href="mailto:pitch@daysearly.com"
+            className="text-fluid-base text-white hover:text-green-400 transition-colors"
+            style={{fontFamily: theme.fonts.primary}}
+          >
+            PITCH
+          </a>
+          <a 
+            href="https://interspace.samir.xyz/p/101-everything-you-wanted-to-know"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-fluid-base text-white hover:text-green-400 transition-colors"
+            style={{fontFamily: theme.fonts.primary}}
+          >
+            LEARN
+          </a>
+          <button
+            className="text-fluid-base text-white hover:text-green-400 transition-colors"
+            style={{fontFamily: theme.fonts.primary, background: 'none', border: 'none', padding: 0}}
+          >
+            JOIN
+          </button>
+        </div>
+        
         <div className="text-fluid-sm text-white" style={{fontFamily: theme.fonts.primary}}>
           © 2025 2 DAYS EARLY
         </div>
