@@ -65,27 +65,24 @@ export default function Footer() {
         </div>
         
         <div className="text-fluid-sm text-white text-center" style={{fontFamily: theme.fonts.primary}}>
-          <div className="mb-2">© 2025 2 DAYS EARLY</div>
-          <div>
-            Built by{" "}
-            <a 
-              href="https://interspace.ventures" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-green-400 hover:text-green-300 transition-colors underline"
-            >
-              Interspace Ventures
-            </a>
-            {" "}at the speed of thought with{" "}
-            <a 
-              href="https://replit.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-green-400 hover:text-green-300 transition-colors underline"
-            >
-              Replit
-            </a>
-          </div>
+          © 2025 2 DAYS EARLY • Built by{" "}
+          <a 
+            href="https://interspace.ventures" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-green-400 hover:text-green-300 transition-colors underline"
+          >
+            Interspace Ventures
+          </a>
+          {" "}at the speed of thought with{" "}
+          <a 
+            href="https://replit.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-green-400 hover:text-green-300 transition-colors underline"
+          >
+            Replit
+          </a>
         </div>
       </div>
     </footer>
