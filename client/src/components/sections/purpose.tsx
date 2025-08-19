@@ -5,7 +5,7 @@ export default function Purpose() {
     <section 
       id="purpose" 
       className="bg-gradient-to-br from-green-100 via-green-200 to-green-300"
-      style={{ paddingTop: '1.5rem', paddingBottom: '3rem' }}
+      style={{ paddingTop: '1rem', paddingBottom: '3rem' }}
       aria-labelledby="purpose-heading"
     >
       <div className="container-fluid">
