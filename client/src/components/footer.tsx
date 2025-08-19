@@ -4,9 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-black" style={{ padding: 'clamp(2rem, 5vw, 3rem) 0' }}>
       <div className="container-fluid text-center">
-        <div className="text-fluid-2xl font-bold text-white mb-6" style={{fontFamily: theme.fonts.primary}}>
-          2 DAYS EARLY
-        </div>
+
         
         {/* First row: Section navigation links */}
         <div className="grid grid-cols-4 gap-2 sm:gap-4 justify-items-center mb-6">
@@ -66,8 +64,28 @@ export default function Footer() {
           </button>
         </div>
         
-        <div className="text-fluid-sm text-white" style={{fontFamily: theme.fonts.primary}}>
-          © 2025 2 DAYS EARLY
+        <div className="text-fluid-sm text-white text-center" style={{fontFamily: theme.fonts.primary}}>
+          <div className="mb-2">© 2025 2 DAYS EARLY</div>
+          <div>
+            Built by{" "}
+            <a 
+              href="https://interspace.ventures" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-green-400 hover:text-green-300 transition-colors underline"
+            >
+              Interspace Ventures
+            </a>
+            {" "}at the speed of thought with{" "}
+            <a 
+              href="https://replit.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-green-400 hover:text-green-300 transition-colors underline"
+            >
+              Replit
+            </a>
+          </div>
         </div>
       </div>
     </footer>
