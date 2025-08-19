@@ -42,7 +42,7 @@ export default function Purpose() {
                 <span className="bg-green-400 border-2 border-black px-2 py-1 text-white font-bold">
                   entrepreneurs, investors and operators
                 </span>
-                . We have backgrounds in growth, product, engineering, operations, finance, analytics and more, determined to helping startups succeed like we did at Chime.
+                . We have backgrounds in growth, product, engineering, operations, and finance, determined to help startups succeed.
               </p>
             </div>
             
@@ -52,7 +52,7 @@ export default function Purpose() {
                 <span className="bg-green-600 border-2 border-black px-2 py-1 text-white font-bold">
                   highest value per dollar invested
                 </span>
-                . Companies we invest in get access to our experience network, and our commitment to empower impactful firms that provide better options for everyday people.
+                . Companies we invest in get access to our experience network and commitment to empowering impactful firms.
               </p>
             </div>
             
@@ -60,9 +60,9 @@ export default function Purpose() {
               <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We love investing in amazing founders of all backgrounds, and we're especially committed to{" "}
                 <span className="bg-green-800 border-2 border-black px-2 py-1 text-white font-bold">
-                  invest in future companies founded by Chime alumni
+                  investing in companies founded by Chime alumni
                 </span>
-                .
+                {" "}and supporting the next generation of operators.
               </p>
             </div>
           </div>
