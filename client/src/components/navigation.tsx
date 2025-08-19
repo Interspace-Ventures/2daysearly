@@ -301,7 +301,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="sm:hidden border-2 border-black bg-green-100 p-2"
+            className="sm:hidden border-2 border-black bg-white p-2"
             style={{boxShadow: '2px 2px 0px 0px #000000'}}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
