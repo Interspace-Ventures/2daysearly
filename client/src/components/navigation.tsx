@@ -345,7 +345,7 @@ export default function Navigation() {
                       className="block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-green-100 font-bold"
                       style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                     >
-                      <span className="flex items-center gap-2">
+                      <span className="flex items-center justify-center gap-2">
                         {button.icon && button.icon}
                         {button.label}
                       </span>
@@ -359,7 +359,7 @@ export default function Navigation() {
                       className="block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-green-100 font-bold"
                       style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
                     >
-                      <span className="flex items-center gap-2">
+                      <span className="flex items-center justify-center gap-2">
                         {button.label}
                         <ExternalLink className="h-4 w-4" />
                       </span>
