@@ -19,8 +19,8 @@ export const IMAGES = {
     backpack: "/images/backpack.png",
     harper: "/images/harper.png",
     juno: "/images/juno.png",
-    fizz: "/images/fizz-new-logo.svg",
-    hadrius: "/images/hadrius-new-logo.svg",
+    fizz: "/images/fizz-logo.png",
+    hadrius: "/images/hadrius-logo.png",
     kartera: "/images/kartera.png",
     sundae: "/images/sundae.png",
     waldo: "/images/waldo.png"
