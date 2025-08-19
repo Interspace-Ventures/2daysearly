@@ -4,10 +4,11 @@ export default function Purpose() {
   return (
     <section 
       id="purpose" 
-      className="neo-section bg-white"
+      className="bg-white"
+      style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
       aria-labelledby="purpose-heading"
     >
-      <div className="container-fluid">
+      <div className="container-fluid" style={{ marginRight: '4px' }}>
         <AnimatedSection>
           <div 
             className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
@@ -34,7 +35,7 @@ export default function Purpose() {
             </h3>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-6" style={{ marginRight: '4px' }}>
             <div className="p-6" style={{backgroundColor: '#bbf7d0', boxShadow: '4px 4px 0px 0px #000000'}}>
               <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We are a community of{" "}
@@ -70,7 +71,8 @@ export default function Purpose() {
         <div 
           className="grid grid-cols-2 md:grid-cols-4 mt-12"
           style={{
-            gap: 'clamp(3rem, 8vw, 4rem)'
+            gap: 'clamp(1.5rem, 4vw, 2rem)',
+            marginRight: '4px' // Account for box shadow on right side
           }}
         >
           <div className="neo-card p-2 text-center bg-white">

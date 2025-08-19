@@ -12,6 +12,9 @@ Preferred communication style: Simple, everyday language.
 Typography: Alexandria as primary font, Inter as secondary font (updated August 17, 2025)
 Design aesthetic: Neobrutalism with Chime's green color scheme instead of bright colors (updated August 17, 2025)
 Code architecture: Clean, modular components with proper TypeScript typing (refactored August 17, 2025)
+Layout alignment: Left alignment based on card edge, right alignment based on box shadow edge for visual balance (August 19, 2025)
+Responsive spacing: Components should be closer together but account for box shadow visual footprint (August 19, 2025)
+Section height: Reduced section padding for more compact layout (August 19, 2025)
 
 ## System Architecture
 

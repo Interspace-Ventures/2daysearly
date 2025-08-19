@@ -6,10 +6,11 @@ export default function Portfolio() {
   return (
     <section 
       id="portfolio" 
-      className="py-20 bg-white"
+      className="bg-white"
+      style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
       aria-labelledby="portfolio-heading"
     >
-      <div className="container-fluid">
+      <div className="container-fluid" style={{ marginRight: '4px' }}>
         {/* Section Header */}
         <div className="bg-white border-4 border-black p-8 mb-12 text-center" 
              style={{ boxShadow: '8px 8px 0px 0px #000000' }}>
@@ -32,7 +33,7 @@ export default function Portfolio() {
         </div>
         
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" style={{ marginRight: '4px' }}>
           {COMPANIES.map((company) => (
             <CompanyCard key={company.name} company={company} />
           ))}

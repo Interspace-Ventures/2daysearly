@@ -47,10 +47,11 @@ export default function Partners() {
   return (
     <section 
       id="partners" 
-      className="neo-section bg-gradient-to-br from-green-100 via-green-200 to-green-300"
+      className="bg-gradient-to-br from-green-100 via-green-200 to-green-300"
+      style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
       aria-labelledby="partners-heading"
     >
-      <div className="container-fluid">
+      <div className="container-fluid" style={{ marginRight: '6px' }}>
         <AnimatedSection>
           <div 
             className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
