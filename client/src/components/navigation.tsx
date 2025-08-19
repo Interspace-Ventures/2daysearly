@@ -229,9 +229,9 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Navigation - Fixed overflow issues */}
-          <div className="hidden md:flex items-center flex-1 justify-end min-w-0">
+          <div className="hidden sm:flex items-center flex-1 justify-end min-w-0">
             {/* Navigation Links - Scale down on smaller screens */}
-            <div className="flex items-center" style={{ gap: 'clamp(0.5rem, 2vw, 2rem)' }}>
+            <div className="flex items-center" style={{ gap: 'clamp(0.25rem, 1.5vw, 1.5rem)' }}>
               {navItems.map(({ id, label }) => (
                 <button
                   key={id}
@@ -256,7 +256,7 @@ export default function Navigation() {
             </div>
             
             {/* Action Links - Clean styling */}
-            <div className="flex items-center ml-4" style={{ gap: 'clamp(0.75rem, 2vw, 1.5rem)' }}>
+            <div className="flex items-center ml-4" style={{ gap: 'clamp(0.5rem, 1.5vw, 1.25rem)' }}>
               {actionButtons.map((button) => (
                 button.onClick ? (
                   <button
@@ -301,7 +301,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden border-2 border-black bg-white p-2"
+            className="sm:hidden border-2 border-black bg-white p-2"
             style={{boxShadow: '4px 4px 0px 0px #000000'}}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -310,7 +310,7 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
+          <div className="sm:hidden bg-white border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '4px 4px 0px 0px #000000'}}>
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Links */}
               <div className="space-y-3">
