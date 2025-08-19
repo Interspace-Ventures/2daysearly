@@ -13,25 +13,19 @@ export default function Portfolio() {
     >
       <div className="container-fluid">
         {/* Section Header */}
-        <div 
-          className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
-          style={{ 
-            padding: 'clamp(1rem, 3vw, 1.5rem)', 
-            marginBottom: 'clamp(2rem, 5vw, 4rem)'
-          }}
-        >
+        <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
           <h2 
             id="portfolio-heading"
-            className="text-fluid-4xl font-bold text-black mb-4"
+            className="text-fluid-4xl font-bold text-black mb-4 text-left"
             style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
           >
             PORTFOLIO
           </h2>
           
-          <div className="w-16 h-1 bg-green-500 mx-auto mb-4"></div>
+          <div className="w-16 h-1 bg-green-500 mb-4"></div>
           
           <h3 
-            className="text-fluid-xl text-black font-bold"
+            className="text-fluid-xl text-black font-bold text-left"
             style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
           >
             We're proud to invest our time and money in operators at these startups:
