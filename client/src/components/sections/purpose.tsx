@@ -67,7 +67,7 @@ export default function Purpose() {
           </div>
         </AnimatedSection>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mt-12">
           <div className="neo-card p-3 text-center bg-white">
             <div className="text-fluid-4xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>200+</div>
             <div className="text-fluid-xs text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>Chime operators in 2 Days Early syndicate</div>
