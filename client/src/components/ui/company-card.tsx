@@ -7,11 +7,16 @@ interface CompanyCardProps {
 
 export default function CompanyCard({ company }: CompanyCardProps) {
   return (
-    <div className="group relative bg-white border-4 border-black cursor-pointer transition-all duration-300 hover:scale-105" 
-         style={{ boxShadow: '8px 8px 0px 0px #000000' }}>
-      
-      {/* Default state: Show logo - Always visible on mobile, hidden on hover for desktop */}
-      <div className="p-6 h-48 flex items-center justify-center group-hover:md:opacity-0 transition-opacity duration-300">
+    <a
+      href={company.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative block bg-white border-4 border-black cursor-pointer transition-all duration-300 hover:scale-105" 
+      style={{ boxShadow: '8px 8px 0px 0px #000000' }}
+      aria-label={`Visit ${company.name} website`}
+    >
+      {/* Logo container - visible by default */}
+      <div className="p-6 h-48 flex items-center justify-center bg-white">
         <img
           src={company.logo}
           alt={`${company.name} logo`}
@@ -23,8 +28,8 @@ export default function CompanyCard({ company }: CompanyCardProps) {
         />
       </div>
 
-      {/* Hover overlay: Show company details - Only on desktop hover */}
-      <div className="absolute inset-0 bg-green-400 border-4 border-black p-6 flex flex-col justify-center opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none md:pointer-events-auto"
+      {/* Text overlay - only appears on hover and only on desktop */}
+      <div className="absolute inset-0 bg-green-400 border-4 border-black p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex"
            style={{ boxShadow: '8px 8px 0px 0px #000000' }}>
         <h3 className="text-xl font-bold text-black text-center mb-3" style={{ fontFamily: 'Alexandria, sans-serif' }}>
           {company.name}
@@ -33,15 +38,6 @@ export default function CompanyCard({ company }: CompanyCardProps) {
           {company.description}
         </p>
       </div>
-
-      {/* Clickable link */}
-      <a
-        href={company.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute inset-0 z-20"
-        aria-label={`Visit ${company.name} website`}
-      />
-    </div>
+    </a>
   );
 }
