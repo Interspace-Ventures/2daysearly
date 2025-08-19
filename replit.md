@@ -20,9 +20,9 @@ Section height: Reduced section padding for more compact layout (August 19, 2025
 
 ### Frontend Architecture
 
-**Framework**: React 18 with TypeScript for type safety and modern development practices.
+**Framework**: Next.js 15 with React 18 and TypeScript for server-side rendering, automatic code splitting, and optimized performance.
 
-**Routing**: Wouter for lightweight client-side routing, chosen for its minimal bundle size and simple API.
+**Routing**: Next.js App Router for file-based routing with automatic code splitting and server components.
 
 **State Management**: TanStack Query (React Query) for server state management and caching, providing efficient data fetching and synchronization.
 
@@ -34,7 +34,7 @@ Section height: Reduced section padding for more compact layout (August 19, 2025
 
 **Animation**: Framer Motion for smooth page transitions and scroll-based animations, enhancing user experience without compromising performance.
 
-**Build System**: Vite for fast development server and optimized production builds, with hot module replacement for rapid development.
+**Build System**: Next.js with Turbopack for ultra-fast development server, automatic optimization, and production builds with compression and minification.
 
 ### Backend Architecture
 
@@ -105,6 +105,22 @@ Section height: Reduced section padding for more compact layout (August 19, 2025
 - **ws**: WebSocket library for database connections
 
 The architecture prioritizes developer experience, type safety, and performance while maintaining a clean separation of concerns between the presentation layer, business logic, and data persistence.
+
+## Migration to Next.js (August 19, 2025)
+
+### Performance & Build System Migration
+- **Framework Change**: Successfully migrated from Vite to Next.js 15.4.7 with Turbopack
+- **Startup Performance**: Application ready in 1681ms with automatic TypeScript configuration
+- **Build Optimization**: Turbopack provides faster development builds and superior production optimization
+- **Bundle Analysis**: Next.js automatic code splitting and tree shaking for optimal performance
+- **Server Architecture**: Removed Express.js dependency, now using Next.js built-in server with superior performance
+
+### Architectural Benefits
+- **Server-Side Rendering**: Automatic SSR for better SEO and initial page load performance  
+- **Automatic Code Splitting**: Routes and components automatically split for optimal loading
+- **Image Optimization**: Built-in Next.js Image component for optimized asset delivery
+- **File-Based Routing**: Next.js App Router provides cleaner routing architecture
+- **Production Ready**: Built-in compression, caching, and deployment optimizations
 
 ## Recent Architectural Improvements (August 17, 2025)
 
