@@ -209,13 +209,13 @@ export default function Navigation() {
             onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0"
           >
-            <div className="bg-white neo-border-responsive neo-shadow-responsive flex items-center" 
+            <div className="bg-green-100 neo-border-responsive neo-shadow-responsive flex items-center" 
                  style={{ padding: 'clamp(0.5rem, 1.5vw, 0.75rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)' }}>
               <Image
                 src="/images/2-days-early-calendar-icon-2025.png"
                 alt="2 Days Early Calendar Icon"
                 className="object-contain"
-                style={{ width: 'clamp(1rem, 2.5vw, 1.25rem)', height: 'clamp(1rem, 2.5vw, 1.25rem)' }}
+                style={{ width: 'clamp(1.25rem, 3vw, 1.5rem)', height: 'clamp(1.25rem, 3vw, 1.5rem)' }}
                 fallbackSrc="/images/2-days-early-calendar-icon-2025.png"
               />
               <span className="font-bold text-black whitespace-nowrap" 
@@ -301,7 +301,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="sm:hidden border-2 border-black bg-white p-2"
+            className="sm:hidden border-2 border-black bg-green-100 p-2"
             style={{boxShadow: '2px 2px 0px 0px #000000'}}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -310,7 +310,7 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="sm:hidden bg-white border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+          <div className="sm:hidden bg-green-100 border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Links */}
               <div className="space-y-3">
@@ -322,7 +322,7 @@ export default function Navigation() {
                     className={`block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 ${
                       activeSection === id 
                         ? 'bg-green-600 text-white font-bold' 
-                        : 'bg-white text-black hover:bg-green-100'
+                        : 'bg-green-100 text-black hover:bg-green-200'
                     }`}
                     style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                   >
@@ -342,7 +342,7 @@ export default function Navigation() {
                       key={button.label}
                       onClick={button.onClick}
                       disabled={isTallyLoading}
-                      className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-green-100 font-bold"
+                      className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-green-100 text-black hover:bg-green-200 font-bold"
                       style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                     >
                       <span className="flex items-center justify-center gap-2">
@@ -356,7 +356,7 @@ export default function Navigation() {
                       href={button.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-green-100 font-bold"
+                      className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-green-100 text-black hover:bg-green-200 font-bold"
                       style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
                     >
                       <span className="flex items-center justify-center gap-2">

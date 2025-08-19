@@ -11,12 +11,12 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       href={company.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block bg-white border-2 border-black cursor-pointer transition-all duration-300 md:hover:scale-105" 
+      className="group relative block bg-green-100 border-2 border-black cursor-pointer transition-all duration-300 md:hover:scale-105" 
       style={{ boxShadow: '2px 2px 0px 0px #000000' }}
       aria-label={`Visit ${company.name} website`}
     >
       {/* Logo container - visible by default */}
-      <div className="p-4 h-28 md:h-32 flex items-center justify-center bg-white">
+      <div className="p-4 h-28 md:h-32 flex items-center justify-center bg-green-100">
         <img
           src={company.logo}
           alt={`${company.name} logo`}

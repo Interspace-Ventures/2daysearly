@@ -11,7 +11,7 @@ export default function Purpose() {
       <div className="container-fluid">
         <AnimatedSection>
           <div 
-            className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
+            className="bg-green-100 text-center neo-border-responsive neo-shadow-lg-responsive"
             style={{ 
               padding: 'clamp(1rem, 3vw, 1.5rem)', 
               marginBottom: 'clamp(2rem, 5vw, 4rem)'
@@ -46,7 +46,7 @@ export default function Purpose() {
               </p>
             </div>
             
-            <div className="bg-white border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#bbf7d0', boxShadow: '2px 2px 0px 0px #000000'}}>
+            <div className="bg-green-100 border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#bbf7d0', boxShadow: '2px 2px 0px 0px #000000'}}>
               <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We aim to be the operator syndicate with{" "}
                 <span className="bg-green-600 border-2 border-black px-2 py-1 text-white font-bold">
@@ -56,7 +56,7 @@ export default function Purpose() {
               </p>
             </div>
             
-            <div className="bg-white border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#bbf7d0', boxShadow: '2px 2px 0px 0px #000000'}}>
+            <div className="bg-green-100 border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#bbf7d0', boxShadow: '2px 2px 0px 0px #000000'}}>
               <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We love investing in amazing founders of all backgrounds, and we're especially committed to{" "}
                 <span className="bg-green-800 border-2 border-black px-2 py-1 text-white font-bold">

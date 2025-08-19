@@ -158,7 +158,7 @@ body {
   .neo-card {
     border: 2px solid #000000;
     box-shadow: 2px 2px 0px 0px #000000;
-    @apply bg-white;
+    @apply bg-green-100;
   }
   
   .neo-button {
