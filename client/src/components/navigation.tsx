@@ -342,12 +342,8 @@ export default function Navigation() {
                       key={button.label}
                       onClick={button.onClick}
                       disabled={isTallyLoading}
-                      className="w-full border-4 border-black bg-white p-4 font-bold transition-all duration-100 text-black hover:bg-green-100"
-                      style={{
-                        fontFamily: 'Alexandria, Inter, sans-serif',
-                        fontSize: '1rem',
-                        boxShadow: '4px 4px 0px 0px #000000'
-                      }}
+                      className="block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-green-100 font-bold"
+                      style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                     >
                       <span className="flex items-center gap-2">
                         {button.icon && button.icon}
@@ -360,13 +356,8 @@ export default function Navigation() {
                       href={button.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full border-4 border-black bg-white p-4 font-bold transition-all duration-100 text-black hover:bg-green-100 block"
-                      style={{
-                        fontFamily: 'Alexandria, Inter, sans-serif',
-                        fontSize: '1rem',
-                        textDecoration: 'none',
-                        boxShadow: '4px 4px 0px 0px #000000'
-                      }}
+                      className="block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-green-100 font-bold"
+                      style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
                     >
                       <span className="flex items-center gap-2">
                         {button.label}
