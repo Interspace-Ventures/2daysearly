@@ -29,15 +29,15 @@ PrincipleItem.displayName = "PrincipleItem";
 const principles = [
   {
     number: 1,
-    text: "We recognize the value of profiting with users, rather than from them",
+    text: "We invest in startups that profit alongside users rather than from them",
   },
   {
     number: 2,
-    text: "We invest in businesses that create high member loyalty and earn trust",
+    text: "We invest in startups that create high user loyalty, engagement and trust",
   },
   {
     number: 3,
-    text: "We believe in doing well by doing good with transparent and fair operating models",
+    text: "We invest in startups that use transparent and fair business models to do well by doing good",
   },
 ];
 
