@@ -73,9 +73,9 @@ export default function Purpose() {
             ].map((card, index) => (
               <AnimatedSection
                 key={index}
-                delay={index * 0.2}
+                delay={index * 0.15}
                 variant="slideUp"
-                duration={0.6}
+                duration={0.5}
               >
                 <div className="bg-white border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #000000'}}>
                   <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>

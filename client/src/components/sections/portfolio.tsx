@@ -43,9 +43,9 @@ export default function Portfolio() {
           {COMPANIES.map((company, index) => (
             <AnimatedSection
               key={company.name}
-              delay={index * 0.15}
-              variant="scaleUp"
-              duration={0.7}
+              delay={index * 0.1}
+              variant="slideUp"
+              duration={0.5}
             >
               <CompanyCard company={company} />
             </AnimatedSection>

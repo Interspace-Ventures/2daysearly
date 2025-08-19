@@ -70,9 +70,9 @@ const Principles = () => {
             {principles.map((principle, index) => (
               <AnimatedSection
                 key={principle.number}
-                delay={index * 0.2}
-                variant="scaleUp"
-                duration={0.6}
+                delay={index * 0.15}
+                variant="slideUp"
+                duration={0.5}
               >
                 <PrincipleItem
                   number={principle.number}

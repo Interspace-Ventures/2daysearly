@@ -70,8 +70,15 @@ export default function Partners() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {partners.map((partner) => (
-              <PartnerCard key={partner.name} partner={partner} />
+            {partners.map((partner, index) => (
+              <AnimatedSection
+                key={partner.name}
+                delay={index * 0.15}
+                variant="slideUp"
+                duration={0.5}
+              >
+                <PartnerCard partner={partner} />
+              </AnimatedSection>
             ))}
           </div>
         </AnimatedSection>
