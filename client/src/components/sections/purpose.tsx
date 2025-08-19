@@ -35,7 +35,7 @@ export default function Purpose() {
             </h3>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8" style={{ marginRight: '4px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8" style={{ marginRight: '4px' }}>
             <div className="p-6" style={{backgroundColor: '#bbf7d0', boxShadow: '4px 4px 0px 0px #000000'}}>
               <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                 We are a community of{" "}
@@ -69,7 +69,7 @@ export default function Purpose() {
         </AnimatedSection>
         
         <div 
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-12"
+          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 lg:gap-8 mt-12"
           style={{ marginRight: '4px' }}
         >
           <div className="neo-card p-2 text-center bg-white">
