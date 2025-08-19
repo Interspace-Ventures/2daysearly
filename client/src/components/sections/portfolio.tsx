@@ -1,5 +1,6 @@
 import React from 'react';
 import CompanyCard from "@/components/ui/company-card";
+import AnimatedSection from "@/components/ui/animated-section";
 import { COMPANIES } from "@/lib/constants";
 
 export default function Portfolio() {
@@ -39,8 +40,15 @@ export default function Portfolio() {
         
         {/* Portfolio Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {COMPANIES.map((company) => (
-            <CompanyCard key={company.name} company={company} />
+          {COMPANIES.map((company, index) => (
+            <AnimatedSection
+              key={company.name}
+              delay={index * 0.15}
+              variant="scaleUp"
+              duration={0.7}
+            >
+              <CompanyCard company={company} />
+            </AnimatedSection>
           ))}
         </div>
       </div>

@@ -36,35 +36,54 @@ export default function Purpose() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <div className="bg-white border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #000000'}}>
-              <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-                We are a community of{" "}
-                <span className="bg-green-400 border-2 border-black px-2 py-1 text-white font-bold">
-                  entrepreneurs, investors and operators
-                </span>
-                . We have backgrounds in growth, product, engineering, operations, and finance, determined to help startups succeed.
-              </p>
-            </div>
-            
-            <div className="bg-white border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #000000'}}>
-              <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-                We aim to be the operator syndicate with{" "}
-                <span className="bg-green-600 border-2 border-black px-2 py-1 text-white font-bold">
-                  highest value per dollar invested
-                </span>
-                . Companies we invest in get access to our experience network and commitment to empowering impactful firms.
-              </p>
-            </div>
-            
-            <div className="bg-white border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #000000'}}>
-              <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-                We love investing in amazing founders of all backgrounds, and we're especially committed to{" "}
-                <span className="bg-green-800 border-2 border-black px-2 py-1 text-white font-bold">
-                  investing in companies founded by Chime alumni
-                </span>
-                {" "}and supporting the next generation of operators.
-              </p>
-            </div>
+            {[
+              {
+                text: (
+                  <>
+                    We are a community of{" "}
+                    <span className="bg-green-400 border-2 border-black px-2 py-1 text-white font-bold">
+                      entrepreneurs, investors and operators
+                    </span>
+                    . We have backgrounds in growth, product, engineering, operations, and finance, determined to help startups succeed.
+                  </>
+                )
+              },
+              {
+                text: (
+                  <>
+                    We aim to be the operator syndicate with{" "}
+                    <span className="bg-green-600 border-2 border-black px-2 py-1 text-white font-bold">
+                      highest value per dollar invested
+                    </span>
+                    . Companies we invest in get access to our experience network and commitment to empowering impactful firms.
+                  </>
+                )
+              },
+              {
+                text: (
+                  <>
+                    We love investing in amazing founders of all backgrounds, and we're especially committed to{" "}
+                    <span className="bg-green-800 border-2 border-black px-2 py-1 text-white font-bold">
+                      investing in companies founded by Chime alumni
+                    </span>
+                    {" "}and supporting the next generation of operators.
+                  </>
+                )
+              }
+            ].map((card, index) => (
+              <AnimatedSection
+                key={index}
+                delay={index * 0.2}
+                variant="slideUp"
+                duration={0.6}
+              >
+                <div className="bg-white border-2 border-black p-4 flex flex-col justify-start" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #000000'}}>
+                  <p className="text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+                    {card.text}
+                  </p>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </AnimatedSection>
         

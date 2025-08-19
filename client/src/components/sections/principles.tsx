@@ -67,12 +67,18 @@ const Principles = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {principles.map((principle) => (
-              <PrincipleItem
+            {principles.map((principle, index) => (
+              <AnimatedSection
                 key={principle.number}
-                number={principle.number}
-                text={principle.text}
-              />
+                delay={index * 0.2}
+                variant="scaleUp"
+                duration={0.6}
+              >
+                <PrincipleItem
+                  number={principle.number}
+                  text={principle.text}
+                />
+              </AnimatedSection>
             ))}
           </div>
         </AnimatedSection>
