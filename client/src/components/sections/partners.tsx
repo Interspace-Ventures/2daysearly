@@ -51,7 +51,7 @@ export default function Partners() {
       style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
       aria-labelledby="partners-heading"
     >
-      <div className="container-fluid" style={{ marginRight: '6px' }}>
+      <div className="container-fluid" style={{ marginRight: '4px' }}>
         <AnimatedSection>
           <div 
             className="bg-white text-center neo-border-responsive neo-shadow-lg-responsive"
@@ -69,7 +69,7 @@ export default function Partners() {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" style={{ marginRight: '6px' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" style={{ marginRight: '4px' }}>
             {partners.map((partner) => (
               <PartnerCard key={partner.name} partner={partner} />
             ))}
