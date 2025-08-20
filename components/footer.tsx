@@ -51,7 +51,7 @@ export default function Footer() {
               PITCH
             </a>
             <a 
-              href="https://interspace.samir.xyz/p/101-everything-you-wanted-to-know"
+              href="https://posts.interspace.ventures/p/101-everything-you-wanted-to-know"
               target="_blank"
               rel="noopener noreferrer"
               className="text-fluid-base text-white hover:text-green-400 transition-colors"
