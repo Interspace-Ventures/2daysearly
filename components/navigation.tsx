@@ -341,7 +341,7 @@ export default function Navigation() {
 
         {/* Sidebar Menu - Shows for mobile and tablet */}
         {isOpen && (
-          <div className="lg:hidden bg-green-100 border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+          <div className="lg:hidden bg-green-100 border-2 border-black mt-2 mb-4" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Links */}
               <div className="space-y-3">
