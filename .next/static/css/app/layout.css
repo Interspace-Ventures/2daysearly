@@ -1349,6 +1349,9 @@ body {
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 @media (min-width: 640px) {
+  .sm\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
   .sm\:h-48 {
     height: 12rem;
   }
@@ -1421,6 +1424,10 @@ body {
   .md\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 @media (min-width: 1024px) {
