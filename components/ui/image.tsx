@@ -68,14 +68,14 @@ export default function Image({
       <img
         className={cn(
           "transition-opacity duration-200",
-          isLoading && "opacity-0",
-          !isLoading && "opacity-100",
+          isLoading ? "opacity-0" : "opacity-100",
           error && "opacity-50"
         )}
         alt={alt}
         src={currentSrc}
         onLoad={handleLoad}
         onError={handleError}
+        style={{ ...props.style }}
         {...props}
       />
     </div>

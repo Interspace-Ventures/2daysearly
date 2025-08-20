@@ -708,6 +708,10 @@ video {
 /* Navigation improvements */
 /* Button responsive sizing */
 /* Section spacing optimization */
+.section-spacing {
+    padding-top: clamp(2rem, 8vw, 4rem);
+    padding-bottom: clamp(2rem, 8vw, 4rem);
+  }
 .sr-only {
   position: absolute;
   width: 1px;
@@ -893,6 +897,9 @@ video {
 }
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
 }
 .ml-1 {
   margin-left: 0.25rem;
