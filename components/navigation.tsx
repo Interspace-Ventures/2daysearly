@@ -133,7 +133,7 @@ export default function Navigation() {
     titleContainer.style.display = 'flex';
     titleContainer.style.justifyContent = 'space-between';
     titleContainer.style.alignItems = 'center';
-    titleContainer.style.backgroundColor = theme.colors.primary;
+    titleContainer.style.backgroundColor = '#16a34a';
 
     const title = document.createElement('h2');
     title.textContent = '2 DAYS EARLY SYNDICATE ONBOARDING';
