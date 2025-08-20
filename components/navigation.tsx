@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { theme } from '@/lib/theme';
 // Simple inline SVG icons
 const Menu = ({ className }: { className?: string }) => (
   <svg className={className} width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,16 +115,16 @@ export default function Navigation() {
     const formContainer = document.createElement('div');
     formContainer.id = 'tally-form-container';
     formContainer.style.position = 'fixed';
-    formContainer.style.top = '0';
+    formContainer.style.bottom = '0';
+    formContainer.style.left = '0';
     formContainer.style.right = '0';
-    formContainer.style.height = '100vh';
-    formContainer.style.width = '600px';
-    formContainer.style.maxWidth = '100vw';
+    formContainer.style.height = '90vh';
+    formContainer.style.maxHeight = '90vh';
     formContainer.style.backgroundColor = 'white';
     formContainer.style.border = '4px solid #000000';
-    formContainer.style.boxShadow = '-4px 0 0px 0px #000000';
+    formContainer.style.boxShadow = '0 -4px 0px 0px #000000';
     formContainer.style.zIndex = '9999';
-    formContainer.style.transform = 'translateX(100%)';
+    formContainer.style.transform = 'translateY(100%)';
     formContainer.style.transition = 'transform 0.3s ease-in-out';
 
     const titleContainer = document.createElement('div');
@@ -132,7 +133,7 @@ export default function Navigation() {
     titleContainer.style.display = 'flex';
     titleContainer.style.justifyContent = 'space-between';
     titleContainer.style.alignItems = 'center';
-    titleContainer.style.backgroundColor = '#10b981';
+    titleContainer.style.backgroundColor = theme.colors.primary;
 
     const title = document.createElement('h2');
     title.textContent = '2 DAYS EARLY SYNDICATE ONBOARDING';
@@ -158,7 +159,7 @@ export default function Navigation() {
 
     const cleanup = () => {
       if (document.body.contains(formContainer)) {
-        formContainer.style.transform = 'translateX(100%)';
+        formContainer.style.transform = 'translateY(100%)';
         setTimeout(() => {
           document.body.removeChild(formContainer);
           document.body.removeChild(overlay);
@@ -204,7 +205,7 @@ export default function Navigation() {
 
     requestAnimationFrame(() => {
       overlay.style.opacity = '1';
-      formContainer.style.transform = 'translateX(0)';
+      formContainer.style.transform = 'translateY(0)';
     });
   };
 
