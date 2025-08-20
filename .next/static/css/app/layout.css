@@ -2129,7 +2129,7 @@ body {
   }
 }
 @media (min-width: 768px) {
-  .md\:text-fluid-xl { font-size: clamp(1.25rem, 3.5vw, 1.5rem); }
+  .md\:text-fluid-base { font-size: clamp(1rem, 2.5vw, 1.125rem); }
 }
 .file\:border-0::file-selector-button {
   border-width: 0px;
