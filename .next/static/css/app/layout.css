@@ -1413,6 +1413,12 @@ body {
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
+  .md\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+  .md\:col-span-6 {
+    grid-column: span 6 / span 6;
+  }
   .md\:h-32 {
     height: 8rem;
   }
@@ -1421,6 +1427,9 @@ body {
   }
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .md\:grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
   .md\:gap-8 {
     gap: 2rem;
