@@ -1046,6 +1046,9 @@ body {
 .h-2\.5 {
   height: 0.625rem;
 }
+.h-20 {
+  height: 5rem;
+}
 .h-28 {
   height: 7rem;
 }
@@ -1142,8 +1145,8 @@ body {
 .w-2\.5 {
   width: 0.625rem;
 }
-.w-28 {
-  width: 7rem;
+.w-20 {
+  width: 5rem;
 }
 .w-3 {
   width: 0.75rem;
@@ -1491,9 +1494,6 @@ body {
 .border-l {
   border-left-width: 1px;
 }
-.border-l-2 {
-  border-left-width: 2px;
-}
 .border-r {
   border-right-width: 1px;
 }
@@ -1766,9 +1766,6 @@ body {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-.pb-1 {
-  padding-bottom: 0.25rem;
 }
 .pb-3 {
   padding-bottom: 0.75rem;
@@ -3068,9 +3065,6 @@ body {
   .sm\:border-b-2 {
     border-bottom-width: 2px;
   }
-  .sm\:border-l-0 {
-    border-left-width: 0px;
-  }
   .sm\:border-black {
     --tw-border-opacity: 1;
     border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
@@ -3082,11 +3076,15 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .sm\:pb-3 {
+  .sm\:py-3 {
+    padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }
   .sm\:text-left {
     text-align: left;
+  }
+  .sm\:text-center {
+    text-align: center;
   }
   .sm\:text-base {
     font-size: 1rem;
