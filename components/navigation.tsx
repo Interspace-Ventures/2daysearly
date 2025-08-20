@@ -232,8 +232,8 @@ export default function Navigation() {
             </div>
           </a>
 
-          {/* Desktop Navigation - Fixed overflow issues */}
-          <div className="hidden sm:flex items-center flex-1 justify-end min-w-0">
+          {/* Desktop Navigation - Only show when there's enough space */}
+          <div className="hidden lg:flex items-center flex-1 justify-end min-w-0">
             {/* Navigation Links - Scale down on smaller screens */}
             <div className="flex items-center" style={{ gap: 'clamp(0.5rem, 2vw, 2rem)' }}>
               {navItems.map(({ id, label }) => (
@@ -308,19 +308,19 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile/Tablet Menu Button - Show when nav links would overlap */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="sm:hidden border-2 border-black bg-white p-2"
+            className="lg:hidden border-2 border-black bg-white p-2"
             style={{boxShadow: '2px 2px 0px 0px #000000'}}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Sidebar Menu - Shows for mobile and tablet */}
         {isOpen && (
-          <div className="sm:hidden bg-green-100 border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+          <div className="lg:hidden bg-green-100 border-2 border-black mt-2 mx-4 mb-4" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Links */}
               <div className="space-y-3">

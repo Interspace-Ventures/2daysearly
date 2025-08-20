@@ -3011,9 +3011,6 @@ body {
   .sm\:flex {
     display: flex;
   }
-  .sm\:hidden {
-    display: none;
-  }
   .sm\:h-48 {
     height: 12rem;
   }
@@ -3178,6 +3175,12 @@ body {
   }
 }
 @media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+  .lg\:hidden {
+    display: none;
+  }
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
