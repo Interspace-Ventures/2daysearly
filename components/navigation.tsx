@@ -205,7 +205,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 neo-border-responsive" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
       <div className="container-fluid">
         <div className="flex items-center justify-between w-full min-w-0" style={{ height: 'clamp(4rem, 8vw, 5rem)' }}>
           {/* Logo - Prevent shrinking too much */}
@@ -214,8 +214,8 @@ export default function Navigation() {
             onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0"
           >
-            <div className="bg-white neo-border-responsive neo-shadow-responsive flex items-center" 
-                 style={{ padding: 'clamp(0.5rem, 1.5vw, 0.75rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)' }}>
+            <div className="bg-white border-2 border-black flex items-center" 
+                 style={{ padding: 'clamp(0.5rem, 1.5vw, 0.75rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)', boxShadow: '2px 2px 0px 0px #000000' }}>
               <img
                 src="/images/2-days-early-calendar-icon-2025.png"
                 alt="2 Days Early Calendar Icon"
