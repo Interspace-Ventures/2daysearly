@@ -334,7 +334,7 @@ export default function Navigation() {
                         ? 'bg-green-600 text-white font-bold' 
                         : 'bg-white text-black hover:bg-gray-100'
                     }`}
-                    style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                    style={{boxShadow: '1px 1px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                   >
                     {label}
                   </a>
@@ -353,7 +353,7 @@ export default function Navigation() {
                       onClick={button.onClick}
                       disabled={isTallyLoading}
                       className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
-                      style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                      style={{boxShadow: '1px 1px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {button.icon && button.icon}
@@ -367,7 +367,7 @@ export default function Navigation() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
-                      style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
+                      style={{boxShadow: '1px 1px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {button.label}
