@@ -21,15 +21,18 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
         />
       </div>
       
-      {/* Content */}
-      <div className="p-3 sm:p-4 bg-white sm:border-t-2 sm:border-black flex-1">
+      {/* Partner Name - Directly below image */}
+      <div className="bg-green-400 border-t-2 border-b-2 border-black p-2 sm:p-3">
         <h3 
-          className="text-sm sm:text-lg font-bold text-black mb-1 sm:mb-3 sm:text-center"
+          className="text-sm sm:text-lg font-bold text-black text-center"
           style={{ fontFamily: theme.fonts.primary }}
         >
           {partner.name}
         </h3>
-        
+      </div>
+      
+      {/* Bio Content */}
+      <div className="p-3 sm:p-4 bg-white flex-1">
         <div 
           className="text-black text-xs sm:text-base leading-relaxed"
           style={{ fontFamily: theme.fonts.primary }}
