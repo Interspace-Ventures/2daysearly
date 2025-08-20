@@ -2924,6 +2924,12 @@ body {
   .sm\:hidden {
     display: none;
   }
+  .sm\:h-48 {
+    height: 12rem;
+  }
+  .sm\:w-full {
+    width: 100%;
+  }
   .sm\:max-w-sm {
     max-width: 24rem;
   }
@@ -2969,8 +2975,39 @@ body {
   .sm\:rounded-lg {
     border-radius: var(--radius);
   }
+  .sm\:rounded-none {
+    border-radius: 0px;
+  }
+  .sm\:border-b-2 {
+    border-bottom-width: 2px;
+  }
+  .sm\:border-l-0 {
+    border-left-width: 0px;
+  }
+  .sm\:border-black {
+    --tw-border-opacity: 1;
+    border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+  }
+  .sm\:p-4 {
+    padding: 1rem;
+  }
+  .sm\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .sm\:pb-3 {
+    padding-bottom: 0.75rem;
+  }
   .sm\:text-left {
     text-align: left;
+  }
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
   .data-\[state\=open\]\:sm\:slide-in-from-bottom-full[data-state="open"] {
     --tw-enter-translate-y: 100%;
