@@ -13,12 +13,12 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
       {/* Left side on mobile (image + title), Top section on desktop */}
       <div className="flex flex-col sm:w-full">
         {/* Profile Image */}
-        <div className="w-20 h-20 sm:w-full sm:h-48 bg-gray-50 flex items-center justify-center p-2 sm:p-4 flex-shrink-0">
+        <div className="w-20 h-20 sm:w-full sm:h-48 bg-white flex items-center justify-center p-2 sm:p-4 flex-shrink-0">
           <img
             src={partner.image}
             alt={`${partner.name}'s portrait`}
             className={`max-w-full max-h-full object-contain rounded-full sm:rounded-none ${partner.imageClassName || ''}`}
-            style={{ maxWidth: '100%', maxHeight: '100%' }}
+            style={{ maxWidth: '100%', maxHeight: '100%', backgroundColor: 'transparent' }}
           />
         </div>
         
