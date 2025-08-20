@@ -328,7 +328,7 @@ export default function Navigation() {
                     className={`block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 ${
                       activeSection === id 
                         ? 'bg-green-600 text-white font-bold' 
-                        : 'bg-green-100 text-black hover:bg-green-200'
+                        : 'bg-white text-black hover:bg-gray-100'
                     }`}
                     style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                   >
@@ -348,7 +348,7 @@ export default function Navigation() {
                       key={button.label}
                       onClick={button.onClick}
                       disabled={isTallyLoading}
-                      className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-green-100 text-black hover:bg-green-200 font-bold"
+                      className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
                       style={{boxShadow: '2px 2px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
                     >
                       <span className="flex items-center justify-center gap-2">
@@ -362,7 +362,7 @@ export default function Navigation() {
                       href={button.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-green-100 text-black hover:bg-green-200 font-bold"
+                      className="w-full block py-3 px-4 text-base text-center border-4 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
                       style={{boxShadow: '4px 4px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
                     >
                       <span className="flex items-center justify-center gap-2">
