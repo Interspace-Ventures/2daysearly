@@ -668,6 +668,12 @@ video {
   }
 }
 /* Neobrutalism utility classes */
+.neo-shadow {
+    box-shadow: 2px 2px 0px 0px #000000;
+  }
+.neo-border {
+    border: 2px solid #000000;
+  }
 /* Responsive neobrutalism components */
 .neo-border-responsive {
     border-width: clamp(1px, 0.2vw, 3px);

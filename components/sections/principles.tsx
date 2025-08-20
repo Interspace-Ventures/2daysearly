@@ -54,7 +54,7 @@ const Principles = () => {
             <h2 
               id="principles-heading"
               className="text-fluid-4xl font-bold text-black text-left"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+              style={{fontFamily: 'Alexandria, Inter, sans-serif', whiteSpace: 'nowrap'}}
             >
               OPERATING PRINCIPLES
             </h2>

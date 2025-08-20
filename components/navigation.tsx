@@ -31,11 +31,17 @@ function getActiveSection(): string {
 
 declare global {
   interface Window {
-    Tally?: any;
+    Tally?: {
+      openPopup: (formId: string, options?: { 
+        width?: number; 
+        alignLeft?: boolean; 
+        hideTitle?: boolean; 
+        emoji?: { text: string; animation: string; }; 
+      }) => void;
+    };
     TallyConfig?: {
-      formId: string;
       hideTitle?: boolean;
-      autoOpen?: boolean;
+      formId?: string;
     };
     loadTally?: () => void;
   }
