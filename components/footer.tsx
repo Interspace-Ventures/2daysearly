@@ -3,14 +3,14 @@ import { theme } from '../lib/theme';
 export default function Footer() {
   return (
     <footer className="bg-black" style={{ padding: 'clamp(2rem, 5vw, 3rem) 0' }}>
-      <div className="container-fluid text-center">
+      <div className="container-fluid">
 
         
         {/* Responsive layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-start text-center sm:text-left">
           
           {/* Column 1: Navigation */}
-          <div className="flex flex-col items-start space-y-3 sm:space-y-2 md:space-y-3">
+          <div className="flex flex-col items-center sm:items-start space-y-3 sm:space-y-2 md:space-y-3">
             <a 
               href="#purpose"
               className="text-fluid-base text-white hover:text-green-400 transition-colors"
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
           
           {/* Column 2: Actions */}
-          <div className="flex flex-col items-start space-y-3 sm:space-y-2 md:space-y-3">
+          <div className="flex flex-col items-center sm:items-start space-y-3 sm:space-y-2 md:space-y-3">
             <a 
               href="mailto:pitch@daysearly.com"
               className="text-fluid-base text-white hover:text-green-400 transition-colors"
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
           
           {/* Column 3: Social & Copyright - spans 2 columns on larger screens */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-2 flex flex-col items-start space-y-4 sm:space-y-3 md:space-y-4">
+          <div className="col-span-1 sm:col-span-2 md:col-span-2 flex flex-col items-center sm:items-start space-y-4 sm:space-y-3 md:space-y-4">
             {/* Social Links */}
             <div className="flex gap-4 sm:gap-3">
               <a 
@@ -97,7 +97,7 @@ export default function Footer() {
               </a>
             </div>
             
-            <div className="text-fluid-sm text-white text-left leading-relaxed" style={{fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
+            <div className="text-fluid-sm text-white text-center sm:text-left leading-relaxed" style={{fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
               <div className="mb-2">© 2025 2 DAYS EARLY</div>
               <div>
                 Built by{" "}
