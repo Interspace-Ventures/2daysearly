@@ -982,9 +982,6 @@ video {
 .h-2\.5 {
   height: 0.625rem;
 }
-.h-24 {
-  height: 6rem;
-}
 .h-28 {
   height: 7rem;
 }
@@ -1081,8 +1078,8 @@ video {
 .w-2\.5 {
   width: 0.625rem;
 }
-.w-24 {
-  width: 6rem;
+.w-28 {
+  width: 7rem;
 }
 .w-3 {
   width: 0.75rem;

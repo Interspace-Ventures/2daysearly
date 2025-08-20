@@ -13,7 +13,7 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
       {/* Left side: Image and Name */}
       <div className="flex flex-col">
         {/* Profile Image */}
-        <div className="w-24 h-24 bg-gray-50 flex items-center justify-center p-2 flex-shrink-0">
+        <div className="w-28 h-28 bg-gray-50 flex items-center justify-center p-2 flex-shrink-0">
           <img
             src={partner.image}
             alt={`${partner.name}'s portrait`}
