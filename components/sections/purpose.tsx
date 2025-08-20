@@ -90,7 +90,7 @@ export default function Purpose() {
           </div>
           <div className="neo-border neo-shadow p-2 text-center bg-white h-full flex flex-col justify-center">
             <div className="text-fluid-2xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>60%</div>
-            <div className="text-fluid-xs text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>of operators have scaled startups from 0 - 100 FTEs</div>
+            <div className="text-fluid-xs text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>have scaled startups from 0 - 100 FTEs</div>
           </div>
           <div className="neo-border neo-shadow p-2 text-center bg-white h-full flex flex-col justify-center">
             <div className="text-fluid-2xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>73%</div>
