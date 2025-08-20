@@ -24,7 +24,7 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
         </div>
         
         {/* Partner Name - Under image on both mobile and desktop */}
-        <div className="px-2 py-1 sm:px-4 sm:py-3 sm:border-b-2 sm:border-black bg-white text-center border-b border-black">
+        <div className="px-2 py-1 sm:px-4 sm:py-3 bg-white text-center">
           <h3 
             className="text-xs sm:text-lg font-bold text-black"
             style={{ fontFamily: theme.fonts.primary }}

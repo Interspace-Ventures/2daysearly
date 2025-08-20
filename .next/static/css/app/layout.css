@@ -3062,13 +3062,6 @@ body {
   .sm\:rounded-none {
     border-radius: 0px;
   }
-  .sm\:border-b-2 {
-    border-bottom-width: 2px;
-  }
-  .sm\:border-black {
-    --tw-border-opacity: 1;
-    border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
-  }
   .sm\:p-4 {
     padding: 1rem;
   }
