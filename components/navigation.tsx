@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ExternalLink, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import Image from "@/components/ui/image";
 
 function scrollToElement(elementId: string) {
   const element = document.getElementById(elementId);
@@ -217,12 +216,11 @@ export default function Navigation() {
           >
             <div className="bg-white neo-border-responsive neo-shadow-responsive flex items-center" 
                  style={{ padding: 'clamp(0.5rem, 1.5vw, 0.75rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)' }}>
-              <Image
+              <img
                 src="/images/2-days-early-calendar-icon-2025.png"
                 alt="2 Days Early Calendar Icon"
                 className="object-contain"
                 style={{ width: 'clamp(1.25rem, 3vw, 1.5rem)', height: 'clamp(1.25rem, 3vw, 1.5rem)' }}
-                fallbackSrc="/images/2-days-early-calendar-icon-2025.png"
               />
               <span className="font-bold text-black whitespace-nowrap" 
                     style={{
