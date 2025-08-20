@@ -235,7 +235,7 @@ export default function Navigation() {
           {/* Desktop Navigation - Fixed overflow issues */}
           <div className="hidden sm:flex items-center flex-1 justify-end min-w-0">
             {/* Navigation Links - Scale down on smaller screens */}
-            <div className="flex items-center" style={{ gap: 'clamp(0.25rem, 1.5vw, 1.5rem)' }}>
+            <div className="flex items-center" style={{ gap: 'clamp(0.5rem, 2vw, 2rem)' }}>
               {navItems.map(({ id, label }) => (
                 <button
                   key={id}
