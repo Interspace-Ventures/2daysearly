@@ -245,9 +245,9 @@ export default function Navigation() {
                     e.preventDefault();
                     scrollToElement(id);
                   }}
-                  className={`transition-all duration-100 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
+                  className={`relative transition-all duration-300 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
                     activeSection === id 
-                      ? 'lg:bg-black lg:text-white font-bold lg:border-2 lg:border-black' 
+                      ? 'text-black font-bold' 
                       : 'text-black hover:text-green-800'
                   }`}
                   style={{
@@ -257,6 +257,12 @@ export default function Navigation() {
                   }}
                 >
                   {label}
+                  {/* Animated underline for active section */}
+                  <div 
+                    className={`absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out ${
+                      activeSection === id ? 'w-full' : 'w-0'
+                    }`}
+                  />
                 </button>
               ))}
             </div>
