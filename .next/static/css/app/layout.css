@@ -744,6 +744,52 @@ body {
 .animate-fade-in-up {
     animation: fadeInUp 0.5s ease-out forwards;
   }
+/* Tally form modal styles */
+.tally-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+.tally-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 90%;
+    max-width: 600px;
+    height: 100%;
+    background: white;
+    border: 4px solid #000;
+    box-shadow: -4px 0 0 #000;
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+.tally-header {
+    padding: 1.5rem;
+    border-bottom: 4px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #10b981;
+  }
+.tally-close {
+    font-size: 20px;
+    border: 3px solid #000;
+    background: white;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    line-height: 1;
+    color: black;
+    font-weight: bold;
+    font-family: Alexandria, Inter, sans-serif;
+    box-shadow: 3px 3px 0 #000;
+  }
 /* Intelligent grid systems */
 /* Container system with viewport-aware sizing */
 .container-fluid {
@@ -1195,6 +1241,11 @@ body {
 .opacity-0 {
   opacity: 0;
 }
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1212,11 +1263,6 @@ body {
 }
 .transition-transform {
   transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
