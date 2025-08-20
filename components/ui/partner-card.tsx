@@ -13,7 +13,7 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
       {/* Left side: Image and Name */}
       <div className="flex flex-col">
         {/* Profile Image */}
-        <div className="w-32 h-32 bg-gray-50 flex items-center justify-center p-3 flex-shrink-0">
+        <div className="w-24 h-24 bg-gray-50 flex items-center justify-center p-2 flex-shrink-0">
           <img
             src={partner.image}
             alt={`${partner.name}'s portrait`}
@@ -23,9 +23,9 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
         </div>
         
         {/* Partner Name - Directly below image */}
-        <div className="px-3 pb-2">
+        <div className="px-2 pb-1">
           <h3 
-            className="text-lg font-bold text-black text-center"
+            className="text-base font-bold text-black text-center"
             style={{ fontFamily: theme.fonts.primary }}
           >
             {partner.name}
@@ -34,9 +34,9 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
       </div>
       
       {/* Right side: Bio Content */}
-      <div className="p-4 bg-white flex-1 border-l-2 border-black">
+      <div className="p-3 bg-white flex-1 border-l-2 border-black">
         <div 
-          className="text-black text-base leading-relaxed"
+          className="text-black text-sm leading-relaxed"
           style={{ fontFamily: theme.fonts.primary }}
         >
           {partner.bio}

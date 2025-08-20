@@ -688,7 +688,6 @@ video {
 .text-fluid-xs { font-size: clamp(0.75rem, 1.5vw, 0.875rem); }
 .text-fluid-sm { font-size: clamp(0.875rem, 2vw, 1rem); }
 .text-fluid-base { font-size: clamp(1rem, 2.5vw, 1.125rem); }
-.text-fluid-lg { font-size: clamp(1.125rem, 3vw, 1.25rem); }
 .text-fluid-xl { font-size: clamp(1.25rem, 3.5vw, 1.5rem); }
 .text-fluid-2xl { font-size: clamp(1.5rem, 4vw, 2rem); }
 .text-fluid-3xl { font-size: clamp(1.875rem, 5vw, 2.5rem); }
@@ -916,9 +915,6 @@ video {
 .mt-1\.5 {
   margin-top: 0.375rem;
 }
-.mt-12 {
-  margin-top: 3rem;
-}
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -927,6 +923,9 @@ video {
 }
 .mt-4 {
   margin-top: 1rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
 }
 .mt-auto {
   margin-top: auto;
@@ -983,6 +982,9 @@ video {
 .h-2\.5 {
   height: 0.625rem;
 }
+.h-24 {
+  height: 6rem;
+}
 .h-28 {
   height: 7rem;
 }
@@ -991,9 +993,6 @@ video {
 }
 .h-3\.5 {
   height: 0.875rem;
-}
-.h-32 {
-  height: 8rem;
 }
 .h-4 {
   height: 1rem;
@@ -1082,6 +1081,9 @@ video {
 .w-2\.5 {
   width: 0.625rem;
 }
+.w-24 {
+  width: 6rem;
+}
 .w-3 {
   width: 0.75rem;
 }
@@ -1090,9 +1092,6 @@ video {
 }
 .w-3\/4 {
   width: 75%;
-}
-.w-32 {
-  width: 8rem;
 }
 .w-4 {
   width: 1rem;
@@ -1704,8 +1703,8 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.pb-2 {
-  padding-bottom: 0.5rem;
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 .pb-3 {
   padding-bottom: 0.75rem;
@@ -2947,6 +2946,9 @@ body {
   .sm\:gap-2\.5 {
     gap: 0.625rem;
   }
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
   .sm\:gap-6 {
     gap: 1.5rem;
   }
@@ -3055,6 +3057,9 @@ body {
   }
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .lg\:gap-6 {
+    gap: 1.5rem;
   }
   .lg\:gap-8 {
     gap: 2rem;

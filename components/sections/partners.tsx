@@ -48,21 +48,21 @@ export default function Partners() {
     <section 
       id="partners" 
       className="bg-gradient-to-br from-green-300 via-green-400 to-green-500"
-      style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
+      style={{ paddingTop: '2rem', paddingBottom: '2rem' }}
       aria-labelledby="partners-heading"
     >
       <div className="container-fluid">
         <AnimatedSection>
-          <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
+          <div style={{ marginBottom: 'clamp(1rem, 3vw, 2rem)' }}>
             <h2 
               id="partners-heading"
-              className="text-fluid-4xl font-bold text-black text-left"
+              className="text-fluid-3xl font-bold text-black text-left"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               PARTNERS
             </h2>
             
-            <div className="w-16 h-1 bg-green-500 mt-4"></div>
+            <div className="w-16 h-1 bg-green-500 mt-2"></div>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
