@@ -21,7 +21,7 @@ const nextConfig = {
   allowedDevOrigins: [
     '127.0.0.1',
     'localhost',
-    /\.replit\.dev$/,
+    '.replit.dev',
   ],
   async headers() {
     return [
