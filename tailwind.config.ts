@@ -2,13 +2,17 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Alexandria', 'Inter', 'system-ui', 'sans-serif'],
-        primary: ['Alexandria', 'Inter', 'system-ui', 'sans-serif'],
-        secondary: ['Inter', 'Alexandria', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'var(--font-alexandria)', 'system-ui', 'sans-serif'],
+        primary: ['var(--font-alexandria)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
+        secondary: ['var(--font-inter)', 'var(--font-alexandria)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

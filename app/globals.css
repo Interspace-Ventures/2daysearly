@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 /* Ensure text is visible on all devices */
 * {
   -webkit-font-smoothing: antialiased;
@@ -9,7 +7,7 @@
 
 /* Force text visibility on mobile and maximize width */
 body, html {
-  font-family: 'Alexandria', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-inter), var(--font-alexandria), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: #000000;
   -webkit-text-size-adjust: 100%;
   margin: 0;
