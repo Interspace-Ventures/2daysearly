@@ -1327,6 +1327,27 @@ body {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
+@media (min-width: 200px) {
+  .min-\[200px\]\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+  .min-\[200px\]\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .min-\[200px\]\:gap-4 {
+    gap: 1rem;
+  }
+  .min-\[200px\]\:space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+  }
+  .min-\[200px\]\:space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+  }
+}
 @media (min-width: 475px) {
   .min-\[475px\]\:col-span-1 {
     grid-column: span 1 / span 1;

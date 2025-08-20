@@ -6,11 +6,11 @@ export default function Footer() {
       <div className="container-fluid">
 
         
-        {/* Responsive layout: stacked at very narrow, 1/3-1/3-1/3 mobile, 1/4-1/4-1/2 desktop */}
-        <div className="grid grid-cols-1 min-[475px]:grid-cols-3 sm:grid-cols-12 gap-4 min-[475px]:gap-6 sm:gap-8 items-start text-left">
+        {/* Responsive layout: stacked only at extremely narrow (<200px), 1/3-1/3-1/3 mobile, 1/4-1/4-1/2 desktop */}
+        <div className="grid grid-cols-1 min-[200px]:grid-cols-3 sm:grid-cols-12 gap-4 min-[200px]:gap-4 sm:gap-8 items-start text-left">
           
           {/* Column 1: Navigation */}
-          <div className="min-[475px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[475px]:space-y-2 sm:space-y-2">
+          <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="#purpose"
               className="text-fluid-base text-white hover:text-green-400 transition-colors"
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
           
           {/* Column 2: Actions */}
-          <div className="min-[475px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[475px]:space-y-2 sm:space-y-2">
+          <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="mailto:pitch@daysearly.com"
               className="text-fluid-base text-white hover:text-green-400 transition-colors"
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
           
           {/* Column 3: Social & Copyright */}
-          <div className="min-[475px]:col-span-1 sm:col-span-6 flex flex-col items-start space-y-4 min-[475px]:space-y-3 sm:space-y-3">
+          <div className="min-[200px]:col-span-1 sm:col-span-6 flex flex-col items-start space-y-4 min-[200px]:space-y-3 sm:space-y-3">
             {/* Social Links */}
             <div className="flex gap-4 sm:gap-3">
               <a 
