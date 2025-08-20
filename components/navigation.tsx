@@ -196,7 +196,7 @@ export default function Navigation() {
 
   const actionButtons = [
     { href: "mailto:pitch@daysearly.com", label: "PITCH" },
-    { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN" },
+    { href: "https://posts.interspace.ventures/p/101-everything-you-wanted-to-know", label: "LEARN" },
     {
       label: isTallyLoading ? "LOADING..." : "JOIN*",
       onClick: handleJoinClick,
