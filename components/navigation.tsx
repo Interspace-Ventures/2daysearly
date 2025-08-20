@@ -87,7 +87,7 @@ export default function Navigation() {
     
     // Event listeners
     overlay.onclick = cleanup;
-    header.querySelector('.tally-close')!.onclick = cleanup;
+    (header.querySelector('.tally-close') as HTMLButtonElement).onclick = cleanup;
     
     // Assemble and show
     container.appendChild(header);
@@ -116,28 +116,28 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-500 border-b-4 border-black">
       <div className="container-fluid">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button 
             onClick={() => scrollToElement('hero')}
-            className="text-fluid-xl font-bold tracking-tight hover:opacity-80 transition-opacity"
+            className="text-fluid-xl font-bold tracking-tight text-white hover:text-gray-200 transition-colors"
             style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
           >
             2 DAYS EARLY
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToElement(item.id)}
-                className={`text-fluid-sm font-medium transition-colors ${
+                className={`text-fluid-sm font-bold transition-colors ${
                   activeSection === item.id 
-                    ? 'text-green-600 font-bold' 
-                    : 'text-black hover:text-green-600'
+                    ? 'text-white bg-black px-3 py-1 border-2 border-white' 
+                    : 'text-white hover:text-gray-200'
                 }`}
                 style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
               >
@@ -152,7 +152,7 @@ export default function Navigation() {
                   href={button.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black font-bold border-3 border-black shadow-neo hover:shadow-neo-hover transition-all"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black font-bold border-4 border-black shadow-neo hover:shadow-neo-hover transition-all text-fluid-sm"
                   style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
                 >
                   {button.label}
@@ -162,9 +162,7 @@ export default function Navigation() {
                 <button
                   key={index}
                   onClick={button.onClick}
-                  className={`px-6 py-2 font-bold border-3 border-black shadow-neo hover:shadow-neo-hover transition-all ${
-                    button.primary ? 'bg-green-500 text-white' : 'bg-white text-black'
-                  }`}
+                  className="px-6 py-2 bg-black text-white font-bold border-4 border-white shadow-neo hover:shadow-neo-hover transition-all text-fluid-sm"
                   style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
                 >
                   {button.label}
@@ -176,7 +174,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 border-3 border-black bg-white hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2 border-4 border-black bg-white hover:bg-gray-100 transition-colors"
           >
             {isOpen ? <X /> : <Menu />}
           </button>
@@ -185,8 +183,8 @@ export default function Navigation() {
 
       {/* Mobile Sidebar */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-white border-r-4 border-black z-40">
-          <div className="p-6 space-y-4">
+        <div className="lg:hidden fixed inset-0 top-20 bg-green-500 border-r-4 border-black z-40">
+          <div className="p-6 space-y-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -194,10 +192,10 @@ export default function Navigation() {
                   scrollToElement(item.id);
                   setIsOpen(false);
                 }}
-                className={`block w-full text-left py-3 text-fluid-lg font-medium transition-colors ${
+                className={`block w-full text-left py-4 text-fluid-lg font-bold transition-colors ${
                   activeSection === item.id 
-                    ? 'text-green-600 font-bold' 
-                    : 'text-black hover:text-green-600'
+                    ? 'text-white bg-black px-4 border-2 border-white' 
+                    : 'text-white hover:text-gray-200'
                 }`}
                 style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
               >
@@ -205,7 +203,7 @@ export default function Navigation() {
               </button>
             ))}
             
-            <div className="pt-4 space-y-3">
+            <div className="pt-6 space-y-4">
               {actionButtons.map((button, index) => (
                 button.href ? (
                   <a
@@ -213,7 +211,7 @@ export default function Navigation() {
                     href={button.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3 bg-white text-black font-bold border-3 border-black shadow-neo"
+                    className="flex items-center justify-center gap-2 w-full py-4 bg-white text-black font-bold border-4 border-black shadow-neo text-fluid-lg"
                     style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
                   >
                     {button.label}
@@ -226,9 +224,7 @@ export default function Navigation() {
                       button.onClick?.();
                       setIsOpen(false);
                     }}
-                    className={`w-full py-3 font-bold border-3 border-black shadow-neo ${
-                      button.primary ? 'bg-green-500 text-white' : 'bg-white text-black'
-                    }`}
+                    className="w-full py-4 bg-black text-white font-bold border-4 border-white shadow-neo text-fluid-lg"
                     style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
                   >
                     {button.label}
