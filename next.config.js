@@ -17,12 +17,6 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
   trailingSlash: false,
-  // Fix cross-origin warnings in Replit development
-  allowedDevOrigins: [
-    '127.0.0.1',
-    'localhost',
-    '.replit.dev',
-  ],
   async headers() {
     return [
       {
