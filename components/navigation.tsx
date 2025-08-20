@@ -1,29 +1,38 @@
 import { useState, useEffect } from 'react';
-
-const Menu = () => (
-  <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+// Simple inline SVG icons
+const Menu = ({ className }: { className?: string }) => (
+  <svg className={className} width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
   </svg>
 );
 
-const X = () => (
-  <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+const X = ({ className }: { className?: string }) => (
+  <svg className={className} width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
   </svg>
 );
 
-const ExternalLink = () => (
-  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+const ExternalLink = ({ style, className }: { style?: React.CSSProperties; className?: string }) => (
+  <svg style={style} className={className} width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+  </svg>
+);
+
+const Loader2 = ({ className }: { className?: string }) => (
+  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
   </svg>
 );
 
 function scrollToElement(elementId: string) {
   const element = document.getElementById(elementId);
   if (element) {
-    const navHeight = 80;
+    const navHeight = 80; // Updated to match new navigation height
     const elementPosition = element.offsetTop - navHeight;
-    window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+    window.scrollTo({
+      top: elementPosition,
+      behavior: 'smooth'
+    });
   }
 }
 
@@ -37,68 +46,165 @@ function getActiveSection(): string {
       return sections[i];
     }
   }
+  
   return 'hero';
+}
+
+declare global {
+  interface Window {
+    Tally?: {
+      openPopup: (formId: string, options?: { 
+        width?: number; 
+        alignLeft?: boolean; 
+        hideTitle?: boolean; 
+        emoji?: { text: string; animation: string; }; 
+      }) => void;
+    };
+    TallyConfig?: {
+      hideTitle?: boolean;
+      formId?: string;
+    };
+    loadTally?: () => void;
+  }
 }
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [isTallyLoading, setIsTallyLoading] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setActiveSection(getActiveSection());
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      setActiveSection(getActiveSection());
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    const handleTallyLoad = () => {
+      setIsTallyLoading(false);
+    };
+
+    window.addEventListener('tally-loaded', handleTallyLoad);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('tally-loaded', handleTallyLoad);
+    };
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    scrollToElement(sectionId);
+    setIsOpen(false);
+  };
+
+  const handleJoinClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setIsTallyLoading(true);
+    openTallyForm();
+  };
+
   const openTallyForm = () => {
-    // Create elements
-    const overlay = document.createElement('div');
-    const container = document.createElement('div');
-    const header = document.createElement('div');
-    const iframe = document.createElement('iframe');
-    
-    // Apply CSS classes
-    overlay.className = 'tally-overlay';
-    container.className = 'tally-container';
-    header.className = 'tally-header';
-    
-    // Setup header content
-    header.innerHTML = `
-      <h2 style="margin:0;font-size:1.125rem;font-weight:bold;color:white;font-family:Alexandria,Inter,sans-serif">
-        2 DAYS EARLY SYNDICATE ONBOARDING
-      </h2>
-      <button class="tally-close">×</button>
-    `;
-    
-    // Setup iframe
-    iframe.src = 'https://tally.so/embed/nP1v8e?alignLeft=1&transparentBackground=1&hideTitle=1';
-    iframe.style.cssText = 'width:100%;height:calc(100% - 5rem);border:none;padding:1.5rem';
-    iframe.title = '2 Days Early Syndicate Onboarding';
-    
-    // Cleanup function
+    // Check if form is already open
+    const existingForm = document.getElementById('tally-form-container');
+    if (existingForm) {
+      setIsTallyLoading(false);
+      return;
+    }
+
+    const formContainer = document.createElement('div');
+    formContainer.id = 'tally-form-container';
+    formContainer.style.position = 'fixed';
+    formContainer.style.top = '0';
+    formContainer.style.right = '0';
+    formContainer.style.height = '100vh';
+    formContainer.style.width = '600px';
+    formContainer.style.maxWidth = '100vw';
+    formContainer.style.backgroundColor = 'white';
+    formContainer.style.border = '4px solid #000000';
+    formContainer.style.boxShadow = '-4px 0 0px 0px #000000';
+    formContainer.style.zIndex = '9999';
+    formContainer.style.transform = 'translateX(100%)';
+    formContainer.style.transition = 'transform 0.3s ease-in-out';
+
+    const titleContainer = document.createElement('div');
+    titleContainer.style.padding = '1.5rem';
+    titleContainer.style.borderBottom = '4px solid #000000';
+    titleContainer.style.display = 'flex';
+    titleContainer.style.justifyContent = 'space-between';
+    titleContainer.style.alignItems = 'center';
+    titleContainer.style.backgroundColor = '#10b981';
+
+    const title = document.createElement('h2');
+    title.textContent = '2 DAYS EARLY SYNDICATE ONBOARDING';
+    title.style.margin = '0';
+    title.style.fontSize = '1.125rem';
+    title.style.fontWeight = 'bold';
+    title.style.color = 'white';
+    title.style.fontFamily = 'Alexandria, Inter, sans-serif';
+
+    const closeButton = document.createElement('button');
+    closeButton.innerHTML = '×';
+    closeButton.style.fontSize = '20px';
+    closeButton.style.border = '3px solid #000000';
+    closeButton.style.background = 'white';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.padding = '0.5rem 0.75rem';
+    closeButton.style.lineHeight = '1';
+    closeButton.style.color = 'black';
+    closeButton.style.fontWeight = 'bold';
+    closeButton.style.fontFamily = 'Alexandria, Inter, sans-serif';
+    closeButton.style.boxShadow = '3px 3px 0px 0px #000000';
+    closeButton.style.transition = 'all 0.1s ease';
+
     const cleanup = () => {
-      container.style.transform = 'translateX(100%)';
-      setTimeout(() => {
-        document.body.removeChild(container);
-        document.body.removeChild(overlay);
-        document.body.style.overflow = 'auto';
-      }, 300);
+      if (document.body.contains(formContainer)) {
+        formContainer.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          document.body.removeChild(formContainer);
+          document.body.removeChild(overlay);
+          document.body.style.overflow = 'auto';
+        }, 300);
+      }
     };
-    
-    // Event listeners
+
+    closeButton.onclick = cleanup;
+
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://tally.so/embed/nP1v8e?alignLeft=1&transparentBackground=1&hideTitle=1';
+    iframe.style.width = '100%';
+    iframe.style.height = 'calc(100% - 5rem)';
+    iframe.style.border = 'none';
+    iframe.style.padding = '1.5rem';
+    iframe.title = "2 Days Early Syndicate Onboarding";
+
+    iframe.onload = () => {
+      setIsTallyLoading(false);
+    };
+
+    titleContainer.appendChild(title);
+    titleContainer.appendChild(closeButton);
+    formContainer.appendChild(titleContainer);
+    formContainer.appendChild(iframe);
+
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    overlay.style.zIndex = '9998';
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.3s ease-in-out';
     overlay.onclick = cleanup;
-    (header.querySelector('.tally-close') as HTMLButtonElement).onclick = cleanup;
-    
-    // Assemble and show
-    container.appendChild(header);
-    container.appendChild(iframe);
+
     document.body.appendChild(overlay);
-    document.body.appendChild(container);
+    document.body.appendChild(formContainer);
     document.body.style.overflow = 'hidden';
-    
+
     requestAnimationFrame(() => {
       overlay.style.opacity = '1';
-      container.style.transform = 'translateX(0)';
+      formContainer.style.transform = 'translateX(0)';
     });
   };
 
@@ -110,131 +216,192 @@ export default function Navigation() {
   ];
 
   const actionButtons = [
-    { href: "mailto:pitch@daysearly.com", label: "PITCH", external: true },
-    { href: "https://posts.interspace.ventures/p/101-everything-you-wanted-to-know", label: "LEARN", external: true },
-    { onClick: openTallyForm, label: "JOIN", primary: true }
+    { href: "mailto:pitch@daysearly.com", label: "PITCH" },
+    { href: "https://posts.interspace.ventures/p/101-everything-you-wanted-to-know", label: "LEARN" },
+    {
+      label: isTallyLoading ? "LOADING..." : "JOIN*",
+      onClick: handleJoinClick,
+      icon: isTallyLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : undefined
+    }
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-500 border-b-4 border-black">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
       <div className="container-fluid">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <button 
-            onClick={() => scrollToElement('hero')}
-            className="text-fluid-xl font-bold tracking-tight text-white hover:text-gray-200 transition-colors"
-            style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
+        <div className="flex items-center justify-between w-full min-w-0" style={{ height: 'clamp(4rem, 8vw, 5rem)' }}>
+          {/* Logo - Prevent shrinking too much */}
+          <a
+            href="#hero"
+            onClick={(e) => handleNavClick(e, 'hero')}
+            className="flex-shrink-0"
           >
-            2 DAYS EARLY
-          </button>
+            <div className="bg-white border-2 border-black flex items-center" 
+                 style={{ padding: 'clamp(0.5rem, 1.5vw, 0.75rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)', boxShadow: '2px 2px 0px 0px #000000' }}>
+              <img
+                src="/images/2-days-early-calendar-icon-2025.png"
+                alt="2 Days Early Calendar Icon"
+                className="object-contain"
+                style={{ width: 'clamp(1.25rem, 3vw, 1.5rem)', height: 'clamp(1.25rem, 3vw, 1.5rem)' }}
+              />
+              <span className="font-bold text-black whitespace-nowrap" 
+                    style={{
+                      fontFamily: 'Alexandria, Inter, sans-serif',
+                      fontSize: 'clamp(0.875rem, 2vw, 1.125rem)'
+                    }}>
+                2 DAYS EARLY
+              </span>
+            </div>
+          </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToElement(item.id)}
-                className={`text-fluid-sm font-bold transition-colors ${
-                  activeSection === item.id 
-                    ? 'text-white bg-black px-3 py-1 border-2 border-white' 
-                    : 'text-white hover:text-gray-200'
-                }`}
-                style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
-              >
-                {item.label}
-              </button>
-            ))}
-            
-            {actionButtons.map((button, index) => (
-              button.href ? (
-                <a
-                  key={index}
-                  href={button.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black font-bold border-4 border-black shadow-neo hover:shadow-neo-hover transition-all text-fluid-sm"
-                  style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
-                >
-                  {button.label}
-                  <ExternalLink />
-                </a>
-              ) : (
+          {/* Desktop Navigation - Only show when there's enough space */}
+          <div className="hidden lg:flex items-center flex-1 justify-end min-w-0">
+            {/* Navigation Links - Scale down on smaller screens */}
+            <div className="flex items-center" style={{ gap: 'clamp(0.5rem, 2vw, 2rem)' }}>
+              {navItems.map(({ id, label }) => (
                 <button
-                  key={index}
-                  onClick={button.onClick}
-                  className="px-6 py-2 bg-black text-white font-bold border-4 border-white shadow-neo hover:shadow-neo-hover transition-all text-fluid-sm"
-                  style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
+                  key={id}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToElement(id);
+                  }}
+                  className={`relative transition-all duration-300 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
+                    activeSection === id 
+                      ? 'text-black font-bold' 
+                      : 'text-black hover:text-green-800'
+                  }`}
+                  style={{
+                    fontFamily: 'Alexandria, Inter, sans-serif',
+                    fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
+                    padding: 'clamp(0.25rem, 1vw, 0.5rem)'
+                  }}
                 >
-                  {button.label}
+                  {label}
+                  {/* Animated underline for active section */}
+                  <div 
+                    className={`absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out ${
+                      activeSection === id ? 'w-full' : 'w-0'
+                    }`}
+                  />
                 </button>
-              )
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 border-4 border-black bg-white hover:bg-gray-100 transition-colors"
-          >
-            {isOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Sidebar */}
-      {isOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-green-500 border-r-4 border-black z-40">
-          <div className="p-6 space-y-6">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  scrollToElement(item.id);
-                  setIsOpen(false);
-                }}
-                className={`block w-full text-left py-4 text-fluid-lg font-bold transition-colors ${
-                  activeSection === item.id 
-                    ? 'text-white bg-black px-4 border-2 border-white' 
-                    : 'text-white hover:text-gray-200'
-                }`}
-                style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
-              >
-                {item.label}
-              </button>
-            ))}
+              ))}
+            </div>
             
-            <div className="pt-6 space-y-4">
-              {actionButtons.map((button, index) => (
-                button.href ? (
+            {/* Action Links - Clean styling */}
+            <div className="flex items-center ml-4" style={{ gap: 'clamp(0.5rem, 1.5vw, 1.25rem)' }}>
+              {actionButtons.map((button) => (
+                button.onClick ? (
+                  <button
+                    key={button.label}
+                    onClick={button.onClick}
+                    disabled={isTallyLoading}
+                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold"
+                    style={{
+                      fontFamily: 'Alexandria, Inter, sans-serif',
+                      fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
+                      gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
+                      background: 'none',
+                      border: 'none',
+                      padding: '0'
+                    }}
+                  >
+                    {button.icon && button.icon}
+                    {button.label}
+                  </button>
+                ) : (
                   <a
-                    key={index}
+                    key={button.label}
                     href={button.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-4 bg-white text-black font-bold border-4 border-black shadow-neo text-fluid-lg"
-                    style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
-                  >
-                    {button.label}
-                    <ExternalLink />
-                  </a>
-                ) : (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      button.onClick?.();
-                      setIsOpen(false);
+                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold"
+                    style={{
+                      fontFamily: 'Alexandria, Inter, sans-serif',
+                      fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
+                      gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
+                      textDecoration: 'none'
                     }}
-                    className="w-full py-4 bg-black text-white font-bold border-4 border-white shadow-neo text-fluid-lg"
-                    style={{ fontFamily: 'Alexandria, Inter, sans-serif' }}
                   >
                     {button.label}
-                  </button>
+                    <ExternalLink style={{ width: 'clamp(0.75rem, 1.5vw, 1rem)', height: 'clamp(0.75rem, 1.5vw, 1rem)' }} />
+                  </a>
                 )
               ))}
             </div>
           </div>
+
+          {/* Mobile/Tablet Menu Button - Show when nav links would overlap */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden border-2 border-black bg-white p-2"
+            style={{boxShadow: '2px 2px 0px 0px #000000'}}
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
-      )}
+
+        {/* Sidebar Menu - Shows for mobile and tablet */}
+        {isOpen && (
+          <div className="lg:hidden bg-green-100 border-2 border-black mt-2 mb-4" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+            <div className="px-4 py-6 space-y-4">
+              {/* Navigation Links */}
+              <div className="space-y-3">
+                {navItems.map(({ id, label }) => (
+                  <a
+                    key={id}
+                    href={`#${id}`}
+                    onClick={(e) => handleNavClick(e, id)}
+                    className={`block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 ${
+                      activeSection === id 
+                        ? 'bg-green-600 text-white font-bold' 
+                        : 'bg-white text-black hover:bg-gray-100'
+                    }`}
+                    style={{boxShadow: '1px 1px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                  >
+                    {label}
+                  </a>
+                ))}
+              </div>
+              
+              {/* Divider */}
+              <div className="h-0.5 bg-black my-6"></div>
+              
+              {/* Action Cards */}
+              <div className="space-y-3">
+                {actionButtons.map((button) => (
+                  button.onClick ? (
+                    <button
+                      key={button.label}
+                      onClick={button.onClick}
+                      disabled={isTallyLoading}
+                      className="w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
+                      style={{boxShadow: '1px 1px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                    >
+                      <span className="flex items-center justify-center gap-2">
+                        {button.icon && button.icon}
+                        {button.label}
+                      </span>
+                    </button>
+                  ) : (
+                    <a
+                      key={button.label}
+                      href={button.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
+                      style={{boxShadow: '1px 1px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
+                    >
+                      <span className="flex items-center justify-center gap-2">
+                        {button.label}
+                        <ExternalLink className="h-4 w-4" />
+                      </span>
+                    </a>
+                  )
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </nav>
   );
 }

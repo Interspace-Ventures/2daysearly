@@ -1,3 +1,4 @@
+import React from 'react';
 import CompanyCard from "@/components/ui/company-card";
 import AnimatedSection from "@/components/ui/animated-section";
 import { COMPANIES } from "@/lib/constants";
