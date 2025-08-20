@@ -6,11 +6,11 @@ export default function Footer() {
       <div className="container-fluid">
 
         
-        {/* Responsive layout: 1 col mobile, 2 cols tablet, 1/4-1/4-1/2 desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 md:gap-8 items-start text-center sm:text-left">
+        {/* Responsive layout: 1 col mobile, 1/4-1/4-1/2 from sm up */}
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-8 items-start text-center sm:text-left">
           
           {/* Column 1: Navigation - 1/4 width (3/12) */}
-          <div className="md:col-span-3 flex flex-col items-center sm:items-start space-y-3 sm:space-y-2 md:space-y-3">
+          <div className="sm:col-span-3 flex flex-col items-center sm:items-start space-y-3 sm:space-y-2">
             <a 
               href="#purpose"
               className="text-fluid-base text-white hover:text-green-400 transition-colors"
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
           
           {/* Column 2: Actions - 1/4 width (3/12) */}
-          <div className="md:col-span-3 flex flex-col items-center sm:items-start space-y-3 sm:space-y-2 md:space-y-3">
+          <div className="sm:col-span-3 flex flex-col items-center sm:items-start space-y-3 sm:space-y-2">
             <a 
               href="mailto:pitch@daysearly.com"
               className="text-fluid-base text-white hover:text-green-400 transition-colors"
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
           
           {/* Column 3: Social & Copyright - 1/2 width (6/12) */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-6 flex flex-col items-center sm:items-start space-y-4 sm:space-y-3 md:space-y-4">
+          <div className="sm:col-span-6 flex flex-col items-center sm:items-start space-y-4 sm:space-y-3">
             {/* Social Links */}
             <div className="flex gap-4 sm:gap-3">
               <a 
