@@ -8,7 +8,6 @@ import Principles from "@/components/sections/principles";
 import Portfolio from "@/components/sections/portfolio";
 import Partners from "@/components/sections/partners";
 import Footer from "@/components/footer";
-import { domAnimation, LazyMotion } from "framer-motion";
 
 // Memoize components for better performance
 const MemoizedNavigation = memo(Navigation);
@@ -44,18 +43,16 @@ export default function Home() {
   }, []);
 
   return (
-    <LazyMotion features={domAnimation}>
-      <div className="min-h-screen bg-white">
-        <MemoizedNavigation />
-        <main>
-          <MemoizedHero />
-          <MemoizedPurpose />
-          <MemoizedPrinciples />
-          <MemoizedPortfolio />
-          <MemoizedPartners />
-        </main>
-        <Footer />
-      </div>
-    </LazyMotion>
+    <div className="min-h-screen bg-white">
+      <MemoizedNavigation />
+      <main>
+        <MemoizedHero />
+        <MemoizedPurpose />
+        <MemoizedPrinciples />
+        <MemoizedPortfolio />
+        <MemoizedPartners />
+      </main>
+      <Footer />
+    </div>
   );
 }

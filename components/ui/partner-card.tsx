@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { Partner } from '@/types';
-import { theme, getNeoBrutalistStyle } from '@/lib/theme';
-import Image from '@/components/ui/image';
+import { theme } from '@/lib/theme';
 
 interface PartnerCardProps {
   partner: Partner;
