@@ -5,9 +5,10 @@ interface AnimatedSectionProps {
   delay?: number;
   variant?: string;
   duration?: number;
+  className?: string;
 }
 
-export default function AnimatedSection({ children, delay = 0, variant = 'slideUp', duration = 0.5 }: AnimatedSectionProps) {
+export default function AnimatedSection({ children, delay = 0, variant = 'slideUp', duration = 0.5, className }: AnimatedSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -72,7 +73,7 @@ export default function AnimatedSection({ children, delay = 0, variant = 'slideU
   };
 
   return (
-    <div ref={ref} style={getAnimationStyle()}>
+    <div ref={ref} style={getAnimationStyle()} className={className}>
       {children}
     </div>
   );
