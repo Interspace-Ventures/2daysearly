@@ -7,7 +7,7 @@ interface PartnerCardProps {
 }
 
 const PartnerCard = memo(({ partner }: PartnerCardProps) => (
-  <div className="bg-white overflow-hidden border-2 border-black h-full" style={{ boxShadow: '2px 2px 0px 0px #000000' }}>
+  <div className="bg-white overflow-hidden border-2 border-black h-full" style={{ boxShadow: '2px 2px 0px 0px #166534' }}>
     {/* Mobile: side-by-side, Desktop: vertical */}
     <div className="flex sm:flex-col h-full">
       {/* Left side on mobile (image + title), Top section on desktop */}

@@ -237,7 +237,7 @@ export default function Navigation() {
             className="flex-shrink-0"
           >
             <div className="bg-white border-2 border-black flex items-center" 
-                 style={{ padding: 'clamp(0.5rem, 1.5vw, 0.75rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)', boxShadow: '2px 2px 0px 0px #000000' }}>
+                 style={{ padding: 'clamp(0.5rem, 1.5vw, 0.75rem)', gap: 'clamp(0.25rem, 1vw, 0.5rem)', boxShadow: '2px 2px 0px 0px #166534' }}>
               <img
                 src="/images/2-days-early-calendar-icon-2025.png"
                 alt="2 Days Early Calendar Icon"
@@ -334,7 +334,7 @@ export default function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden border-2 border-black bg-white p-2"
-            style={{boxShadow: '2px 2px 0px 0px #000000'}}
+            style={{boxShadow: '2px 2px 0px 0px #166534'}}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -342,7 +342,7 @@ export default function Navigation() {
 
         {/* Sidebar Menu - Shows for mobile and tablet */}
         {isOpen && (
-          <div className="lg:hidden bg-green-100 border-2 border-black mt-2 mb-4" style={{boxShadow: '2px 2px 0px 0px #000000'}}>
+          <div className="lg:hidden bg-green-100 border-2 border-black mt-2 mb-4" style={{boxShadow: '2px 2px 0px 0px #166534'}}>
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Links */}
               <div className="space-y-3">
@@ -356,7 +356,7 @@ export default function Navigation() {
                         ? 'bg-green-600 text-white font-bold' 
                         : 'bg-white text-black hover:bg-gray-100'
                     }`}
-                    style={{boxShadow: '1px 1px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                    style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'Alexandria, Inter, sans-serif'}}
                   >
                     {label}
                   </a>
@@ -375,7 +375,7 @@ export default function Navigation() {
                       onClick={button.onClick}
                       disabled={isTallyLoading}
                       className="w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
-                      style={{boxShadow: '1px 1px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                      style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'Alexandria, Inter, sans-serif'}}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {button.icon && button.icon}
@@ -389,7 +389,7 @@ export default function Navigation() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
-                      style={{boxShadow: '1px 1px 0px 0px #000000', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
+                      style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {button.label}

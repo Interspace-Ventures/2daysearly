@@ -13,7 +13,7 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       rel="noopener noreferrer"
       className="group relative block bg-white border-2 border-black cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 h-full" 
       style={{ 
-        boxShadow: '2px 2px 0px 0px #000000',
+        boxShadow: '2px 2px 0px 0px #166534',
         backfaceVisibility: 'hidden',
         transformStyle: 'preserve-3d'
       }}

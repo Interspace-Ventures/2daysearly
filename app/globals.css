@@ -110,15 +110,15 @@ body {
 @layer components {
   /* Neobrutalism utility classes */
   .neo-shadow {
-    box-shadow: 2px 2px 0px 0px #000000;
+    box-shadow: 2px 2px 0px 0px #166534;
   }
   
   .neo-shadow-lg {
-    box-shadow: 4px 4px 0px 0px #000000;
+    box-shadow: 4px 4px 0px 0px #166534;
   }
   
   .neo-shadow-xl {
-    box-shadow: 12px 12px 0px 0px #000000;
+    box-shadow: 12px 12px 0px 0px #166534;
   }
   
   .neo-border {
@@ -141,7 +141,7 @@ body {
   }
 
   .neo-shadow-responsive {
-    box-shadow: clamp(1px, 0.3vw, 4px) clamp(1px, 0.3vw, 4px) 0px 0px #000000;
+    box-shadow: clamp(1px, 0.3vw, 4px) clamp(1px, 0.3vw, 4px) 0px 0px #166534;
   }
 
   /* Card components with responsive sizing */
