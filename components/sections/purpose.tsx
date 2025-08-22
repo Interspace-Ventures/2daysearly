@@ -71,7 +71,7 @@ export default function Purpose() {
                 variant="slideUp"
                 duration={0.5}
               >
-                <div className="bg-white border-2 border-black p-3 flex flex-col justify-start h-full" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #000000'}}>
+                <div className="bg-white border-2 border-black p-3 flex flex-col justify-start h-full" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #166534'}}>
                   <p className="text-fluid-base text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                     {card.text}
                   </p>

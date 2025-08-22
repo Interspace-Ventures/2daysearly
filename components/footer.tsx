@@ -76,7 +76,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white hover:bg-green-100 transition-colors border-2 border-black p-2 flex items-center justify-center"
-                style={{boxShadow: '2px 2px 0px 0px #000000'}}
+                style={{boxShadow: '2px 2px 0px 0px #166534'}}
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -88,7 +88,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white hover:bg-green-100 transition-colors border-2 border-black p-2 flex items-center justify-center"
-                style={{boxShadow: '2px 2px 0px 0px #000000'}}
+                style={{boxShadow: '2px 2px 0px 0px #166534'}}
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">

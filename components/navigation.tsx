@@ -122,7 +122,7 @@ export default function Navigation() {
     formContainer.style.maxHeight = '90vh';
     formContainer.style.backgroundColor = 'white';
     formContainer.style.border = '4px solid #000000';
-    formContainer.style.boxShadow = '0 -4px 0px 0px #000000';
+    formContainer.style.boxShadow = '0 -4px 0px 0px #166534';
     formContainer.style.zIndex = '9999';
     formContainer.style.transform = 'translateY(100%)';
     formContainer.style.transition = 'transform 0.3s ease-in-out';
@@ -154,7 +154,7 @@ export default function Navigation() {
     closeButton.style.color = 'black';
     closeButton.style.fontWeight = 'bold';
     closeButton.style.fontFamily = 'Alexandria, Inter, sans-serif';
-    closeButton.style.boxShadow = '3px 3px 0px 0px #000000';
+    closeButton.style.boxShadow = '3px 3px 0px 0px #166534';
     closeButton.style.transition = 'all 0.1s ease';
 
     const cleanup = () => {
