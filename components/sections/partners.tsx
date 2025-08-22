@@ -1,5 +1,4 @@
 import AnimatedSection from "@/components/ui/animated-section";
-import SectionHeader from "@/components/ui/section-header";
 import PartnerCard from "@/components/ui/partner-card";
 import { Partner } from "@/types";
 
