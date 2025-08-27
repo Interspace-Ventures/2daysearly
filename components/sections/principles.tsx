@@ -54,7 +54,7 @@ const Principles = () => {
           <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
             <h2 
               id="principles-heading"
-              className="text-fluid-4xl font-bold text-black text-left"
+              className="text-fluid-4xl font-bold text-white text-left"
               style={{fontFamily: 'Alexandria, Inter, sans-serif', whiteSpace: 'nowrap'}}
             >
               OPERATING PRINCIPLES
