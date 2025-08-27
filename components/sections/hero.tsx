@@ -3,7 +3,7 @@ import { IMAGES } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full pt-24 pb-4" style={{ backgroundColor: '#166534' }}>
+    <section id="hero" className="w-full pt-24 pb-4" style={{ backgroundColor: '#4bdc7f' }}>
       <div className="container-fluid">
         <AnimatedSection className="text-center w-full" delay={0.2}>
           <div className="flex flex-col items-center justify-center">
