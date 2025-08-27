@@ -227,7 +227,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-green-400 border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
       <div className="container-fluid">
         <div className="flex items-center justify-between w-full min-w-0" style={{ height: 'clamp(4rem, 8vw, 5rem)' }}>
           {/* Logo - Prevent shrinking too much */}
