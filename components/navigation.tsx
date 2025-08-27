@@ -295,14 +295,13 @@ export default function Navigation() {
                     key={button.label}
                     onClick={button.onClick}
                     disabled={isTallyLoading}
-                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold"
+                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold border-2 border-black bg-white hover:bg-gray-100"
                     style={{
                       fontFamily: 'Alexandria, Inter, sans-serif',
                       fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
                       gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
-                      background: 'none',
-                      border: 'none',
-                      padding: '0'
+                      padding: 'clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem)',
+                      boxShadow: '2px 2px 0px 0px #166534'
                     }}
                   >
                     {button.icon && button.icon}
@@ -314,12 +313,14 @@ export default function Navigation() {
                     href={button.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold"
+                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold border-2 border-black bg-white hover:bg-gray-100"
                     style={{
                       fontFamily: 'Alexandria, Inter, sans-serif',
                       fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
                       gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
-                      textDecoration: 'none'
+                      textDecoration: 'none',
+                      padding: 'clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem)',
+                      boxShadow: '2px 2px 0px 0px #166534'
                     }}
                   >
                     {button.label}
