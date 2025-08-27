@@ -45,7 +45,8 @@ const Principles = () => {
   return (
     <section 
       id="principles" 
-      className="section-spacing bg-green-400"
+      className="section-spacing"
+      style={{ backgroundColor: '#166534' }}
       aria-labelledby="principles-heading"
     >
       <div className="container-fluid">

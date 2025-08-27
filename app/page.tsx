@@ -51,6 +51,8 @@ export default function Home() {
         <MemoizedPrinciples />
         <MemoizedPortfolio />
         <MemoizedPartners />
+        {/* Spacer section with appropriate background color */}
+        <section style={{ backgroundColor: '#166534', height: 'clamp(2rem, 5vw, 4rem)' }} />
       </main>
       <Footer />
     </div>
