@@ -267,8 +267,8 @@ export default function Navigation() {
                   }}
                   className={`relative transition-all duration-300 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
                     activeSection === id 
-                      ? 'text-black font-bold' 
-                      : 'text-black hover:text-green-800'
+                      ? 'text-white font-bold' 
+                      : 'text-white hover:text-green-300'
                   }`}
                   style={{
                     fontFamily: 'Alexandria, Inter, sans-serif',
@@ -279,7 +279,7 @@ export default function Navigation() {
                   {label}
                   {/* Animated underline for active section */}
                   <div 
-                    className={`absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out ${
+                    className={`absolute bottom-0 left-0 h-0.5 bg-white transition-all duration-300 ease-out ${
                       activeSection === id ? 'w-full' : 'w-0'
                     }`}
                   />

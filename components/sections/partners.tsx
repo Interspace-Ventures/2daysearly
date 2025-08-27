@@ -76,6 +76,9 @@ export default function Partners() {
             ))}
           </div>
         </AnimatedSection>
+        
+        {/* Additional whitespace before footer */}
+        <div style={{ height: 'clamp(2rem, 5vw, 4rem)' }} />
       </div>
     </section>
   );
