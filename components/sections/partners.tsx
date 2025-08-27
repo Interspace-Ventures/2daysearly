@@ -55,7 +55,7 @@ export default function Partners() {
           <div style={{ marginBottom: 'clamp(1rem, 3vw, 2rem)' }}>
             <h2 
               id="partners-heading"
-              className="text-fluid-3xl font-bold text-black text-left"
+              className="text-fluid-4xl font-bold text-black text-left"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               PARTNERS

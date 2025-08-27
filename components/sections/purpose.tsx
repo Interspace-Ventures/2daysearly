@@ -13,7 +13,7 @@ export default function Purpose() {
           <div style={{ marginBottom: 'clamp(1rem, 3vw, 2rem)' }} className="text-center">
             <h2 
               id="purpose-heading"
-              className="text-fluid-3xl font-bold text-black mb-2"
+              className="text-fluid-4xl font-bold text-black mb-2 text-left"
               style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
             >
               PURPOSE
