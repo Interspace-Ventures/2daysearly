@@ -255,9 +255,9 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Navigation - Only show when there's enough space */}
-          <div className="hidden lg:flex items-center flex-1 justify-end min-w-0">
+          <div className="hidden xl:flex items-center flex-1 justify-end min-w-0">
             {/* Navigation Links - Scale down on smaller screens */}
-            <div className="flex items-center" style={{ gap: 'clamp(0.5rem, 2vw, 2rem)' }}>
+            <div className="flex items-center" style={{ gap: 'clamp(0.25rem, 1vw, 1rem)' }}>
               {navItems.map(({ id, label }) => (
                 <button
                   key={id}
@@ -288,7 +288,7 @@ export default function Navigation() {
             </div>
             
             {/* Action Links - Clean styling */}
-            <div className="flex items-center ml-4" style={{ gap: 'clamp(0.5rem, 1.5vw, 1.25rem)' }}>
+            <div className="flex items-center ml-2" style={{ gap: 'clamp(0.25rem, 1vw, 0.75rem)' }}>
               {actionButtons.map((button) => (
                 button.onClick ? (
                   <button
@@ -334,7 +334,7 @@ export default function Navigation() {
           {/* Mobile/Tablet Menu Button - Show when nav links would overlap */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden border-2 border-black bg-white p-2"
+            className="xl:hidden border-2 border-black bg-white p-2"
             style={{boxShadow: '2px 2px 0px 0px #166534'}}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -343,7 +343,7 @@ export default function Navigation() {
 
         {/* Sidebar Menu - Shows for mobile and tablet */}
         {isOpen && (
-          <div className="lg:hidden bg-green-100 border-2 border-black mt-2 mb-4" style={{boxShadow: '2px 2px 0px 0px #166534'}}>
+          <div className="xl:hidden bg-green-100 border-2 border-black mt-2 mb-4" style={{boxShadow: '2px 2px 0px 0px #166534'}}>
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Links */}
               <div className="space-y-3">
