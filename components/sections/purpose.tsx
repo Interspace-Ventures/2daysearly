@@ -80,6 +80,9 @@ export default function Purpose() {
           </div>
         </AnimatedSection>
         
+        {/* Small spacing between purpose cards and KPI cards */}
+        <div style={{ height: 'clamp(1.5rem, 3vw, 2.5rem)' }} />
+        
         <AnimatedSection delay={0.6}>
           <div 
             className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mt-6"

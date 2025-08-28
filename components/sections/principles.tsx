@@ -16,7 +16,7 @@ const PrincipleItem = memo(({ number, text }: PrincipleItemProps) => (
         </span>
       </div>
       <div className="w-full">
-        <p className="text-fluid-sm md:text-fluid-base text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+        <p className="text-fluid-base md:text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
           {text}
         </p>
       </div>

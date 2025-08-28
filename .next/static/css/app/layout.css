@@ -1226,7 +1226,7 @@ body {
   }
 }
 @media (min-width: 768px) {
-  .md\:text-fluid-base { font-size: clamp(1rem, 2.5vw, 1.125rem); }
+  .md\:text-fluid-lg { font-size: clamp(1.125rem, 3vw, 1.25rem); }
 }
 .hover\:-translate-y-1:hover {
   --tw-translate-y: -0.25rem;
