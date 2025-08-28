@@ -7,7 +7,7 @@ interface PrincipleItemProps {
 }
 
 const PrincipleItem = memo(({ number, text }: PrincipleItemProps) => (
-  <div className="neo-border-responsive neo-shadow-responsive mb-4 h-full" style={{ backgroundColor: '#4bdc7f', padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
+  <div className="neo-border-responsive neo-shadow-responsive mb-4 h-full" style={{ backgroundColor: '#bff5db', padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
     <div className="flex items-start" style={{ gap: 'clamp(0.75rem, 3vw, 1.5rem)' }}>
       <div className="bg-white neo-border-responsive neo-shadow-responsive flex-shrink-0" 
            style={{ padding: 'clamp(0.5rem, 2vw, 1rem)' }}>
