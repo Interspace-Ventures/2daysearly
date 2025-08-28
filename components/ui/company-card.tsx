@@ -33,7 +33,7 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       </div>
 
       {/* Text overlay - appears on hover for desktop */}
-      <div className="absolute inset-0 bg-green-400 p-2 sm:p-4 flex flex-col justify-center opacity-0 group-hover:opacity-95 transition-all duration-300 border-2 border-black">
+      <div className="absolute inset-0 p-2 sm:p-4 flex flex-col justify-center opacity-0 group-hover:opacity-95 transition-all duration-300 border-2 border-black" style={{ backgroundColor: '#4bdc7f' }}>
         <h3 className="text-sm sm:text-base md:text-lg font-bold text-black text-center mb-1 sm:mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300" style={{ fontFamily: 'Alexandria, sans-serif' }}>
           {company.name}
         </h3>
