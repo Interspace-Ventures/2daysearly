@@ -19,11 +19,12 @@ export const IMAGES = {
     backpack: "/images/backpack.png",
     harper: "/images/harper.png",
     juno: "/images/juno.png",
-    fizz: "/images/fizz-logo.png",
+    mine: "/images/mine-logo.svg",
     hadrius: "/images/hadrius-logo.png",
     kartera: "/images/kartera.png",
     sundae: "/images/sundae.png",
-    waldo: "/images/waldo.png"
+    waldo: "/images/waldo.png",
+    instaswitch: "/images/instaswitch-logo.svg"
   }
 } as const;
 
@@ -44,10 +45,10 @@ export const COMPANIES: Company[] = [
     color: "bg-purple-400"
   },
   {
-    name: "FIZZ",
-    href: "https://joinfizz.com",
-    description: "Social debit card and financial platform designed for college students and young adults.",
-    logo: IMAGES.companies.fizz,
+    name: "MINE",
+    href: "https://usemine.com",
+    description: "Build credit, stay on budget, and control your money.",
+    logo: IMAGES.companies.mine,
     color: "bg-green-400"
   },
   {
@@ -74,9 +75,16 @@ export const COMPANIES: Company[] = [
   {
     name: "WALDO",
     href: "https://www.waldo.ai/",
-    description: "AI-powered fraud prevention that automates compliance and keeps your business safe.",
+    description: "AI-powered treasury management for startups.",
     logo: IMAGES.companies.waldo,
     color: "bg-red-400"
+  },
+  {
+    name: "INSTASWITCH",
+    href: "https://instaswitch.co",
+    description: "Automate business bank switching — move income, payroll, spend, and vendors instantly.",
+    logo: IMAGES.companies.instaswitch,
+    color: "bg-blue-400"
   }
 ];
 
