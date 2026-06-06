@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { theme } from '@/lib/theme';
 // Simple inline SVG icons
 const Menu = ({ className }: { className?: string }) => (
   <svg className={className} width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">

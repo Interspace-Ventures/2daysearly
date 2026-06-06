@@ -4,7 +4,6 @@ export interface Company {
   href: string;
   description: string;
   logo: string;
-  color: string;
 }
 
 export interface Partner {

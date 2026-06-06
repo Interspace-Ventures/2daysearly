@@ -34,58 +34,50 @@ export const COMPANIES: Company[] = [
     name: "BACKPACK",
     href: "https://www.backpack529.com/",
     description: "Simplifying 529 plan management for families and advisors with innovative payment solutions.",
-    logo: IMAGES.companies.backpack,
-    color: "bg-blue-400"
+    logo: IMAGES.companies.backpack
   },
   {
-    name: "JUNO", 
+    name: "JUNO",
     href: "https://juno.finance/",
     description: "Modern banking for the crypto-native, with seamless on-ramps and a focus on user experience.",
-    logo: IMAGES.companies.juno,
-    color: "bg-purple-400"
+    logo: IMAGES.companies.juno
   },
   {
     name: "MINE",
     href: "https://usemine.com",
     description: "Build credit, stay on budget, and control your money.",
-    logo: IMAGES.companies.mine,
-    color: "bg-green-400"
+    logo: IMAGES.companies.mine
   },
   {
     name: "HADRIUS",
     href: "https://hadrius.com",
     description: "AI-powered compliance platform for SEC & FINRA regulated firms, saving 19hrs/week on compliance tasks.",
-    logo: IMAGES.companies.hadrius,
-    color: "bg-purple-400"
+    logo: IMAGES.companies.hadrius
   },
   {
     name: "KARTERA",
     href: "https://www.kartera.com",
     description: "Empowering financial advisors with digital-first solutions to serve the next generation of wealth.",
-    logo: IMAGES.companies.kartera,
-    color: "bg-yellow-400"
+    logo: IMAGES.companies.kartera
   },
   {
     name: "SUNDAE",
     href: "https://www.sundae.com",
     description: "Marketplace connecting homeowners looking to sell with property investors for fair, off-market deals.",
-    logo: IMAGES.companies.sundae,
-    color: "bg-orange-400"
+    logo: IMAGES.companies.sundae
   },
   {
     name: "WALDO",
     href: "https://www.waldo.ai/",
     description: "AI-powered treasury management for startups.",
-    logo: IMAGES.companies.waldo,
-    color: "bg-red-400"
+    logo: IMAGES.companies.waldo
   },
   {
     name: "INSTASWITCH",
     href: "https://instaswitch.co",
     description: "Automate business bank switching — move income, payroll, spend, and vendors instantly.",
-    logo: IMAGES.companies.instaswitch,
-    color: "bg-blue-400"
+    logo: IMAGES.companies.instaswitch
   }
 ];
 
-// Partners data - JSX will be defined in the component file due to import constraints
+// Partners data - JSX is defined in components/sections/partners.tsx

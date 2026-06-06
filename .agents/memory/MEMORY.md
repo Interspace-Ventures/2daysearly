@@ -1,0 +1,1 @@
+- [2 Days Early site notes](2-days-early-notes.md) — stack reality (no Express/Vite/Drizzle, it's plain Next.js App Router), portfolio SVG wordmark centering via `magick -trim`, and the `rm -rf .next` stale-cache fix.
