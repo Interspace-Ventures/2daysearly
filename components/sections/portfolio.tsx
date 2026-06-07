@@ -1,6 +1,7 @@
 import React from 'react';
 import CompanyCard from "@/components/ui/company-card";
 import AnimatedSection from "@/components/ui/animated-section";
+import { PortfolioIcon } from "@/components/ui/section-icons";
 import { COMPANIES } from "@/lib/constants";
 
 export default function Portfolio() {
@@ -13,13 +14,16 @@ export default function Portfolio() {
       <div className="container-fluid">
         {/* Section Header */}
         <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
-          <h2 
-            id="portfolio-heading"
-            className="text-fluid-4xl font-bold text-black mb-4 text-left"
-            style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
-          >
-            PORTFOLIO
-          </h2>
+          <div className="flex items-center gap-3 mb-4">
+            <PortfolioIcon className="text-black flex-shrink-0" style={{ width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
+            <h2 
+              id="portfolio-heading"
+              className="text-fluid-4xl font-bold text-black text-left"
+              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+            >
+              PORTFOLIO
+            </h2>
+          </div>
           
           <div className="w-16 h-1 bg-green-500 mb-4"></div>
           

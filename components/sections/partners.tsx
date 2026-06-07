@@ -1,5 +1,6 @@
 import AnimatedSection from "@/components/ui/animated-section";
 import PartnerCard from "@/components/ui/partner-card";
+import { PartnersIcon } from "@/components/ui/section-icons";
 import { Partner } from "@/types";
 
 // Partners data with JSX components
@@ -21,7 +22,14 @@ const partners: Partner[] = [
   },
   {
     name: "BAISHI",
-    bio: "At Chime, shapes lending products helping millions get the credit they deserve. Previously revolutionized mortgages at LendingHome and home search at Compass. Building great fintech while raising tiny humans.",
+    bio: (
+      <>
+        At Chime, shapes lending products helping millions get the credit they deserve. Previously revolutionized mortgages at LendingHome and home search at Compass.{" "}
+        <span className="bg-green-600 border-2 border-black px-1 text-white font-bold">
+          Building great fintech while raising tiny humans.
+        </span>
+      </>
+    ),
     image: "/images/Baishi.png"
   },
   {
@@ -58,13 +66,16 @@ export default function Partners() {
       <div className="container-fluid">
         <AnimatedSection>
           <div style={{ marginBottom: 'clamp(1rem, 3vw, 2rem)' }}>
-            <h2 
-              id="partners-heading"
-              className="text-fluid-4xl font-bold text-white text-left"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
-            >
-              PARTNERS
-            </h2>
+            <div className="flex items-center gap-3">
+              <PartnersIcon className="text-white flex-shrink-0" style={{ width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
+              <h2 
+                id="partners-heading"
+                className="text-fluid-4xl font-bold text-white text-left"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+              >
+                PARTNERS
+              </h2>
+            </div>
             
             <div className="w-16 h-1 bg-green-500 mt-2"></div>
           </div>

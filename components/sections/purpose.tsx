@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/ui/animated-section";
+import { PurposeIcon } from "@/components/ui/section-icons";
 
 export default function Purpose() {
   return (
@@ -10,13 +11,16 @@ export default function Purpose() {
       <div className="container-fluid">
         <AnimatedSection>
           <div style={{ marginBottom: 'clamp(1rem, 3vw, 2rem)' }} className="text-center">
-            <h2 
-              id="purpose-heading"
-              className="text-fluid-4xl font-bold text-black mb-2 text-center"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
-            >
-              PURPOSE
-            </h2>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <PurposeIcon className="text-black flex-shrink-0" style={{ width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
+              <h2 
+                id="purpose-heading"
+                className="text-fluid-4xl font-bold text-black text-center"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+              >
+                PURPOSE
+              </h2>
+            </div>
             
             <div className="w-16 h-1 bg-green-500 mx-auto mb-2"></div>
             

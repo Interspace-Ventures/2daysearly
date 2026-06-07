@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { openTallyForm } from '@/lib/tally';
+import { PurposeIcon, PrinciplesIcon, PortfolioIcon, PartnersIcon } from '@/components/ui/section-icons';
 // Simple inline SVG icons
 const Menu = ({ className }: { className?: string }) => (
   <svg className={className} width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -22,37 +23,6 @@ const ExternalLink = ({ style, className }: { style?: React.CSSProperties; class
 const Loader2 = ({ className }: { className?: string }) => (
   <svg className={className} width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-  </svg>
-);
-
-const PurposeIcon = ({ className }: { className?: string }) => (
-  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="10" />
-    <circle cx="12" cy="12" r="6" />
-    <circle cx="12" cy="12" r="2" />
-  </svg>
-);
-
-const PrinciplesIcon = ({ className }: { className?: string }) => (
-  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
-    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
-  </svg>
-);
-
-const PortfolioIcon = ({ className }: { className?: string }) => (
-  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-    <rect x="2" y="7" width="20" height="14" rx="2" />
-    <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
-  </svg>
-);
-
-const PartnersIcon = ({ className }: { className?: string }) => (
-  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-    <circle cx="9" cy="7" r="4" />
-    <path d="M23 21v-2a4 4 0 00-3-3.87" />
-    <path d="M16 3.13a4 4 0 010 7.75" />
   </svg>
 );
 
@@ -147,7 +117,10 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
-      <div className="container-fluid">
+      <div
+        className="w-full mx-auto"
+        style={{ maxWidth: 'min(1280px, 100%)', paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}
+      >
         <div className="flex items-center justify-between w-full min-w-0" style={{ height: 'clamp(4rem, 8vw, 5rem)' }}>
           {/* Logo - Prevent shrinking too much */}
           <a
@@ -174,7 +147,7 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Navigation - Only show when there's enough space */}
-          <div className="hidden xl:flex items-center flex-1 justify-end min-w-0">
+          <div className="hidden lg:flex items-center flex-1 justify-end min-w-0">
             {/* Navigation Links - Scale down on smaller screens */}
             <div className="flex items-center" style={{ gap: 'clamp(0.25rem, 1vw, 1rem)' }}>
               {navItems.map(({ id, label, icon }) => (
@@ -254,7 +227,7 @@ export default function Navigation() {
           {/* Mobile/Tablet Menu Button - Show when nav links would overlap */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="xl:hidden border-2 border-black bg-white p-2"
+            className="lg:hidden border-2 border-black bg-white p-2"
             style={{boxShadow: '2px 2px 0px 0px #166534'}}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -263,7 +236,7 @@ export default function Navigation() {
 
         {/* Sidebar Menu - Shows for mobile and tablet */}
         {isOpen && (
-          <div className="xl:hidden bg-green-100 border-2 border-black mt-2 mb-4" style={{boxShadow: '2px 2px 0px 0px #166534'}}>
+          <div className="lg:hidden bg-green-100 border-2 border-black mt-2 mb-4" style={{boxShadow: '2px 2px 0px 0px #166534'}}>
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Links */}
               <div className="space-y-3">

@@ -28,7 +28,7 @@ export default function Home() {
         <MemoizedPortfolio />
         <MemoizedPartners />
         {/* Visual spacer bridging the dark-green Partners section into the footer */}
-        <section aria-hidden="true" style={{ backgroundColor: '#166534', height: '200px' }} />
+        <section aria-hidden="true" style={{ backgroundColor: '#166534', height: '48px' }} />
       </main>
       <Footer />
     </div>

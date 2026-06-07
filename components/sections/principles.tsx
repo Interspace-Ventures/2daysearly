@@ -1,5 +1,6 @@
 import { memo } from "react";
 import AnimatedSection from "@/components/ui/animated-section";
+import { PrinciplesIcon } from "@/components/ui/section-icons";
 
 interface PrincipleItemProps {
   number: number;
@@ -52,13 +53,16 @@ const Principles = () => {
       <div className="container-fluid">
         <AnimatedSection>
           <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
-            <h2 
-              id="principles-heading"
-              className="text-fluid-4xl font-bold text-white text-left break-words"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
-            >
-              OPERATING PRINCIPLES
-            </h2>
+            <div className="flex items-center gap-3">
+              <PrinciplesIcon className="text-white flex-shrink-0" style={{ width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
+              <h2 
+                id="principles-heading"
+                className="text-fluid-4xl font-bold text-white text-left break-words"
+                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+              >
+                OPERATING PRINCIPLES
+              </h2>
+            </div>
             
             <div className="w-16 h-1 bg-green-500 mt-4"></div>
           </div>
