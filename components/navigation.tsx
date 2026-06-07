@@ -116,7 +116,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif', backgroundColor: 'rgba(17, 19, 18, 0.72)', backdropFilter: 'blur(14px) saturate(160%)', WebkitBackdropFilter: 'blur(14px) saturate(160%)'}}>
       <div
         className="w-full mx-auto"
         style={{ maxWidth: 'min(1280px, 100%)', paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}
