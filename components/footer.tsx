@@ -1,4 +1,5 @@
 import { theme } from '../lib/theme';
+import ChangelogDialog from '@/components/ui/changelog-dialog';
 
 export default function Footer() {
   return (
@@ -97,8 +98,12 @@ export default function Footer() {
               </a>
             </div>
             
+            <div className="mb-1">
+              <ChangelogDialog />
+            </div>
+
             <div className="text-fluid-sm text-white text-left leading-relaxed" style={{fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
-              <div className="mb-2">© 2025 2 DAYS EARLY</div>
+              <div className="mb-2">© {new Date().getFullYear()} 2 DAYS EARLY</div>
               <div>
                 Built by{" "}
                 <a 
