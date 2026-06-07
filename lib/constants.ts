@@ -24,7 +24,7 @@ export const IMAGES = {
     kartera: "/images/kartera.png",
     sundae: "/images/sundae.png",
     waldo: "/images/waldo.png",
-    instaswitch: "/images/instaswitch-logo.svg"
+    instaswitch: "/images/instaswitch-logo.png"
   }
 } as const;
 
