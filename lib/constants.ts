@@ -19,7 +19,7 @@ export const IMAGES = {
     backpack: "/images/backpack.png",
     harper: "/images/harper.png",
     juno: "/images/juno.png",
-    mine: "/images/mine-logo.svg",
+    mine: "/images/mine-logo.png",
     hadrius: "/images/hadrius-logo.png",
     kartera: "/images/kartera.png",
     sundae: "/images/sundae.png",
