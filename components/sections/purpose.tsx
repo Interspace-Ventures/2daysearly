@@ -16,7 +16,7 @@ export default function Purpose() {
               <h2 
                 id="purpose-heading"
                 className="text-fluid-4xl font-bold text-black text-center"
-                style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+                style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
               >
                 PURPOSE
               </h2>
@@ -26,7 +26,7 @@ export default function Purpose() {
             
             <h3 
               className="text-fluid-xl font-bold text-black"
-              style={{fontFamily: 'Alexandria, Inter, sans-serif'}}
+              style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
             >
               By operators. For operators.
             </h3>
@@ -75,7 +75,7 @@ export default function Purpose() {
                 duration={0.5}
               >
                 <div className="glass-sheen overflow-hidden border-2 border-black p-3 flex flex-col justify-start h-full" style={{background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78))', boxShadow: '2px 2px 0px 0px #166534'}}>
-                  <p className="text-fluid-base text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
+                  <p className="text-fluid-base text-black leading-relaxed" style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}>
                     {card.text}
                   </p>
                 </div>
@@ -99,8 +99,8 @@ export default function Purpose() {
             ].map((kpi, index) => (
               <AnimatedSection key={index} delay={0.8 + (index * 0.1)} variant="slideUp">
                 <div className="neo-border neo-shadow glass-sheen overflow-hidden p-2 text-center bg-white h-full flex flex-col justify-center">
-                  <div className="text-fluid-2xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>{kpi.number}</div>
-                  <div className="text-fluid-xs text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>{kpi.text}</div>
+                  <div className="text-fluid-2xl font-bold text-green-600 mb-1" style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif', color: '#059669'}}>{kpi.number}</div>
+                  <div className="text-fluid-xs text-black" style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}>{kpi.text}</div>
                 </div>
               </AnimatedSection>
             ))}

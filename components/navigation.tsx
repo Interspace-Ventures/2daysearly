@@ -115,7 +115,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b-2 border-black" style={{fontFamily: 'Alexandria, Inter, sans-serif', backgroundColor: 'rgba(17, 19, 18, 0.72)', backdropFilter: 'blur(14px) saturate(160%)', WebkitBackdropFilter: 'blur(14px) saturate(160%)'}}>
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b-2 border-black" style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif', backgroundColor: 'rgba(17, 19, 18, 0.72)', backdropFilter: 'blur(14px) saturate(160%)', WebkitBackdropFilter: 'blur(14px) saturate(160%)'}}>
       <div
         className="w-full mx-auto"
         style={{ maxWidth: 'min(1280px, 100%)', paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}
@@ -137,7 +137,7 @@ export default function Navigation() {
               />
               <span className="font-bold text-black whitespace-nowrap" 
                     style={{
-                      fontFamily: 'Alexandria, Inter, sans-serif',
+                      fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
                       fontSize: 'clamp(0.875rem, 2vw, 1.125rem)'
                     }}>
                 2 DAYS EARLY
@@ -162,7 +162,7 @@ export default function Navigation() {
                       : 'text-white hover:text-green-300'
                   }`}
                   style={{
-                    fontFamily: 'Alexandria, Inter, sans-serif',
+                    fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
                     fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
                     padding: 'clamp(0.25rem, 1vw, 0.5rem)'
                   }}
@@ -189,7 +189,7 @@ export default function Navigation() {
                     disabled={isTallyLoading}
                     className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold border-2 border-black bg-white hover:bg-gray-100"
                     style={{
-                      fontFamily: 'Alexandria, Inter, sans-serif',
+                      fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
                       fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
                       gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
                       padding: 'clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem)',
@@ -207,7 +207,7 @@ export default function Navigation() {
                     rel="noopener noreferrer"
                     className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold border-2 border-black bg-white hover:bg-gray-100"
                     style={{
-                      fontFamily: 'Alexandria, Inter, sans-serif',
+                      fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
                       fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
                       gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
                       textDecoration: 'none',
@@ -249,7 +249,7 @@ export default function Navigation() {
                         ? 'bg-green-600 text-white font-bold' 
                         : 'bg-white text-black hover:bg-gray-100'
                     }`}
-                    style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                    style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
                   >
                     <span className="flex-shrink-0" aria-hidden="true">{icon}</span>
                     {label}
@@ -269,7 +269,7 @@ export default function Navigation() {
                       onClick={button.onClick}
                       disabled={isTallyLoading}
                       className="w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
-                      style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'Alexandria, Inter, sans-serif'}}
+                      style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {button.icon && button.icon}
@@ -283,7 +283,7 @@ export default function Navigation() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
-                      style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'Alexandria, Inter, sans-serif', textDecoration: 'none'}}
+                      style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif', textDecoration: 'none'}}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {button.label}

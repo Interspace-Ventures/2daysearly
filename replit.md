@@ -9,7 +9,7 @@ The design uses a neobrutalism aesthetic — bold type, sharp 2px black borders,
 ## User Preferences
 
 - **Communication style**: Simple, everyday language.
-- **Typography**: Alexandria as the primary font, Inter as the secondary/fallback font.
+- **Typography**: Following the Structured Liquidity recommendations — Archivo as the display/heading font, Inter for body text, and Space Mono available for mono accents/labels.
 - **Design aesthetic**: Neobrutalism using a green (Chime-style) palette rather than bright primary colors.
 - **Code architecture**: Clean, modular components with proper TypeScript typing.
 - **Layout alignment**: Left-align to the card edge, right-align to the box-shadow edge for visual balance.

@@ -2,8 +2,8 @@ import { Theme } from '@/types';
 
 export const theme: Theme = {
   fonts: {
-    primary: 'Alexandria, Inter, sans-serif',
-    secondary: 'Inter, sans-serif'
+    primary: 'var(--font-archivo), var(--font-inter), sans-serif',
+    secondary: 'var(--font-inter), sans-serif'
   },
   colors: {
     primary: '#059669', // Chime green

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Alexandria } from 'next/font/google';
+import { Inter, Archivo, Space_Mono } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({ 
@@ -8,9 +8,16 @@ const inter = Inter({
   display: 'swap',
 });
 
-const alexandria = Alexandria({ 
+const archivo = Archivo({ 
   subsets: ['latin'],
-  variable: '--font-alexandria',
+  variable: '--font-archivo',
+  display: 'swap',
+});
+
+const spaceMono = Space_Mono({ 
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-space-mono',
   display: 'swap',
 });
 
@@ -56,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${alexandria.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${archivo.variable} ${spaceMono.variable}`}>
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         {children}
       </body>
