@@ -28,13 +28,13 @@ const partners: Partner[] = [
     name: "SAMIR",
     bio: (
       <>
-        Finance nerd building money superpowers at Block's Cash App. Previously shaped strategic finance at HRT, Unit, and Chime after starting at JP Morgan. Writes{" "}
+        Building{" "}
         <span className="bg-green-800 border-2 border-black px-1 text-white">
-          <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
-            over-engineered fintech takes
+          <a href="https://interspace.ventures" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
+            Interspace Ventures
           </a>
-        </span>{" "}
-        and is learning to raise a fintech-nerd newborn.
+        </span>
+        . Previously led strategic finance at Block, HRT, Unit etc.
       </>
     ),
     image: "/images/Samir-Desai-min.png",

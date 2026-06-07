@@ -105,16 +105,16 @@ export default function Footer() {
             <div className="text-fluid-sm text-white text-left leading-relaxed" style={{fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
               <div className="mb-2">© {new Date().getFullYear()} 2 DAYS EARLY</div>
               <div>
-                Built by{" "}
+                2 Days Early is an{" "}
                 <a 
                   href="https://interspace.ventures" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-green-400 hover:text-green-300 transition-colors underline"
                 >
-                  Interspace Ventures
+                  Interspace Venture
                 </a>
-                {" "}at the speed of thought with{" "}
+                {" "}built at the speed of thought using{" "}
                 <a 
                   href="https://replit.com" 
                   target="_blank" 
