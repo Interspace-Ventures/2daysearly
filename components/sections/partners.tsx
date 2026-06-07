@@ -28,7 +28,7 @@ const partners: Partner[] = [
     name: "SAMIR",
     bio: (
       <>
-        Finance nerd building money superpowers at Cash App. Previously shaped strategic finance at HRT, Unit, and Chime after starting at JP Morgan. Writes{" "}
+        Finance nerd building money superpowers at Block's Cash App. Previously shaped strategic finance at HRT, Unit, and Chime after starting at JP Morgan. Writes{" "}
         <span className="bg-green-800 border-2 border-black px-1 text-white">
           <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
             over-engineered fintech takes
