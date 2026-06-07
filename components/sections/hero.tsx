@@ -59,7 +59,7 @@ export default function Hero() {
                   boxShadow: '4px 4px 0px 0px #166534'
                 }}
               >
-                APPLY TO JOIN
+                JOIN
               </button>
 
               <a
@@ -73,7 +73,23 @@ export default function Hero() {
                   textDecoration: 'none'
                 }}
               >
-                PITCH YOUR STARTUP
+                PITCH
+              </a>
+
+              <a
+                href="https://posts.interspace.ventures/p/101-everything-you-wanted-to-know"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto text-center bg-white text-black border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                style={{
+                  fontFamily: 'Alexandria, Inter, sans-serif',
+                  fontSize: 'clamp(0.875rem, 1.6vw, 1rem)',
+                  padding: '0.75rem 1.5rem',
+                  boxShadow: '4px 4px 0px 0px #166534',
+                  textDecoration: 'none'
+                }}
+              >
+                LEARN
               </a>
             </div>
           </div>
