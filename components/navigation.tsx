@@ -24,6 +24,37 @@ const Loader2 = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const PurposeIcon = ({ className }: { className?: string }) => (
+  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="12" cy="12" r="6" />
+    <circle cx="12" cy="12" r="2" />
+  </svg>
+);
+
+const PrinciplesIcon = ({ className }: { className?: string }) => (
+  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+  </svg>
+);
+
+const PortfolioIcon = ({ className }: { className?: string }) => (
+  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+    <rect x="2" y="7" width="20" height="14" rx="2" />
+    <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+  </svg>
+);
+
+const PartnersIcon = ({ className }: { className?: string }) => (
+  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 00-3-3.87" />
+    <path d="M16 3.13a4 4 0 010 7.75" />
+  </svg>
+);
+
 function scrollToElement(elementId: string) {
   const element = document.getElementById(elementId);
   if (element) {
@@ -209,10 +240,10 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { id: 'purpose', label: 'PURPOSE' },
-    { id: 'principles', label: 'PRINCIPLES' },
-    { id: 'portfolio', label: 'PORTFOLIO' },
-    { id: 'partners', label: 'PARTNERS' }
+    { id: 'purpose', label: 'PURPOSE', icon: <PurposeIcon className="h-4 w-4" /> },
+    { id: 'principles', label: 'PRINCIPLES', icon: <PrinciplesIcon className="h-4 w-4" /> },
+    { id: 'portfolio', label: 'PORTFOLIO', icon: <PortfolioIcon className="h-4 w-4" /> },
+    { id: 'partners', label: 'PARTNERS', icon: <PartnersIcon className="h-4 w-4" /> }
   ];
 
   const actionButtons = [
@@ -257,14 +288,14 @@ export default function Navigation() {
           <div className="hidden xl:flex items-center flex-1 justify-end min-w-0">
             {/* Navigation Links - Scale down on smaller screens */}
             <div className="flex items-center" style={{ gap: 'clamp(0.25rem, 1vw, 1rem)' }}>
-              {navItems.map(({ id, label }) => (
+              {navItems.map(({ id, label, icon }) => (
                 <button
                   key={id}
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToElement(id);
                   }}
-                  className={`relative transition-all duration-300 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
+                  className={`relative flex items-center gap-1.5 transition-all duration-300 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
                     activeSection === id 
                       ? 'text-white font-bold' 
                       : 'text-white hover:text-green-300'
@@ -275,6 +306,7 @@ export default function Navigation() {
                     padding: 'clamp(0.25rem, 1vw, 0.5rem)'
                   }}
                 >
+                  <span className="flex-shrink-0" aria-hidden="true">{icon}</span>
                   {label}
                   {/* Animated underline for active section */}
                   <div 
@@ -346,18 +378,19 @@ export default function Navigation() {
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Links */}
               <div className="space-y-3">
-                {navItems.map(({ id, label }) => (
+                {navItems.map(({ id, label, icon }) => (
                   <a
                     key={id}
                     href={`#${id}`}
                     onClick={(e) => handleNavClick(e, id)}
-                    className={`block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 ${
+                    className={`flex items-center justify-center gap-2 py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 ${
                       activeSection === id 
                         ? 'bg-green-600 text-white font-bold' 
                         : 'bg-white text-black hover:bg-gray-100'
                     }`}
                     style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'Alexandria, Inter, sans-serif'}}
                   >
+                    <span className="flex-shrink-0" aria-hidden="true">{icon}</span>
                     {label}
                   </a>
                 ))}

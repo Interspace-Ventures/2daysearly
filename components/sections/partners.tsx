@@ -34,7 +34,7 @@ const partners: Partner[] = [
             over-engineered fintech takes
           </a>
         </span>{" "}
-        and loves building models in Python.
+        and is learning to raise a fintech-nerd newborn.
       </>
     ),
     image: "/images/Samir-Desai-min.png",
