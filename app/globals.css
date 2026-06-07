@@ -315,3 +315,22 @@ body {
     max-height: 90px;
   }
 }
+/* Changelog drawer slide-up */
+@keyframes changelog-slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.changelog-drawer {
+  animation: changelog-slide-up 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .changelog-drawer {
+    animation: none;
+  }
+}

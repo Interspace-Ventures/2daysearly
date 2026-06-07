@@ -67,25 +67,24 @@ export default function ChangelogDialog() {
         ref={triggerRef}
         type="button"
         onClick={() => setIsOpen(true)}
-        className="inline-flex items-center gap-1 bg-white text-black border-2 border-black px-2 py-1 text-xs font-bold transition-transform hover:-translate-y-0.5"
-        style={{ fontFamily: theme.fonts.primary, boxShadow: '2px 2px 0px 0px #166534' }}
+        className="text-fluid-sm text-white hover:text-green-400 transition-colors underline"
+        style={{ fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
         aria-haspopup="dialog"
         aria-label={`View changelog, current version ${APP_VERSION}`}
       >
         v{APP_VERSION}
-        <span className="text-green-700">· Changelog</span>
       </button>
 
       {isOpen && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+          className="fixed inset-0 z-[9999] flex items-end justify-center"
           style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
           onClick={() => setIsOpen(false)}
         >
           <div
             ref={dialogRef}
-            className="w-full max-w-lg max-h-[80vh] flex flex-col bg-white border-4 border-black"
-            style={{ boxShadow: '8px 8px 0px 0px #166534' }}
+            className="changelog-drawer w-full max-w-lg max-h-[80vh] flex flex-col bg-white border-4 border-black border-b-0"
+            style={{ boxShadow: '0px -8px 0px 0px #166534' }}
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
