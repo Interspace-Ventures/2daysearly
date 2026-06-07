@@ -47,7 +47,7 @@ const Principles = () => {
     <section 
       id="principles" 
       className="section-spacing"
-      style={{ backgroundColor: '#166534' }}
+      style={{ background: 'linear-gradient(180deg, #1a7a3e 0%, #134e2b 100%)' }}
       aria-labelledby="principles-heading"
     >
       <div className="container-fluid">

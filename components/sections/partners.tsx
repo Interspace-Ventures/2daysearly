@@ -60,7 +60,7 @@ export default function Partners() {
   return (
     <section 
       id="partners" 
-      style={{ backgroundColor: '#166534', paddingTop: '2rem', paddingBottom: '2rem' }}
+      style={{ background: 'linear-gradient(180deg, #1a7a3e 0%, #134e2b 100%)', paddingTop: '2rem', paddingBottom: '2rem' }}
       aria-labelledby="partners-heading"
     >
       <div className="container-fluid">

@@ -4,7 +4,7 @@ import { openTallyForm } from "@/lib/tally";
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full pt-24 pb-12" style={{ backgroundColor: '#4bdc7f' }}>
+    <section id="hero" className="w-full pt-24 pb-12" style={{ background: 'linear-gradient(180deg, #57e188 0%, #45d97a 100%)' }}>
       <div className="container-fluid">
         <AnimatedSection className="text-center w-full" delay={0.2}>
           <div className="flex flex-col items-center justify-center">

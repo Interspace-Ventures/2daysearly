@@ -5,7 +5,7 @@ export default function Purpose() {
   return (
     <section 
       id="purpose" 
-      style={{ backgroundColor: '#4bdc7f', paddingTop: '1rem', paddingBottom: '3rem' }}
+      style={{ background: 'linear-gradient(180deg, #57e188 0%, #45d97a 100%)', paddingTop: '1rem', paddingBottom: '3rem' }}
       aria-labelledby="purpose-heading"
     >
       <div className="container-fluid">

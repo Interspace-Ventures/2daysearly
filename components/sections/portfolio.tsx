@@ -8,7 +8,7 @@ export default function Portfolio() {
   return (
     <section 
       id="portfolio" 
-      style={{ backgroundColor: '#4bdc7f', paddingTop: '3rem', paddingBottom: '3rem' }}
+      style={{ background: 'linear-gradient(180deg, #57e188 0%, #45d97a 100%)', paddingTop: '3rem', paddingBottom: '3rem' }}
       aria-labelledby="portfolio-heading"
     >
       <div className="container-fluid">
