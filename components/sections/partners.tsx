@@ -34,7 +34,13 @@ const partners: Partner[] = [
             Interspace Ventures
           </a>
         </span>
-        . Previously led strategic finance at Block, HRT, Unit etc.
+        . Previously led strategic finance at Block, HRT, Unit, and Chime after starting at JP Morgan. Writes{" "}
+        <span className="bg-green-800 border-2 border-black px-1 text-white">
+          <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
+            over-engineered fintech takes
+          </a>
+        </span>{" "}
+        and is learning to raise a fintech-nerd newborn.
       </>
     ),
     image: "/images/Samir-Desai-min.png",
