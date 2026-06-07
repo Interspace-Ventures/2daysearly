@@ -45,13 +45,13 @@ export default function Hero() {
             </p>
 
             <div
-              className="flex flex-col sm:flex-row items-center justify-center w-full sm:w-auto"
+              className="flex flex-row flex-wrap items-center justify-center"
               style={{ gap: 'clamp(0.75rem, 2vw, 1rem)', marginTop: 'clamp(1.5rem, 4vw, 2.25rem)' }}
             >
               <button
                 type="button"
                 onClick={() => openTallyForm()}
-                className="w-full sm:w-auto bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                className="w-auto bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
                 style={{
                   fontFamily: 'Alexandria, Inter, sans-serif',
                   fontSize: 'clamp(0.875rem, 1.6vw, 1rem)',
@@ -64,7 +64,7 @@ export default function Hero() {
 
               <a
                 href="mailto:pitch@daysearly.com"
-                className="w-full sm:w-auto text-center bg-white text-black border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                className="w-auto text-center bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
                 style={{
                   fontFamily: 'Alexandria, Inter, sans-serif',
                   fontSize: 'clamp(0.875rem, 1.6vw, 1rem)',
@@ -80,7 +80,7 @@ export default function Hero() {
                 href="https://posts.interspace.ventures/p/101-everything-you-wanted-to-know"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto text-center bg-white text-black border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                className="w-auto text-center bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
                 style={{
                   fontFamily: 'Alexandria, Inter, sans-serif',
                   fontSize: 'clamp(0.875rem, 1.6vw, 1rem)',
