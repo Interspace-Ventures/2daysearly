@@ -7,6 +7,7 @@ import Purpose from "@/components/sections/purpose";
 import Principles from "@/components/sections/principles";
 import Portfolio from "@/components/sections/portfolio";
 import Partners from "@/components/sections/partners";
+import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/footer";
 
 // Memoize section components to avoid unnecessary re-renders
@@ -16,6 +17,7 @@ const MemoizedPurpose = memo(Purpose);
 const MemoizedPrinciples = memo(Principles);
 const MemoizedPortfolio = memo(Portfolio);
 const MemoizedPartners = memo(Partners);
+const MemoizedTestimonials = memo(Testimonials);
 
 export default function Home() {
   return (
@@ -27,6 +29,7 @@ export default function Home() {
         <MemoizedPrinciples />
         <MemoizedPortfolio />
         <MemoizedPartners />
+        <MemoizedTestimonials />
         {/* Visual spacer bridging the dark-green Partners section into the footer */}
         <section aria-hidden="true" style={{ backgroundColor: '#166534', height: '200px' }} />
       </main>
