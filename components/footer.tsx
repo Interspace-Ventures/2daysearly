@@ -103,7 +103,7 @@ export default function Footer() {
             </div>
 
             <div className="text-fluid-sm text-white text-left leading-relaxed" style={{fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
-              <div className="mb-2">© {new Date().getFullYear()} 2 DAYS EARLY</div>
+              <div className="mb-2">© 2026 2 DAYS EARLY</div>
               <div>
                 2 Days Early is an{" "}
                 <a 
