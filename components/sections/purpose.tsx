@@ -74,7 +74,7 @@ export default function Purpose() {
                 variant="slideUp"
                 duration={0.5}
               >
-                <div className="bg-white border-2 border-black p-3 flex flex-col justify-start h-full" style={{backgroundColor: '#ffffff', boxShadow: '2px 2px 0px 0px #166534'}}>
+                <div className="glass-sheen overflow-hidden border-2 border-black p-3 flex flex-col justify-start h-full" style={{background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78))', boxShadow: '2px 2px 0px 0px #166534'}}>
                   <p className="text-fluid-base text-black leading-relaxed" style={{fontFamily: 'Alexandria, Inter, sans-serif'}}>
                     {card.text}
                   </p>
@@ -98,7 +98,7 @@ export default function Purpose() {
               { number: "$2.5M", text: "investing capacity per year" }
             ].map((kpi, index) => (
               <AnimatedSection key={index} delay={0.8 + (index * 0.1)} variant="slideUp">
-                <div className="neo-border neo-shadow p-2 text-center bg-white h-full flex flex-col justify-center">
+                <div className="neo-border neo-shadow glass-sheen overflow-hidden p-2 text-center bg-white h-full flex flex-col justify-center">
                   <div className="text-fluid-2xl font-bold text-green-600 mb-1" style={{fontFamily: 'Alexandria, sans-serif', color: '#059669'}}>{kpi.number}</div>
                   <div className="text-fluid-xs text-black" style={{fontFamily: 'Alexandria, sans-serif'}}>{kpi.text}</div>
                 </div>

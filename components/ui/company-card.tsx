@@ -11,7 +11,7 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       href={company.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block bg-white border-2 border-black cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 h-full" 
+      className="group relative block glass-sheen overflow-hidden bg-white border-2 border-black cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1 h-full" 
       style={{ 
         boxShadow: '2px 2px 0px 0px #166534',
         backfaceVisibility: 'hidden',

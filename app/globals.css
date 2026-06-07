@@ -264,6 +264,58 @@ body {
     @apply text-sm text-gray-600;
   }
 
+  /* Structured Liquidity: liquid depth + tactile glass.
+     Rigid containment (sharp edges, flat shadows) stays on the card;
+     the surface inside reflects light like semi-transparent glass. */
+  .glass-sheen {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .glass-sheen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.08) 24%, rgba(255, 255, 255, 0) 46%),
+      linear-gradient(118deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 34%);
+  }
+
+  /* Frosted, semi-transparent glass that lets the section tint bleed through */
+  .frosted-glass {
+    position: relative;
+    isolation: isolate;
+    backdrop-filter: blur(10px) saturate(165%);
+    -webkit-backdrop-filter: blur(10px) saturate(165%);
+  }
+
+  .frosted-glass::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 26%, rgba(255, 255, 255, 0) 50%),
+      linear-gradient(118deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 36%);
+  }
+
+  /* Keep real content above the sheen overlays */
+  .glass-sheen > *,
+  .frosted-glass > * {
+    position: relative;
+    z-index: 3;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .glass-sheen,
+    .frosted-glass {
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+  }
+
   /* Navigation improvements */
   .nav-logo {
     height: clamp(32px, 6vw, 48px);
