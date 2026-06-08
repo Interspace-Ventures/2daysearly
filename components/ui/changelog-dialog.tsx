@@ -83,7 +83,7 @@ export default function ChangelogDialog() {
         >
           <div
             ref={dialogRef}
-            className="changelog-drawer w-full max-w-[min(750px,95vw)] max-h-[80vh] flex flex-col border-4 border-b-0"
+            className="changelog-drawer w-full max-w-[min(960px,95vw)] max-h-[80vh] flex flex-col border-4 border-b-0"
             style={{ background: 'var(--carbon-surface)', borderColor: 'var(--carbon-border)', boxShadow: '0px -8px 0px 0px var(--carbon-shadow)' }}
             onClick={(e) => e.stopPropagation()}
             role="dialog"

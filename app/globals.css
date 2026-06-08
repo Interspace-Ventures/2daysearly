@@ -223,7 +223,7 @@ body {
   /* Container system with viewport-aware sizing */
   .container-fluid {
     width: 100%;
-    max-width: min(750px, 95vw);
+    max-width: min(960px, 95vw);
     margin-left: auto;
     margin-right: auto;
     padding-left: clamp(1rem, 4vw, 2rem);
@@ -415,7 +415,7 @@ body {
 /* Large screen optimizations */
 @media (min-width: 1400px) {
   .container-fluid {
-    max-width: 750px;
+    max-width: 960px;
   }
   
   .company-card .logo-container img {
