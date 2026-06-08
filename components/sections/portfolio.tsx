@@ -25,7 +25,6 @@ export default function Portfolio() {
             </h2>
           </div>
           
-          <div className="w-16 h-1 mb-4" style={{ backgroundColor: 'var(--mint)' }}></div>
           
           <h3 
             className="text-fluid-xl font-bold text-left"

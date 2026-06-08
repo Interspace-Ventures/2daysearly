@@ -22,8 +22,6 @@ export default function Purpose() {
               </h2>
             </div>
             
-            <div className="w-16 h-1 mb-2" style={{ backgroundColor: 'var(--mint)' }}></div>
-            
             <h3 
               className="text-fluid-xl font-bold"
               style={{ color: 'var(--carbon-text)', fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}

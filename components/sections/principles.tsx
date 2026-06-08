@@ -62,8 +62,6 @@ const Principles = () => {
                 PRINCIPLES
               </h2>
             </div>
-            
-            <div className="w-16 h-1 mt-4" style={{ backgroundColor: 'var(--mint)' }}></div>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8">
