@@ -96,7 +96,7 @@ export default function Purpose() {
               { number: "$2.5M", text: "investing capacity per year" }
             ].map((kpi, index) => (
               <AnimatedSection key={index} delay={0.8 + (index * 0.1)} variant="slideUp">
-                <div className="neo-border neo-shadow glass-sheen overflow-hidden p-2 text-center h-full flex flex-col justify-center" style={{ background: 'var(--carbon-card)' }}>
+                <div className="neo-border neo-shadow glass-sheen overflow-hidden p-2 text-center h-full flex flex-col justify-start" style={{ background: 'var(--carbon-card)' }}>
                   <div className="text-fluid-2xl font-bold mb-1" style={{fontFamily: 'var(--font-display), var(--font-outfit), sans-serif', color: 'var(--mint)'}}>{kpi.number}</div>
                   <div className="text-fluid-xs sl-body" style={{ color: 'var(--carbon-muted)' }}>{kpi.text}</div>
                 </div>
