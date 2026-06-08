@@ -13,25 +13,25 @@ export default function Footer() {
           <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="#purpose"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
             >
               PURPOSE
             </a>
             <a 
               href="#principles"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
             >
               PRINCIPLES
             </a>
             <a 
               href="#portfolio"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
             >
               PORTFOLIO
             </a>
             <a 
               href="#partners"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
             >
               PARTNERS
             </a>
@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="mailto:pitch@daysearly.com"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
             >
               PITCH
             </a>
@@ -49,12 +49,12 @@ export default function Footer() {
               href="https://posts.interspace.ventures/p/101-everything-you-wanted-to-know"
               target="_blank"
               rel="noopener noreferrer"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
             >
               LEARN
             </a>
             <button
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
               style={{background: 'none', border: 'none', padding: 0}}
             >
               JOIN
@@ -107,7 +107,7 @@ export default function Footer() {
               href="https://interspace.ventures" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-colors underline text-[#5ec7b6] hover:text-[#3e978a]"
+              className="transition-colors underline text-[#1dc677] hover:text-[#179e5f]"
             >
               Interspace Venture
             </a>
@@ -116,7 +116,7 @@ export default function Footer() {
               href="https://replit.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-colors underline text-[#5ec7b6] hover:text-[#3e978a]"
+              className="transition-colors underline text-[#1dc677] hover:text-[#179e5f]"
             >
               Replit
             </a>

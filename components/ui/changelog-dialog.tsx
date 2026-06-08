@@ -67,7 +67,7 @@ export default function ChangelogDialog() {
         ref={triggerRef}
         type="button"
         onClick={() => setIsOpen(true)}
-        className="text-fluid-sm text-white transition-colors underline hover:text-[#5ec7b6]"
+        className="text-fluid-sm text-white transition-colors underline hover:text-[#1dc677]"
         style={{ fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
         aria-haspopup="dialog"
         aria-label={`View changelog, current version ${APP_VERSION}`}
