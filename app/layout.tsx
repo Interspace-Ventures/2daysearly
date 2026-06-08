@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter, Archivo, Space_Mono } from 'next/font/google';
+import { Outfit, Archivo, Space_Mono } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ 
+const outfit = Outfit({ 
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-outfit',
   display: 'swap',
 });
 
@@ -63,8 +64,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${archivo.variable} ${spaceMono.variable}`}>
-      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${archivo.variable} ${spaceMono.variable}`}>
+      <body className={`${outfit.className} antialiased`} suppressHydrationWarning>
         {children}
       </body>
     </html>

@@ -10,9 +10,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'var(--font-alexandria)', 'system-ui', 'sans-serif'],
-        primary: ['var(--font-alexandria)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
-        secondary: ['var(--font-inter)', 'var(--font-alexandria)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-outfit)', 'Helvetica Neue', 'system-ui', 'sans-serif'],
+        display: ['var(--font-archivo)', 'Helvetica Neue', 'system-ui', 'sans-serif'],
+        body: ['var(--font-outfit)', 'Helvetica Neue', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-space-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        primary: ['var(--font-archivo)', 'var(--font-outfit)', 'system-ui', 'sans-serif'],
+        secondary: ['var(--font-outfit)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

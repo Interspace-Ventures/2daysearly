@@ -71,7 +71,7 @@ export default function Partners() {
               <h2 
                 id="partners-heading"
                 className="text-fluid-4xl font-bold text-white text-left"
-                style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
+                style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
               >
                 PARTNERS
               </h2>

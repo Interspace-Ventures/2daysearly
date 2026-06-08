@@ -9,7 +9,7 @@ The design uses a neobrutalism aesthetic — bold type, sharp 2px black borders,
 ## User Preferences
 
 - **Communication style**: Simple, everyday language.
-- **Typography**: Following the Structured Liquidity recommendations — Archivo as the display/heading font, Inter for body text, and Space Mono available for mono accents/labels.
+- **Typography**: Matching the Structured Liquidity framework's three-tier type system — Archivo for display/headings (tight -0.02em tracking), Outfit for body copy, and Space Mono (uppercase, loose tracking) for labels, nav links, and buttons. Reusable `.sl-display` / `.sl-body` / `.sl-label` utility classes live in `app/globals.css`.
 - **Design aesthetic**: Neobrutalism using a green (Chime-style) palette rather than bright primary colors.
 - **Code architecture**: Clean, modular components with proper TypeScript typing.
 - **Layout alignment**: Left-align to the card edge, right-align to the box-shadow edge for visual balance.

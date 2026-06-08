@@ -7,7 +7,7 @@
 
 /* Force text visibility on mobile and maximize width */
 body, html {
-  font-family: var(--font-inter), var(--font-archivo), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-outfit), 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
   color: #000000;
   -webkit-text-size-adjust: 100%;
   margin: 0;
@@ -15,6 +15,30 @@ body, html {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* ── Structured Liquidity typography roles ──
+   Display/headings: Archivo, tight tracking.
+   Body copy: Outfit (inherited from body).
+   Labels/eyebrows/nav: Space Mono, uppercase, loose tracking. */
+.sl-display {
+  font-family: var(--font-archivo), 'Helvetica Neue', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.sl-body {
+  font-family: var(--font-outfit), 'Helvetica Neue', system-ui, sans-serif;
+}
+
+.sl-label {
+  font-family: var(--font-space-mono), ui-monospace, 'SFMono-Regular', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-archivo), 'Helvetica Neue', system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 @tailwind base;

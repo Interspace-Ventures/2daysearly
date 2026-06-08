@@ -1,4 +1,3 @@
-import { theme } from '../lib/theme';
 import ChangelogDialog from '@/components/ui/changelog-dialog';
 
 export default function Footer() {
@@ -14,29 +13,25 @@ export default function Footer() {
           <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="#purpose"
-              className="text-fluid-base text-white hover:text-green-400 transition-colors"
-              style={{fontFamily: theme.fonts.primary}}
+              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
             >
               PURPOSE
             </a>
             <a 
               href="#principles"
-              className="text-fluid-base text-white hover:text-green-400 transition-colors"
-              style={{fontFamily: theme.fonts.primary}}
+              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
             >
               PRINCIPLES
             </a>
             <a 
               href="#portfolio"
-              className="text-fluid-base text-white hover:text-green-400 transition-colors"
-              style={{fontFamily: theme.fonts.primary}}
+              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
             >
               PORTFOLIO
             </a>
             <a 
               href="#partners"
-              className="text-fluid-base text-white hover:text-green-400 transition-colors"
-              style={{fontFamily: theme.fonts.primary}}
+              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
             >
               PARTNERS
             </a>
@@ -46,8 +41,7 @@ export default function Footer() {
           <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="mailto:pitch@daysearly.com"
-              className="text-fluid-base text-white hover:text-green-400 transition-colors"
-              style={{fontFamily: theme.fonts.primary}}
+              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
             >
               PITCH
             </a>
@@ -55,14 +49,13 @@ export default function Footer() {
               href="https://posts.interspace.ventures/p/101-everything-you-wanted-to-know"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-fluid-base text-white hover:text-green-400 transition-colors"
-              style={{fontFamily: theme.fonts.primary}}
+              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
             >
               LEARN
             </a>
             <button
-              className="text-fluid-base text-white hover:text-green-400 transition-colors"
-              style={{fontFamily: theme.fonts.primary, background: 'none', border: 'none', padding: 0}}
+              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
+              style={{background: 'none', border: 'none', padding: 0}}
             >
               JOIN
             </button>
@@ -102,8 +95,8 @@ export default function Footer() {
               <ChangelogDialog />
             </div>
 
-            <div className="text-fluid-sm text-white text-left leading-relaxed" style={{fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
-              <div className="mb-2">© 2026 2 DAYS EARLY</div>
+            <div className="text-fluid-sm text-white text-left leading-relaxed sl-body" style={{fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
+              <div className="mb-2 sl-label" style={{letterSpacing: '0.08em'}}>© 2026 2 DAYS EARLY</div>
               <div>
                 2 Days Early is an{" "}
                 <a 

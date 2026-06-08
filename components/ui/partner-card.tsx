@@ -37,7 +37,7 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
       <div className="flex-1 p-3 sm:p-4 bg-white">
         <div 
           className="text-black text-xs sm:text-base leading-relaxed"
-          style={{ fontFamily: theme.fonts.primary }}
+          style={{ fontFamily: theme.fonts.secondary }}
         >
           {partner.bio}
         </div>

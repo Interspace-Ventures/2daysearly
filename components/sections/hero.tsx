@@ -21,7 +21,7 @@ export default function Hero() {
             <h1
               className="font-bold text-black"
               style={{
-                fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
+                fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif',
                 fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
                 lineHeight: 1.1,
                 marginTop: 'clamp(1rem, 3vw, 1.75rem)',
@@ -34,7 +34,7 @@ export default function Hero() {
             <p
               className="text-black"
               style={{
-                fontFamily: 'var(--font-inter), sans-serif',
+                fontFamily: 'var(--font-outfit), sans-serif',
                 fontSize: 'clamp(1rem, 2vw, 1.25rem)',
                 marginTop: 'clamp(0.75rem, 2vw, 1rem)',
                 maxWidth: '46ch',
@@ -51,10 +51,9 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => openTallyForm()}
-                className="w-auto bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                className="sl-label w-auto bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
                 style={{
-                  fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
-                  fontSize: 'clamp(0.875rem, 1.6vw, 1rem)',
+                  fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
                   padding: '0.75rem 1.5rem',
                   boxShadow: '4px 4px 0px 0px #166534'
                 }}
@@ -64,10 +63,9 @@ export default function Hero() {
 
               <a
                 href="mailto:pitch@daysearly.com"
-                className="w-auto text-center bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                className="sl-label w-auto text-center bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
                 style={{
-                  fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
-                  fontSize: 'clamp(0.875rem, 1.6vw, 1rem)',
+                  fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
                   padding: '0.75rem 1.5rem',
                   boxShadow: '4px 4px 0px 0px #166534',
                   textDecoration: 'none'
@@ -80,10 +78,9 @@ export default function Hero() {
                 href="https://posts.interspace.ventures/p/101-everything-you-wanted-to-know"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-auto text-center bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                className="sl-label w-auto text-center bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
                 style={{
-                  fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
-                  fontSize: 'clamp(0.875rem, 1.6vw, 1rem)',
+                  fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
                   padding: '0.75rem 1.5rem',
                   boxShadow: '4px 4px 0px 0px #166534',
                   textDecoration: 'none'

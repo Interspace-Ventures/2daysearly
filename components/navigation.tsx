@@ -115,7 +115,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b-2 border-black" style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif', backgroundColor: 'rgba(17, 19, 18, 0.72)', backdropFilter: 'blur(14px) saturate(160%)', WebkitBackdropFilter: 'blur(14px) saturate(160%)'}}>
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b-2 border-black" style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif', backgroundColor: 'rgba(17, 19, 18, 0.72)', backdropFilter: 'blur(14px) saturate(160%)', WebkitBackdropFilter: 'blur(14px) saturate(160%)'}}>
       <div
         className="w-full mx-auto"
         style={{ maxWidth: 'min(1280px, 100%)', paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)' }}
@@ -137,7 +137,7 @@ export default function Navigation() {
               />
               <span className="font-bold text-black whitespace-nowrap" 
                     style={{
-                      fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
+                      fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif',
                       fontSize: 'clamp(0.875rem, 2vw, 1.125rem)'
                     }}>
                 2 DAYS EARLY
@@ -156,14 +156,13 @@ export default function Navigation() {
                     e.preventDefault();
                     scrollToElement(id);
                   }}
-                  className={`relative flex items-center gap-1.5 transition-all duration-300 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
+                  className={`sl-label relative flex items-center gap-1.5 transition-all duration-300 whitespace-nowrap lg:border-0 lg:shadow-none lg:bg-transparent ${
                     activeSection === id 
                       ? 'text-white font-bold' 
                       : 'text-white hover:text-green-300'
                   }`}
                   style={{
-                    fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
-                    fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
+                    fontSize: 'clamp(0.7rem, 1.4vw, 0.8rem)',
                     padding: 'clamp(0.25rem, 1vw, 0.5rem)'
                   }}
                 >
@@ -187,10 +186,9 @@ export default function Navigation() {
                     key={button.label}
                     onClick={button.onClick}
                     disabled={isTallyLoading}
-                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold border-2 border-black bg-white hover:bg-gray-100"
+                    className="sl-label transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold border-2 border-black bg-white hover:bg-gray-100"
                     style={{
-                      fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
-                      fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
+                      fontSize: 'clamp(0.7rem, 1.4vw, 0.8rem)',
                       gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
                       padding: 'clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem)',
                       boxShadow: '2px 2px 0px 0px #166534'
@@ -205,10 +203,9 @@ export default function Navigation() {
                     href={button.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold border-2 border-black bg-white hover:bg-gray-100"
+                    className="sl-label transition-all duration-100 flex items-center whitespace-nowrap text-black hover:text-green-800 font-bold border-2 border-black bg-white hover:bg-gray-100"
                     style={{
-                      fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif',
-                      fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)',
+                      fontSize: 'clamp(0.7rem, 1.4vw, 0.8rem)',
                       gap: 'clamp(0.25rem, 0.5vw, 0.375rem)',
                       textDecoration: 'none',
                       padding: 'clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem)',
@@ -244,12 +241,12 @@ export default function Navigation() {
                     key={id}
                     href={`#${id}`}
                     onClick={(e) => handleNavClick(e, id)}
-                    className={`flex items-center justify-center gap-2 py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 ${
+                    className={`sl-label flex items-center justify-center gap-2 py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 ${
                       activeSection === id 
                         ? 'bg-green-600 text-white font-bold' 
                         : 'bg-white text-black hover:bg-gray-100'
                     }`}
-                    style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
+                    style={{boxShadow: '1px 1px 0px 0px #166534'}}
                   >
                     <span className="flex-shrink-0" aria-hidden="true">{icon}</span>
                     {label}
@@ -268,8 +265,8 @@ export default function Navigation() {
                       key={button.label}
                       onClick={button.onClick}
                       disabled={isTallyLoading}
-                      className="w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
-                      style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
+                      className="sl-label w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
+                      style={{boxShadow: '1px 1px 0px 0px #166534'}}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {button.icon && button.icon}
@@ -282,8 +279,8 @@ export default function Navigation() {
                       href={button.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
-                      style={{boxShadow: '1px 1px 0px 0px #166534', fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif', textDecoration: 'none'}}
+                      className="sl-label w-full block py-3 px-4 text-base text-center border-2 border-black transition-all duration-100 bg-white text-black hover:bg-gray-100 font-bold"
+                      style={{boxShadow: '1px 1px 0px 0px #166534', textDecoration: 'none'}}
                     >
                       <span className="flex items-center justify-center gap-2">
                         {button.label}

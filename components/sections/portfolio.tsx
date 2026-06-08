@@ -19,7 +19,7 @@ export default function Portfolio() {
             <h2 
               id="portfolio-heading"
               className="text-fluid-4xl font-bold text-black text-left"
-              style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
+              style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
             >
               PORTFOLIO
             </h2>
@@ -29,7 +29,7 @@ export default function Portfolio() {
           
           <h3 
             className="text-fluid-xl text-black font-bold text-left"
-            style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
+            style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
           >
             We're proud to invest our time and money in operators at these startups:
           </h3>

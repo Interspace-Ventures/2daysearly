@@ -12,12 +12,12 @@ const PrincipleItem = memo(({ number, text }: PrincipleItemProps) => (
     <div className="flex flex-col items-center text-center" style={{ gap: 'clamp(0.75rem, 3vw, 1.5rem)' }}>
       <div className="neo-border-responsive neo-shadow-responsive" 
            style={{ backgroundColor: '#4bdc7f', padding: 'clamp(0.5rem, 2vw, 1rem)' }}>
-        <span className="text-fluid-xl font-bold text-black" style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}>
+        <span className="text-fluid-xl font-bold text-black" style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}>
           {number}
         </span>
       </div>
       <div className="w-full">
-        <p className="text-fluid-base md:text-fluid-lg text-black leading-relaxed" style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}>
+        <p className="text-fluid-base md:text-fluid-lg text-black leading-relaxed sl-body">
           {text}
         </p>
       </div>
@@ -58,7 +58,7 @@ const Principles = () => {
               <h2 
                 id="principles-heading"
                 className="text-fluid-4xl font-bold text-white text-left break-words"
-                style={{fontFamily: 'var(--font-archivo), var(--font-inter), sans-serif'}}
+                style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
               >
                 OPERATING PRINCIPLES
               </h2>
