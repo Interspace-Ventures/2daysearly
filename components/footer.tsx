@@ -94,32 +94,33 @@ export default function Footer() {
             <div className="mb-1">
               <ChangelogDialog />
             </div>
-
-            <div className="text-fluid-sm text-white text-left leading-relaxed sl-body" style={{fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)'}}>
-              <div className="mb-2 sl-label" style={{letterSpacing: '0.08em'}}>© 2026 2 DAYS EARLY</div>
-              <div>
-                2 Days Early is an{" "}
-                <a 
-                  href="https://interspace.ventures" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="transition-colors underline text-[#5ec7b6] hover:text-[#3e978a]"
-                >
-                  Interspace Venture
-                </a>
-                {" "}built at the speed of thought using{" "}
-                <a 
-                  href="https://replit.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="transition-colors underline text-[#5ec7b6] hover:text-[#3e978a]"
-                >
-                  Replit
-                </a>
-              </div>
-            </div>
           </div>
           
+        </div>
+
+        {/* Full-width copyright row */}
+        <div className="text-fluid-sm text-white text-left leading-relaxed sl-body mt-8 pt-6" style={{fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', borderTop: '1px solid var(--carbon-border)'}}>
+          <div className="mb-2 sl-label" style={{letterSpacing: '0.08em'}}>© 2026 2 DAYS EARLY</div>
+          <div>
+            2 Days Early is an{" "}
+            <a 
+              href="https://interspace.ventures" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-colors underline text-[#5ec7b6] hover:text-[#3e978a]"
+            >
+              Interspace Venture
+            </a>
+            {" "}built at the speed of thought using{" "}
+            <a 
+              href="https://replit.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-colors underline text-[#5ec7b6] hover:text-[#3e978a]"
+            >
+              Replit
+            </a>
+          </div>
         </div>
       </div>
     </footer>
