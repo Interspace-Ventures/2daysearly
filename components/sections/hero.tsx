@@ -67,7 +67,8 @@ export default function Hero() {
                 style={{
                   fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
                   padding: '0.75rem 1.5rem',
-                  textDecoration: 'none'
+                  textDecoration: 'none',
+                  boxShadow: '3px 3px 0px 0px var(--carbon-shadow)'
                 }}
               >
                 PITCH
@@ -81,7 +82,8 @@ export default function Hero() {
                 style={{
                   fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
                   padding: '0.75rem 1.5rem',
-                  textDecoration: 'none'
+                  textDecoration: 'none',
+                  boxShadow: '3px 3px 0px 0px var(--carbon-shadow)'
                 }}
               >
                 LEARN
