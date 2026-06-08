@@ -10,19 +10,19 @@ export default function Purpose() {
     >
       <div className="container-fluid">
         <AnimatedSection>
-          <div style={{ marginBottom: 'clamp(1rem, 3vw, 2rem)' }} className="text-center">
-            <div className="flex items-center justify-center gap-3 mb-2">
+          <div style={{ marginBottom: 'clamp(1rem, 3vw, 2rem)' }}>
+            <div className="flex items-center gap-3 mb-2">
               <PurposeIcon className="flex-shrink-0" style={{ color: 'var(--mint)', width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
               <h2 
                 id="purpose-heading"
-                className="text-fluid-4xl font-bold text-center"
+                className="text-fluid-4xl font-bold text-left"
                 style={{ color: 'var(--carbon-text)', fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
               >
                 PURPOSE
               </h2>
             </div>
             
-            <div className="w-16 h-1 mx-auto mb-2" style={{ backgroundColor: 'var(--mint)' }}></div>
+            <div className="w-16 h-1 mb-2" style={{ backgroundColor: 'var(--mint)' }}></div>
             
             <h3 
               className="text-fluid-xl font-bold"
