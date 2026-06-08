@@ -41,6 +41,22 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 
+/* ── "Green MODS" carbon palette (structured.glass MODS theme) ──
+   Carbon-dark surfaces with a mint-teal green highlight, sampled
+   from the reference screenshots. */
+:root {
+  --carbon-bg: #15171e;
+  --carbon-surface: #20232c;
+  --carbon-card: #2a2d3f;
+  --carbon-border: #3a3e4f;
+  --carbon-text: #eceef2;
+  --carbon-muted: #9aa1b2;
+  --carbon-shadow: #05070a;
+  --mint: #5ec7b6;
+  --mint-strong: #3e978a;
+  --mint-ink: #0c1a17;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -391,6 +407,111 @@ body {
     max-height: 90px;
   }
 }
+/* ── Structured Liquidity style navbar (carbon glass + mint accent) ── */
+@layer components {
+  /* Floating glass bar: translucent carbon with a subtle top sheen */
+  .sl-nav-glass {
+    position: relative;
+    isolation: isolate;
+    background-color: rgba(21, 23, 30, 0.72);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid var(--carbon-border);
+    box-shadow: 5px 5px 0px 0px var(--carbon-shadow);
+  }
+
+  .sl-nav-glass::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 42%);
+  }
+
+  .sl-nav-glass > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Desktop text links */
+  .sl-nav-link {
+    color: var(--carbon-muted);
+    background: transparent;
+    transition: color 0.18s ease;
+  }
+  .sl-nav-link:hover {
+    color: var(--mint);
+  }
+  .sl-nav-link[data-active='true'] {
+    color: var(--carbon-text);
+  }
+
+  /* Secondary / ghost action (PITCH) */
+  .sl-nav-ghost {
+    color: var(--carbon-text);
+    background: transparent;
+    border: 1px solid var(--carbon-border);
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .sl-nav-ghost:hover {
+    color: var(--mint);
+    border-color: var(--mint);
+  }
+
+  /* Primary accent CTA (JOIN) — filled mint with flat offset shadow */
+  .sl-nav-cta {
+    color: var(--mint-ink);
+    background: var(--mint);
+    border: 1px solid var(--mint);
+    box-shadow: 3px 3px 0px 0px var(--carbon-shadow);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease;
+  }
+  .sl-nav-cta:hover {
+    background: var(--mint-strong);
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px 0px var(--carbon-shadow);
+  }
+  .sl-nav-cta:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px 0px var(--carbon-shadow);
+  }
+  .sl-nav-cta:disabled {
+    opacity: 0.7;
+    cursor: default;
+    transform: none;
+    box-shadow: 3px 3px 0px 0px var(--carbon-shadow);
+  }
+
+  /* Keyboard focus visibility on the dark glass UI */
+  .sl-nav-link:focus-visible,
+  .sl-nav-ghost:focus-visible,
+  .sl-nav-cta:focus-visible,
+  .sl-mnav-link:focus-visible,
+  .sl-nav-toggle:focus-visible {
+    outline: 2px solid var(--mint);
+    outline-offset: 2px;
+  }
+
+  /* Mobile menu links */
+  .sl-mnav-link {
+    color: var(--carbon-text);
+    background: var(--carbon-card);
+    border: 1px solid var(--carbon-border);
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .sl-mnav-link:hover {
+    color: var(--mint);
+    border-color: var(--mint);
+  }
+  .sl-mnav-link[data-active='true'] {
+    background: var(--mint);
+    color: var(--mint-ink);
+    border-color: var(--mint);
+    font-weight: 700;
+  }
+}
+
 /* Changelog drawer slide-up */
 @keyframes changelog-slide-up {
   from {

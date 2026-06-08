@@ -17,5 +17,9 @@ Then build a viewBox with equal margins around that content box. Example: Instas
 
 **Why:** earlier guesses at text width were wildly off (Arial bold ~22px "InstaSwitch" is ~169px, not the ~113px estimated), causing clipping and left-shift. Always measure, don't estimate.
 
+## "Green MODS" palette = carbon dark + mint-teal
+When the user says the "green pairing from mods" / "MODS theme", they mean the green theme variant in the MODS panel on structured.glass: a **carbon-dark** base with a **mint-teal green** highlight. Colors were sampled from their phone screenshots (phone brightness dims them, so the live accent reads brighter). Tokens live in `app/globals.css` `:root` (`--carbon-*`, `--mint*`). The SL-style navbar (floating inset glass box, flat offset shadow, mono labels, filled mint CTA) is built from `.sl-nav-*` / `.sl-mnav-*` classes there.
+**Why:** "mods" is unresolvable from code alone — it's an external reference to structured.glass's theme switcher.
+
 ## Next.js stale-cache gotcha
 After deleting/renaming component files, the dev server can throw `__webpack_modules__[moduleId] is not a function` (HTTP 500). Fix: `rm -rf .next` then restart the `Start application` workflow. `.next` is now gitignored.
