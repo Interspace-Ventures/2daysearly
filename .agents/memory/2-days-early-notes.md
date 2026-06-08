@@ -27,3 +27,9 @@ This palette is now applied **site-wide**: one unified `--carbon-bg` background 
 
 ## Next.js stale-cache gotcha
 After deleting/renaming component files, the dev server can throw `__webpack_modules__[moduleId] is not a function` (HTTP 500). Fix: `rm -rf .next` then restart the `Start application` workflow. `.next` is now gitignored.
+
+## "Artifact crashed with a runtime error" = blocked preview iframe, not a real crash
+Repeated "Start application artifact crashed" reports while the server is healthy (200s, no log errors, `screenshot` renders fine) point to the **Replit preview/canvas iframe being blocked**, not app code. The `screenshot` tool loads the dev URL directly so it bypasses the iframe and always looks fine — that masks the real symptom.
+- **Root cause here:** `next.config.js` set `X-Frame-Options: DENY` on all routes, which forbids ALL iframe embedding. Replit's preview embeds the app in an iframe, so it never loads. Fix: gate that header to production only (`if (process.env.NODE_ENV === 'production')`); dev is determined by `NODE_ENV !== 'production'` in `server/index.ts`. Keeps clickjacking protection on the live site (threat_model wants it) without breaking the dev preview.
+- **Also:** the recurring `⚠ Cross origin request detected ... /_next/*` warning is cleared with `allowedDevOrigins` in `next.config.js`. The dev host is `<id>.<cluster>.replit.dev` (e.g. `...riker.replit.dev`), so `*.replit.dev` alone does NOT match (wildcard = one label) — add the cluster-level pattern too, e.g. `*.riker.replit.dev`.
+**Why:** took three identical "crash" reports to diagnose because every health check looked clean; the tell is "iframe-only failure" → check framing headers (`X-Frame-Options`, CSP `frame-ancestors`) before anything else.
