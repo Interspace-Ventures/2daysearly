@@ -91,16 +91,16 @@ export default function Footer() {
               </a>
             </div>
             
-            <div className="mb-1">
-              <ChangelogDialog />
-            </div>
           </div>
           
         </div>
 
         {/* Full-width copyright row */}
         <div className="text-fluid-sm text-white text-left leading-relaxed sl-body mt-8 pt-6" style={{fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', borderTop: '1px solid var(--carbon-border)'}}>
-          <div className="mb-2 sl-label" style={{letterSpacing: '0.08em'}}>© 2026 2 DAYS EARLY</div>
+          <div className="mb-2 flex items-center gap-3">
+            <span className="sl-label" style={{letterSpacing: '0.08em'}}>© 2026 2 DAYS EARLY</span>
+            <ChangelogDialog />
+          </div>
           <div>
             2 Days Early is an{" "}
             <a 
