@@ -59,7 +59,7 @@ const Principles = () => {
                 className="text-fluid-4xl font-bold text-left break-words"
                 style={{ color: 'var(--carbon-text)', fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
               >
-                OPERATING PRINCIPLES
+                PRINCIPLES
               </h2>
             </div>
             

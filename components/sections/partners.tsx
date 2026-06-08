@@ -30,7 +30,7 @@ const partners: Partner[] = [
         </span>
       </>
     ),
-    image: "/images/Baishi.png"
+    image: "/images/Baishi-nobg.png"
   },
   {
     name: "SAMIR",
@@ -51,7 +51,7 @@ const partners: Partner[] = [
         and is learning to raise a fintech-nerd newborn.
       </>
     ),
-    image: "/images/Samir-Desai-min.png",
+    image: "/images/Samir-Desai-nobg.png",
     imageClassName: "scale-[0.8]"
   }
 ];
