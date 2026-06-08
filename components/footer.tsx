@@ -2,7 +2,7 @@ import ChangelogDialog from '@/components/ui/changelog-dialog';
 
 export default function Footer() {
   return (
-    <footer className="bg-black" style={{ padding: 'clamp(2rem, 5vw, 3rem) 0' }}>
+    <footer style={{ backgroundColor: 'var(--carbon-surface)', borderTop: '1px solid var(--carbon-border)', padding: 'clamp(2rem, 5vw, 3rem) 0' }}>
       <div className="container-fluid">
 
         
@@ -13,25 +13,25 @@ export default function Footer() {
           <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="#purpose"
-              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
             >
               PURPOSE
             </a>
             <a 
               href="#principles"
-              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
             >
               PRINCIPLES
             </a>
             <a 
               href="#portfolio"
-              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
             >
               PORTFOLIO
             </a>
             <a 
               href="#partners"
-              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
             >
               PARTNERS
             </a>
@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="mailto:pitch@daysearly.com"
-              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
             >
               PITCH
             </a>
@@ -49,12 +49,12 @@ export default function Footer() {
               href="https://posts.interspace.ventures/p/101-everything-you-wanted-to-know"
               target="_blank"
               rel="noopener noreferrer"
-              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
             >
               LEARN
             </a>
             <button
-              className="sl-label text-fluid-base text-white hover:text-green-400 transition-colors"
+              className="sl-label text-fluid-base text-white transition-colors hover:text-[#5ec7b6]"
               style={{background: 'none', border: 'none', padding: 0}}
             >
               JOIN
@@ -69,8 +69,8 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/106588337/admin/dashboard/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white hover:bg-green-100 transition-colors border-2 border-black p-2 flex items-center justify-center"
-                style={{boxShadow: '2px 2px 0px 0px #166534'}}
+                className="bg-white transition-colors border-2 p-2 flex items-center justify-center"
+                style={{ borderColor: 'var(--carbon-border)', boxShadow: '2px 2px 0px 0px var(--carbon-shadow)'}}
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -81,8 +81,8 @@ export default function Footer() {
                 href="https://x.com/2DaysEarly"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white hover:bg-green-100 transition-colors border-2 border-black p-2 flex items-center justify-center"
-                style={{boxShadow: '2px 2px 0px 0px #166534'}}
+                className="bg-white transition-colors border-2 p-2 flex items-center justify-center"
+                style={{ borderColor: 'var(--carbon-border)', boxShadow: '2px 2px 0px 0px var(--carbon-shadow)'}}
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -103,7 +103,7 @@ export default function Footer() {
                   href="https://interspace.ventures" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-green-400 hover:text-green-300 transition-colors underline"
+                  className="transition-colors underline text-[#5ec7b6] hover:text-[#3e978a]"
                 >
                   Interspace Venture
                 </a>
@@ -112,7 +112,7 @@ export default function Footer() {
                   href="https://replit.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-green-400 hover:text-green-300 transition-colors underline"
+                  className="transition-colors underline text-[#5ec7b6] hover:text-[#3e978a]"
                 >
                   Replit
                 </a>

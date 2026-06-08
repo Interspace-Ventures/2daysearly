@@ -21,41 +21,41 @@ export function openTallyForm(onReady?: () => void): void {
   formContainer.style.height = '90vh';
   formContainer.style.maxHeight = '90vh';
   formContainer.style.backgroundColor = 'white';
-  formContainer.style.border = '4px solid #000000';
-  formContainer.style.boxShadow = '0 -4px 0px 0px #166534';
+  formContainer.style.border = '4px solid var(--carbon-border)';
+  formContainer.style.boxShadow = '0 -4px 0px 0px var(--carbon-shadow)';
   formContainer.style.zIndex = '9999';
   formContainer.style.transform = 'translateY(100%)';
   formContainer.style.transition = 'transform 0.3s ease-in-out';
 
   const titleContainer = document.createElement('div');
   titleContainer.style.padding = '1.5rem';
-  titleContainer.style.borderBottom = '4px solid #000000';
+  titleContainer.style.borderBottom = '4px solid var(--carbon-border)';
   titleContainer.style.display = 'flex';
   titleContainer.style.justifyContent = 'space-between';
   titleContainer.style.alignItems = 'center';
-  titleContainer.style.backgroundColor = '#16a34a';
+  titleContainer.style.backgroundColor = 'var(--mint)';
 
   const title = document.createElement('h2');
   title.textContent = '2 DAYS EARLY SYNDICATE ONBOARDING';
   title.style.margin = '0';
   title.style.fontSize = '1.125rem';
   title.style.fontWeight = 'bold';
-  title.style.color = 'white';
+  title.style.color = 'var(--mint-ink)';
   title.style.fontFamily = 'var(--font-archivo), var(--font-outfit), sans-serif';
 
   const closeButton = document.createElement('button');
   closeButton.innerHTML = '×';
   closeButton.setAttribute('aria-label', 'Close onboarding form');
   closeButton.style.fontSize = '20px';
-  closeButton.style.border = '3px solid #000000';
-  closeButton.style.background = 'white';
+  closeButton.style.border = '3px solid var(--carbon-border)';
+  closeButton.style.background = 'var(--carbon-card)';
   closeButton.style.cursor = 'pointer';
   closeButton.style.padding = '0.5rem 0.75rem';
   closeButton.style.lineHeight = '1';
-  closeButton.style.color = 'black';
+  closeButton.style.color = 'var(--carbon-text)';
   closeButton.style.fontWeight = 'bold';
   closeButton.style.fontFamily = 'var(--font-archivo), var(--font-outfit), sans-serif';
-  closeButton.style.boxShadow = '3px 3px 0px 0px #166534';
+  closeButton.style.boxShadow = '3px 3px 0px 0px var(--carbon-shadow)';
   closeButton.style.transition = 'all 0.1s ease';
 
   const cleanup = () => {

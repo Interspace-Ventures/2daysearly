@@ -67,7 +67,7 @@ export default function ChangelogDialog() {
         ref={triggerRef}
         type="button"
         onClick={() => setIsOpen(true)}
-        className="text-fluid-sm text-white hover:text-green-400 transition-colors underline"
+        className="text-fluid-sm text-white transition-colors underline hover:text-[#5ec7b6]"
         style={{ fontFamily: theme.fonts.primary, fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)' }}
         aria-haspopup="dialog"
         aria-label={`View changelog, current version ${APP_VERSION}`}
@@ -83,8 +83,8 @@ export default function ChangelogDialog() {
         >
           <div
             ref={dialogRef}
-            className="changelog-drawer w-full max-w-lg max-h-[80vh] flex flex-col bg-white border-4 border-black border-b-0"
-            style={{ boxShadow: '0px -8px 0px 0px #166534' }}
+            className="changelog-drawer w-full max-w-lg max-h-[80vh] flex flex-col border-4 border-b-0"
+            style={{ background: 'var(--carbon-surface)', borderColor: 'var(--carbon-border)', boxShadow: '0px -8px 0px 0px var(--carbon-shadow)' }}
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
@@ -92,13 +92,13 @@ export default function ChangelogDialog() {
           >
             {/* Header */}
             <div
-              className="flex items-center justify-between border-b-4 border-black px-5 py-4"
-              style={{ backgroundColor: '#16a34a' }}
+              className="flex items-center justify-between border-b-4 px-5 py-4"
+              style={{ backgroundColor: 'var(--mint)', borderColor: 'var(--carbon-border)' }}
             >
               <h2
                 id="changelog-title"
-                className="text-lg font-bold text-white"
-                style={{ fontFamily: theme.fonts.primary }}
+                className="text-lg font-bold"
+                style={{ color: 'var(--mint-ink)', fontFamily: theme.fonts.primary }}
               >
                 CHANGELOG
               </h2>
@@ -106,8 +106,8 @@ export default function ChangelogDialog() {
                 ref={closeButtonRef}
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="bg-white text-black border-2 border-black px-3 py-1 text-lg font-bold leading-none"
-                style={{ boxShadow: '2px 2px 0px 0px #166534', fontFamily: theme.fonts.primary }}
+                className="border-2 px-3 py-1 text-lg font-bold leading-none"
+                style={{ background: 'var(--carbon-card)', color: 'var(--carbon-text)', borderColor: 'var(--carbon-border)', boxShadow: '2px 2px 0px 0px var(--carbon-shadow)', fontFamily: theme.fonts.primary }}
                 aria-label="Close changelog"
               >
                 ×
@@ -120,12 +120,12 @@ export default function ChangelogDialog() {
                 <div key={entry.version}>
                   <div className="flex items-center gap-2 mb-2">
                     <span
-                      className="bg-green-600 text-white border-2 border-black px-2 py-0.5 text-sm font-bold"
+                      className="sl-pill px-2 py-0.5 text-sm"
                       style={{ fontFamily: theme.fonts.primary }}
                     >
                       v{entry.version}
                     </span>
-                    <span className="text-sm text-gray-600" style={{ fontFamily: theme.fonts.secondary }}>
+                    <span className="text-sm" style={{ color: 'var(--carbon-muted)', fontFamily: theme.fonts.secondary }}>
                       {entry.date}
                     </span>
                   </div>
@@ -133,8 +133,8 @@ export default function ChangelogDialog() {
                     {entry.changes.map((change, i) => (
                       <li
                         key={i}
-                        className="text-sm text-black leading-relaxed"
-                        style={{ fontFamily: theme.fonts.secondary }}
+                        className="text-sm leading-relaxed"
+                        style={{ color: 'var(--carbon-text)', fontFamily: theme.fonts.secondary }}
                       >
                         {change}
                       </li>

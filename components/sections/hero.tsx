@@ -4,7 +4,7 @@ import { openTallyForm } from "@/lib/tally";
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full pt-24 pb-12" style={{ background: 'linear-gradient(180deg, #57e188 0%, #45d97a 100%)' }}>
+    <section id="hero" className="w-full pt-24 pb-12">
       <div className="container-fluid">
         <AnimatedSection className="text-center w-full" delay={0.2}>
           <div className="flex flex-col items-center justify-center">
@@ -19,8 +19,9 @@ export default function Hero() {
             />
 
             <h1
-              className="font-bold text-black"
+              className="font-bold"
               style={{
+                color: 'var(--carbon-text)',
                 fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif',
                 fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
                 lineHeight: 1.1,
@@ -32,8 +33,8 @@ export default function Hero() {
             </h1>
 
             <p
-              className="text-black"
               style={{
+                color: 'var(--carbon-muted)',
                 fontFamily: 'var(--font-outfit), sans-serif',
                 fontSize: 'clamp(1rem, 2vw, 1.25rem)',
                 marginTop: 'clamp(0.75rem, 2vw, 1rem)',
@@ -51,11 +52,10 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => openTallyForm()}
-                className="sl-label w-auto bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                className="sl-nav-cta sl-label w-auto font-bold whitespace-nowrap"
                 style={{
                   fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
-                  padding: '0.75rem 1.5rem',
-                  boxShadow: '4px 4px 0px 0px #166534'
+                  padding: '0.75rem 1.5rem'
                 }}
               >
                 JOIN
@@ -63,11 +63,10 @@ export default function Hero() {
 
               <a
                 href="mailto:pitch@daysearly.com"
-                className="sl-label w-auto text-center bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                className="sl-nav-ghost sl-label w-auto text-center font-bold whitespace-nowrap"
                 style={{
                   fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
                   padding: '0.75rem 1.5rem',
-                  boxShadow: '4px 4px 0px 0px #166534',
                   textDecoration: 'none'
                 }}
               >
@@ -78,11 +77,10 @@ export default function Hero() {
                 href="https://posts.interspace.ventures/p/101-everything-you-wanted-to-know"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="sl-label w-auto text-center bg-black text-white border-2 border-black font-bold whitespace-nowrap transition-transform hover:-translate-y-0.5"
+                className="sl-nav-ghost sl-label w-auto text-center font-bold whitespace-nowrap"
                 style={{
                   fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
                   padding: '0.75rem 1.5rem',
-                  boxShadow: '4px 4px 0px 0px #166534',
                   textDecoration: 'none'
                 }}
               >

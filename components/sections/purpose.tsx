@@ -5,28 +5,28 @@ export default function Purpose() {
   return (
     <section 
       id="purpose" 
-      style={{ background: 'linear-gradient(180deg, #7eecaa 0%, #62e293 100%)', paddingTop: '1rem', paddingBottom: '3rem' }}
+      style={{ paddingTop: '1rem', paddingBottom: '3rem' }}
       aria-labelledby="purpose-heading"
     >
       <div className="container-fluid">
         <AnimatedSection>
           <div style={{ marginBottom: 'clamp(1rem, 3vw, 2rem)' }} className="text-center">
             <div className="flex items-center justify-center gap-3 mb-2">
-              <PurposeIcon className="text-black flex-shrink-0" style={{ width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
+              <PurposeIcon className="flex-shrink-0" style={{ color: 'var(--mint)', width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
               <h2 
                 id="purpose-heading"
-                className="text-fluid-4xl font-bold text-black text-center"
-                style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
+                className="text-fluid-4xl font-bold text-center"
+                style={{ color: 'var(--carbon-text)', fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
               >
                 PURPOSE
               </h2>
             </div>
             
-            <div className="w-16 h-1 bg-green-500 mx-auto mb-2"></div>
+            <div className="w-16 h-1 mx-auto mb-2" style={{ backgroundColor: 'var(--mint)' }}></div>
             
             <h3 
-              className="text-fluid-xl font-bold text-black"
-              style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
+              className="text-fluid-xl font-bold"
+              style={{ color: 'var(--carbon-text)', fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
             >
               By operators. For operators.
             </h3>
@@ -38,7 +38,7 @@ export default function Purpose() {
                 text: (
                   <>
                     We are a community of{" "}
-                    <span className="bg-green-400 border-2 border-black px-2 py-1 text-white font-bold">
+                    <span className="sl-pill px-2 py-1">
                       entrepreneurs, investors and operators
                     </span>
                     . We have backgrounds in growth, product, engineering, operations, and finance, determined to help startups succeed.
@@ -49,7 +49,7 @@ export default function Purpose() {
                 text: (
                   <>
                     We aim to be the operator syndicate with{" "}
-                    <span className="bg-green-600 border-2 border-black px-2 py-1 text-white font-bold">
+                    <span className="sl-pill px-2 py-1">
                       highest value per dollar invested
                     </span>
                     . Companies we invest in get access to our experience network and commitment to empowering impactful firms.
@@ -60,7 +60,7 @@ export default function Purpose() {
                 text: (
                   <>
                     We love investing in amazing founders of all backgrounds, and we're especially committed to{" "}
-                    <span className="bg-green-800 border-2 border-black px-2 py-1 text-white font-bold">
+                    <span className="sl-pill px-2 py-1">
                       investing in companies founded by Chime alumni
                     </span>
                     {" "}and supporting the next generation of operators.
@@ -74,8 +74,8 @@ export default function Purpose() {
                 variant="slideUp"
                 duration={0.5}
               >
-                <div className="glass-sheen overflow-hidden border-2 border-black p-3 flex flex-col justify-start h-full" style={{background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78))', boxShadow: '2px 2px 0px 0px #166534'}}>
-                  <p className="text-fluid-base text-black leading-relaxed sl-body">
+                <div className="glass-sheen overflow-hidden border-2 p-3 flex flex-col justify-start h-full" style={{ background: 'var(--carbon-card)', borderColor: 'var(--carbon-border)', boxShadow: '2px 2px 0px 0px var(--carbon-shadow)'}}>
+                  <p className="text-fluid-base leading-relaxed sl-body" style={{ color: 'var(--carbon-text)' }}>
                     {card.text}
                   </p>
                 </div>
@@ -98,9 +98,9 @@ export default function Purpose() {
               { number: "$2.5M", text: "investing capacity per year" }
             ].map((kpi, index) => (
               <AnimatedSection key={index} delay={0.8 + (index * 0.1)} variant="slideUp">
-                <div className="neo-border neo-shadow glass-sheen overflow-hidden p-2 text-center bg-white h-full flex flex-col justify-center">
-                  <div className="text-fluid-2xl font-bold text-green-600 mb-1" style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif', color: '#059669'}}>{kpi.number}</div>
-                  <div className="text-fluid-xs text-black sl-body">{kpi.text}</div>
+                <div className="neo-border neo-shadow glass-sheen overflow-hidden p-2 text-center h-full flex flex-col justify-center" style={{ background: 'var(--carbon-card)' }}>
+                  <div className="text-fluid-2xl font-bold mb-1" style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif', color: 'var(--mint)'}}>{kpi.number}</div>
+                  <div className="text-fluid-xs sl-body" style={{ color: 'var(--carbon-muted)' }}>{kpi.text}</div>
                 </div>
               </AnimatedSection>
             ))}

@@ -8,16 +8,16 @@ interface PrincipleItemProps {
 }
 
 const PrincipleItem = memo(({ number, text }: PrincipleItemProps) => (
-  <div className="neo-border-responsive neo-shadow-responsive frosted-glass overflow-hidden mb-4 h-full" style={{ background: 'linear-gradient(135deg, rgba(214, 250, 231, 0.82), rgba(150, 233, 190, 0.62))', padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
+  <div className="neo-border-responsive neo-shadow-responsive frosted-glass overflow-hidden mb-4 h-full" style={{ background: 'var(--carbon-card)', padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
     <div className="flex flex-col items-center text-center" style={{ gap: 'clamp(0.75rem, 3vw, 1.5rem)' }}>
       <div className="neo-border-responsive neo-shadow-responsive" 
-           style={{ backgroundColor: '#4bdc7f', padding: 'clamp(0.5rem, 2vw, 1rem)' }}>
-        <span className="text-fluid-xl font-bold text-black" style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}>
+           style={{ backgroundColor: 'var(--mint)', padding: 'clamp(0.5rem, 2vw, 1rem)' }}>
+        <span className="text-fluid-xl font-bold" style={{ color: 'var(--mint-ink)', fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}>
           {number}
         </span>
       </div>
       <div className="w-full">
-        <p className="text-fluid-base md:text-fluid-lg text-black leading-relaxed sl-body">
+        <p className="text-fluid-base md:text-fluid-lg leading-relaxed sl-body" style={{ color: 'var(--carbon-text)' }}>
           {text}
         </p>
       </div>
@@ -47,24 +47,23 @@ const Principles = () => {
     <section 
       id="principles" 
       className="section-spacing"
-      style={{ background: 'linear-gradient(180deg, #1a7a3e 0%, #134e2b 100%)' }}
       aria-labelledby="principles-heading"
     >
       <div className="container-fluid">
         <AnimatedSection>
           <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
             <div className="flex items-center gap-3">
-              <PrinciplesIcon className="text-white flex-shrink-0" style={{ width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
+              <PrinciplesIcon className="flex-shrink-0" style={{ color: 'var(--mint)', width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
               <h2 
                 id="principles-heading"
-                className="text-fluid-4xl font-bold text-white text-left break-words"
-                style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
+                className="text-fluid-4xl font-bold text-left break-words"
+                style={{ color: 'var(--carbon-text)', fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
               >
                 OPERATING PRINCIPLES
               </h2>
             </div>
             
-            <div className="w-16 h-1 bg-green-500 mt-4"></div>
+            <div className="w-16 h-1 mt-4" style={{ backgroundColor: 'var(--mint)' }}></div>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8">

@@ -10,8 +10,8 @@ const partners: Partner[] = [
     bio: (
       <>
         Builds cool fintech stuff at Chime (after they acquired her credit-building startup Pinch). Previously founded Rocksbox (also acquired). Now backs founders at XFactor & Parcel B. Probably sharing{" "}
-        <span className="bg-green-600 border-2 border-black px-1 text-white">
-          <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
+        <span className="sl-pill px-1">
+          <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="font-bold underline">
             TMI tweets
           </a>
         </span>{" "}
@@ -25,7 +25,7 @@ const partners: Partner[] = [
     bio: (
       <>
         At Chime, shapes lending products helping millions get the credit they deserve. Previously revolutionized mortgages at LendingHome and home search at Compass.{" "}
-        <span className="bg-green-600 border-2 border-black px-1 text-white font-bold">
+        <span className="sl-pill px-1">
           Building great fintech while raising tiny humans.
         </span>
       </>
@@ -37,14 +37,14 @@ const partners: Partner[] = [
     bio: (
       <>
         Building{" "}
-        <span className="bg-green-800 border-2 border-black px-1 text-white">
-          <a href="https://interspace.ventures" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
+        <span className="sl-pill px-1">
+          <a href="https://interspace.ventures" target="_blank" rel="noopener noreferrer" className="font-bold underline">
             Interspace Ventures
           </a>
         </span>
         . Previously led strategic finance at Block, HRT, Unit, and Chime after starting at JP Morgan. Writes{" "}
-        <span className="bg-green-800 border-2 border-black px-1 text-white">
-          <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline">
+        <span className="sl-pill px-1">
+          <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="font-bold underline">
             over-engineered fintech takes
           </a>
         </span>{" "}
@@ -60,24 +60,24 @@ export default function Partners() {
   return (
     <section 
       id="partners" 
-      style={{ background: 'linear-gradient(180deg, #1a7a3e 0%, #134e2b 100%)', paddingTop: '2rem', paddingBottom: '2rem' }}
+      style={{ paddingTop: '2rem', paddingBottom: '2rem' }}
       aria-labelledby="partners-heading"
     >
       <div className="container-fluid">
         <AnimatedSection>
           <div style={{ marginBottom: 'clamp(1rem, 3vw, 2rem)' }}>
             <div className="flex items-center gap-3">
-              <PartnersIcon className="text-white flex-shrink-0" style={{ width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
+              <PartnersIcon className="flex-shrink-0" style={{ color: 'var(--mint)', width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
               <h2 
                 id="partners-heading"
-                className="text-fluid-4xl font-bold text-white text-left"
-                style={{fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
+                className="text-fluid-4xl font-bold text-left"
+                style={{ color: 'var(--carbon-text)', fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif'}}
               >
                 PARTNERS
               </h2>
             </div>
             
-            <div className="w-16 h-1 bg-green-500 mt-2"></div>
+            <div className="w-16 h-1 mt-2" style={{ backgroundColor: 'var(--mint)' }}></div>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">

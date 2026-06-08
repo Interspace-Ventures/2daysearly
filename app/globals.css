@@ -8,7 +8,7 @@
 /* Force text visibility on mobile and maximize width */
 body, html {
   font-family: var(--font-outfit), 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
-  color: #000000;
+  color: var(--carbon-text);
   -webkit-text-size-adjust: 100%;
   margin: 0;
   padding: 0;
@@ -119,11 +119,9 @@ h1, h2, h3, h4 {
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--carbon-bg);
+    color: var(--carbon-text);
   }
 }
 
@@ -144,44 +142,45 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: var(--carbon-bg);
 }
 
 /* Improved CSS architecture with consistent theming */
 @layer components {
   /* Neobrutalism utility classes */
   .neo-shadow {
-    box-shadow: 2px 2px 0px 0px #166534;
+    box-shadow: 2px 2px 0px 0px var(--carbon-shadow);
   }
   
   .neo-shadow-lg {
-    box-shadow: 4px 4px 0px 0px #166534;
+    box-shadow: 4px 4px 0px 0px var(--carbon-shadow);
   }
   
   .neo-shadow-xl {
-    box-shadow: 12px 12px 0px 0px #166534;
+    box-shadow: 12px 12px 0px 0px var(--carbon-shadow);
   }
   
   .neo-border {
-    border: 2px solid #000000;
+    border: 2px solid var(--carbon-border);
   }
   
   .neo-border-lg {
-    border: 3px solid #000000;
+    border: 3px solid var(--carbon-border);
   }
   
   .neo-border-xl {
-    border: 4px solid #000000;
+    border: 4px solid var(--carbon-border);
   }
 
   /* Responsive neobrutalism components */
   .neo-border-responsive {
     border-width: clamp(1px, 0.2vw, 3px);
     border-style: solid;
-    border-color: #000000;
+    border-color: var(--carbon-border);
   }
 
   .neo-shadow-responsive {
-    box-shadow: clamp(1px, 0.3vw, 4px) clamp(1px, 0.3vw, 4px) 0px 0px #166534;
+    box-shadow: clamp(1px, 0.3vw, 4px) clamp(1px, 0.3vw, 4px) 0px 0px var(--carbon-shadow);
   }
 
   /* Card components with responsive sizing */
@@ -233,7 +232,8 @@ body {
 
   /* Company card styling */
   .company-card {
-    @apply bg-white neo-border neo-shadow transition-all duration-200 hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] cursor-pointer h-full;
+    @apply neo-border neo-shadow transition-all duration-200 hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] cursor-pointer h-full;
+    background: var(--carbon-card);
     position: relative;
     overflow: hidden;
     min-height: 200px;
@@ -264,8 +264,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: white;
+    background: linear-gradient(135deg, var(--mint), var(--mint-strong));
+    color: var(--mint-ink);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -289,7 +289,8 @@ body {
 
   /* Partner card styling */
   .partner-card {
-    @apply bg-white neo-border neo-shadow p-6 text-center h-full flex flex-col justify-between;
+    @apply neo-border neo-shadow p-6 text-center h-full flex flex-col justify-between;
+    background: var(--carbon-card);
   }
 
   .partner-card img {
@@ -298,10 +299,25 @@ body {
 
   .partner-card h3 {
     @apply text-lg font-bold mb-2;
+    color: var(--carbon-text);
   }
 
   .partner-card p {
-    @apply text-sm text-gray-600;
+    @apply text-sm;
+    color: var(--carbon-muted);
+  }
+
+  /* Inline highlight pill (mint) used in body copy */
+  .sl-pill {
+    background: var(--mint);
+    color: var(--mint-ink);
+    border: 2px solid var(--mint-ink);
+    font-weight: 700;
+  }
+  .sl-pill a {
+    color: var(--mint-ink);
+    font-weight: 700;
+    text-decoration: underline;
   }
 
   /* Structured Liquidity: liquid depth + tactile glass.
@@ -319,8 +335,8 @@ body {
     z-index: 2;
     pointer-events: none;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.08) 24%, rgba(255, 255, 255, 0) 46%),
-      linear-gradient(118deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 34%);
+      linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.03) 24%, rgba(255, 255, 255, 0) 46%),
+      linear-gradient(118deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 34%);
   }
 
   /* Frosted, semi-transparent glass that lets the section tint bleed through */
@@ -338,8 +354,8 @@ body {
     z-index: 2;
     pointer-events: none;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 26%, rgba(255, 255, 255, 0) 50%),
-      linear-gradient(118deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 36%);
+      linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.03) 26%, rgba(255, 255, 255, 0) 50%),
+      linear-gradient(118deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 36%);
   }
 
   /* Keep real content above the sheen overlays */

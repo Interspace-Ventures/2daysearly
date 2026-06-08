@@ -19,7 +19,7 @@ const MemoizedPartners = memo(Partners);
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--carbon-bg)' }}>
       <MemoizedNavigation />
       <main>
         <MemoizedHero />
@@ -27,8 +27,6 @@ export default function Home() {
         <MemoizedPrinciples />
         <MemoizedPortfolio />
         <MemoizedPartners />
-        {/* Visual spacer bridging the dark-green Partners section into the footer */}
-        <section aria-hidden="true" style={{ backgroundColor: '#134e2b', height: '48px' }} />
       </main>
       <Footer />
     </div>
