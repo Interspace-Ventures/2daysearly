@@ -2,7 +2,7 @@ import { Theme } from '@/types';
 
 export const theme: Theme = {
   fonts: {
-    primary: 'var(--font-archivo), var(--font-outfit), sans-serif',
+    primary: 'var(--font-display), var(--font-outfit), sans-serif',
     secondary: 'var(--font-outfit), sans-serif'
   },
   colors: {

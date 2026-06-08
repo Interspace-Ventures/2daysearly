@@ -22,7 +22,7 @@ export default function Hero() {
               className="font-bold"
               style={{
                 color: 'var(--carbon-text)',
-                fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif',
+                fontFamily: 'var(--font-display), var(--font-outfit), sans-serif',
                 fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
                 lineHeight: 1.1,
                 marginTop: 'clamp(1rem, 3vw, 1.75rem)',

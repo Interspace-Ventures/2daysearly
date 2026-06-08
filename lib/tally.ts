@@ -41,7 +41,7 @@ export function openTallyForm(onReady?: () => void): void {
   title.style.fontSize = '1.125rem';
   title.style.fontWeight = 'bold';
   title.style.color = 'var(--mint-ink)';
-  title.style.fontFamily = 'var(--font-archivo), var(--font-outfit), sans-serif';
+  title.style.fontFamily = 'var(--font-display), var(--font-outfit), sans-serif';
 
   const closeButton = document.createElement('button');
   closeButton.innerHTML = '×';
@@ -54,7 +54,7 @@ export function openTallyForm(onReady?: () => void): void {
   closeButton.style.lineHeight = '1';
   closeButton.style.color = 'var(--carbon-text)';
   closeButton.style.fontWeight = 'bold';
-  closeButton.style.fontFamily = 'var(--font-archivo), var(--font-outfit), sans-serif';
+  closeButton.style.fontFamily = 'var(--font-display), var(--font-outfit), sans-serif';
   closeButton.style.boxShadow = '3px 3px 0px 0px var(--carbon-shadow)';
   closeButton.style.transition = 'all 0.1s ease';
 

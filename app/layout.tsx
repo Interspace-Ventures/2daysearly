@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Outfit, Archivo, Space_Mono } from 'next/font/google';
+import { Outfit, Space_Grotesk, Space_Mono } from 'next/font/google';
 import './globals.css';
 
 const outfit = Outfit({ 
@@ -9,9 +9,10 @@ const outfit = Outfit({
   display: 'swap',
 });
 
-const archivo = Archivo({ 
+const spaceGrotesk = Space_Grotesk({ 
   subsets: ['latin'],
-  variable: '--font-archivo',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
   display: 'swap',
 });
 
@@ -64,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${archivo.variable} ${spaceMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${spaceGrotesk.variable} ${spaceMono.variable}`}>
       <body className={`${outfit.className} antialiased`} suppressHydrationWarning>
         {children}
       </body>

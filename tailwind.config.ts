@@ -11,10 +11,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-outfit)', 'Helvetica Neue', 'system-ui', 'sans-serif'],
-        display: ['var(--font-archivo)', 'Helvetica Neue', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Helvetica Neue', 'system-ui', 'sans-serif'],
         body: ['var(--font-outfit)', 'Helvetica Neue', 'system-ui', 'sans-serif'],
         mono: ['var(--font-space-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
-        primary: ['var(--font-archivo)', 'var(--font-outfit)', 'system-ui', 'sans-serif'],
+        primary: ['var(--font-display)', 'var(--font-outfit)', 'system-ui', 'sans-serif'],
         secondary: ['var(--font-outfit)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {

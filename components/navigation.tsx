@@ -109,7 +109,7 @@ export default function Navigation() {
     <nav
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        fontFamily: 'var(--font-archivo), var(--font-outfit), sans-serif',
+        fontFamily: 'var(--font-display), var(--font-outfit), sans-serif',
         padding: 'clamp(0.5rem, 1.6vw, 0.9rem) clamp(0.75rem, 4vw, 2rem) 0'
       }}
     >

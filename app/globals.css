@@ -18,11 +18,11 @@ body, html {
 }
 
 /* ── Structured Liquidity typography roles ──
-   Display/headings: Archivo, tight tracking.
+   Display/headings: Space Grotesk, tight tracking.
    Body copy: Outfit (inherited from body).
    Labels/eyebrows/nav: Space Mono, uppercase, loose tracking. */
 .sl-display {
-  font-family: var(--font-archivo), 'Helvetica Neue', system-ui, sans-serif;
+  font-family: var(--font-display), 'Helvetica Neue', system-ui, sans-serif;
   letter-spacing: -0.02em;
 }
 
@@ -37,7 +37,7 @@ body, html {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-archivo), 'Helvetica Neue', system-ui, sans-serif;
+  font-family: var(--font-display), 'Helvetica Neue', system-ui, sans-serif;
   letter-spacing: -0.02em;
 }
 
