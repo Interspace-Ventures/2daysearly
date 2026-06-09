@@ -11,7 +11,22 @@ async function startServer() {
   try {
     await nextApp.prepare();
     
+    const CANONICAL_HOST = '2daysearly.com';
+
     const server = createServer((req, res) => {
+      // In production, forward the default *.replit.app domain to the
+      // canonical custom domain. Gated to production so the dev preview
+      // (served on *.replit.dev inside an iframe) is never redirected.
+      if (!dev) {
+        const host = (req.headers.host || '').split(':')[0];
+        if (host.endsWith('.replit.app')) {
+          res.statusCode = 308;
+          res.setHeader('Location', `https://${CANONICAL_HOST}${req.url || '/'}`);
+          res.end();
+          return;
+        }
+      }
+
       handle(req, res);
     });
 

@@ -23,7 +23,7 @@ const spaceMono = Space_Mono({
   display: 'swap',
 });
 
-const SITE_URL = 'https://daysearly.com';
+const SITE_URL = 'https://2daysearly.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   description: 'Operator-led investments for the future of technology. Join our syndicate of experienced operators investing in early-stage companies.',
   keywords: ['investment', 'syndicate', 'operator-led', 'early-stage', 'venture capital'],
   authors: [{ name: '2 Days Early' }],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: '2 Days Early - Investment Syndicate',
     description: 'By operators. For operators. Operator-led investments for the future of technology.',
