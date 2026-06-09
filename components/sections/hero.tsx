@@ -1,6 +1,6 @@
 import AnimatedSection from "@/components/ui/animated-section";
 import { IMAGES } from "@/lib/constants";
-import { openTallyForm } from "@/lib/tally";
+import { openJoinForm } from "@/lib/join-modal";
 
 export default function Hero() {
   return (
@@ -54,7 +54,7 @@ export default function Hero() {
             >
               <button
                 type="button"
-                onClick={() => openTallyForm()}
+                onClick={() => openJoinForm()}
                 className="sl-nav-cta sl-label w-auto font-bold whitespace-nowrap"
                 style={{
                   fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',

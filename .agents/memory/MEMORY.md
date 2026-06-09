@@ -1,1 +1,2 @@
-- [2 Days Early site notes](2-days-early-notes.md) — stack reality (no Express/Vite/Drizzle, it's plain Next.js App Router), portfolio SVG wordmark centering via `magick -trim`, and the `rm -rf .next` stale-cache fix.
+- [2 Days Early site notes](2-days-early-notes.md) — stack reality (no Express/Vite, plain Next.js App Router; now also Drizzle+Postgres), portfolio SVG wordmark centering via `magick -trim`, and the `rm -rf .next` stale-cache fix.
+- [Join flow](join-flow.md) — Tally replaced by native form: zod v4 quirks (no `.default/.optional`, `{message}` not `errorMap`), custom Slack app requirement, atomic approve/reject decisions.

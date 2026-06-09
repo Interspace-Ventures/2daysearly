@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { openTallyForm } from '@/lib/tally';
+import { openJoinForm } from '@/lib/join-modal';
 import { PurposeIcon, PrinciplesIcon, PortfolioIcon, PartnersIcon } from '@/components/ui/section-icons';
 // Simple inline SVG icons
 const Menu = ({ className }: { className?: string }) => (
@@ -17,12 +17,6 @@ const X = ({ className }: { className?: string }) => (
 const ExternalLink = ({ style, className }: { style?: React.CSSProperties; className?: string }) => (
   <svg style={style} className={className} width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-  </svg>
-);
-
-const Loader2 = ({ className }: { className?: string }) => (
-  <svg className={className} width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
   </svg>
 );
 
@@ -52,28 +46,9 @@ function getActiveSection(): string {
   return 'hero';
 }
 
-declare global {
-  interface Window {
-    Tally?: {
-      openPopup: (formId: string, options?: { 
-        width?: number; 
-        alignLeft?: boolean; 
-        hideTitle?: boolean; 
-        emoji?: { text: string; animation: string; }; 
-      }) => void;
-    };
-    TallyConfig?: {
-      hideTitle?: boolean;
-      formId?: string;
-    };
-    loadTally?: () => void;
-  }
-}
-
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [isTallyLoading, setIsTallyLoading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,8 +69,7 @@ export default function Navigation() {
 
   const handleJoinClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setIsTallyLoading(true);
-    openTallyForm(() => setIsTallyLoading(false));
+    openJoinForm();
   };
 
   const navItems = [
@@ -209,7 +183,6 @@ export default function Navigation() {
               </a>
               <button
                 onClick={handleJoinClick}
-                disabled={isTallyLoading}
                 className="sl-nav-cta sl-label flex items-center whitespace-nowrap"
                 style={{
                   fontSize: 'clamp(0.66rem, 1.25vw, 0.78rem)',
@@ -217,8 +190,7 @@ export default function Navigation() {
                   padding: 'clamp(0.4rem, 0.9vw, 0.55rem) clamp(0.7rem, 1.6vw, 1rem)'
                 }}
               >
-                {isTallyLoading && <Loader2 className="h-4 w-4 animate-spin" />}
-                {isTallyLoading ? 'LOADING...' : 'JOIN*'}
+                JOIN
               </button>
             </div>
           </div>
@@ -287,12 +259,10 @@ export default function Navigation() {
                 </a>
                 <button
                   onClick={handleJoinClick}
-                  disabled={isTallyLoading}
                   className="sl-nav-cta sl-label w-full block py-3 px-4 text-base text-center"
                 >
                   <span className="flex items-center justify-center gap-2">
-                    {isTallyLoading && <Loader2 className="h-4 w-4 animate-spin" />}
-                    {isTallyLoading ? 'LOADING...' : 'JOIN*'}
+                    JOIN
                   </span>
                 </button>
               </div>
