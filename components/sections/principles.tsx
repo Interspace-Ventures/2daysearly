@@ -4,76 +4,104 @@ import { PrinciplesIcon } from "@/components/ui/section-icons";
 
 interface PrincipleItemProps {
   number: number;
+  label: string;
   text: string;
 }
 
-const PrincipleItem = memo(({ number, text }: PrincipleItemProps) => (
-  <div className="neo-border-responsive neo-shadow-responsive frosted-glass overflow-hidden mb-4 h-full" style={{ background: 'var(--carbon-card)', padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
-    <div className="flex flex-col items-center text-center" style={{ gap: 'clamp(0.75rem, 3vw, 1.5rem)' }}>
-      <div className="neo-border-responsive neo-shadow-responsive" 
-           style={{ backgroundColor: 'var(--mint)', padding: 'clamp(0.5rem, 2vw, 1rem)' }}>
-        <span className="text-fluid-xl font-bold" style={{ color: 'var(--mint-ink)', fontFamily: 'var(--font-display), var(--font-outfit), sans-serif'}}>
-          {number}
-        </span>
-      </div>
-      <div className="w-full">
-        <p className="text-fluid-base md:text-fluid-lg leading-relaxed sl-body" style={{ color: 'var(--carbon-text)' }}>
-          {text}
-        </p>
-      </div>
+const PrincipleRow = memo(({ number, label, text }: PrincipleItemProps) => (
+  <div
+    className="group grid grid-cols-[auto_1fr] items-start border-t-2"
+    style={{
+      borderColor: "var(--carbon-border)",
+      columnGap: "clamp(1rem, 4vw, 3rem)",
+      paddingTop: "clamp(1.5rem, 4vw, 2.5rem)",
+      paddingBottom: "clamp(1.5rem, 4vw, 2.5rem)",
+    }}
+  >
+    <span
+      className="sl-display font-bold leading-none tabular-nums transition-transform duration-300 group-hover:-translate-y-1"
+      style={{ color: "var(--mint)", fontSize: "clamp(2rem, 6vw, 3.5rem)" }}
+      aria-hidden="true"
+    >
+      {String(number).padStart(2, "0")}
+    </span>
+    <div className="flex flex-col" style={{ gap: "clamp(0.4rem, 1.5vw, 0.75rem)" }}>
+      <span className="sl-label text-fluid-xs" style={{ color: "var(--mint)" }}>
+        {label}
+      </span>
+      <p
+        className="sl-body text-fluid-lg md:text-fluid-xl leading-snug"
+        style={{ color: "var(--carbon-text)", maxWidth: "52ch" }}
+      >
+        {text}
+      </p>
     </div>
   </div>
 ));
 
-PrincipleItem.displayName = "PrincipleItem";
+PrincipleRow.displayName = "PrincipleRow";
 
 const principles = [
   {
     number: 1,
+    label: "Aligned incentives",
     text: "We invest in startups that profit alongside users rather than from them",
   },
   {
     number: 2,
+    label: "Trust & loyalty",
     text: "We invest in startups that create high user loyalty, engagement and trust",
   },
   {
     number: 3,
+    label: "Fair by design",
     text: "We invest in startups that use transparent and fair business models to do well by doing good",
   },
 ];
 
 const Principles = () => {
   return (
-    <section 
-      id="principles" 
+    <section
+      id="principles"
       className="section-spacing"
       aria-labelledby="principles-heading"
     >
       <div className="container-fluid">
         <AnimatedSection>
-          <div style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
+          <div style={{ marginBottom: "clamp(2rem, 5vw, 4rem)" }}>
             <div className="flex items-center gap-3">
-              <PrinciplesIcon className="flex-shrink-0" style={{ color: 'var(--mint)', width: 'clamp(1.75rem, 4vw, 2.5rem)', height: 'clamp(1.75rem, 4vw, 2.5rem)' }} />
-              <h2 
+              <PrinciplesIcon
+                className="flex-shrink-0"
+                style={{
+                  color: "var(--mint)",
+                  width: "clamp(1.75rem, 4vw, 2.5rem)",
+                  height: "clamp(1.75rem, 4vw, 2.5rem)",
+                }}
+              />
+              <h2
                 id="principles-heading"
                 className="text-fluid-4xl font-bold text-left break-words"
-                style={{ color: 'var(--carbon-text)', fontFamily: 'var(--font-display), var(--font-outfit), sans-serif'}}
+                style={{
+                  color: "var(--carbon-text)",
+                  fontFamily: "var(--font-display), var(--font-outfit), sans-serif",
+                }}
               >
                 PRINCIPLES
               </h2>
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8">
+
+          <div style={{ borderBottom: "2px solid var(--carbon-border)" }}>
             {principles.map((principle, index) => (
               <AnimatedSection
                 key={principle.number}
-                delay={index * 0.15}
+                delay={index * 0.12}
                 variant="slideUp"
                 duration={0.5}
               >
-                <PrincipleItem
+                <PrincipleRow
                   number={principle.number}
+                  label={principle.label}
                   text={principle.text}
                 />
               </AnimatedSection>
