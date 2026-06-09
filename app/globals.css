@@ -18,7 +18,7 @@ body, html {
 }
 
 /* ── Structured Liquidity typography roles ──
-   Display/headings: Space Grotesk, tight tracking.
+   Display/headings: Archivo (heavy weights), tight tracking.
    Body copy: Outfit (inherited from body).
    Labels/eyebrows/nav: Space Mono, uppercase, loose tracking. */
 .sl-display {
