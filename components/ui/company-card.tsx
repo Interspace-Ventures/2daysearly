@@ -26,6 +26,8 @@ export default function CompanyCard({ company }: CompanyCardProps) {
         <img
           src={company.logo}
           alt={`${company.name} logo`}
+          loading="lazy"
+          decoding="async"
           className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-110"
           onError={(e) => {
             console.error(`Failed to load image: ${company.logo}`);

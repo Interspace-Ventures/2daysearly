@@ -91,22 +91,23 @@ const Principles = () => {
             </div>
           </div>
 
-          <div style={{ borderBottom: "2px solid var(--carbon-border)" }}>
+          <ol className="list-none m-0 p-0" style={{ borderBottom: "2px solid var(--carbon-border)" }}>
             {principles.map((principle, index) => (
-              <AnimatedSection
-                key={principle.number}
-                delay={index * 0.12}
-                variant="slideUp"
-                duration={0.5}
-              >
-                <PrincipleRow
-                  number={principle.number}
-                  label={principle.label}
-                  text={principle.text}
-                />
-              </AnimatedSection>
+              <li key={principle.number}>
+                <AnimatedSection
+                  delay={index * 0.12}
+                  variant="slideUp"
+                  duration={0.5}
+                >
+                  <PrincipleRow
+                    number={principle.number}
+                    label={principle.label}
+                    text={principle.text}
+                  />
+                </AnimatedSection>
+              </li>
             ))}
-          </div>
+          </ol>
         </AnimatedSection>
       </div>
     </section>

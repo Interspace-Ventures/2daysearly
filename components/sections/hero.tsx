@@ -11,6 +11,9 @@ export default function Hero() {
             <img
               src={IMAGES.logo.src}
               alt="2 Days Early Logo"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="max-w-full object-contain"
               style={{
                 height: 'clamp(8rem, 15vw, 12rem)',

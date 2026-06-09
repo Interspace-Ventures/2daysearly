@@ -17,6 +17,8 @@ const PartnerCard = memo(({ partner }: PartnerCardProps) => (
           <img
             src={partner.image}
             alt={`${partner.name}'s portrait`}
+            loading="lazy"
+            decoding="async"
             className={`max-w-full max-h-full object-contain rounded-full sm:rounded-none ${partner.imageClassName || ''}`}
             style={{ maxWidth: '100%', maxHeight: '100%', backgroundColor: 'transparent' }}
           />

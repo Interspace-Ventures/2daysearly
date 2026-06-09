@@ -142,6 +142,8 @@ export default function Navigation() {
               <img
                 src="/images/2-days-early-calendar-icon-2025.png"
                 alt="2 Days Early Calendar Icon"
+                loading="eager"
+                decoding="async"
                 className="object-contain"
                 style={{ width: 'clamp(1.1rem, 2.6vw, 1.4rem)', height: 'clamp(1.1rem, 2.6vw, 1.4rem)' }}
               />
