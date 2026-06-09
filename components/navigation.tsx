@@ -140,7 +140,7 @@ export default function Navigation() {
               }}
             >
               <img
-                src="/images/2-days-early-calendar-icon-2025.png"
+                src="/images/2-days-early-calendar-icon-2025-v2.png"
                 alt="2 Days Early Calendar Icon"
                 loading="eager"
                 decoding="async"
