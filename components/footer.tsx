@@ -13,25 +13,25 @@ export default function Footer() {
           <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="#purpose"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
+              className="sl-label text-fluid-sm text-white transition-colors hover:text-[#1dc677]"
             >
               PURPOSE
             </a>
             <a 
               href="#principles"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
+              className="sl-label text-fluid-sm text-white transition-colors hover:text-[#1dc677]"
             >
               PRINCIPLES
             </a>
             <a 
               href="#portfolio"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
+              className="sl-label text-fluid-sm text-white transition-colors hover:text-[#1dc677]"
             >
               PORTFOLIO
             </a>
             <a 
               href="#partners"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
+              className="sl-label text-fluid-sm text-white transition-colors hover:text-[#1dc677]"
             >
               PARTNERS
             </a>
@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="min-[200px]:col-span-1 sm:col-span-3 flex flex-col items-start space-y-3 min-[200px]:space-y-2 sm:space-y-2">
             <a 
               href="mailto:pitch@daysearly.com"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
+              className="sl-label text-fluid-sm text-white transition-colors hover:text-[#1dc677]"
             >
               PITCH
             </a>
@@ -49,12 +49,12 @@ export default function Footer() {
               href="https://posts.interspace.ventures/p/101-everything-you-wanted-to-know"
               target="_blank"
               rel="noopener noreferrer"
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
+              className="sl-label text-fluid-sm text-white transition-colors hover:text-[#1dc677]"
             >
               LEARN
             </a>
             <button
-              className="sl-label text-fluid-base text-white transition-colors hover:text-[#1dc677]"
+              className="sl-label text-fluid-sm text-white transition-colors hover:text-[#1dc677]"
               style={{background: 'none', border: 'none', padding: 0}}
             >
               JOIN
@@ -97,29 +97,29 @@ export default function Footer() {
 
         {/* Full-width copyright row */}
         <div className="text-fluid-sm text-white text-left leading-relaxed sl-body mt-8 pt-6" style={{fontSize: 'clamp(0.75rem, 1.5vw, 0.875rem)', borderTop: '1px solid var(--carbon-border)'}}>
-          <div className="mb-2 flex items-center gap-3">
-            <span className="sl-label" style={{letterSpacing: '0.08em'}}>© 2026 2 DAYS EARLY</span>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <span className="sl-label whitespace-nowrap" style={{letterSpacing: '0.08em'}}>© 2026 2 DAYS EARLY</span>
             <ChangelogDialog />
-          </div>
-          <div>
-            2 Days Early is an{" "}
-            <a 
-              href="https://interspace.ventures" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="transition-colors underline text-[#1dc677] hover:text-[#179e5f]"
-            >
-              Interspace Venture
-            </a>
-            {" "}built at the speed of thought using{" "}
-            <a 
-              href="https://replit.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="transition-colors underline text-[#1dc677] hover:text-[#179e5f]"
-            >
-              Replit
-            </a>
+            <span>
+              2 Days Early is an{" "}
+              <a 
+                href="https://interspace.ventures" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-colors underline text-[#1dc677] hover:text-[#179e5f]"
+              >
+                Interspace Venture
+              </a>
+              {" "}built at the speed of thought using{" "}
+              <a 
+                href="https://replit.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-colors underline text-[#1dc677] hover:text-[#179e5f]"
+              >
+                Replit
+              </a>
+            </span>
           </div>
         </div>
       </div>
