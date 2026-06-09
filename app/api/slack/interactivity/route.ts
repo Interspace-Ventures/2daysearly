@@ -8,6 +8,7 @@ import {
   verifySlackSignature,
   buildDecidedBlocks,
   buildWelcomeBlocks,
+  resolveChannelId,
   CHATTER_CHANNEL,
 } from '@/lib/slack';
 import { sendInviteEmail } from '@/server/email';
@@ -98,8 +99,9 @@ export async function POST(req: Request) {
     // Welcome post in the chatter channel.
     if (slack) {
       try {
+        const chatterChannel = await resolveChannelId(slack, CHATTER_CHANNEL);
         await slack.chat.postMessage({
-          channel: CHATTER_CHANNEL,
+          channel: chatterChannel,
           text: `Welcome ${updated.firstName} ${updated.lastName} to the community!`,
           blocks: buildWelcomeBlocks(updated) as any,
         });

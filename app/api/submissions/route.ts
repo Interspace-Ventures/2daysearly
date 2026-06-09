@@ -7,6 +7,7 @@ import {
   getSlackClient,
   isSlackConfigured,
   buildSubmissionBlocks,
+  resolveChannelId,
   PARTNERS_CHANNEL,
 } from '@/lib/slack';
 
@@ -55,8 +56,9 @@ export async function POST(req: Request) {
   if (isSlackConfigured()) {
     try {
       const slack = getSlackClient();
+      const channel = await resolveChannelId(slack, PARTNERS_CHANNEL);
       const posted = await slack.chat.postMessage({
-        channel: PARTNERS_CHANNEL,
+        channel,
         text: `New application from ${created.firstName} ${created.lastName}`,
         blocks: buildSubmissionBlocks(created) as any,
       });

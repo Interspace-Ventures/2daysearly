@@ -18,6 +18,40 @@ export function isSlackConfigured(): boolean {
   return Boolean(process.env.SLACK_BOT_TOKEN && process.env.SLACK_SIGNING_SECRET);
 }
 
+// chat.postMessage with chat:write.public requires a channel *ID* for channels
+// the bot hasn't joined; a "#name" only resolves if the bot is a member. To keep
+// friendly "#name" config working, resolve names to IDs via conversations.list
+// (needs channels:read / groups:read) and cache the result. Values that are
+// already IDs (or anything not prefixed with "#") pass straight through.
+const channelIdCache = new Map<string, string>();
+
+export async function resolveChannelId(
+  slack: WebClient,
+  channel: string,
+): Promise<string> {
+  if (!channel.startsWith('#')) return channel;
+  const name = channel.slice(1).toLowerCase();
+  if (channelIdCache.has(name)) return channelIdCache.get(name) as string;
+
+  let cursor: string | undefined;
+  do {
+    const res = await slack.conversations.list({
+      types: 'public_channel,private_channel',
+      exclude_archived: true,
+      limit: 200,
+      cursor,
+    });
+    for (const c of res.channels || []) {
+      if (c.name && c.id) channelIdCache.set(c.name.toLowerCase(), c.id);
+    }
+    if (channelIdCache.has(name)) return channelIdCache.get(name) as string;
+    cursor = res.response_metadata?.next_cursor || undefined;
+  } while (cursor);
+
+  // Not found — return the raw value and let Slack surface the error.
+  return channel;
+}
+
 // Slack mrkdwn fields cap at 3000 chars; keep individual answers well under.
 function trunc(text: string, max = 700): string {
   const t = (text || '').trim();
