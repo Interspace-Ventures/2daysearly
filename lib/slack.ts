@@ -143,6 +143,7 @@ export function buildDecidedBlocks(
 
 export function buildWelcomeBlocks(s: Submission) {
   const interests = (s.fintechInterests || []).join(', ');
+  const experience = (s.experienceTags || []).join('; ');
   return [
     {
       type: 'section',
@@ -154,14 +155,13 @@ export function buildWelcomeBlocks(s: Submission) {
     {
       type: 'section',
       fields: [
-        { type: 'mrkdwn', text: `*Currently:*\n${s.currentWork}` },
-        { type: 'mrkdwn', text: `*Into:*\n${interests || '—'}` },
-        { type: 'mrkdwn', text: `*LinkedIn:*\n<${s.linkedinUrl}|Connect>` },
-        { type: 'mrkdwn', text: `*Outside work:*\n${trunc(s.hobbies, 300)}` },
+        { type: 'mrkdwn', text: `*Fintech interests:*\n${interests || '—'}` },
+        { type: 'mrkdwn', text: `*Experience:*\n${experience || '—'}` },
       ],
     },
-    { type: 'section', text: { type: 'mrkdwn', text: `*Can help with:* ${trunc(s.helpOffer, 400)}` } },
-    { type: 'section', text: { type: 'mrkdwn', text: `*Wants to learn:* ${trunc(s.learnInterest, 400)}` } },
+    { type: 'section', text: { type: 'mrkdwn', text: `*Can help others with:*\n${trunc(s.helpOffer, 500)}` } },
+    { type: 'section', text: { type: 'mrkdwn', text: `*Wants to learn about:*\n${trunc(s.learnInterest, 500)}` } },
+    { type: 'section', text: { type: 'mrkdwn', text: `*Outside of work:*\n${trunc(s.hobbies, 500)}` } },
   ];
 }
 
