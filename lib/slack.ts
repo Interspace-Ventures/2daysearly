@@ -29,6 +29,13 @@ export async function resolveChannelId(
   slack: WebClient,
   channel: string,
 ): Promise<string> {
+  // A user ID (e.g. "U0123ABC") means "send a direct message": open (or reuse)
+  // the IM channel and return its ID. Handy for testing without posting to a
+  // shared channel. Requires the im:write scope.
+  if (/^[UW][A-Z0-9]+$/.test(channel)) {
+    const im = await slack.conversations.open({ users: channel });
+    return (im.channel?.id as string) || channel;
+  }
   if (!channel.startsWith('#')) return channel;
   const name = channel.slice(1).toLowerCase();
   if (channelIdCache.has(name)) return channelIdCache.get(name) as string;
