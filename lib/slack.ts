@@ -141,28 +141,58 @@ export function buildDecidedBlocks(
   return blocks;
 }
 
-export function buildWelcomeBlocks(s: Submission) {
-  const interests = (s.fintechInterests || []).join(', ');
-  const experience = (s.experienceTags || []).join('; ');
-  return [
-    {
-      type: 'section',
-      text: {
-        type: 'mrkdwn',
-        text: `👋 Everyone welcome *${s.firstName} ${s.lastName}* to the community!`,
-      },
-    },
-    {
-      type: 'section',
-      fields: [
-        { type: 'mrkdwn', text: `*Fintech interests:*\n${interests || '—'}` },
-        { type: 'mrkdwn', text: `*Experience:*\n${experience || '—'}` },
-      ],
-    },
-    { type: 'section', text: { type: 'mrkdwn', text: `*Can help others with:*\n${trunc(s.helpOffer, 500)}` } },
-    { type: 'section', text: { type: 'mrkdwn', text: `*Wants to learn about:*\n${trunc(s.learnInterest, 500)}` } },
-    { type: 'section', text: { type: 'mrkdwn', text: `*Outside of work:*\n${trunc(s.hobbies, 500)}` } },
+// Joins a list into natural language: "A", "A and B", "A, B, and C".
+function naturalList(items: string[]): string {
+  const xs = (items || []).map((x) => x.trim()).filter(Boolean);
+  if (xs.length === 0) return '';
+  if (xs.length === 1) return xs[0];
+  if (xs.length === 2) return `${xs[0]} and ${xs[1]}`;
+  return `${xs.slice(0, -1).join(', ')}, and ${xs[xs.length - 1]}`;
+}
+
+// Turns the "I have ..." experience options into clauses that read after "has".
+function experienceClauses(tags: string[]): string {
+  return naturalList((tags || []).map((t) => t.replace(/^I have\s+/i, '')));
+}
+
+// Trims freeform text and drops a single trailing period for clean inlining.
+function inlineText(text: string | null): string {
+  return (text || '').trim().replace(/\s*\.\s*$/, '');
+}
+
+// Builds the community welcome post as a warm, woven paragraph. When
+// `slackUserId` is provided the new member is @-mentioned in the closing line;
+// otherwise we fall back to their first name (e.g. when the post is made before
+// they have joined the workspace).
+export function buildWelcomeBlocks(s: Submission, slackUserId?: string | null) {
+  const name = s.firstName;
+  const mention = slackUserId ? `<@${slackUserId}>` : name;
+  const experiences = experienceClauses(s.experienceTags || []);
+  const interests = naturalList(s.fintechInterests || []);
+  const help = inlineText(s.helpOffer);
+  const learn = inlineText(s.learnInterest);
+  const hobbies = inlineText(s.hobbies);
+
+  const lines: string[] = [
+    `👋 Please welcome *${s.firstName} ${s.lastName}* to the community!`,
+    '',
   ];
+
+  const intro: string[] = [];
+  if (experiences) intro.push(`${name} has ${experiences}.`);
+  if (interests) intro.push(`${name} is interested in ${interests}.`);
+  if (intro.length) lines.push(intro.join(' '));
+
+  if (help) lines.push(`• ${name} can help others with ${help}`);
+  if (learn) lines.push(`• ${name} wants to learn about ${learn}`);
+
+  lines.push('');
+  const closing = hobbies
+    ? `Outside of work, ${name} is doing ${hobbies}. Let's give a warm welcome to ${mention}! 🎉`
+    : `Let's give a warm welcome to ${mention}! 🎉`;
+  lines.push(closing);
+
+  return [{ type: 'section', text: { type: 'mrkdwn', text: lines.join('\n') } }];
 }
 
 // Verifies a Slack request signature (v0 scheme). Pass the RAW request body.
