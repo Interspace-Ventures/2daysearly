@@ -173,21 +173,12 @@ export function verifySlackSignature(
 ): boolean {
   const secret = process.env.SLACK_SIGNING_SECRET;
   if (!secret || !timestamp || !signature) {
-    console.warn('[slack-sig] missing input', {
-      hasSecret: Boolean(secret),
-      hasTimestamp: Boolean(timestamp),
-      hasSignature: Boolean(signature),
-    });
     return false;
   }
 
   // Reject requests older than 5 minutes (replay protection).
   const ts = Number(timestamp);
   if (!Number.isFinite(ts) || Math.abs(Date.now() / 1000 - ts) > 60 * 5) {
-    console.warn('[slack-sig] timestamp out of range', {
-      timestamp,
-      skewSeconds: Number.isFinite(ts) ? Math.round(Date.now() / 1000 - ts) : 'NaN',
-    });
     return false;
   }
 
@@ -200,13 +191,6 @@ export function verifySlackSignature(
   const a = Buffer.from(expected);
   const b = Buffer.from(signature);
   if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) {
-    console.warn('[slack-sig] signature mismatch', {
-      secretLen: secret.length,
-      secretTrimmedLen: secret.trim().length,
-      bodyLen: rawBody.length,
-      expectedPrefix: expected.slice(0, 11),
-      receivedPrefix: signature.slice(0, 11),
-    });
     return false;
   }
   return true;

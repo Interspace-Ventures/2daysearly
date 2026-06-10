@@ -19,27 +19,11 @@ export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
   // Raw body is required for Slack signature verification.
   const rawBody = await req.text();
-  const tsHeader = req.headers.get('x-slack-request-timestamp');
-  const sigHeader = req.headers.get('x-slack-signature');
-  const valid = verifySlackSignature(rawBody, tsHeader, sigHeader);
-  // TEMP DIAGNOSTIC: persists across dev-server restarts (remove after fix).
-  try {
-    const fs = await import('node:fs');
-    const secret = process.env.SLACK_SIGNING_SECRET || '';
-    const expected = tsHeader
-      ? 'v0=' +
-        (await import('node:crypto'))
-          .createHmac('sha256', secret)
-          .update(`v0:${tsHeader}:${rawBody}`)
-          .digest('hex')
-      : '(no-ts)';
-    fs.appendFileSync(
-      '/tmp/slack-debug.log',
-      `${new Date().toISOString()} ARRIVED valid=${valid} secretLen=${secret.length} ` +
-        `tsHeader=${tsHeader} bodyLen=${rawBody.length} ` +
-        `expected=${expected.slice(0, 15)} received=${(sigHeader || '').slice(0, 15)}\n`,
-    );
-  } catch {}
+  const valid = verifySlackSignature(
+    rawBody,
+    req.headers.get('x-slack-request-timestamp'),
+    req.headers.get('x-slack-signature'),
+  );
   if (!valid) {
     return new NextResponse('invalid signature', { status: 401 });
   }
