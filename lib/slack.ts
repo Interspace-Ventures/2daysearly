@@ -138,6 +138,19 @@ export function buildDecidedBlocks(
       },
     ],
   } as any);
+  // On approval, surface the exact next step: invite the applicant into Slack
+  // by email. Slack has no public API to do this on Free/Pro plans, so the
+  // reviewer pastes the (inline-code, one-click-copyable) email into Slack's
+  // native "Invite people" dialog.
+  if (decision === 'approved') {
+    blocks.push({
+      type: 'section',
+      text: {
+        type: 'mrkdwn',
+        text: `📨 *To let them in:* open *Invite people to 2 Days Early* in Slack and paste \`${s.email}\``,
+      },
+    } as any);
+  }
   return blocks;
 }
 

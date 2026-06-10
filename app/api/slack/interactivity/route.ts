@@ -11,7 +11,6 @@ import {
   resolveChannelId,
   CHATTER_CHANNEL,
 } from '@/lib/slack';
-import { sendInviteEmail } from '@/server/email';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -58,7 +57,7 @@ export async function POST(req: Request) {
 
   // Atomic, idempotent decision: only the first click that finds the row still
   // 'pending' wins. Concurrent clicks update zero rows and exit without running
-  // any side effects (welcome post / invite email).
+  // any side effects (the welcome post).
   const updatedRows = await db
     .update(submissions)
     .set({ status: decision, decidedBy: deciderName, decidedAt: new Date() })
@@ -108,19 +107,6 @@ export async function POST(req: Request) {
       } catch (err) {
         console.error('Chatter post failed:', err);
       }
-    }
-
-    // Email the applicant their Slack invite link.
-    try {
-      const sent = await sendInviteEmail(updated);
-      if (sent) {
-        await db
-          .update(submissions)
-          .set({ inviteSentAt: new Date() })
-          .where(eq(submissions.id, submissionId));
-      }
-    } catch (err) {
-      console.error('Invite email failed:', err);
     }
   }
 

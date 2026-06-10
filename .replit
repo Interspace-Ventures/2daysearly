@@ -68,5 +68,3 @@ timeoutMs = 20000
 [userenv]
 
 [userenv.shared]
-SLACK_PARTNERS_CHANNEL = "U02DDPZ6MCP"
-SLACK_CHATTER_CHANNEL = "U02DDPZ6MCP"

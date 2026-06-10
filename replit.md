@@ -4,7 +4,7 @@
 
 Marketing website for "2 Days Early", an operator-led investment syndicate (Chime alumni and fintech operators). It presents the syndicate's purpose, principles, portfolio companies, and partners, and lets interested operators apply through a **native multi-step join form** built into the site.
 
-Applications are stored in Postgres and routed for review through Slack: each submission posts to a partners channel with Approve/Reject buttons. On approval, a welcome message is posted to a community channel and the applicant is emailed a Slack invite link. A password-protected admin page lists all applications.
+Applications are stored in Postgres and routed for review through Slack: each submission posts to a partners channel with Approve/Reject buttons. On approval, a welcome message is posted to a community channel and the review message updates with a reminder to invite the applicant into Slack — the reviewer pastes their email (shown on the message) into Slack's native "Invite people" dialog, which sends the official invite. A password-protected admin page lists all applications.
 
 The design uses a neobrutalism aesthetic — bold type, sharp 2px borders, and offset drop shadows — built around a green ("mint") color palette on dark carbon surfaces.
 
@@ -28,7 +28,7 @@ The design uses a neobrutalism aesthetic — bold type, sharp 2px borders, and o
 - **Forms**: A native multi-step form (`components/forms/join-form.tsx`) using `react-hook-form` + `zod` (shared schema in `lib/join-form.ts`). Opened via a global custom event from the nav/hero "JOIN" buttons (`lib/join-modal.ts`).
 - **API**: Next.js route handlers (Node runtime) under `app/api/` — submission intake, Slack interactivity, and admin auth.
 - **Slack**: `@slack/web-api` (`lib/slack.ts`) posts Block Kit messages and verifies inbound request signatures. Approve/Reject buttons require a **custom Slack app** (a managed connector cannot set the interactivity Request URL or expose a signing secret).
-- **Email**: Resend (via the Replit Resend connector, or a `RESEND_API_KEY` fallback) sends the invite email in `server/email.ts`.
+- **Member invites**: handled by Slack's own native "Invite people" dialog (no email service). On a Free/Pro plan Slack offers no public API to invite by email, so this is a manual one-paste step per approval; the approval message surfaces the applicant's email (inline code, one-click copy) to make it frictionless.
 - **Animation**: A custom `AnimatedSection` component (`components/ui/animated-section.tsx`) using the IntersectionObserver API. No animation library.
 - **Icons**: Inline SVG components (no icon package).
 
@@ -37,14 +37,14 @@ The design uses a neobrutalism aesthetic — bold type, sharp 2px borders, and o
 1. Visitor completes the multi-step form → `POST /api/submissions` (zod-validated) → row inserted into `submissions`.
 2. The submission is posted to the Slack partners channel with Approve/Reject buttons; the message timestamp is stored on the row.
 3. A reviewer clicks a button → Slack calls `POST /api/slack/interactivity` (signature-verified). The decision update is **atomic** (`WHERE id = ? AND status = 'pending'`) so concurrent clicks run side effects only once.
-4. On approve: the original message is updated, a welcome is posted to the chatter channel, and the applicant is emailed the Slack invite link.
+4. On approve: the original message is updated (and shows a reminder to invite the applicant by pasting their email into Slack's "Invite people" dialog), and a welcome is posted to the chatter channel.
 5. `/admin` (password-gated) lists all submissions and their status.
 
 ### Configuration (env / secrets)
 
-- Secrets: `SLACK_BOT_TOKEN`, `SLACK_SIGNING_SECRET`, `ADMIN_PASSWORD` (and `RESEND_API_KEY` if not using the Resend connector).
-- Env: `SLACK_INVITE_URL` (the shared Slack invite link), `RESEND_FROM` (verified sender), optional `SLACK_PARTNERS_CHANNEL` / `SLACK_CHATTER_CHANNEL` (default `#syndicate-partners` / `#chatter`).
-- Slack/email steps are non-fatal when unconfigured: submissions still persist and the admin page still works.
+- Secrets: `SLACK_BOT_TOKEN`, `SLACK_SIGNING_SECRET`, `ADMIN_PASSWORD`.
+- Env: optional `SLACK_PARTNERS_CHANNEL` / `SLACK_CHATTER_CHANNEL` (default `#syndicate-partners` / `#chatter`).
+- Slack steps are non-fatal when unconfigured: submissions still persist and the admin page still works.
 
 ### Project structure
 
@@ -68,7 +68,6 @@ The design uses a neobrutalism aesthetic — bold type, sharp 2px borders, and o
   - `constants.ts` — image asset paths and `COMPANIES` data; `theme.ts` — design tokens; `utils.ts` — `cn()` helper.
 - `server/`
   - `index.ts` — minimal custom Next.js server (Node `http`) on port 5000 for Replit (uses Next's request handler — not Express).
-  - `email.ts` — Resend invite email.
 - `types/index.ts` — shared interfaces. `public/images/` — logos and partner photos.
 
 ### Running the project

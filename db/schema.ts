@@ -28,7 +28,6 @@ export const submissions = pgTable('submissions', {
   slackChannel: text('slack_channel'),
   decidedBy: text('decided_by'),
   decidedAt: timestamp('decided_at'),
-  inviteSentAt: timestamp('invite_sent_at'),
 
   createdAt: timestamp('created_at').notNull().defaultNow(),
 });
