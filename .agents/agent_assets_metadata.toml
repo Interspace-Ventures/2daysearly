@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "cbZLVsBW65mhqH6o1W1ir"
+uri = "file://exports/chimebot-profile-512.png"
+type = "image"
+title = "Chimebot profile picture (512×512)"
