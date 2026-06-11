@@ -28,6 +28,7 @@ export const submissions = pgTable('submissions', {
   slackChannel: text('slack_channel'),
   decidedBy: text('decided_by'),
   decidedAt: timestamp('decided_at'),
+  welcomedAt: timestamp('welcomed_at'), // set when they join Slack and the welcome posts
 
   createdAt: timestamp('created_at').notNull().defaultNow(),
 });

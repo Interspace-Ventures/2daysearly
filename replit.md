@@ -26,9 +26,10 @@ The design uses a neobrutalism aesthetic — bold type, sharp 2px borders, and o
 - **Styling**: Tailwind CSS 3 plus custom utilities in `app/globals.css` (fluid typography, responsive grids, neobrutalism helpers). Class composition via `clsx` and `tailwind-merge`.
 - **Database**: Postgres via Drizzle ORM (`drizzle-orm` + `pg`). Schema in `db/schema.ts`, client in `db/index.ts`, config in `drizzle.config.ts`. Push schema changes with `npx drizzle-kit push`.
 - **Forms**: A native multi-step form (`components/forms/join-form.tsx`) using `react-hook-form` + `zod` (shared schema in `lib/join-form.ts`). Opened via a global custom event from the nav/hero "JOIN" buttons (`lib/join-modal.ts`).
-- **API**: Next.js route handlers (Node runtime) under `app/api/` — submission intake, Slack interactivity, and admin auth.
+- **API**: Next.js route handlers (Node runtime) under `app/api/` — submission intake, Slack interactivity, Slack events, and admin auth.
 - **Slack**: `@slack/web-api` (`lib/slack.ts`) posts Block Kit messages and verifies inbound request signatures. Approve/Reject buttons require a **custom Slack app** (a managed connector cannot set the interactivity Request URL or expose a signing secret).
 - **Member invites**: handled by Slack's own native "Invite people" dialog (no email service). On a Free/Pro plan Slack offers no public API to invite by email, so this is a manual one-paste step per approval; the approval message surfaces the applicant's email (inline code, one-click copy) to make it frictionless.
+- **Welcome on join (@mention)**: the community welcome is posted when the approved applicant actually **joins the workspace**, not at approval time, so it can `@`-mention their real Slack account. The Slack app subscribes to the `team_join` event (needs the `users:read.email` scope); the handler matches the joiner's email to an approved submission and posts to `#chatter` exactly once (idempotent against Slack event retries via the `welcomed_at` claim).
 - **Animation**: A custom `AnimatedSection` component (`components/ui/animated-section.tsx`) using the IntersectionObserver API. No animation library.
 - **Icons**: Inline SVG components (no icon package).
 
@@ -37,20 +38,23 @@ The design uses a neobrutalism aesthetic — bold type, sharp 2px borders, and o
 1. Visitor completes the multi-step form → `POST /api/submissions` (zod-validated) → row inserted into `submissions`.
 2. The submission is posted to the Slack partners channel with Approve/Reject buttons; the message timestamp is stored on the row.
 3. A reviewer clicks a button → Slack calls `POST /api/slack/interactivity` (signature-verified). The decision update is **atomic** (`WHERE id = ? AND status = 'pending'`) so concurrent clicks run side effects only once.
-4. On approve: the original message is updated (and shows a reminder to invite the applicant by pasting their email into Slack's "Invite people" dialog), and a welcome is posted to the chatter channel.
-5. `/admin` (password-gated) lists all submissions and their status.
+4. On approve: the original message is updated and shows a reminder to invite the applicant by pasting their email into Slack's "Invite people" dialog. (No welcome is posted yet.)
+5. When the approved applicant joins the workspace → Slack calls `POST /api/slack/events` (`team_join`, signature-verified). The handler matches their email to an approved, not-yet-welcomed submission, **atomically claims it** (`SET welcomed_at = now() WHERE lower(email)=? AND status='approved' AND welcomed_at IS NULL`), and posts the `@`-mention welcome to the chatter channel. A failed post releases the claim so it can retry.
+6. `/admin` (password-gated) lists all submissions and their status (including who has joined & been welcomed).
 
 ### Configuration (env / secrets)
 
 - Secrets: `SLACK_BOT_TOKEN`, `SLACK_SIGNING_SECRET`, `ADMIN_PASSWORD`.
 - Env: optional `SLACK_PARTNERS_CHANNEL` / `SLACK_CHATTER_CHANNEL` (default `#syndicate-partners` / `#chatter`).
 - Slack steps are non-fatal when unconfigured: submissions still persist and the admin page still works.
+- Slack app setup: enable **Interactivity** (Request URL `<base>/api/slack/interactivity`) and **Event Subscriptions** (Request URL `<base>/api/slack/events`, subscribed to the `team_join` event). The `team_join` welcome needs the `users:read.email` OAuth scope — without it Slack omits the joiner's email and the welcome silently no-ops. Adding scopes requires reinstalling the app.
 
 ### Project structure
 
 - `app/` — App Router entry. `page.tsx` composes the page and mounts the join-form modal; `layout.tsx` sets up fonts/metadata; `globals.css` holds global styles and custom utilities.
   - `app/api/submissions/route.ts` — form intake.
-  - `app/api/slack/interactivity/route.ts` — Slack button handler.
+  - `app/api/slack/interactivity/route.ts` — Slack Approve/Reject button handler.
+  - `app/api/slack/events/route.ts` — Slack `team_join` handler that posts the @-mention welcome on join.
   - `app/api/admin/{login,logout}/route.ts` — admin auth.
   - `app/admin/` — password-gated submissions list.
 - `components/`

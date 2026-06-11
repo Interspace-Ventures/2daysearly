@@ -7,9 +7,6 @@ import {
   getSlackClient,
   verifySlackSignature,
   buildDecidedBlocks,
-  buildWelcomeBlocks,
-  resolveChannelId,
-  CHATTER_CHANNEL,
 } from '@/lib/slack';
 
 export const runtime = 'nodejs';
@@ -94,21 +91,9 @@ export async function POST(req: Request) {
     }
   }
 
-  if (decision === 'approved') {
-    // Welcome post in the chatter channel.
-    if (slack) {
-      try {
-        const chatterChannel = await resolveChannelId(slack, CHATTER_CHANNEL);
-        await slack.chat.postMessage({
-          channel: chatterChannel,
-          text: `Welcome ${updated.firstName} ${updated.lastName} to the community!`,
-          blocks: buildWelcomeBlocks(updated) as any,
-        });
-      } catch (err) {
-        console.error('Chatter post failed:', err);
-      }
-    }
-  }
+  // The community welcome is intentionally NOT posted here. It fires later, when
+  // the approved applicant actually joins the workspace (handled in
+  // app/api/slack/events), so the post can @-mention their real Slack account.
 
   return new NextResponse('ok');
 }

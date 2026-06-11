@@ -60,6 +60,7 @@ function Row({ s }: { s: Submission }) {
         {s.decidedBy && (
           <span className="sm:col-span-2">
             <strong style={{ color: 'var(--carbon-text)' }}>Decision by:</strong> {s.decidedBy}
+            {s.welcomedAt ? ' · joined & welcomed' : ''}
           </span>
         )}
       </div>
