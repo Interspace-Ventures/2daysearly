@@ -2,42 +2,72 @@
 
 ## Project Overview
 
-2 Days Early is a public marketing site built with Next.js App Router, React, and a minimal custom Node `http` server. In production it serves mostly static content and opens a hardcoded Tally form in an iframe for operator applications. There is no application database, no custom API layer, no user authentication, and no admin surface in this repo.
+2 Days Early is a public marketing site (Next.js App Router, React, TypeScript) served by a minimal custom Node `http` server (`server/index.ts`) on port 5000. It is no longer a purely static site: it has a Postgres database (Drizzle ORM), a native multi-step application form, a password-protected admin surface, Slack-driven application review, and a **referral rewards program that moves real money** via Tremendous payouts. These additions materially expand the attack surface beyond the original static brochure site.
 
 ## Assets
 
-- **Site integrity and brand trust** — visitors should see only the intended marketing content and outbound links. Unauthorized script injection or content tampering would directly affect brand reputation and could be used for phishing.
-- **Visitor interaction with the application form** — the JOIN flow sends users to a third-party Tally embed. The app must not let attackers swap that destination or inject a malicious form.
-- **Deployment and runtime configuration** — the public deployment at `2daysearly.com` is internet-reachable. Production server behavior and headers must not expose debug-only behavior or unnecessary attack surface.
+- **Applicant data (PII)** — submissions store names, emails, LinkedIn URLs, and free-text answers in Postgres. This data must not leak to unauthenticated users or through public endpoints.
+- **Money movement (referral payouts)** — the highest-value asset. Each confirmed referral creates a $5 reward, paid out through Tremendous. The system must prevent unauthorized payouts, double-payment, payout to an attacker-controlled recipient, and fraudulent reward creation.
+- **Admin access** — `/admin` and the admin-only payout API are gated by a single shared `ADMIN_PASSWORD`. Compromise grants both PII access and the ability to trigger payouts.
+- **Slack workspace integrity** — the bot token can post messages and read user emails. Inbound Slack webhooks (interactivity, events) must be authenticated so attackers cannot forge approvals or join events.
+- **Site integrity and brand trust** — visitors should see only intended content and outbound links; no script injection or content tampering.
 
 ## Trust Boundaries
 
-- **Browser to Next.js server** — all public requests hit the custom server in `server/index.ts`, which delegates to Next's request handler. The browser is untrusted.
-- **Application to third-party Tally embed** — the client injects an iframe pointing to `https://tally.so/embed/nP1v8e...`. This is the main external trust boundary because application traffic and user submission flow cross into a third-party origin.
-- **Application to external outbound links** — users can be sent to external domains from navigation, portfolio cards, footer links, and mailto links. Those destinations must remain intentional and hardcoded.
-- **Production vs dev-only/template leftovers** — vestigial files like `db/`, `db:push`, and template config are out of scope unless production code imports or executes them.
+- **Browser → Next.js server** — all public requests hit the custom server, which delegates to Next's handler. The browser is untrusted; form input and referral codes (`?ref=`) are attacker-controllable.
+- **Slack → app webhooks** — `POST /api/slack/interactivity` (Approve/Reject) and `POST /api/slack/events` (`team_join`) are public endpoints. They are authenticated by HMAC signature verification using `SLACK_SIGNING_SECRET` over the raw request body, with a timestamp check to limit replay. Unsigned or stale requests must be rejected.
+- **Admin auth boundary** — `/admin` and `/api/admin/*` require a session cookie (`tde_admin`) whose value is an unguessable SHA-256 derivation of `ADMIN_PASSWORD`, compared with a timing-safe equality check. The payout endpoint re-checks this on every request.
+- **App → Tremendous** — payout credentials come from the Replit Tremendous connector (preferred) or a `TREMENDOUS_API_KEY` secret. All payout calls are server-only; credentials are never exposed to the client. The environment defaults to **sandbox** (`testflight.tremendous.com`) unless `TREMENDOUS_ENV=production` is set.
+- **App → Slack** — outbound Block Kit messages built from stored submission data.
 
 ## Scan Anchors
 
-- **Production entry points:** `server/index.ts`, `app/layout.tsx`, `app/page.tsx`
-- **Highest-risk production code:** `next.config.js` headers, `lib/tally.ts` iframe/embed logic, client components that render links or dynamic DOM
-- **Public surface:** the entire site is public; there are no authenticated or admin routes in this repo
-- **Usually dev-only / ignore unless proven reachable:** `db/`, leftover template config, build artifacts, and non-imported scaffolding
+- **Production entry points:** `server/index.ts`, `app/layout.tsx`, `app/page.tsx`, the App Router route handlers under `app/api/`.
+- **Highest-risk production code (money + auth + inbound webhooks):**
+  - `lib/tremendous.ts` (credential fetch, payout order creation)
+  - `app/api/admin/referrals/pay/route.ts` (admin-gated payout trigger; atomic claim)
+  - `lib/referral.ts` (reward creation, idempotency, self/dup/cap anti-fraud)
+  - `app/api/slack/interactivity/route.ts` and `app/api/slack/events/route.ts` (signature verification, atomic state transitions)
+  - `lib/slack.ts` (signature verification), `lib/admin.ts` (session token)
+  - `app/api/submissions/route.ts` (referral-code validation, input validation)
+- **Public surface:** the marketing site, `/api/submissions`, `/api/slack/*`, and `/admin` login. The admin list/payout actions are authenticated.
+- **Out of scope unless proven reachable:** leftover template config, build artifacts, non-imported scaffolding.
 
 ## Threat Categories
 
+### Spoofing
+
+- **Forged Slack webhooks** — an attacker could try to fake an Approve action or a `team_join` event to trigger an approval or a payout-qualifying join. Mitigation: HMAC signature verification over the raw body with a timestamp window; reject anything unsigned/stale.
+- **Referral attribution spoofing** — `?ref=CODE` is attacker-controlled. The intake route must validate the code maps to a real member and drop self-referral and unknown codes, so attribution cannot be forged onto an arbitrary member.
+- **Admin impersonation** — the admin cookie must be derived from the secret and compared in constant time; no client-trusted "isAdmin" flags.
+
 ### Tampering
 
-Because the site is mostly static, tampering risk is concentrated in client-side DOM creation and outbound navigation. The application must only create trusted DOM elements from hardcoded values, and any third-party embed or external navigation target must remain fixed rather than user-controlled.
+- **Payout recipient tampering** — the payout recipient email/name is taken from the stored referrer submission, never from client input on the pay request. The pay endpoint accepts only reward IDs, not amounts or recipients.
+- **Reward amount tampering** — amounts are server-side constants (`amountCents` default 500); the client cannot set or change them.
+- **DOM/outbound-link tampering** — client components must render trusted, hardcoded destinations only.
+
+### Repudiation / Integrity of money movement
+
+- **Double payment** — concurrent admin clicks or webhook retries must not pay twice. Mitigations: (1) `referredSubmissionId` is `UNIQUE`, so a join produces at most one reward; reward creation uses on-conflict-do-nothing; (2) the pay endpoint atomically claims a reward (`status` → `processing`) before calling Tremendous, so only one request can advance it; (3) Tremendous orders are sent with an `external_id` (`reward_<id>`) for provider-side idempotency.
+- **Reward only on real confirmation** — a reward is created only when the referred person is approved by a partner AND actually joins Slack with a verified email (tied to the atomic `welcomedAt` claim). This is the core anti-fraud gate.
+- **Soft cap** — more than `REFERRAL_MONTHLY_CAP` (25) confirmed referrals in 30 days marks new rewards `flagged` for manual review rather than auto-payable.
 
 ### Information Disclosure
 
-The app should not expose debug details, stack traces, internal paths, secrets, or unintended metadata in public responses. Since there is no database or private user data in the repo, the main guarantee is that production configuration stays minimal and does not leak internals through headers, error output, or accidental client-side secret exposure.
-
-### Spoofing
-
-Users rely on the site to send them to the correct join flow and external destinations. The application must ensure the Tally form destination and other outbound links are explicit, trusted, and not attacker-replaceable through query parameters, CMS content, or client-controlled state.
+- **PII exposure** — submission data is only rendered on the authenticated `/admin` page; no public endpoint returns it. Error responses must not leak stack traces, internal paths, or secrets.
+- **Credential exposure** — Slack/admin/Tremendous secrets are server-only. The Tremendous API key must never reach the client; the connector proxy fetch happens server-side.
 
 ### Elevation of Privilege
 
-There is no in-app account system or admin panel, so classic authorization issues are largely not applicable. The relevant guarantee is that the custom Node server should not add privileged endpoints, file access behavior, or request handling beyond Next's normal static-site serving path.
+- **Unauthenticated payout** — `/api/admin/referrals/pay` must reject requests without a valid admin cookie (return 401) before doing any work.
+- **Custom server scope** — the Node server should not add privileged endpoints, file access, or request handling beyond Next's normal serving path.
+
+## Required Security Guarantees
+
+1. Every admin-only endpoint re-verifies the admin cookie server-side on each request.
+2. All Slack inbound webhooks verify the HMAC signature over the raw body with a timestamp window.
+3. Payout recipient and amount are derived server-side from stored data; the client supplies only reward IDs.
+4. Reward creation and payout are idempotent (unique constraint + atomic claim + provider `external_id`).
+5. Tremendous defaults to sandbox; going live requires an explicit `TREMENDOUS_ENV=production`.
+6. No secret or PII is ever sent to the browser or included in error output.

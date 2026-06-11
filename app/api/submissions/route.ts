@@ -3,6 +3,7 @@ import { eq } from 'drizzle-orm';
 import { db } from '@db/index';
 import { submissions } from '@db/schema';
 import { joinFormSchema } from '@/lib/join-form';
+import { normalizeReferralCode } from '@/lib/referral';
 import {
   getSlackClient,
   isSlackConfigured,
@@ -32,6 +33,25 @@ export async function POST(req: Request) {
 
   const data = parsed.data;
 
+  // Resolve referral attribution. A referral code only ever exists for a real,
+  // approved member who has joined Slack, so this also acts as validation:
+  // unknown codes and self-referrals (same email) are silently dropped.
+  let referredByCode: string | null = null;
+  let referredByName: string | null = null;
+  const refCode = normalizeReferralCode(data.referredByCode);
+  if (refCode) {
+    const referrer = await db.query.submissions.findFirst({
+      where: eq(submissions.referralCode, refCode),
+    });
+    if (
+      referrer &&
+      referrer.email.trim().toLowerCase() !== data.email.trim().toLowerCase()
+    ) {
+      referredByCode = referrer.referralCode;
+      referredByName = `${referrer.firstName} ${referrer.lastName}`;
+    }
+  }
+
   // 1. Persist the submission.
   const [created] = await db
     .insert(submissions)
@@ -40,6 +60,7 @@ export async function POST(req: Request) {
       lastName: data.lastName,
       email: data.email,
       referralSource: data.referralSource || null,
+      referredByCode,
       currentWork: data.currentWork,
       experienceTags: data.experienceTags,
       linkedinUrl: data.linkedinUrl,
@@ -60,7 +81,7 @@ export async function POST(req: Request) {
       const posted = await slack.chat.postMessage({
         channel,
         text: `New application from ${created.firstName} ${created.lastName}`,
-        blocks: buildSubmissionBlocks(created) as any,
+        blocks: buildSubmissionBlocks(created, referredByName) as any,
       });
       if (posted.ok) {
         await db

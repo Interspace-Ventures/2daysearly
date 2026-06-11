@@ -12,6 +12,7 @@ import {
   ANNUAL_BUDGET_OPTIONS,
 } from '@/lib/join-form';
 import { JOIN_FORM_EVENT } from '@/lib/join-modal';
+import { getStoredRefCode } from '@/lib/referral-client';
 
 const STEPS: { title: string; fields: (keyof JoinFormValues)[] }[] = [
   { title: 'About you', fields: ['firstName', 'lastName', 'email', 'referralSource'] },
@@ -59,6 +60,7 @@ export default function JoinFormModal() {
       lastName: '',
       email: '',
       referralSource: '',
+      referredByCode: '',
       currentWork: undefined,
       experienceTags: [],
       linkedinUrl: '',
@@ -80,6 +82,8 @@ export default function JoinFormModal() {
       setStep(0);
       setSubmitState('idle');
       setSubmitError('');
+      // Attribute this application to a referrer if they arrived via a ref link.
+      form.setValue('referredByCode', getStoredRefCode());
       setOpen(true);
     };
     window.addEventListener(JOIN_FORM_EVENT, onOpen);
@@ -234,6 +238,9 @@ export default function JoinFormModal() {
             className="flex flex-col min-h-0 flex-1"
           >
             <div className="overflow-y-auto px-5 py-5 space-y-5" style={{ flex: 1 }}>
+              {/* Hidden: referral attribution, populated on open. */}
+              <input type="hidden" {...register('referredByCode')} />
+
               {/* Step 1 — About you */}
               {step === 0 && (
                 <>

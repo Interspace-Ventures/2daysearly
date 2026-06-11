@@ -1,10 +1,12 @@
 import { cookies } from 'next/headers';
 import { desc } from 'drizzle-orm';
 import { db } from '@db/index';
-import { submissions, type Submission } from '@db/schema';
+import { submissions, referralRewards, type Submission } from '@db/schema';
 import { isAdminAuthed, ADMIN_COOKIE } from '@/lib/admin';
+import { isTremendousConfigured, tremendousIsProduction } from '@/lib/tremendous';
 import AdminLogin from './login-form';
 import LogoutButton from './logout-button';
+import ReferralsPanel, { type ReferrerGroup, type RewardRow } from './referrals-panel';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -82,6 +84,56 @@ export default async function AdminPage() {
     rejected: rows.filter((r) => r.status === 'rejected').length,
   };
 
+  // Build the per-referrer referral summary.
+  const rewards = await db.query.referralRewards.findMany({
+    with: { referrer: true, referred: true },
+    orderBy: desc(referralRewards.createdAt),
+  });
+
+  const groupMap = new Map<number, ReferrerGroup>();
+  for (const r of rewards) {
+    const referrer = r.referrer;
+    const referred = r.referred;
+    if (!referrer) continue;
+    let g = groupMap.get(referrer.id);
+    if (!g) {
+      g = {
+        referrerId: referrer.id,
+        referrerName: `${referrer.firstName} ${referrer.lastName}`.trim(),
+        referrerEmail: referrer.email,
+        referralCode: referrer.referralCode,
+        confirmed: 0,
+        earnedCents: 0,
+        paidCents: 0,
+        owedCents: 0,
+        flagged: 0,
+        rewards: [],
+      };
+      groupMap.set(referrer.id, g);
+    }
+    g.confirmed += 1;
+    if (r.status === 'paid') g.paidCents += r.amountCents;
+    if (r.status === 'earned' || r.status === 'failed' || r.status === 'flagged') {
+      g.earnedCents += r.amountCents;
+      g.owedCents += r.amountCents;
+    }
+    if (r.status === 'flagged') g.flagged += 1;
+    const row: RewardRow = {
+      id: r.id,
+      referredName: referred ? `${referred.firstName} ${referred.lastName}`.trim() : `#${r.referredSubmissionId}`,
+      referredEmail: referred?.email || '',
+      amountCents: r.amountCents,
+      status: r.status,
+      flagReason: r.flagReason,
+      providerPayoutId: r.providerPayoutId,
+      createdAt: r.createdAt ? r.createdAt.toISOString() : null,
+      paidAt: r.paidAt ? r.paidAt.toISOString() : null,
+    };
+    g.rewards.push(row);
+  }
+  const groups = [...groupMap.values()].sort((a, b) => b.owedCents - a.owedCents);
+  const tremendousConfigured = await isTremendousConfigured();
+
   return (
     <div className="min-h-screen px-4 py-8" style={{ background: 'var(--carbon-bg)' }}>
       <div className="mx-auto" style={{ maxWidth: '880px' }}>
@@ -106,6 +158,12 @@ export default async function AdminPage() {
             ))}
           </div>
         )}
+
+        <ReferralsPanel
+          groups={groups}
+          configured={tremendousConfigured}
+          sandbox={!tremendousIsProduction()}
+        />
       </div>
     </div>
   );

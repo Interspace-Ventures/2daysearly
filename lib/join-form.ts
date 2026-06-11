@@ -51,6 +51,9 @@ export const joinFormSchema = z.object({
   lastName: z.string().trim().min(1, 'Last name is required'),
   email: z.string().trim().email('Enter a valid email address'),
   referralSource: z.string().trim().max(500),
+  // Hidden field: the referral code this applicant arrived through, if any.
+  // Kept input === output (no .optional/.default) per the zod v4 resolver rule.
+  referredByCode: z.string().trim().max(64),
   currentWork: z.enum(CURRENT_WORK_OPTIONS, { message: 'Select what you do for work' }),
   experienceTags: z.array(z.enum(EXPERIENCE_OPTIONS)),
   linkedinUrl: z

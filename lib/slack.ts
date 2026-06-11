@@ -65,8 +65,11 @@ function trunc(text: string, max = 700): string {
   return t.length > max ? `${t.slice(0, max - 1)}…` : t || '—';
 }
 
-export function buildSubmissionBlocks(s: Submission) {
-  return [
+// `referredByName` (optional): when this applicant arrived through a member's
+// referral link, surface it so the reviewer knows approving + this person
+// joining Slack earns that member a $5 reward.
+export function buildSubmissionBlocks(s: Submission, referredByName?: string | null) {
+  const blocks: any[] = [
     {
       type: 'header',
       text: { type: 'plain_text', text: `New application — ${s.firstName} ${s.lastName}` },
@@ -98,27 +101,42 @@ export function buildSubmissionBlocks(s: Submission) {
     { type: 'section', text: { type: 'mrkdwn', text: `*Can help others with:*\n${trunc(s.helpOffer)}` } },
     { type: 'section', text: { type: 'mrkdwn', text: `*Wants to learn about:*\n${trunc(s.learnInterest)}` } },
     { type: 'section', text: { type: 'mrkdwn', text: `*Outside of work:*\n${trunc(s.hobbies)}` } },
-    {
-      type: 'actions',
-      block_id: `review_${s.id}`,
+  ];
+
+  if (referredByName) {
+    blocks.push({
+      type: 'context',
       elements: [
         {
-          type: 'button',
-          style: 'primary',
-          text: { type: 'plain_text', text: 'Approve' },
-          action_id: 'approve_submission',
-          value: String(s.id),
-        },
-        {
-          type: 'button',
-          style: 'danger',
-          text: { type: 'plain_text', text: 'Reject' },
-          action_id: 'reject_submission',
-          value: String(s.id),
+          type: 'mrkdwn',
+          text: `🎁 Referral: came in via *${referredByName}*'s link — approving + them joining Slack earns *${referredByName}* $5.`,
         },
       ],
-    },
-  ];
+    });
+  }
+
+  blocks.push({
+    type: 'actions',
+    block_id: `review_${s.id}`,
+    elements: [
+      {
+        type: 'button',
+        style: 'primary',
+        text: { type: 'plain_text', text: 'Approve' },
+        action_id: 'approve_submission',
+        value: String(s.id),
+      },
+      {
+        type: 'button',
+        style: 'danger',
+        text: { type: 'plain_text', text: 'Reject' },
+        action_id: 'reject_submission',
+        value: String(s.id),
+      },
+    ],
+  });
+
+  return blocks;
 }
 
 // Replaces the action buttons with a context line recording the decision.
