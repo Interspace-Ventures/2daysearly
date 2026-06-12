@@ -3,8 +3,8 @@ import { Company, Partner, ImageAsset } from '@/types';
 // Image assets with proper typing
 export const IMAGES = {
   logo: {
-    src: "/images/2-days-early-calendar-logo-2025-banner-v2.png?v=3",
-    fallback: "/images/2-days-early-calendar-icon-2025-v2.png?v=3"
+    src: "/images/2-days-early-wordmark-2026-v4.png?v=4",
+    fallback: "/images/2-days-early-calendar-logo-2025-banner-v2.png?v=3"
   } as ImageAsset,
   calendarIcon: {
     src: "/images/2-days-early-calendar-icon-2025-v2.png",
