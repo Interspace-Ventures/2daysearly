@@ -21,6 +21,21 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       }}
       aria-label={`Visit ${company.name} website`}
     >
+      {/* Markup tag - top-left corner for companies that have received a markup */}
+      {company.markup && (
+        <span
+          className="sl-label absolute top-2 left-2 z-10 px-1.5 py-0.5 text-[10px] leading-none border-2"
+          style={{
+            backgroundColor: 'var(--mint)',
+            borderColor: 'var(--carbon-border)',
+            color: 'var(--mint-ink)',
+            boxShadow: '2px 2px 0px 0px var(--carbon-shadow)'
+          }}
+        >
+          Markup
+        </span>
+      )}
+
       {/* Logo container - light plate keeps black-on-transparent logos visible */}
       <div className="p-4 h-28 md:h-32 flex items-center justify-center bg-white transition-all duration-300 group-hover:bg-white">
         <img

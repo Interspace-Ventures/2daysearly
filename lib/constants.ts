@@ -70,13 +70,15 @@ export const COMPANIES: Company[] = [
     name: "WALDO",
     href: "https://www.waldo.ai/",
     description: "AI-powered treasury management for startups.",
-    logo: IMAGES.companies.waldo
+    logo: IMAGES.companies.waldo,
+    markup: true
   },
   {
     name: "INSTASWITCH",
     href: "https://instaswitch.co",
     description: "Automate business bank switching — move income, payroll, spend, and vendors instantly.",
-    logo: IMAGES.companies.instaswitch
+    logo: IMAGES.companies.instaswitch,
+    markup: true
   }
 ];
 
