@@ -114,8 +114,8 @@ export default function Navigation() {
               }}
             >
               <img
-                src="/images/2-days-early-calendar-icon-2025-v2.png"
-                alt="2 Days Early Calendar Icon"
+                src="/images/2de-logo-2026-v4.png?v=5"
+                alt="2 Days Early Logo"
                 loading="eager"
                 decoding="async"
                 className="object-contain"
