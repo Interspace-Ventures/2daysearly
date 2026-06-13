@@ -14,13 +14,6 @@ import {
 import { JOIN_FORM_EVENT } from '@/lib/join-modal';
 import { getStoredRefCode } from '@/lib/referral-client';
 
-const STEPS: { title: string; fields: (keyof JoinFormValues)[] }[] = [
-  { title: 'About you', fields: ['firstName', 'lastName', 'email', 'referralSource'] },
-  { title: 'Your work', fields: ['currentWork', 'experienceTags', 'linkedinUrl'] },
-  { title: 'Your interests', fields: ['fintechInterests', 'annualBudget'] },
-  { title: 'The community', fields: ['helpOffer', 'learnInterest', 'hobbies', 'codeOfConduct'] },
-];
-
 const inputClass =
   'w-full bg-white text-black border-2 border-black px-3 py-2.5 text-base outline-none focus:bg-[#f4fdf8] placeholder:text-neutral-400';
 
@@ -45,9 +38,24 @@ function ErrorText({ msg }: { msg?: string }) {
   );
 }
 
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h3
+      className="sl-label"
+      style={{
+        color: 'var(--mint)',
+        fontSize: '0.78rem',
+        paddingBottom: '0.5rem',
+        borderBottom: '2px solid var(--carbon-border)',
+      }}
+    >
+      {children}
+    </h3>
+  );
+}
+
 export default function JoinFormModal() {
   const [open, setOpen] = useState(false);
-  const [step, setStep] = useState(0);
   const [submitState, setSubmitState] = useState<'idle' | 'submitting' | 'done' | 'error'>('idle');
   const [submitError, setSubmitError] = useState('');
 
@@ -73,13 +81,23 @@ export default function JoinFormModal() {
     },
   });
 
-  const { register, handleSubmit, trigger, reset, formState } = form;
+  const { register, handleSubmit, reset, formState } = form;
   const { errors } = formState;
+
+  // The form is long; if submit fails validation, bring the first error into view.
+  const onInvalid = (formErrors: typeof errors) => {
+    const firstName = Object.keys(formErrors)[0];
+    if (!firstName) return;
+    const el = document.querySelector(`[name="${firstName}"]`) as HTMLElement | null;
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.focus({ preventScroll: true });
+    }
+  };
 
   // Open via the global custom event.
   useEffect(() => {
     const onOpen = () => {
-      setStep(0);
       setSubmitState('idle');
       setSubmitError('');
       // Attribute this application to a referrer if they arrived via a ref link.
@@ -106,14 +124,6 @@ export default function JoinFormModal() {
   }, [open]);
 
   if (!open) return null;
-
-  const isLast = step === STEPS.length - 1;
-  const progress = ((step + 1) / STEPS.length) * 100;
-
-  const goNext = async () => {
-    const valid = await trigger(STEPS[step].fields as any);
-    if (valid) setStep((s) => Math.min(s + 1, STEPS.length - 1));
-  };
 
   const onSubmit = async (values: JoinFormValues) => {
     setSubmitState('submitting');
@@ -163,10 +173,10 @@ export default function JoinFormModal() {
         >
           <div>
             <p className="sl-label" style={{ fontSize: '0.68rem', opacity: 0.8 }}>
-              Apply to join · Step {Math.min(step + 1, STEPS.length)} of {STEPS.length}
+              Apply to join
             </p>
             <h2 className="sl-display font-extrabold" style={{ fontSize: '1.3rem', lineHeight: 1.1 }}>
-              {submitState === 'done' ? 'You’re on the list' : STEPS[step].title}
+              {submitState === 'done' ? 'You’re on the list' : 'Join 2 Days Early'}
             </h2>
           </div>
           <button
@@ -187,20 +197,6 @@ export default function JoinFormModal() {
             </svg>
           </button>
         </div>
-
-        {/* Progress */}
-        {submitState !== 'done' && (
-          <div style={{ height: '4px', background: 'var(--carbon-card)' }}>
-            <div
-              style={{
-                height: '100%',
-                width: `${progress}%`,
-                background: 'var(--mint)',
-                transition: 'width 0.25s ease',
-              }}
-            />
-          </div>
-        )}
 
         {/* Body */}
         {submitState === 'done' ? (
@@ -233,159 +229,144 @@ export default function JoinFormModal() {
             </button>
           </div>
         ) : (
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col min-h-0 flex-1"
-          >
-            <div className="overflow-y-auto px-5 py-5 space-y-5" style={{ flex: 1 }}>
+          <form onSubmit={handleSubmit(onSubmit, onInvalid)} className="flex flex-col min-h-0 flex-1">
+            <div className="overflow-y-auto px-5 py-5 space-y-6" style={{ flex: 1 }}>
               {/* Hidden: referral attribution, populated on open. */}
               <input type="hidden" {...register('referredByCode')} />
 
-              {/* Step 1 — About you */}
-              {step === 0 && (
-                <>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <label>
-                      <FieldLabel required>First name</FieldLabel>
-                      <input className={inputClass} {...register('firstName')} />
-                      <ErrorText msg={errors.firstName?.message} />
+              {/* About you */}
+              <SectionHeading>About you</SectionHeading>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <label>
+                  <FieldLabel required>First name</FieldLabel>
+                  <input className={inputClass} {...register('firstName')} />
+                  <ErrorText msg={errors.firstName?.message} />
+                </label>
+                <label>
+                  <FieldLabel required>Last name</FieldLabel>
+                  <input className={inputClass} {...register('lastName')} />
+                  <ErrorText msg={errors.lastName?.message} />
+                </label>
+              </div>
+              <label className="block">
+                <FieldLabel required>Email</FieldLabel>
+                <input type="email" className={inputClass} {...register('email')} />
+                <ErrorText msg={errors.email?.message} />
+              </label>
+              <label className="block">
+                <FieldLabel>How did you hear about us?</FieldLabel>
+                <input className={inputClass} {...register('referralSource')} />
+                <ErrorText msg={errors.referralSource?.message} />
+              </label>
+
+              {/* Your work */}
+              <SectionHeading>Your work</SectionHeading>
+              <fieldset>
+                <FieldLabel required>What do you do for work?</FieldLabel>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {CURRENT_WORK_OPTIONS.map((opt) => (
+                    <label
+                      key={opt}
+                      className="flex items-center gap-2 px-3 py-2 cursor-pointer"
+                      style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
+                    >
+                      <input type="radio" value={opt} {...register('currentWork')} className="accent-[var(--mint)]" />
+                      <span className="sl-body text-sm">{opt}</span>
                     </label>
-                    <label>
-                      <FieldLabel required>Last name</FieldLabel>
-                      <input className={inputClass} {...register('lastName')} />
-                      <ErrorText msg={errors.lastName?.message} />
+                  ))}
+                </div>
+                <ErrorText msg={errors.currentWork?.message} />
+              </fieldset>
+
+              <fieldset>
+                <FieldLabel>Which of these describe you? (optional)</FieldLabel>
+                <div className="space-y-2">
+                  {EXPERIENCE_OPTIONS.map((opt) => (
+                    <label
+                      key={opt}
+                      className="flex items-start gap-2.5 px-3 py-2 cursor-pointer"
+                      style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
+                    >
+                      <input type="checkbox" value={opt} {...register('experienceTags')} className="mt-1 accent-[var(--mint)]" />
+                      <span className="sl-body text-sm">{opt}</span>
                     </label>
-                  </div>
-                  <label className="block">
-                    <FieldLabel required>Email</FieldLabel>
-                    <input type="email" className={inputClass} {...register('email')} />
-                    <ErrorText msg={errors.email?.message} />
-                  </label>
-                  <label className="block">
-                    <FieldLabel>How did you hear about us?</FieldLabel>
-                    <input className={inputClass} {...register('referralSource')} />
-                    <ErrorText msg={errors.referralSource?.message} />
-                  </label>
-                </>
-              )}
+                  ))}
+                </div>
+              </fieldset>
 
-              {/* Step 2 — Your work */}
-              {step === 1 && (
-                <>
-                  <fieldset>
-                    <FieldLabel required>What do you do for work?</FieldLabel>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {CURRENT_WORK_OPTIONS.map((opt) => (
-                        <label
-                          key={opt}
-                          className="flex items-center gap-2 px-3 py-2 cursor-pointer"
-                          style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
-                        >
-                          <input type="radio" value={opt} {...register('currentWork')} className="accent-[var(--mint)]" />
-                          <span className="sl-body text-sm">{opt}</span>
-                        </label>
-                      ))}
-                    </div>
-                    <ErrorText msg={errors.currentWork?.message} />
-                  </fieldset>
+              <label className="block">
+                <FieldLabel required>LinkedIn URL</FieldLabel>
+                <input
+                  className={inputClass}
+                  placeholder="https://www.linkedin.com/in/..."
+                  {...register('linkedinUrl')}
+                />
+                <ErrorText msg={errors.linkedinUrl?.message} />
+              </label>
 
-                  <fieldset>
-                    <FieldLabel>Which of these describe you? (optional)</FieldLabel>
-                    <div className="space-y-2">
-                      {EXPERIENCE_OPTIONS.map((opt) => (
-                        <label
-                          key={opt}
-                          className="flex items-start gap-2.5 px-3 py-2 cursor-pointer"
-                          style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
-                        >
-                          <input type="checkbox" value={opt} {...register('experienceTags')} className="mt-1 accent-[var(--mint)]" />
-                          <span className="sl-body text-sm">{opt}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </fieldset>
+              {/* Your interests */}
+              <SectionHeading>Your interests</SectionHeading>
+              <fieldset>
+                <FieldLabel required>Which fintech areas interest you?</FieldLabel>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {FINTECH_INTEREST_OPTIONS.map((opt) => (
+                    <label
+                      key={opt}
+                      className="flex items-center gap-2 px-3 py-2 cursor-pointer"
+                      style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
+                    >
+                      <input type="checkbox" value={opt} {...register('fintechInterests')} className="accent-[var(--mint)]" />
+                      <span className="sl-body text-sm">{opt}</span>
+                    </label>
+                  ))}
+                </div>
+                <ErrorText msg={errors.fintechInterests?.message as string | undefined} />
+              </fieldset>
 
-                  <label className="block">
-                    <FieldLabel required>LinkedIn URL</FieldLabel>
-                    <input
-                      className={inputClass}
-                      placeholder="https://www.linkedin.com/in/..."
-                      {...register('linkedinUrl')}
-                    />
-                    <ErrorText msg={errors.linkedinUrl?.message} />
-                  </label>
-                </>
-              )}
+              <fieldset>
+                <FieldLabel required>Annual investing budget</FieldLabel>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {ANNUAL_BUDGET_OPTIONS.map((opt) => (
+                    <label
+                      key={opt}
+                      className="flex items-center gap-2 px-3 py-2 cursor-pointer"
+                      style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
+                    >
+                      <input type="radio" value={opt} {...register('annualBudget')} className="accent-[var(--mint)]" />
+                      <span className="sl-body text-sm">{opt}</span>
+                    </label>
+                  ))}
+                </div>
+                <ErrorText msg={errors.annualBudget?.message} />
+              </fieldset>
 
-              {/* Step 3 — Interests */}
-              {step === 2 && (
-                <>
-                  <fieldset>
-                    <FieldLabel required>Which fintech areas interest you?</FieldLabel>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {FINTECH_INTEREST_OPTIONS.map((opt) => (
-                        <label
-                          key={opt}
-                          className="flex items-center gap-2 px-3 py-2 cursor-pointer"
-                          style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
-                        >
-                          <input type="checkbox" value={opt} {...register('fintechInterests')} className="accent-[var(--mint)]" />
-                          <span className="sl-body text-sm">{opt}</span>
-                        </label>
-                      ))}
-                    </div>
-                    <ErrorText msg={errors.fintechInterests?.message as string | undefined} />
-                  </fieldset>
-
-                  <fieldset>
-                    <FieldLabel required>Annual investing budget</FieldLabel>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {ANNUAL_BUDGET_OPTIONS.map((opt) => (
-                        <label
-                          key={opt}
-                          className="flex items-center gap-2 px-3 py-2 cursor-pointer"
-                          style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
-                        >
-                          <input type="radio" value={opt} {...register('annualBudget')} className="accent-[var(--mint)]" />
-                          <span className="sl-body text-sm">{opt}</span>
-                        </label>
-                      ))}
-                    </div>
-                    <ErrorText msg={errors.annualBudget?.message} />
-                  </fieldset>
-                </>
-              )}
-
-              {/* Step 4 — Community */}
-              {step === 3 && (
-                <>
-                  <label className="block">
-                    <FieldLabel required>What can you help other members with?</FieldLabel>
-                    <textarea rows={3} className={inputClass} {...register('helpOffer')} />
-                    <ErrorText msg={errors.helpOffer?.message} />
-                  </label>
-                  <label className="block">
-                    <FieldLabel required>What do you want to learn about?</FieldLabel>
-                    <textarea rows={3} className={inputClass} {...register('learnInterest')} />
-                    <ErrorText msg={errors.learnInterest?.message} />
-                  </label>
-                  <label className="block">
-                    <FieldLabel required>What do you do outside of work?</FieldLabel>
-                    <textarea rows={3} className={inputClass} {...register('hobbies')} />
-                    <ErrorText msg={errors.hobbies?.message} />
-                  </label>
-                  <label
-                    className="flex items-start gap-2.5 px-3 py-3 cursor-pointer"
-                    style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
-                  >
-                    <input type="checkbox" {...register('codeOfConduct')} className="mt-1 accent-[var(--mint)]" />
-                    <span className="sl-body text-sm">
-                      I’m committed to being a generous, respectful member of this community.
-                    </span>
-                  </label>
-                  <ErrorText msg={errors.codeOfConduct?.message} />
-                </>
-              )}
+              {/* The community */}
+              <SectionHeading>The community</SectionHeading>
+              <label className="block">
+                <FieldLabel required>What can you help other members with?</FieldLabel>
+                <textarea rows={3} className={inputClass} {...register('helpOffer')} />
+                <ErrorText msg={errors.helpOffer?.message} />
+              </label>
+              <label className="block">
+                <FieldLabel required>What do you want to learn about?</FieldLabel>
+                <textarea rows={3} className={inputClass} {...register('learnInterest')} />
+                <ErrorText msg={errors.learnInterest?.message} />
+              </label>
+              <label className="block">
+                <FieldLabel required>What do you do outside of work?</FieldLabel>
+                <textarea rows={3} className={inputClass} {...register('hobbies')} />
+                <ErrorText msg={errors.hobbies?.message} />
+              </label>
+              <label
+                className="flex items-start gap-2.5 px-3 py-3 cursor-pointer"
+                style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
+              >
+                <input type="checkbox" {...register('codeOfConduct')} className="mt-1 accent-[var(--mint)]" />
+                <span className="sl-body text-sm">
+                  I’m committed to being a generous, respectful member of this community.
+                </span>
+              </label>
+              <ErrorText msg={errors.codeOfConduct?.message} />
 
               {submitState === 'error' && (
                 <div
@@ -404,32 +385,21 @@ export default function JoinFormModal() {
             >
               <button
                 type="button"
-                onClick={() => (step === 0 ? setOpen(false) : setStep((s) => s - 1))}
+                onClick={() => setOpen(false)}
                 className="sl-nav-ghost sl-label font-bold"
                 style={{ padding: '0.65rem 1.2rem' }}
               >
-                {step === 0 ? 'Cancel' : 'Back'}
+                Cancel
               </button>
 
-              {isLast ? (
-                <button
-                  type="submit"
-                  disabled={submitState === 'submitting'}
-                  className="sl-nav-cta sl-label font-bold"
-                  style={{ padding: '0.65rem 1.6rem' }}
-                >
-                  {submitState === 'submitting' ? 'Submitting…' : 'Submit application'}
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={goNext}
-                  className="sl-nav-cta sl-label font-bold"
-                  style={{ padding: '0.65rem 1.6rem' }}
-                >
-                  Continue
-                </button>
-              )}
+              <button
+                type="submit"
+                disabled={submitState === 'submitting'}
+                className="sl-nav-cta sl-label font-bold"
+                style={{ padding: '0.65rem 1.6rem' }}
+              >
+                {submitState === 'submitting' ? 'Submitting…' : 'Submit application'}
+              </button>
             </div>
           </form>
         )}
