@@ -239,44 +239,51 @@ export default function JoinFormModal() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <label>
                   <FieldLabel required>First name</FieldLabel>
-                  <input className={inputClass} {...register('firstName')} />
+                  <input className={inputClass} placeholder="Jane" {...register('firstName')} />
                   <ErrorText msg={errors.firstName?.message} />
                 </label>
                 <label>
                   <FieldLabel required>Last name</FieldLabel>
-                  <input className={inputClass} {...register('lastName')} />
+                  <input className={inputClass} placeholder="Doe" {...register('lastName')} />
                   <ErrorText msg={errors.lastName?.message} />
                 </label>
               </div>
               <label className="block">
                 <FieldLabel required>Email</FieldLabel>
-                <input type="email" className={inputClass} {...register('email')} />
+                <input type="email" className={inputClass} placeholder="jane@example.com" {...register('email')} />
                 <ErrorText msg={errors.email?.message} />
               </label>
               <label className="block">
+                <FieldLabel required>LinkedIn URL</FieldLabel>
+                <input
+                  className={inputClass}
+                  placeholder="https://www.linkedin.com/in/janedoe"
+                  {...register('linkedinUrl')}
+                />
+                <ErrorText msg={errors.linkedinUrl?.message} />
+              </label>
+              <label className="block">
                 <FieldLabel>How did you hear about us?</FieldLabel>
-                <input className={inputClass} {...register('referralSource')} />
+                <input className={inputClass} placeholder="A friend, X/Twitter, a portfolio founder…" {...register('referralSource')} />
                 <ErrorText msg={errors.referralSource?.message} />
               </label>
 
               {/* Your work */}
               <SectionHeading>Your work</SectionHeading>
-              <fieldset>
+              <label className="block">
                 <FieldLabel required>What do you do for work?</FieldLabel>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <select className={inputClass} defaultValue="" {...register('currentWork')}>
+                  <option value="" disabled>
+                    Select your role…
+                  </option>
                   {CURRENT_WORK_OPTIONS.map((opt) => (
-                    <label
-                      key={opt}
-                      className="flex items-center gap-2 px-3 py-2 cursor-pointer"
-                      style={{ background: 'var(--carbon-card)', border: '2px solid var(--carbon-border)', color: 'var(--carbon-text)' }}
-                    >
-                      <input type="radio" value={opt} {...register('currentWork')} className="accent-[var(--mint)]" />
-                      <span className="sl-body text-sm">{opt}</span>
-                    </label>
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
                   ))}
-                </div>
+                </select>
                 <ErrorText msg={errors.currentWork?.message} />
-              </fieldset>
+              </label>
 
               <fieldset>
                 <FieldLabel>Which of these describe you? (optional)</FieldLabel>
@@ -293,16 +300,6 @@ export default function JoinFormModal() {
                   ))}
                 </div>
               </fieldset>
-
-              <label className="block">
-                <FieldLabel required>LinkedIn URL</FieldLabel>
-                <input
-                  className={inputClass}
-                  placeholder="https://www.linkedin.com/in/..."
-                  {...register('linkedinUrl')}
-                />
-                <ErrorText msg={errors.linkedinUrl?.message} />
-              </label>
 
               {/* Your interests */}
               <SectionHeading>Your interests</SectionHeading>
@@ -344,17 +341,17 @@ export default function JoinFormModal() {
               <SectionHeading>The community</SectionHeading>
               <label className="block">
                 <FieldLabel required>What can you help other members with?</FieldLabel>
-                <textarea rows={3} className={inputClass} {...register('helpOffer')} />
+                <textarea rows={3} className={inputClass} placeholder="e.g. fundraising intros, growth experiments, compliance reviews, hiring…" {...register('helpOffer')} />
                 <ErrorText msg={errors.helpOffer?.message} />
               </label>
               <label className="block">
                 <FieldLabel required>What do you want to learn about?</FieldLabel>
-                <textarea rows={3} className={inputClass} {...register('learnInterest')} />
+                <textarea rows={3} className={inputClass} placeholder="e.g. angel investing, evaluating deals, a specific fintech vertical…" {...register('learnInterest')} />
                 <ErrorText msg={errors.learnInterest?.message} />
               </label>
               <label className="block">
                 <FieldLabel required>What do you do outside of work?</FieldLabel>
-                <textarea rows={3} className={inputClass} {...register('hobbies')} />
+                <textarea rows={3} className={inputClass} placeholder="e.g. trail running, woodworking, chasing my toddler around…" {...register('hobbies')} />
                 <ErrorText msg={errors.hobbies?.message} />
               </label>
               <label

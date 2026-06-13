@@ -15,6 +15,7 @@ const STATUS_STYLE: Record<string, { bg: string; fg: string }> = {
   pending: { bg: '#2a2d3f', fg: '#9aa1b2' },
   approved: { bg: '#1dc677', fg: '#0c1a17' },
   rejected: { bg: '#3a1d1d', fg: '#ffb4b4' },
+  imported: { bg: '#1d2a3a', fg: '#9ac3ff' },
 };
 
 function StatusBadge({ status }: { status: string }) {
@@ -76,7 +77,11 @@ export default async function AdminPage() {
 
   if (!authed) return <AdminLogin />;
 
-  const rows = await db.select().from(submissions).orderBy(desc(submissions.createdAt));
+  const allRows = await db.select().from(submissions).orderBy(desc(submissions.createdAt));
+  // Imported historical records are kept for metrics only — they should not
+  // appear in the live review queue or inflate the operational counts.
+  const rows = allRows.filter((r) => r.status !== 'imported');
+  const importedCount = allRows.length - rows.length;
   const counts = {
     total: rows.length,
     pending: rows.filter((r) => r.status === 'pending').length,
@@ -144,6 +149,7 @@ export default async function AdminPage() {
             </h1>
             <p className="sl-label" style={{ color: 'var(--carbon-muted)', fontSize: '0.7rem' }}>
               {counts.total} total · {counts.pending} pending · {counts.approved} approved · {counts.rejected} rejected
+              {importedCount > 0 ? ` · ${importedCount} imported (historical, metrics only)` : ''}
             </p>
           </div>
           <LogoutButton />

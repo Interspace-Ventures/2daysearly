@@ -1,3 +1,4 @@
 - [2 Days Early site notes](2-days-early-notes.md) — stack reality (plain Next.js App Router, no Express/Vite; Drizzle+Postgres), SVG wordmark centering, `rm -rf .next` cache fix.
 - [Join flow](join-flow.md) — native form replacing Tally: zod v4 quirks, custom Slack app requirement, atomic approve/reject decisions.
 - [Referral payouts](referral-payouts.md) — reward earned only on confirmed join; 3-layer double-pay guard; recipient/amount server-derived; Tremendous is connector_catalog, sandbox default.
+- [Imported historical submissions](submissions-imported-data.md) — past exports loaded as `status='imported'` (excluded from admin queue); metrics query all statuses; jsonb arrays use `?` containment.
