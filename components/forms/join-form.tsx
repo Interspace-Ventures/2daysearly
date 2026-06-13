@@ -395,7 +395,7 @@ export default function JoinFormModal() {
                 className="sl-nav-cta sl-label font-bold"
                 style={{ padding: '0.65rem 1.6rem' }}
               >
-                {submitState === 'submitting' ? 'Submitting…' : 'Submit application'}
+                {submitState === 'submitting' ? 'Submitting…' : 'SUBMIT'}
               </button>
             </div>
           </form>
