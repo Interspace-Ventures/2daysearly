@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ClerkProvider } from '@clerk/nextjs';
 import { Outfit, Archivo, Space_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -68,10 +69,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${archivo.variable} ${spaceMono.variable}`}>
-      <body className={`${outfit.className} antialiased`} suppressHydrationWarning>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${archivo.variable} ${spaceMono.variable}`}>
+        <body className={`${outfit.className} antialiased`} suppressHydrationWarning>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

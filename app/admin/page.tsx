@@ -1,8 +1,7 @@
-import { cookies } from 'next/headers';
 import { desc } from 'drizzle-orm';
 import { db } from '@db/index';
 import { submissions, referralRewards, type Submission } from '@db/schema';
-import { isAdminAuthed, ADMIN_COOKIE } from '@/lib/admin';
+import { isAdminAuthed } from '@/lib/admin';
 import { isTremendousConfigured, tremendousIsProduction } from '@/lib/tremendous';
 import AdminLogin from './login-form';
 import LogoutButton from './logout-button';
@@ -72,8 +71,7 @@ function Row({ s }: { s: Submission }) {
 }
 
 export default async function AdminPage() {
-  const store = await cookies();
-  const authed = isAdminAuthed(store.get(ADMIN_COOKIE)?.value);
+  const authed = await isAdminAuthed();
 
   if (!authed) return <AdminLogin />;
 

@@ -1,20 +1,23 @@
-import crypto from 'crypto';
+import { auth, currentUser } from '@clerk/nextjs/server';
 
-export const ADMIN_COOKIE = 'tde_admin';
-
-// Derives an opaque session token from the admin password. Because the
-// password is secret, the hash is unguessable and needs no server-side store.
-export function adminToken(): string | null {
-  const pw = process.env.ADMIN_PASSWORD;
-  if (!pw) return null;
-  return crypto.createHash('sha256').update(`tde:${pw}`).digest('hex');
+function adminEmails(): string[] {
+  return (process.env.ADMIN_EMAILS ?? '')
+    .split(',')
+    .map((email) => email.trim().toLowerCase())
+    .filter(Boolean);
 }
 
-export function isAdminAuthed(cookieVal?: string): boolean {
-  const token = adminToken();
-  if (!token || !cookieVal) return false;
-  const a = Buffer.from(token);
-  const b = Buffer.from(cookieVal);
-  if (a.length !== b.length) return false;
-  return crypto.timingSafeEqual(a, b);
+export async function isAdminAuthed(): Promise<boolean> {
+  const { isAuthenticated } = await auth();
+  if (!isAuthenticated) return false;
+
+  const allowlist = adminEmails();
+  if (allowlist.length === 0) return false;
+
+  const user = await currentUser();
+  return Boolean(
+    user?.emailAddresses.some((item) =>
+      allowlist.includes(item.emailAddress.toLowerCase()),
+    ),
+  );
 }

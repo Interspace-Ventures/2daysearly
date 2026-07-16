@@ -110,15 +110,7 @@ export default function Footer() {
               >
                 Interspace Venture
               </a>
-              {" "}built at the speed of thought using{" "}
-              <a 
-                href="https://replit.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-colors underline text-[#1dc677] hover:text-[#179e5f]"
-              >
-                Replit
-              </a>
+              {" "}built at the speed of thought.
             </span>
           </div>
         </div>

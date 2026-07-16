@@ -1,7 +1,6 @@
 // Tremendous payout client.
 //
-// Credentials come from the Replit Tremendous connector (preferred) or a
-// TREMENDOUS_API_KEY secret as a fallback. The environment defaults to
+// Credentials come from a standard TREMENDOUS_API_KEY secret. The environment defaults to
 // **sandbox** so no real money moves during testing — set
 // `TREMENDOUS_ENV=production` to go live.
 //
@@ -23,42 +22,8 @@ function tremendousBaseUrl(): string {
   return tremendousIsProduction() ? PROD_BASE : SANDBOX_BASE;
 }
 
-// Pull the API key from the Replit connectors proxy if the connector is set up.
-async function getConnectorApiKey(): Promise<string | null> {
-  const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME;
-  if (!hostname) return null;
-  const xReplitToken = process.env.REPL_IDENTITY
-    ? 'repl ' + process.env.REPL_IDENTITY
-    : process.env.WEB_REPL_RENEWAL
-      ? 'depl ' + process.env.WEB_REPL_RENEWAL
-      : null;
-  if (!xReplitToken) return null;
-
-  try {
-    const res = await fetch(
-      `https://${hostname}/api/v2/connection?include_secrets=true&connector_names=tremendous`,
-      { headers: { Accept: 'application/json', X_REPLIT_TOKEN: xReplitToken } },
-    );
-    if (!res.ok) return null;
-    const data = await res.json();
-    const item = data.items?.[0];
-    const s = item?.settings || {};
-    return (
-      s.api_key ||
-      s.apiKey ||
-      s.access_token ||
-      s.secret_key ||
-      item?.secret ||
-      null
-    );
-  } catch {
-    return null;
-  }
-}
-
 async function getCreds(): Promise<TremendousCreds | null> {
-  const apiKey =
-    (await getConnectorApiKey()) || process.env.TREMENDOUS_API_KEY || null;
+  const apiKey = process.env.TREMENDOUS_API_KEY || null;
   if (!apiKey) return null;
   return { apiKey, baseUrl: tremendousBaseUrl() };
 }

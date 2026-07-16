@@ -5,12 +5,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx server/index.ts",
-    "build": "next build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
-    "start": "NODE_ENV=production node dist/index.js",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
     "check": "tsc",
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
+    "@clerk/nextjs": "^7.5.19",
     "@hookform/resolvers": "^5.4.0",
     "@slack/web-api": "^7.16.0",
     "@types/pg": "^8.20.0",

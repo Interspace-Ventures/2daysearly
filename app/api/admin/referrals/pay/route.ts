@@ -1,9 +1,8 @@
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
 import { and, eq, inArray } from 'drizzle-orm';
 import { db } from '@db/index';
 import { referralRewards, submissions } from '@db/schema';
-import { isAdminAuthed, ADMIN_COOKIE } from '@/lib/admin';
+import { isAdminAuthed } from '@/lib/admin';
 import { sendReferralPayout } from '@/lib/tremendous';
 
 export const runtime = 'nodejs';
@@ -15,8 +14,7 @@ export const dynamic = 'force-dynamic';
 const PAYABLE = ['earned', 'failed', 'flagged'];
 
 export async function POST(req: Request) {
-  const store = await cookies();
-  if (!isAdminAuthed(store.get(ADMIN_COOKIE)?.value)) {
+  if (!(await isAdminAuthed())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

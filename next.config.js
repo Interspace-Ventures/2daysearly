@@ -2,7 +2,6 @@ const isProd = process.env.NODE_ENV === 'production';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  allowedDevOrigins: ['*.replit.dev', '*.riker.replit.dev', '*.repl.co'],
   turbopack: {
     rules: {
       '*.svg': {
@@ -13,12 +12,10 @@ const nextConfig = {
   },
   images: {
     domains: ['localhost'],
-    unoptimized: true, // For Replit compatibility
   },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  output: 'standalone',
   trailingSlash: false,
   async headers() {
     const securityHeaders = [
@@ -32,9 +29,7 @@ const nextConfig = {
       },
     ];
 
-    // Only block iframe embedding in production. In dev, the Replit
-    // preview/canvas embeds the app in an iframe, and X-Frame-Options: DENY
-    // would prevent it from loading.
+    // Block iframe embedding in production.
     if (isProd) {
       securityHeaders.unshift({
         key: 'X-Frame-Options',
