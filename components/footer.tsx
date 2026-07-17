@@ -101,7 +101,13 @@ export default function Footer() {
             <span className="sl-label whitespace-nowrap" style={{letterSpacing: '0.08em'}}>© 2026 2 DAYS EARLY</span>
             <ChangelogDialog />
             <span>
-              2 Days Early is an{" "}
+              <a
+                href="/"
+                className="transition-colors underline text-[#1dc677] hover:text-[#179e5f]"
+              >
+                2 Days Early
+              </a>{" "}
+              is an{" "}
               <a 
                 href="https://interspace.ventures" 
                 target="_blank" 
@@ -110,7 +116,7 @@ export default function Footer() {
               >
                 Interspace Venture
               </a>
-              {" "}built at the speed of thought.
+              . Built at the speed of thought with AI.
             </span>
           </div>
         </div>
