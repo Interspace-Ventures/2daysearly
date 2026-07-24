@@ -116,7 +116,16 @@ export default function Footer() {
               >
                 Interspace Venture
               </a>
-              . Built at the speed of thought with AI.
+              . Built at the speed of thought with AI. Interface built with{" "}
+              <a
+                href="https://structured.glass"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors underline text-[#1dc677] hover:text-[#179e5f]"
+              >
+                Structured Liquidity
+              </a>
+              .
             </span>
           </div>
         </div>

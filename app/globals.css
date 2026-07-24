@@ -232,6 +232,10 @@ body {
     padding-right: clamp(1rem, 4vw, 2rem);
   }
 
+  footer > .container-fluid {
+    max-width: min(1200px, 95vw);
+  }
+
   /* Company card styling */
   .company-card {
     @apply neo-border neo-shadow transition-all duration-200 hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] cursor-pointer h-full;
@@ -418,6 +422,10 @@ body {
 @media (min-width: 1400px) {
   .container-fluid {
     max-width: 960px;
+  }
+
+  footer > .container-fluid {
+    max-width: 1200px;
   }
   
   .company-card .logo-container img {
