@@ -7,7 +7,7 @@ on:
 
 jobs:
   validate:
-    uses: Interspace-Ventures/Structured/.github/workflows/managed-repository.yml@9cf93bcc63b0584768a4a78fbba320f59f6272f1
+    uses: Interspace-Ventures/Structured/.github/workflows/managed-repository.yml@aafd51cb5b7014f8cfc42dd46c73a9becff7bfbe
     with:
       node-version: "22"
       package-manager: npm
