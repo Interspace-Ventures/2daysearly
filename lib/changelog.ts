@@ -7,6 +7,15 @@ export interface ChangelogEntry {
 // Newest entry first. The current app version is derived from CHANGELOG[0].
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "1.4.0",
+    date: "2026-08-18",
+    changes: [
+      "Added Campus, Coast, Keep, and Uno Wallet to the portfolio.",
+      "Updated Juno to its new nfa.trade brand.",
+      "Removed Mine and Kartera from the portfolio.",
+    ],
+  },
+  {
     version: "1.3.1",
     date: "2026-08-12",
     changes: [
