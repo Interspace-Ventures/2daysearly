@@ -7,6 +7,13 @@ export interface ChangelogEntry {
 // Newest entry first. The current app version is derived from CHANGELOG[0].
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "1.3.1",
+    date: "2026-08-12",
+    changes: [
+      "Aligned the navigation and body container widths and separated the body from the page background.",
+    ],
+  },
+  {
     version: "1.3.0",
     date: "2026-06-06",
     changes: [
