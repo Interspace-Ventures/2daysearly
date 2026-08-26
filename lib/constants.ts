@@ -39,18 +39,6 @@ export const COMPANIES: Company[] = [
     logo: IMAGES.companies.backpack
   },
   {
-    name: "NFA.TRADE",
-    href: "https://nfa.trade/",
-    description: "A trading terminal that turns high-signal social posts into executable trades.",
-    logo: IMAGES.companies.nfaTrade
-  },
-  {
-    name: "HADRIUS",
-    href: "https://hadrius.com",
-    description: "AI-powered compliance platform for SEC & FINRA regulated firms, saving 19hrs/week on compliance tasks.",
-    logo: IMAGES.companies.hadrius
-  },
-  {
     name: "CAMPUS",
     href: "https://campus.edu/",
     description: "An accredited online community college expanding access to live higher education.",
@@ -63,16 +51,29 @@ export const COMPANIES: Company[] = [
     logo: IMAGES.companies.coast
   },
   {
+    name: "HADRIUS",
+    href: "https://hadrius.com",
+    description: "AI-powered compliance platform for SEC & FINRA regulated firms, saving 19hrs/week on compliance tasks.",
+    logo: IMAGES.companies.hadrius
+  },
+  {
+    name: "INSTASWITCH",
+    href: "https://instaswitch.co",
+    description: "Automate business bank switching — move income, payroll, spend, and vendors instantly.",
+    logo: IMAGES.companies.instaswitch,
+    markup: true
+  },
+  {
     name: "KEEP",
     href: "https://www.trykeep.com/",
     description: "All-in-one business banking, cards, expense management, and growth capital for Canadian companies.",
     logo: IMAGES.companies.keep
   },
   {
-    name: "UNO WALLET",
-    href: "https://myunowallet.com/",
-    description: "A smart wallet that helps consumers choose the best rewards card for every purchase.",
-    logo: IMAGES.companies.unoWallet
+    name: "NFA.TRADE",
+    href: "https://nfa.trade/",
+    description: "A trading terminal that turns high-signal social posts into executable trades.",
+    logo: IMAGES.companies.nfaTrade
   },
   {
     name: "SUNDAE",
@@ -81,17 +82,16 @@ export const COMPANIES: Company[] = [
     logo: IMAGES.companies.sundae
   },
   {
+    name: "UNO WALLET",
+    href: "https://myunowallet.com/",
+    description: "A smart wallet that helps consumers choose the best rewards card for every purchase.",
+    logo: IMAGES.companies.unoWallet
+  },
+  {
     name: "WALDO",
     href: "https://www.waldo.ai/",
     description: "AI-powered treasury management for startups.",
     logo: IMAGES.companies.waldo,
-    markup: true
-  },
-  {
-    name: "INSTASWITCH",
-    href: "https://instaswitch.co",
-    description: "Automate business bank switching — move income, payroll, spend, and vendors instantly.",
-    logo: IMAGES.companies.instaswitch,
     markup: true
   }
 ];
