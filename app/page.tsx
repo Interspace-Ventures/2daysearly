@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--carbon-bg)' }}>
       <MemoizedNavigation />
-      <main>
+      <main className="site-body-surface">
         <MemoizedHero />
         <MemoizedPurpose />
         <MemoizedPrinciples />

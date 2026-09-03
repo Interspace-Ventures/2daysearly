@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "repository": "Interspace-Ventures/2daysearly",
+  "linear": {
+    "workspaceSlug": "interspaceventures",
+    "teamKey": "IV",
+    "projectURL": "https://linear.app/interspaceventures/project/2-days-early-1e024e0ace89",
+    "issueRequired": true
+  },
+  "designSystem": {
+    "name": "Structured Liquidity",
+    "componentSystem": "shadcn",
+    "registry": "https://structured.glass/r/structured-liquidity-agent.json",
+    "configs": [
+      "components.json"
+    ],
+    "primitiveRoots": [
+      "components/ui"
+    ],
+    "tokenSources": [
+      "app/globals.css"
+    ]
+  },
+  "delivery": {
+    "promotionOrder": [
+      "preview",
+      "staging",
+      "release-candidate",
+      "production"
+    ],
+    "releaseRecordRequired": true,
+    "securityReviewRequired": true,
+    "explicitProductionApprovalRequired": true
+  }
+}
+

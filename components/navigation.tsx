@@ -87,7 +87,7 @@ export default function Navigation() {
         padding: 'clamp(0.5rem, 1.6vw, 0.9rem) clamp(0.75rem, 4vw, 2rem) 0'
       }}
     >
-      <div className="mx-auto" style={{ maxWidth: 'min(1200px, 100%)' }}>
+      <div className="mx-auto" style={{ maxWidth: 'min(var(--site-shell-width), 100%)' }}>
         {/* Floating SL-style glass bar */}
         <div
           className="sl-nav-glass flex items-center justify-between w-full min-w-0"

@@ -18,11 +18,13 @@ export const IMAGES = {
     placeholder: "/images/company-placeholder.svg",
     backpack: "/images/backpack.png",
     harper: "/images/harper.png",
-    juno: "/images/juno.png",
-    mine: "/images/mine-logo.png",
+    campus: "/images/campus.png",
+    coast: "/images/coast.png",
+    nfaTrade: "/images/nfa-trade.svg",
     hadrius: "/images/hadrius-logo.png",
-    kartera: "/images/kartera.png",
+    keep: "/images/keep.png",
     sundae: "/images/sundae.png",
+    unoWallet: "/images/uno-wallet.png",
     waldo: "/images/waldo.png",
     instaswitch: "/images/instaswitch-logo.png"
   }
@@ -37,16 +39,16 @@ export const COMPANIES: Company[] = [
     logo: IMAGES.companies.backpack
   },
   {
-    name: "JUNO",
-    href: "https://juno.finance/",
-    description: "Modern banking for the crypto-native, with seamless on-ramps and a focus on user experience.",
-    logo: IMAGES.companies.juno
+    name: "CAMPUS",
+    href: "https://campus.edu/",
+    description: "An accredited online community college expanding access to live higher education.",
+    logo: IMAGES.companies.campus
   },
   {
-    name: "MINE",
-    href: "https://usemine.com",
-    description: "Build credit, stay on budget, and control your money.",
-    logo: IMAGES.companies.mine
+    name: "COAST",
+    href: "https://coastpay.com/",
+    description: "A modern commercial card and expense management platform built for fleet operators.",
+    logo: IMAGES.companies.coast
   },
   {
     name: "HADRIUS",
@@ -55,10 +57,23 @@ export const COMPANIES: Company[] = [
     logo: IMAGES.companies.hadrius
   },
   {
-    name: "KARTERA",
-    href: "https://www.kartera.com",
-    description: "Empowering financial advisors with digital-first solutions to serve the next generation of wealth.",
-    logo: IMAGES.companies.kartera
+    name: "INSTASWITCH",
+    href: "https://instaswitch.co",
+    description: "Automate business bank switching — move income, payroll, spend, and vendors instantly.",
+    logo: IMAGES.companies.instaswitch,
+    markup: true
+  },
+  {
+    name: "KEEP",
+    href: "https://www.trykeep.com/",
+    description: "All-in-one business banking, cards, expense management, and growth capital for Canadian companies.",
+    logo: IMAGES.companies.keep
+  },
+  {
+    name: "NFA.TRADE",
+    href: "https://nfa.trade/",
+    description: "A trading terminal that turns high-signal social posts into executable trades.",
+    logo: IMAGES.companies.nfaTrade
   },
   {
     name: "SUNDAE",
@@ -67,17 +82,16 @@ export const COMPANIES: Company[] = [
     logo: IMAGES.companies.sundae
   },
   {
+    name: "UNO WALLET",
+    href: "https://myunowallet.com/",
+    description: "A smart wallet that helps consumers choose the best rewards card for every purchase.",
+    logo: IMAGES.companies.unoWallet
+  },
+  {
     name: "WALDO",
     href: "https://www.waldo.ai/",
     description: "AI-powered treasury management for startups.",
     logo: IMAGES.companies.waldo,
-    markup: true
-  },
-  {
-    name: "INSTASWITCH",
-    href: "https://instaswitch.co",
-    description: "Automate business bank switching — move income, payroll, spend, and vendors instantly.",
-    logo: IMAGES.companies.instaswitch,
     markup: true
   }
 ];
